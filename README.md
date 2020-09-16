@@ -10,7 +10,7 @@
 
 - [ ] Numerous TODO's still need addressed.
 
-## Full_Of_Bugs_v3
+## Full_Of_Bugs_v3 [https://github.com/pasciaks/sabio/tree/master/Full_Of_Bugs_v3]()
 
 ### Within this folder are the debugging ajax calls exercises and debugged solutions.
 
@@ -24,39 +24,57 @@
 
 #
 
+#
+
+#
+
+#
+
+#
+
+#
+
+#
+
+#
+
+#
+
+#
+
+#
+
+#
+
+#
+
+#
+
+#
+
+#
+
+#
+
+#
+
+#
+
+#
+
+#
+
+#
+
+#
+
+#
+
+#
+
+#
+
 # Markdown examples follow for future reference
-
-#
-
-#
-
-#
-
-#
-
-#
-
-#
-
-#
-
-#
-
-#
-
-#
-
-#
-
-#
-
-#
-
-#
-
-#
-
-#
 
 #
 
@@ -124,3 +142,5 @@ function fancyAlert(arg) {
 | --------------------------- | ---------------------------- |
 | Content from cell 1         | Content from cell 2          |
 | Content in the first column | Content in the second column |
+
+### ---------------------------------------------------------------------------------
