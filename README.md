@@ -4,13 +4,13 @@ lab work
 
 # 05-forms
 
-#Within this file is the lab assignment to use the entities endpoint. Add, Update and Delete are implemented using a jQuery form and axios methods to communicate with the back end.
+#Within this folder is the lab assignment to use the entities endpoint. Add, Update and Delete are implemented using a jQuery form and axios methods to communicate with the back end.
 
 - [ ] Numerous TODO's still need addressed.
 
-# --------------------------------------------------------------------
+# ---------------------------------------------------------
 
-#
+# Markdown examples follow for future reference
 
 #
 
