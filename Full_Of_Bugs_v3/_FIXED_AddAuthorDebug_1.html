@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- #region Sabio Code - You can Fold this region to remove it from sight -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Sabio Coding Bootcamp" />
+    <meta itemprop="image" content="https://sabio.la/Sabio.png">
+    <link rel="shortcut icon" href="https://sabio.la/Sabio.png">
+    <link rel="icon" type="image/png" href="https://sabio.la/Sabio.png" />
+    <!-- Do Not Change the HTML title or anything between this line and the line with the 💘's -->
+    <title>Add Authors 1</title>
+    <link href="https://pw.sabio.la/dist/all-site.css" rel="stylesheet" />
+    <script src="https://pw.sabio.la/api/js/site"></script>
+    <script src="https://unpkg.com/axios@0.19.2/dist/axios.min.js"></script>
+    <style>
+        .view-border {
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 5px;
+        }
+        
+        .container-form {
+            margin-left: 60px;
+        }
+        
+        #outputMsg {
+            border: 1px solid black;
+            background-color: green;
+        }
+    </style>
+    <!-- #endregion -->
+    <!-- I 💘 Code, You 💘 Code, We all 💘 Code -->
+
+    <!-- 💡 All your CSS in here -->
+    <style>
+
+    </style>
+</head>
+
+
+<body class="sabio" data-ins="pw-00" data-ui="full-height">
+    <!-- Do Not Edit or Remove this nav element -->
+    <nav class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio"></nav>
+
+    <!-- <div class="container ajax sabio"></div> -->
+
+    <div class="container main">
+        <div class="container-form">
+            <h1>AJAX LAB</h1>
+            <h2>Add Authors</h2>
+            <form class="col-md-6" id="authorForm">
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="First Name" />
+                </div>
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Last Name" />
+                </div>
+                <div class="form-group">
+                    <label>Age</label>
+                    <input type="text" class="form-control" id="age" placeholder="Age" />
+                </div>
+                <div class="form-group">
+                    <label>Salary</label>
+                    <input type="text" class="form-control" id="salary" placeholder="Salary" />
+                </div>
+                <button type="submit" id="addAuthor" class="btn btn-primary">Add</button>
+            </form>
+        </div>
+
+        <div id="outputMsg" class="hide col-md-6">
+        </div>
+        <div class="authorList col-md-6">
+        </div>
+
+
+        <!-- MY CODE STARTS HERE -->
+        <div class="col-md-12">
+            &nbsp;
+        </div>
+
+        <div>
+            <div class="col-md-8">
+                <h3>What was the Bug? How did you solve/fix the Bug?</h3>
+            </div>
+        </div>
+        <div class="col-md-12">
+            &nbsp;
+            <br> &nbsp;
+            <br>
+        </div>
+    </div>
+
+    <!-- Do Not Edit or Remove this footer element -->
+    <footer class="do-not-remove container-fluid footer mx-auto  fb-targert sabio">
+        <p class="text-center">© Sabio.la 2019</p>
+    </footer>
+    <script type="text/html" id="authorTemplate">
+        <div class="viewAuthor col-md-6 view-border">
+            <h3 class="authorName">Name: <span class="part1"></span> <span class="part2"></span></h3>
+            <h4 class="authorAge">Age: <span></span></h4>
+            <h4 class="authorSalary">Salary: <span></span></h4>
+        </div>
+
+    </script>
+    <!--👇🏻 All your JavaScript code goes below here inside this script tag 👇🏻 -->
+    <script id="candidateCode">
+        function startUp() {
+            console.log("page has loaded");
+
+            $("#addAuthor").on("click", onAddAuthor);
+        }
+        var onAddAuthor = function(event) {
+            event.preventDefault(); // FIXED // prevent default
+            var data = readAuthorForm();
+            var isValid = validateFormData(data); // FIXED // validateFormData instead of validateForm
+            if (isValid != "") {
+                $("#outputMsg").html(isValid);
+                $("#outputMsg").removeClass("hide");
+            } else {
+                console.log("add Author is working");
+                addAuthor(data, onAddSuccess, onReqError);
+            }
+
+        };
+
+        var addAuthor = function(payload, onSuccess, onError) { // FIXED // parameter name 
+            const config = {
+                method: "POST",
+                url: "https://api.remotebootcamp.dev/api/authors",
+                data: payload,
+                crossdomain: true,
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            };
+
+            return axios(config)
+                .then(onSuccess)
+                .catch(onError);
+        };
+
+        var readAuthorForm = function() {
+            var authorData = {
+                firstName: $("#firstName").val(),
+                lastName: $("#lastName").val(),
+                age: $("#age").val(), // FIXED // missing # for ID selector
+                salary: $("#salary").val()
+            };
+
+            return authorData;
+        };
+
+        // FIXED // INFO for validation
+
+        // "errors": [
+        // "The field Age must be between 21 and 100.",
+        // "The field Salary must be between 50000 and 100000.",
+        // "The LastName field is required.",
+        // "The field LastName must be a string with a minimum length of 2 and a maximum length of 100.",
+        // "The FirstName field is required.",
+        // "The field FirstName must be a string with a minimum length of 2 and a maximum length of 100."
+        // ],
+
+        //-------------------------------------------------------------
+        // var anAjaxCall = (payload) =>
+        // {
+        // const config = {
+        //     method: "_PICK_A_HTPP_METHOD",
+        //     url: "_A_URL_GOES_HERE",
+        //     data: payload,
+        //     crossdomain: true,
+        //     headers: { "Content-Type": "application/json" }
+        // };
+        // return axios(config);
+        // };        
+        //-------------------------------------------------------------            
+
+        var validateFormData = function(data) { // TODO Better validation with in-line error messages perhaps using data-error attribute ?
+
+
+            // AuthorAddRequest{
+            //     firstName*	string
+            //     maxLength: 100
+            //     minLength: 2
+            //     lastName*	string
+            //     maxLength: 100
+            //     minLength: 2
+            //     age	integer($int32)
+            //     maximum: 100
+            //     minimum: 21
+            //     salary	number($double)
+            //     maximum: 100000
+            //     minimum: 50000
+            // }
+
+            // FIXED // Reference item for ID of newly created author
+            // {
+            // "item": 349897138,
+            // "isSuccessful": true,
+            // "transactionId": "f2f01baf-7bf2-48e8-98e9-432eadf93a7b"
+            // }
+            var errorMsg = "";
+            if (data.firstName == "") {
+                errorMsg += "first name cannot be empty<br/>"
+            };
+            if (data.lastName == "") {
+                errorMsg += "last name cannot be empty<br/>"
+            };
+            if (data.age == "") {
+                errorMsg += "age cannot be empty<br/>"
+            };
+            if (data.salary == "") {
+                errorMsg += "salary cannot be empty<br/>"
+            };
+            return errorMsg;
+        };
+
+        var onAddSuccess = function(data, status, xhr) {
+
+            console.log("ajax successful");
+
+            console.log("data", data);
+            console.log("status", status);
+            console.log("xhr", xhr);
+            console.log("ajax successful");
+
+            var targetView = `https://api.remotebootcamp.dev/api/authors/${data.data.item}`
+            $("#outputMsg").text("author added successfully " + data.data.item);
+            $("#outputMsg").html(`<h1><a href="${targetView}"> Added id ${data.data.item} </a></h1>`);
+            $("#outputMsg").removeClass("hide");
+            console.log(data);
+
+        };
+
+
+        var onReqError = function(data, status, xhr) {
+
+            console.log("there was an error");
+
+            console.log("data", data);
+            console.log("status", status);
+            console.log("xhr", xhr);
+            console.log("there was an error");
+
+            $("#outputMsg").text("there was an error: " + data.responseText);
+            $("#outputMsg").removeClass("hide");
+            console.log(data); //console.log(data.responseText);
+        };
+    </script>
+    <!-- 🛑 Do Not Write Any Code Below here -->
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- #region Sabio Code - You can Fold this region to remove it from sight -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Sabio Coding Bootcamp" />
+    <meta itemprop="image" content="https://sabio.la/Sabio.png">
+    <link rel="shortcut icon" href="https://sabio.la/Sabio.png">
+    <link rel="icon" type="image/png" href="https://sabio.la/Sabio.png" />
+    <!-- Do Not Change the HTML title or anything between this line and the line with the 💘's -->
+    <title>Get All</title>
+    <link href="https://pw.sabio.la/dist/all-site.css" rel="stylesheet" />
+    <script src="https://pw.sabio.la/api/js/site"></script>
+    <script src="https://unpkg.com/axios@0.19.2/dist/axios.min.js"></script>
+
+    <!-- #endregion -->
+    <!-- I 💘 Code, You 💘 Code, We all 💘 Code -->
+
+    <!-- 💡 All your CSS in here -->
+    <style>
+
+    </style>
+</head>
+
+<body class="sabio" data-ins="pw-00" data-ui="full-height">
+    <!-- Do Not Edit or Remove this nav element -->
+    <nav class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio"></nav>
+    <div class="container ajax sabio"></div>
+    <div class="container main">
+        <div class="col-md-6 row container-form">
+            <button type="button" class="btn btn-primary" id="showPeopleButton">Show All People</button>
+            <div id="authorContainer">
+            </div>
+        </div>
+    </div>
+
+    <!-- Do Not Edit or Remove this footer element -->
+    <footer class="do-not-remove container-fluid footer mx-auto  fb-targert sabio">
+        <p class="text-center">© Sabio.la 2019</p>
+    </footer>
+
+    <!--👇🏻 All your JavaScript code goes below here inside this script tag 👇🏻 -->
+    <script id="candidateCode">
+        function startUp() {
+            console.log("page has loaded");
+            //this makes the setting global so you do not have to include in every ajax call
+            $.ajaxSetup({
+                headers: {
+                    'SABIO-AUTH': 'SA-1391-AAA'
+                }
+            });
+            $("#showPeopleButton").on("click", onPeopleRequested);
+        }
+
+        //handlers
+        var onPeopleRequested = function() {
+            getAllPeople() //FIXED 
+                .then(onRequestSuccess)
+                .catch(onReqError)
+        }
+
+        var renderPeople = function(peopleArray) { //FIXED 
+            console.log("people..");
+            console.log(peopleArray);
+            for (var i = 0; i < peopleArray.length; i++) {
+                console.log(peopleArray[i].id + " " + peopleArray[i].firstName + " " + peopleArray[i].lastName); // fixed peopleArray not authorArray
+
+            }
+        }
+
+        //ajax get all authors // note paging is not the url so all come back, need more info like pageIndex and pageSize to properly complete
+        var getAllPeople = function() { //FIXED (USING THEN AND CATCH, NO NEED FOR CALLBACK FUNCTION PARAMETERS)
+            const config = {
+                method: "GET",
+                url: "https://api.remotebootcamp.dev/api/authors",
+                crossdomain: true,
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            };
+
+            return axios(config);
+        };
+
+        //ajax success
+        var onRequestSuccess = function(data, status, xhr) {
+            console.log("ajax successful");
+            //console.log(data);
+            renderPeople(data.data.items); //fixed variable object path data.data.items not data.items
+        };
+
+        //error method
+        var onReqError = function(data, status, xhr) {
+            console.log("there was an error");
+            console.log(data.responseText);
+        }
+    </script>
+    <!-- 🛑 Do Not Write Any Code Below here -->
+</body>
+
+</html>

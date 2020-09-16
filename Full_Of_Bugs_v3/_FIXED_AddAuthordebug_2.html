@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- #region Sabio Code - You can Fold this region to remove it from sight -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Sabio Coding Bootcamp" />
+    <meta itemprop="image" content="https://sabio.la/Sabio.png">
+    <link rel="shortcut icon" href="https://sabio.la/Sabio.png">
+    <link rel="icon" type="image/png" href="https://sabio.la/Sabio.png" />
+    <!-- Do Not Change the HTML title or anything between this line and the line with the 💘's -->
+    <title>Add Authors 2</title>
+    <link href="https://pw.sabio.la/dist/all-site.css" rel="stylesheet" />
+    <script src="https://pw.sabio.la/api/js/site"></script>
+    <script src="https://unpkg.com/axios@0.19.2/dist/axios.min.js"></script>
+
+    <!-- #endregion -->
+    <!-- I 💘 Code, You 💘 Code, We all 💘 Code -->
+
+    <!-- 💡 All your CSS in here -->
+    <style>
+
+    </style>
+</head>
+
+<body class="sabio" data-ins="pw-00" data-ui="full-height">
+    <!-- Do Not Edit or Remove this nav element -->
+    <nav class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio"></nav>
+    <div class="container ajax sabio"></div>
+    <div class="container main">
+        <div class="container-form">
+            <h1>AJAX LAB</h1>
+            <h2>Add Authors</h2>
+            <form class="col-md-6" id="authorForm">
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="First Name" />
+                </div>
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Last Name" />
+                </div>
+                <div class="form-group">
+                    <label>Age</label>
+                    <input type="text" class="form-control" id="age" placeholder="Age" />
+                </div>
+                <div class="form-group">
+                    <label>Salary</label>
+                    <input type="text" class="form-control" id="salary" placeholder="Salary" />
+                </div>
+                <button type="submit" id="addAuthor" class="btn btn-primary">Add</button>
+            </form>
+        </div>
+        <div id="outputMsg" class="hide col-md-6">
+
+        </div>
+        <div class="authorList col-md-6">
+
+        </div>
+    </div>
+
+    <!-- Do Not Edit or Remove this footer element -->
+    <footer class="do-not-remove container-fluid footer mx-auto  fb-targert sabio">
+        <p class="text-center">© Sabio.la 2019</p>
+    </footer>
+    <script type="text/html" id="authorTemplate">
+
+        <div class="viewAuthor col-md-6 view-border">
+            <h3 class="authorName">Name: <span class="part1"></span> <span class="part2"></span></h3>
+            <h4 class="authorAge">Age: <span></span></h4>
+            <h4 class="authorSalary">Salary: <span></span></h4>
+        </div>
+
+    </script>
+    <!--👇🏻 All your JavaScript code goes below here inside this script tag 👇🏻 -->
+    <script id="candidateCode">
+        function startUp() {
+            console.log("page has loaded");
+            $("#addAuthor").on("click", addAuthor);
+
+            alert('not fixed yet');
+        }
+
+        //handlers
+        var addAuthor = function(event) {
+            event.preventDefault();
+            var data = readAuthorForm();
+            var isValid = validateFormData(data);
+            if (isValid != "") {
+                $("#outputMsg").html(isValid);
+                $("#outputMsg").removeClass("hide");
+            } else {
+                console.log("add Author is working");
+                addAuthorToDB(data, onRequestSuccess, onReqError);
+            }
+        };
+
+        var addAuthorToDB = function(payload, onSuccess, onError) { // FIXED the param (payload) instead of (data)
+            const config = {
+                method: "POST",
+                url: "https://api.remotebootcamp.dev/api/authors",
+                data: payload,
+                crossdomain: true,
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            };
+
+            return axios(config)
+                .then(onSuccess)
+                .catch(onError);;
+        };
+
+        var readAuthorForm = function() {
+            var authorData = {
+                firstName: $("#firstName").val(),
+                lastName: $("#lastName").val(),
+                age: $("#age").val(),
+                salary: $("#salary").val()
+            };
+            return authorData;
+        };
+
+        var validateFormData = function(data) {
+            var errorMsg = "";
+            if (data.firstName == "") {
+                errorMsg += "first name cannot be empty<br/>";
+            }
+            if (data.lastName == "") {
+                errorMsg += "last name cannot be empty<br/>";
+            }
+            if (data.age == "") {
+                errorMsg += "age cannot be empty<br/>";
+            }
+            if (data.salary == "") {
+                errorMsg += "salary cannot be empty<br/>";
+            }
+            return errorMsg;
+        };
+
+        //ajax success
+        var onRequestSuccess = function(data, status, xhr) {
+            console.log("ajax successful");
+            $("#outputMsg").text("author added successfully");
+            $("#outputMsg").removeClass("hide");
+            console.log(data);
+        };
+
+        //error method
+
+        var onReqError = function(data, status, xhr) {
+            console.log("there was an error");
+            $("#outputMsg").text("there was an error: " + data.responseText);
+            $("#outputMsg").removeClass("hide");
+            console.log(data.responseText);
+        };
+    </script>
+    <!-- 🛑 Do Not Write Any Code Below here -->
+</body>
+
+</html>

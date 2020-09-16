@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- #region Sabio Code - You can Fold this region to remove it from sight -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Sabio Coding Bootcamp" />
+    <meta itemprop="image" content="https://sabio.la/Sabio.png">
+    <link rel="shortcut icon" href="https://sabio.la/Sabio.png">
+    <link rel="icon" type="image/png" href="https://sabio.la/Sabio.png" />
+    <!-- Do Not Change the HTML title or anything between this line and the line with the 💘's -->
+    <title>Show All Authors</title>
+    <link href="https://pw.sabio.la/dist/all-site.css" rel="stylesheet" />
+    <script src="https://pw.sabio.la/api/js/site"></script>
+    <script src="https://unpkg.com/axios@0.19.2/dist/axios.min.js"></script>
+    <style>
+        .view-border {
+            border: 1px solid black;
+            border-radius: 10px;
+            margin: 20px;
+            padding: 5px;
+        }
+
+        #showAuthorsButton {
+            margin: 20px;
+        }
+    </style>
+    <!-- #endregion -->
+    <!-- I 💘 Code, You 💘 Code, We all 💘 Code -->
+
+    <!-- 💡 All your CSS in here -->
+    <style>
+
+    </style>
+</head>
+
+<body class="sabio" data-ins="pw-00" data-ui="full-height">
+    <!-- Do Not Edit or Remove this nav element -->
+    <nav class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio"></nav>
+    <div class="container ajax sabio"></div>
+    <div class="container main">
+        <div class="col-md-6 row container-form">
+            <button type="button" class="btn btn-primary" id="showAuthorsButton">Show All Authors</button>
+            <div id="authorContainer">
+            </div>
+        </div>
+    </div>
+
+    <!-- Do Not Edit or Remove this footer element -->
+    <footer class="do-not-remove container-fluid footer mx-auto  fb-targert sabio">
+        <p class="text-center">© Sabio.la 2019</p>
+    </footer>
+    <script type="text/template" id="authorTemplate">
+
+            <div class="viewAuthor col-md-6 view-border">
+                <h3 class="authorName">Name: <span class="part1"></span> <span class="part2"></span></h3>
+                <h4 class="authorAge">Age: <span></span></h4>
+                <h4 class="authorSalary">Salary: <span></span></h4>
+                <h4 class="articleNumber">Articles: <span></span></h4>
+            </div>
+    
+        </script>
+    <!--👇🏻 All your JavaScript code goes below here inside this script tag 👇🏻 -->
+    <script id="candidateCode">
+        function startUp()
+        {
+            console.log("page has loaded");
+
+            $("#showAuthorsButton").on("click", onShowAuthors);
+        }
+
+        var onShowAuthors = function ()
+        {
+            getAllAuthors(onRequestSuccess, onReqError);
+        }
+
+        var loadTemplate = function ()
+        {
+            var $author = $($("#authorTemplate").html());
+            return $author;
+        }
+
+        var writeToTemplate = function (data)
+        {
+            var authorTemplate = loadTemplate();
+            authorTemplate.find(".authorName .part1").text(data.firtName);
+            authorTemplate.find(".authorName .part2").text(data.lastName);
+            authorTemplate.find(".authorAge > span").text(data.age);
+            authorTemplate.find(".authorSalary > span").text(data.salary);
+            if (data.articles == null)
+            {
+                data.articles = "No articles found";
+            }
+            authorTemplate.find(".articleNumber > span").text(data.articles);
+            $("#authorContainer").append($authorTemplate);
+        }
+
+        var authorLoop = function (authorArray)
+        {
+            for (var i = 0; i < authorArray.length; i++)
+            {
+                console.log(authorArray[i].firstName + " " + authorArray[i].lastNames);
+                writeToTemplate(authorArray);
+            }
+        }
+
+        var getAllAuthors = function (onSuccess, onError)
+        {
+            const config = {
+                method: "GET",
+                url: "https://api.remotebootcamp.dev/api/authors",
+                data: payload,
+                crossdomain: true,
+                headers: { "Content-Type": "application/json" }
+            };
+
+            return axios(config)
+                .then(onSuccess)
+                .catch(onError);
+        };
+
+        var onRequestSuccess = function (data, status, xhr)
+        {
+            console.log("ajax successful");
+            console.log(data);
+            authorLoop(data);
+        };
+
+
+        var onReqError = function (data, status, xhr)
+        {
+            console.log("there was an error");
+            console.log(data.responseText);
+        }
+
+    </script>
+    <!-- 🛑 Do Not Write Any Code Below here -->
+</body>
+
+</html>
