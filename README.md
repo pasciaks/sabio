@@ -34,7 +34,7 @@ _You **can** combine them_
    1. Item 3b
 
 ![GitHub Logo](http://lostwords.org/images/penguin.png)
-Format: ![Alt Text](url)
+Format: ![Alt Text](http://lostwords.org/images/ww.png)
 
 http://github.com - automatic!
 [GitHub](http://github.com)
