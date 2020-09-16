@@ -1,22 +1,18 @@
-# sabio
+# Sabio - L A B W O R K
 
-L A B W O R K
+## 02-filtering
 
-# 02-filtering
+### Within this folder are (sports.html, presidents.html, and cakes.html) - The filtering and mapping assignments.
 
-## Within this folder are (sports.html, presidents.html, and cakes.html) - The filtering and mapping assignments.
+## 05-forms
 
-# 05-forms
-
-## Within this folder is the lab assignment to use the entities endpoint. Add, Update and Delete are implemented using a jQuery form and axios methods to communicate with the back end.
+### Within this folder is the lab assignment to use the entities endpoint. Add, Update and Delete are implemented using a jQuery form and axios methods to communicate with the back end.
 
 - [ ] Numerous TODO's still need addressed.
 
-# Full_Of_Bugs_v3
+## Full_Of_Bugs_v3
 
-## Within this folder are the debugging ajax calls exercises and debugged solutions.
-
-#
+### Within this folder are the debugging ajax calls exercises and debugged solutions.
 
 #
 
@@ -26,7 +22,7 @@ L A B W O R K
 
 #
 
-# ---------------------------------------------------------
+#
 
 # Markdown examples follow for future reference
 
