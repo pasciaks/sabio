@@ -206,6 +206,7 @@
         }
 
         function updateView() {
+
             // todo // TODO get this working without timeout -- rely on callback/promise/async
             // todo // TODO get this working without timeout -- rely on callback/promise/async
             // todo // TODO get this working without timeout -- rely on callback/promise/async
@@ -229,12 +230,14 @@
             // TODO set edit properties and enable delete confirmation
             deleteTeam(selectedTeamId);
 
+            // TODO TODO - rely on delteTeam to handle it using .then .catch
+            // TODO limit business logic in click events, make functions to do the work
             // TODO - NOTE - these are async, so the result is undefined -- need to implement as a promise
             updateView();
 
         }
 
-
+        // TODO limit business logic in click events, make functions to do the work
         function onEditTeamClicked(event) {
             event.preventDefault();
             console.log("onEditTeamClicked...", event.target.closest(".card"));
@@ -314,6 +317,8 @@
 
             console.log(teamName, sportName, cityName);
 
+            // NOTE - better implementation is to use IN-CONTEXT Error Messages
+
             if ((teamName == null) || (teamName == "") || (teamName.length < 2) || (teamName.length > 50)) {
                 hasErrors = true;
                 errors.push("Team name must be 2-50 characters."); // todo consider in context-error messages
@@ -335,6 +340,11 @@
             }
 
         }
+
+        // TODO - organize, order and sort/group functions for readability
+
+        // NOTE - consider a views object instead of all these global hoisted functions
+        // NOTE - framwork like react will help here so no worries
 
         function hideErrors() {
             $('#errors').hide();
