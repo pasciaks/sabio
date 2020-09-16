@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- #region Sabio Code - You can Fold this region to remove it from sight -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Sabio Coding Bootcamp" />
+    <meta itemprop="image" content="https://sabio.la/Sabio.png">
+    <link rel="shortcut icon" href="https://sabio.la/Sabio.png">
+    <link rel="icon" type="image/png" href="https://sabio.la/Sabio.png" />
+    <!-- Do Not Change the HTML title or anything between this line and the line with the 💘's -->
+    <title>Filtering Objects</title>
+    <link href="https://pw.sabio.la/dist/all-site.css" rel="stylesheet" />
+
+    <script src="https://pw.sabio.la/api/js/site"></script>
+
+    <!-- #endregion -->
+    <!-- I 💘 Code, You 💘 Code, We all 💘 Code -->
+
+    <!-- 💡 All your CSS in here -->
+    <style>
+
+    </style>
+</head>
+
+<body class="sabio" data-ins="pw-00" data-ui="full-height">
+    <!-- Do Not Edit or Remove this nav element -->
+    <nav class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio"></nav>
+
+    <main role="main" class="graph-container align-middle d-flex justify-content-center" style="height:100%" id="objGraph">
+
+    </main>
+
+    <!-- Do Not Edit or Remove this footer element -->
+    <footer class="do-not-remove container-fluid footer mx-auto  fb-targert sabio d-none">
+        <p class="text-center">© Sabio.la 2019</p>
+    </footer>
+
+    <!--👇🏻 All your JavaScript code goes below here inside this script tag 👇🏻 -->
+    <script id="candidateCode">
+        var bakery = {
+            "items": {
+                "item": [{
+                        "id": "0001",
+                        "type": "donut",
+                        "name": "Cake",
+                        "ppu": 0.55,
+                        "batters": {
+                            "batter": [{
+                                "id": "1001",
+                                "type": "Regular"
+                            }, {
+                                "id": "1002",
+                                "type": "Chocolate"
+                            }, {
+                                "id": "1003",
+                                "type": "Blueberry"
+                            }, {
+                                "id": "1004",
+                                "type": "Devil's Food"
+                            }]
+                        },
+                        "topping": [{
+                            "id": "5001",
+                            "type": "None"
+                        }, {
+                            "id": "5002",
+                            "type": "Glazed"
+                        }, {
+                            "id": "5005",
+                            "type": "Sugar"
+                        }, {
+                            "id": "5007",
+                            "type": "Powdered Sugar"
+                        }, {
+                            "id": "5006",
+                            "type": "Chocolate with Sprinkles"
+                        }, {
+                            "id": "5003",
+                            "type": "Chocolate"
+                        }, {
+                            "id": "5004",
+                            "type": "Maple"
+                        }]
+                    }, {
+                        "id": "0002",
+                        "type": "donut",
+                        "name": "Raised",
+                        "ppu": 0.55,
+                        "batters": {
+                            "batter": [{
+                                "id": "1001",
+                                "type": "Regular"
+                            }]
+                        },
+                        "topping": [{
+                            "id": "5001",
+                            "type": "None"
+                        }, {
+                            "id": "5002",
+                            "type": "Glazed"
+                        }, {
+                            "id": "5005",
+                            "type": "Sugar"
+                        }, {
+                            "id": "5003",
+                            "type": "Chocolate"
+                        }, {
+                            "id": "5004",
+                            "type": "Maple"
+                        }]
+                    },
+
+                    {
+                        "id": "0003",
+                        "type": "donut",
+                        "name": "Old Fashioned",
+                        "ppu": 0.55,
+                        "batters": {
+                            "batter": [{
+                                "id": "1001",
+                                "type": "Regular"
+                            }, {
+                                "id": "1002",
+                                "type": "Chocolate"
+                            }]
+                        },
+                        "topping": [{
+                            "id": "5001",
+                            "type": "None"
+                        }, {
+                            "id": "5002",
+                            "type": "Glazed"
+                        }, {
+                            "id": "5003",
+                            "type": "Chocolate"
+                        }, {
+                            "id": "5004",
+                            "type": "Maple"
+                        }]
+                    }, {
+                        "id": "0004",
+                        "type": "bar",
+                        "name": "Bar",
+                        "ppu": 0.75,
+                        "batters": {
+                            "batter": [{
+                                "id": "1001",
+                                "type": "Regular"
+                            }, ]
+                        },
+                        "topping": [{
+                            "id": "5003",
+                            "type": "Chocolate"
+                        }, {
+                            "id": "5004",
+                            "type": "Maple"
+                        }],
+                        "fillings": {
+                            "filling": [{
+                                "id": "7001",
+                                "name": "None",
+                                "addcost": 0
+                            }, {
+                                "id": "7002",
+                                "name": "Custard",
+                                "addcost": 0.25
+                            }, {
+                                "id": "7003",
+                                "name": "Whipped Cream",
+                                "addcost": 0.25
+                            }]
+                        }
+                    },
+
+                    {
+                        "id": "0005",
+                        "type": "twist",
+                        "name": "Twist",
+                        "ppu": 0.65,
+                        "batters": {
+                            "batter": [{
+                                "id": "1001",
+                                "type": "Regular"
+                            }, ]
+                        },
+                        "topping": [{
+                            "id": "5002",
+                            "type": "Glazed"
+                        }, {
+                            "id": "5005",
+                            "type": "Sugar"
+                        }, ]
+                    },
+
+                    {
+                        "id": "0006",
+                        "type": "filled",
+                        "name": "Filled",
+                        "ppu": 0.75,
+                        "batters": {
+                            "batter": [{
+                                "id": "1001",
+                                "type": "Regular"
+                            }, ]
+                        },
+                        "topping": [{
+                            "id": "5002",
+                            "type": "Glazed"
+                        }, {
+                            "id": "5007",
+                            "type": "Powdered Sugar"
+                        }, {
+                            "id": "5003",
+                            "type": "Chocolate"
+                        }, {
+                            "id": "5004",
+                            "type": "Maple"
+                        }],
+                        "fillings": {
+                            "filling": [{
+                                "id": "7002",
+                                "name": "Custard",
+                                "addcost": 0
+                            }, {
+                                "id": "7003",
+                                "name": "Whipped Cream",
+                                "addcost": 0
+                            }, {
+                                "id": "7004",
+                                "name": "Strawberry Jelly",
+                                "addcost": 0
+                            }, {
+                                "id": "7005",
+                                "name": "Rasberry Jelly",
+                                "addcost": 0
+                            }]
+                        }
+                    }
+                ]
+            }
+        }
+
+
+        var target = {
+            "id": 1, //as an int
+            "type": "donut",
+            "name": "Cake",
+            "ppu": 0.55,
+            "batters": "all of the batter types as a string",
+            "ingredients": [], //a copy of all the toppings
+            "countOfFillings": 0
+        }
+
+        // transposes "batter": [{"id": "1001","type": "Regular"}, ] to ["<batter type>"]
+
+        function mapBatter(aBatterObject) {
+            return aBatterObject.type || "";
+        }
+
+        function mapCakes(aCake) {
+
+            console.log("---------------------------", aCake, "---------------------------");
+
+            let result = {};
+
+            result.id = Math.floor(aCake.id);
+            result.type = aCake.type;
+            result.name = aCake.name;
+            result.ppu = aCake.ppu;
+
+            console.log(` id: ${aCake.id} Name: ${aCake.name} Type: ${aCake.type} ppu: ${aCake.ppu} `);
+
+            var stringOfBatterTypes = "";
+            var stringOfBatterTypesUsingJoin = "";
+            var currentBatter = null;
+
+            if (aCake.batters) {
+                if (aCake.batters.batter) {
+
+                    currentBatter = aCake.batters.batter;
+
+                    stringOfBatterTypesUsingJoin = aCake.batters.batter.map(mapBatter).join(" and ");
+
+                    aCake.batters.batter.forEach(batter => {
+                        console.log(` BATTER - id: ${batter.id} Type: ${batter.type} `);
+                        stringOfBatterTypes += `${batter.type} `; //  
+                    });
+
+                    stringOfBatterTypes = stringOfBatterTypes.trim();
+
+                } else {
+                    currentBatter = {};
+                    console.log("***************************** no batters ");
+                }
+            }
+
+            console.log("String of Batter Types");
+            console.log(stringOfBatterTypes);
+            console.log(stringOfBatterTypesUsingJoin);
+
+            result.batters = stringOfBatterTypes;
+
+            console.log("---------------------------", currentBatter, "---------------------------");
+
+
+            if (aCake.topping) {
+                result.ingredients = [...aCake.topping];
+            } else {
+                result.ingredients = [];
+            }
+
+            // if (aCake.topping) {
+            //     aCake.topping.forEach(topping => {
+            //         console.log(` TOPPING - id: ${topping.id} Type: ${topping.type} `);
+            //     });
+            // }
+
+
+            result.countOfFillings = 0;
+            if (aCake.fillings) {
+                if (aCake.fillings.filling) {
+                    result.countOfFillings = aCake.fillings.filling.length;
+                }
+            }
+
+            result._orig = aCake;
+
+            return result;
+        }
+
+        var cakes = bakery.items.item.map(mapCakes);
+        console.log("mapped cakes", cakes);
+    </script>
+    <!-- 🛑 Do Not Write Any Code Below here -->
+</body>
+
+</html>

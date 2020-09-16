@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- #region Sabio Code - You can Fold this region to remove it from sight -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Sabio Coding Bootcamp" />
+    <meta itemprop="image" content="https://sabio.la/Sabio.png">
+    <link rel="shortcut icon" href="https://sabio.la/Sabio.png">
+    <link rel="icon" type="image/png" href="https://sabio.la/Sabio.png" />
+    <!-- Do Not Change the HTML title or anything between this line and the line with the 💘's -->
+    <title>PW Execise Template</title>
+    <link href="https://pw.sabio.la/dist/all-site.css" rel="stylesheet" />
+    <script src="https://pw.sabio.la/api/js/site"></script>
+
+
+    <!-- #endregion -->
+    <!-- I 💘 Code, You 💘 Code, We all 💘 Code -->
+
+    <script src="https://unpkg.com/axios@0.19.2/dist/axios.min.js"></script>
+    <script src="formsService.js"></script>
+
+    <!-- 💡 All your CSS in here -->
+    <style>
+        .btn-small {
+            height: 25px;
+            font-size: x-small;
+        }
+        
+        .isSelected {
+            border: 1px solid green;
+        }
+    </style>
+
+
+    <script id="teamTemplate" type="text/template">
+        <div class="card">
+            <div class="card-body">
+                <span class="card-city"></span>
+                <span class="card-team"></span>
+                <p class="card-sport"></p>
+                <button type="button" class="editTeam btn btn-default btn-success btn-small">Edit</button>
+                <button type="button" class="deleteTeam btn btn-default btn-danger btn-small">Delete</button>
+            </div>
+        </div>
+    </script>
+
+
+</head>
+
+<body class="sabio" data-ins="pw-00">
+    <!-- Do Not Edit or Remove this nav element -->
+    <nav class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio"></nav>
+
+
+    <main class="container">
+
+        <p>Sports Teams Form</p>
+
+        <div class="container">
+
+            <div id="errors" class="alert alert-danger"></div>
+
+            <form id="formSports">
+
+                <input type="hidden" id="teamId" name="teamId" disabled class="d-none" value="-1">
+
+                <div class="form-group">
+                    <label for="team">Team Name:</label>
+                    <input type="text" class="form-control" id="team" name="team" required minlength="2" maxlength="50">
+                    <small id="teamhelp" class="form-text text-muted">Team Name is required (2-50).</small>
+                </div>
+                <div class="form-group">
+                    <label for="sport">Sport:</label>
+                    <input type="text" class="form-control" id="sport" name="sport" required minlength="2" maxlength="50">
+                    <small id="sporthelp" class="form-text text-muted">Sport type is required (2-50).</small>
+                </div>
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    <input type="text" class="form-control" id="city" name="city" required minlength="2" maxlength="50">
+                    <small id="cityhelp" class="form-text text-muted">City name is required (2-50).</small>
+                </div>
+
+                <!-- NOTE Observe this nuance of submit, validation, etc -->
+                <button type="button" name="clear" id="clear" onclick="clearForm();return false;" class="btn btn-default btn-warning">Reset</button>
+                <button type="submit" name="submit" id="submit" onclick="onAddNewSportsTeamButtonClick();return false;" class="btn btn-default btn-primary">Add</button>
+                <button type="button" name="update" id="update" onclick="onUpdateSportsTeamButtonClick();return false;" class="btn btn-default btn-info">Update</button>
+
+                <button type="button" name="render" id="render" onclick="onRenderButtonClick();return false;" class="btn btn-default btn-success">Render</button>
+
+            </form>
+
+        </div>
+
+        <hr>
+
+        <div class="card-columns">
+            <div class="clone-container">
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Do Not Edit or Remove this footer element -->
+    <footer class="do-not-remove container-fluid footer mx-auto  fb-targert sabio d-none">
+        <p class="text-center">© Sabio.la 2019</p>
+    </footer>
+
+    <!--👇🏻 All your JavaScript code goes below here inside this script tag 👇🏻 -->
+    <script id="candidateCode">
+        function startUp() {
+
+            console.log("startUp...");
+
+            wireUpEvents();
+
+            console.log("before test");
+
+            var result = test()
+                .then(function(data) {
+                    console.log(data);
+                })
+                .catch(function(data) {
+                    console.log(data);
+                })
+
+            console.log("after test");
+
+            console.log(result);
+
+        }
+
+        async function test() {
+            var result = await something();
+            console.log("result", result);
+            return result;
+        }
+
+        function something() {
+            return new Promise(function(resolve, reject) {
+
+                var random = Math.random();
+
+                if (random > .5) {
+                    resolve({
+                        name: 'object name',
+                        status: 'success'
+                    });
+                } else {
+                    //reject(new Error("Error"));
+                    reject("error message");
+                }
+
+
+
+            });
+        }
+
+        // function onlyBasketball(team, option) {
+        //     return team.sport.indexOf("ball") > -1;
+        // }
+
+        function onGetAllTeamsSuccess(response) {
+
+            // console.log({
+            //     teams: response.data.items
+            // });
+
+            var resultSet = response.data.items;
+
+            //resultSet = response.data.items.filter(onlyBasketball);
+
+            processArrayByMapping(resultSet);
+
+            // var teamsArray = response.data.items;
+
+            // teamsArray.forEach(team => {
+            //     console.log(team);
+            //     var testTemplate = getTemplate();
+            //     // testTemplate = modifyTemplate(testTemplate, {
+            //     //     'team': team.team,
+            //     //     'city': team.city,
+            //     //     'sport': team.sport
+            //     // });
+            //     testTemplate = modifyTemplate(testTemplate, team);
+            //     $(".clone-container").append(testTemplate);
+            // });
+        }
+
+        function onGetAllTeamsError(response) {
+            console.warn({
+                error: response
+            })
+        }
+
+        function wireUpEvents() {
+            $('#team').focus();
+            console.log("wireUpEvents...");
+            $('.clone-container').on("click", ".deleteTeam", onDeleteTeamClicked);
+            $('.clone-container').on("click", ".editTeam", onEditTeamClicked);
+
+            $("#formSports").submit(function(event) {
+                event.preventDefault();
+            });
+        }
+
+        function updateView() {
+            // todo // TODO get this working without timeout -- rely on callback/promise/async
+            // todo // TODO get this working without timeout -- rely on callback/promise/async
+            // todo // TODO get this working without timeout -- rely on callback/promise/async
+
+            // setTimeout(function() {
+            //     renderView();
+            // }, 1500);
+
+            renderView();
+
+        }
+
+        function onDeleteTeamClicked(event) {
+            event.preventDefault();
+            console.log("onDeleteTeamClicked...", event.target.closest(".card"));
+            var selected = $(event.target.closest(".card"));
+            console.log(selected.attr("data-id"));
+
+            var selectedTeamId = selected.attr("data-id");
+
+            // TODO set edit properties and enable delete confirmation
+            deleteTeam(selectedTeamId);
+
+            // TODO - NOTE - these are async, so the result is undefined -- need to implement as a promise
+            updateView();
+
+        }
+
+
+        function onEditTeamClicked(event) {
+            event.preventDefault();
+            console.log("onEditTeamClicked...", event.target.closest(".card"));
+            var selected = $(event.target.closest(".card"));
+
+            $(".isSelected").removeClass("isSelected");
+            selected.toggleClass("isSelected");
+
+            console.log(selected.attr("data-id"));
+
+            var objParse = JSON.parse(selected.attr("data"));
+            $('#team').val(objParse.team);
+            $('#sport').val(objParse.sport);
+            $('#city').val(objParse.city);
+            $('#teamId').val(objParse.id);
+
+            // TODO set edit properties and enable update button
+
+            emptyErrors();
+
+            hideErrors();
+
+            window.scrollTo(0, 0);
+        }
+
+
+        function getTemplate() {
+            var template = $('#teamTemplate').html()
+            return $(template);
+        }
+
+        // function modifyTemplate(template, objProperties) {
+        //     template.find('.card-team').text(objProperties.team);
+        //     template.find('.card-sport').text(objProperties.sport);
+        //     template.find('.card-city').text(objProperties.city);
+        //     return template;
+        // }
+
+        function modifyTemplate(template, team) {
+            template.attr("data-id", team.id);
+            template.attr("data", JSON.stringify(team));
+            template.find('.card-team').text(team.team);
+            template.find('.card-sport').text(team.sport);
+            template.find('.card-city').text(team.city);
+            return template;
+        }
+
+        function clearForm() {
+            console.log("reset...");
+            $("#formSports")[0].reset();
+            $('#teamId').val(-1);
+            $(".isSelected").removeClass("isSelected");
+            emptyErrors();
+            hideErrors();
+            return true;
+        }
+
+        function getAndTrimFormText(selector) {
+            var strOut = $(selector).val();
+            strOut = strOut.trim();
+            $(selector).val(strOut);
+            console.log(' value for ' + selector + ' is [' + strOut + ']');
+            return strOut;
+        }
+
+        function formValidation() {
+
+            var hasErrors = false;
+            var errors = [];
+
+            emptyErrors();
+            hideErrors();
+
+            var teamName = getAndTrimFormText('#team');
+            var sportName = getAndTrimFormText('#sport');
+            var cityName = getAndTrimFormText('#city');
+
+            console.log(teamName, sportName, cityName);
+
+            if ((teamName == null) || (teamName == "") || (teamName.length < 2) || (teamName.length > 50)) {
+                hasErrors = true;
+                errors.push("Team name must be 2-50 characters."); // todo consider in context-error messages
+            }
+
+            if ((sportName.length < 2) || (sportName.length > 50)) {
+                hasErrors = true;
+                errors.push("Sport name must be 2-50 characters.");
+            }
+
+            if ((cityName.length < 2) || (cityName.length > 50)) {
+                hasErrors = true;
+                errors.push("City name must be 2-50 characters.");
+            }
+
+            return {
+                hasErrors: hasErrors,
+                errors: errors
+            }
+
+        }
+
+        function hideErrors() {
+            $('#errors').hide();
+        }
+
+        function showErrors() {
+            $('#errors').show();
+        }
+
+        function emptyErrors() {
+            $('#errors').empty();
+        }
+
+        function findFormErrors(formValidationResult) {
+
+            formValidationResult.errors.forEach((error) => {
+                $('#errors').append(`<p>${error}</p>`);
+            });
+
+            showErrors();
+        }
+
+        // no need for async , await yet
+
+        async function renderView() {
+
+            $(".clone-container").empty();
+
+            let result = await teamsService.getAll()
+                .then(onGetAllTeamsSuccess)
+                .catch(onGetAllTeamsError);
+
+            return result;
+        }
+
+        async function onRenderButtonClick() {
+
+            let result = await renderView(); // returns promise
+
+            console.log("onRenderButtonClick", result);
+
+            // todo capture the getAll as object, then call render function separately
+
+        }
+
+        function appendOneTeam(team) {
+            let singleJqTemplate = team.map(mapSingleItem);
+            $(".clone-container").append(singleJqTemplate);
+        }
+
+        function mapSingleItem(team) {
+            console.log(team);
+            var testTemplate = getTemplate();
+            testTemplate = modifyTemplate(testTemplate, team);
+            return testTemplate;
+        }
+
+        function processArrayByMapping(arrayOfData) {
+
+            //mapSingleItem is missing. you need to write that function
+            let arrayofJqTemplates = arrayOfData.map(mapSingleItem);
+            $(".clone-container").append(arrayofJqTemplates);
+
+            // for (let i = 0; i < arrayOfData.length; i++) {
+            //     const address = arrayOfData[i];
+            //     var templateClone = getTemplate();
+            //     //code here to change template
+            //     $(".clone-container").append(templateClone);
+            // }
+        }
+
+        function onAddNewSportsTeamButtonClick() {
+
+            // TODO hide the button to prevent extra clicks
+            // todo - dynamically hide and show add or update buttons according to selections and reset / clear / render / update 'un-selections' - perhaps an updateView function that is always called on changes
+
+
+            var selectedId = $('#teamId').val();
+
+            console.log("onAddNewSportsTeamButtonClick...");
+
+            var formValidationResult = formValidation();
+
+            if (formValidationResult.hasErrors) {
+                findFormErrors(formValidationResult);
+                return false; // form isn't posted/submitted
+            }
+
+            if (selectedId != -1) { // todo - this is possibly clumsy use of variables for state information
+                if (confirm("Warning. You have an existing element selected. Are you sure you want to ADD instead of UPDATE ?") == false) {
+                    return false;
+                }
+            }
+
+            // add new sport
+
+            var newTeam = {
+                team: $('#team').val(),
+                sport: $('#sport').val(),
+                city: $('#city').val()
+            }
+
+            console.log(`add will be invoked with ${JSON.stringify(newTeam)}`);
+
+            addTeam(newTeam)
+                .then(function(data) {
+                    alert('success', data);
+                })
+                .catch(function(data) {
+                    alert('error', data);
+                })
+
+            // TODO - NOTE - these are async, so the result is undefined -- need to implement as a promise
+            updateView();
+
+        }
+
+        function onUpdateSportsTeamButtonClick() {
+            console.log("onUpdateSportsTeamButtonClick...");
+
+            var formValidationResult = formValidation();
+
+            if (formValidationResult.hasErrors) {
+                findFormErrors(formValidationResult);
+                return false; // form isn't posted/submitted
+            }
+
+            var updateId = $('#teamId').val();
+
+            if (updateId == -1) {
+                $('#errors').append(`<p>You must select an existing team to UPDATE, or use ADD to create a new team.</p>`);
+                showErrors();
+                return false;
+            }
+
+            // update current sport
+
+            var updateObject = {
+                team: $('#team').val(),
+                sport: $('#sport').val(),
+                city: $('#city').val()
+            }
+
+            console.log(`update will be invoked with ${JSON.stringify(updateObject)}`);
+
+            updateTeam(updateId, updateObject);
+
+            // // TODO - NOTE - these are async, so the result is undefined -- need to implement as a promise
+            // updateView();
+
+        }
+
+        // teams // add // POST //---------------------------------------------------------------------
+
+        var addTeam = (team) => {
+            console.log("addTeam");
+            var payload = {
+                team: team.team,
+                sport: team.sport,
+                city: team.city
+            };
+
+            // todo consider another revolve,reject promise here perhaps
+
+            return teamsService.add(payload)
+                .then(onAddTeamSuccess)
+                .catch(onAddTeamError);
+        }
+
+        var onAddTeamSuccess = data => {
+            console.log("onAddTeamSuccess", data);
+            console.log(data);
+            clearForm();
+            updateView();
+
+            // // todo consider simply just add one item
+            // return data;
+        }
+
+        var onAddTeamError = err => {
+            console.log("onAddTeamError", err);
+            return err;
+        }
+
+        // teams // update // PUT //---------------------------------------------------------------------
+        // TODO - Once the data is update in the form, you should allow the user to click a second "Update" button or the same Submit button from the original form so that they can initiate an actual update.
+
+        var updateTeam = (teamId, team) => {
+            console.log("updateTeam");
+            var payload = {
+                team: team.team,
+                sport: team.sport,
+                city: team.city
+            };
+
+            return teamsService.update(teamId, payload)
+                .then(onUpdateTeamSuccess)
+                .catch(onUpdateTeamError);
+        }
+
+        var onUpdateTeamSuccess = data => {
+            console.log("onUpdateTeamSuccess", data);
+            console.log(data);
+            clearForm();
+            updateView();
+
+            // // todo consider remove current ID and re Append
+
+            // return data;
+        }
+
+        var onUpdateTeamError = err => {
+            console.log("onUpdateTeamError", err);
+            return err;
+        }
+
+        // teams // delete // DELETE //---------------------------------------------------------------------
+        // TODO - It should remove the entity from the database and the DOM when the operation is successful, not before.
+
+        var deleteTeam = (teamId) => {
+            console.log("deleteTeam");
+
+            return teamsService.delete(teamId)
+                .then(onDeleteTeamSuccess)
+                .catch(onDeleteTeamError);
+        }
+
+        var onDeleteTeamSuccess = data => {
+            console.log("onDeleteTeamSuccess", data);
+            console.log(data);
+            clearForm();
+            updateView();
+            // return data;
+        }
+
+        var onDeleteTeamError = err => {
+            console.log("onDeleteTeamError", err);
+            return err;
+        }
+
+        //---------------------------------------------------------------------
+
+        function blogsDemo() {
+
+            var newBlog = {
+                "authorId": 770304984,
+                "title": "Title Of Blog " + Date.now(),
+                "content": "This is my blog content."
+            }
+
+            var updatedBlog = {
+                "id": 1529585106,
+                "authorId": 770304984,
+                "title": "Updated Blog Title " + Date.now(),
+                "content": "Updated Content. " + Date.now()
+            }
+
+            var blogIdToGet = 1529585106;
+
+            blogsService.getAll()
+                .then(onGetBlogsSuccess)
+                .catch(onGetBlogsError);
+
+            blogsService.add(newBlog)
+                .then(onAddBlogSuccess)
+                .catch(onAddBlogError);
+
+            blogsService.get(blogIdToGet)
+                .then(onGetBlogSuccess)
+                .catch(onGetBlogError);
+
+            blogsService.update(updatedBlog)
+                .then(onUpdateBlogSuccess)
+                .catch(onUpdateBlogError);
+
+            update(updatedBlog.id, updatedBlog);
+
+            getById(blogIdToGet);
+
+        }
+
+        function update(id, payload) {
+            return blogsService.update(payload);
+        }
+
+        function getById(id) {
+            return blogsService.get(id);
+        }
+
+        function onUpdateBlogSuccess(response) {
+            console.log({
+                updateRespone: response
+            })
+        }
+
+        function onUpdateBlogError(response) {
+            console.log({
+                error: response
+            })
+        }
+
+        function onGetBlogSuccess(response) {
+            console.log({
+                blog: response.data.item
+            })
+        }
+
+        function onGetBlogError(response) {
+            console.log({
+                error: response
+            })
+        }
+
+        function onAddBlogSuccess(response) {
+            console.log({
+                blogId: response.data.item
+            })
+        }
+
+        function onAddBlogError(response) {
+            console.warn({
+                error: response
+            })
+        }
+
+        function onGetBlogsSuccess(response) {
+            console.log({
+                blogs: response.data.items
+            })
+        }
+
+        function onGetBlogsError(response) {
+            console.warn({
+                error: response
+            })
+        }
+    </script>
+    <!-- 🛑 Do Not Write Any Code Below here -->
+</body>
+
+</html>

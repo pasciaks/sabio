@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- #region Sabio Code - You can Fold this region to remove it from sight -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Sabio Coding Bootcamp" />
+    <meta itemprop="image" content="https://sabio.la/Sabio.png">
+    <link rel="shortcut icon" href="https://sabio.la/Sabio.png">
+    <link rel="icon" type="image/png" href="https://sabio.la/Sabio.png" />
+    <!-- Do Not Change the HTML title or anything between this line and the line with the 💘's -->
+    <title>Mapping Basics</title>
+    <link href="https://pw.sabio.la/dist/all-site.css" rel="stylesheet" />
+
+    <script src="https://pw.sabio.la/api/js/site"></script>
+
+    <!-- #endregion -->
+    <!-- I 💘 Code, You 💘 Code, We all 💘 Code -->
+
+    <!-- 💡 All your CSS in here -->
+    <style>
+
+    </style>
+</head>
+
+<body class="sabio" data-ins="pw-00" data-ui="full-height">
+    <!-- Do Not Edit or Remove this nav element -->
+    <nav class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio"></nav>
+    <main role="main" class="graph-container align-middle d-flex justify-content-center" style="height:100%" id="objGraph">
+
+    </main>
+
+
+    <!-- Do Not Edit or Remove this footer element -->
+    <footer class="do-not-remove container-fluid footer mx-auto  fb-targert sabio">
+        <p class="text-center">© Sabio.la 2019</p>
+    </footer>
+
+    <!--👇🏻 All your JavaScript code goes below here inside this script tag 👇🏻 -->
+    <script id="candidateCode">
+        var ages = [20, 80, 65, 15, 43, 21, 30, 22, 44, 18, 31, 89];
+
+        var exampleTarget = {
+            myAge: 80
+        };
+
+        var testAge = mapAge(25);
+
+        var newAges = ages.map(mapAge);
+
+        function mapAge(anInt) {
+            let result = {}; // { myAge: anInt }
+            result.myAge = anInt;
+            return result;
+        }
+
+        //----------------------------------------------
+
+        var names = ["Aled Ratcliffe",
+            "Cassie Gibbons", "Ephraim Holman", "Asim Ayala", "Johnny Villegas", "Kanye Bond", "Leoni Akhtar", "Duane Velasquez", "Elana Stark", "Gracie-Leigh Hutchings"
+        ];
+
+        var longName = ["Mari David", "Bruce Silva", "Rowena Dowling", "Nicolle Marquez", "Jaidon Kidd", "Alicia Huff", "Yahya Felix", "Adrienne Craft", "Jimi Harwood", "Prisha Douglas"];
+
+        var exampleNameTarget = {
+            displayName: "Someone Someone"
+        }
+
+        var testNames = names.map(mapSimplePerson);
+
+        function mapSimplePerson(personName) {
+            let result = {}
+            result.displayName = personName;
+            return result;
+        }
+
+        var exampleNamesObjectTarget = {
+            fName: "Sheldon",
+            lName: "Pasciak"
+        }
+
+        /*
+
+        personName = "Firstname Lastname";
+        
+        */
+        function mapNamesObject(personName) {
+            let result = {};
+            let nameParts = personName.split(" ");
+            result.fName = nameParts[0];
+            result.lName = nameParts[1];
+            return result;
+        }
+
+        var people = longName.map(mapNamesObject);
+    </script>
+    <!-- 🛑 Do Not Write Any Code Below here -->
+</body>
+
+</html>

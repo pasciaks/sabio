@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- #region Sabio Code - You can Fold this region to remove it from sight -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Sabio Coding Bootcamp" />
+    <meta itemprop="image" content="https://sabio.la/Sabio.png">
+    <link rel="shortcut icon" href="https://sabio.la/Sabio.png">
+    <link rel="icon" type="image/png" href="https://sabio.la/Sabio.png" />
+    <!-- Do Not Change the HTML title or anything between this line and the line with the 💘's -->
+    <title>Filtering Objects</title>
+    <link href="https://pw.sabio.la/dist/all-site.css" rel="stylesheet" />
+
+    <script src="https://pw.sabio.la/api/js/site"></script>
+
+    <!-- #endregion -->
+    <!-- I 💘 Code, You 💘 Code, We all 💘 Code -->
+
+    <!-- 💡 All your CSS in here -->
+    <style>
+
+    </style>
+</head>
+
+<body class="sabio" data-ins="pw-00" data-ui="full-height">
+    <!-- Do Not Edit or Remove this nav element -->
+    <nav class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio"></nav>
+
+    <main role="main" class="graph-container align-middle d-flex justify-content-center" style="height:100%" id="objGraph">
+
+    </main>
+
+    <!-- Do Not Edit or Remove this footer element -->
+    <footer class="do-not-remove container-fluid footer mx-auto  fb-targert sabio">
+        <p class="text-center">© Sabio.la 2019</p>
+    </footer>
+
+    <!--👇🏻 All your JavaScript code goes below here inside this script tag 👇🏻 -->
+    <script id="candidateCode">
+        var prices = [{
+            "cost": 87
+        }, {
+            "cost": 67
+        }, {
+            "cost": 41
+        }, {
+            "cost": 18
+        }, {
+            "cost": 93
+        }];
+
+        function mapThisPerson(person) {
+            let result = {};
+            result.displayName = `${person.fName} ${person.lName}`;
+            result.contactInfo = `Please email me at: ${person.email}`;
+            result.isOver21 = (person.age >= 21);
+            return result;
+        }
+
+        var newPeople = people.map(mapThisPerson);
+
+        let people = [{
+            "id": 1,
+            "fName": "Barbie",
+            "lName": "Ismay",
+            "email": "bismay0@ezinearticles.com",
+            "age": 86
+        }, {
+            "id": 2,
+            "fName": "Winthrop",
+            "lName": "Erbe",
+            "email": "werbe1@reuters.com",
+            "age": 63
+        }, {
+            "id": 3,
+            "fName": "Cori",
+            "lName": "MacGettigen",
+            "email": "cmacgettigen2@virginia.edu",
+            "age": 57
+        }, {
+            "id": 4,
+            "fName": "Robyn",
+            "lName": "Stannering",
+            "email": "rstannering3@gnu.org",
+            "age": 68
+        }, {
+            "id": 5,
+            "fName": "Kile",
+            "lName": "Iannini",
+            "email": "kiannini4@yale.edu",
+            "age": 22
+        }];
+
+        let companies = [{
+            "desc": "Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
+            "domain": "newyorker.com",
+            "industry": "Transportation",
+            "co": "Muxo",
+            "est": "11/01/2018",
+            "revenue": 325504
+        }, {
+            "desc": "In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt.",
+            "domain": "unicef.org",
+            "industry": "Technology",
+            "co": "Mita",
+            "est": "03/30/2019",
+            "revenue": 658198
+        }, {
+            "desc": "Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst.",
+            "domain": "linkedin.com",
+            "industry": "n/a",
+            "co": "Brainsphere",
+            "est": "08/27/2019",
+            "revenue": 763581
+        }, {
+            "desc": "Donec vitae nisi.",
+            "domain": "cloudflare.com",
+            "industry": "n/a",
+            "co": "Roomm",
+            "est": "04/25/2019",
+            "revenue": 393149
+        }, {
+            "desc": "Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+            "domain": "intel.com",
+            "industry": "Consumer Services",
+            "co": "Dazzlesphere",
+            "est": "05/26/2019",
+            "revenue": 976377
+        }]
+
+        var legalPeople = newPeople.filter(filterPerson);
+
+        function filterPerson(person) {
+            return person.isOver21 === true;
+        }
+
+        var newPeople = people.filter(filterPerson);
+    </script>
+    <!-- 🛑 Do Not Write Any Code Below here -->
+</body>
+
+</html>
