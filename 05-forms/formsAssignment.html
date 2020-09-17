@@ -84,7 +84,9 @@
 
                 <!-- NOTE Observe this nuance of submit, validation, etc -->
                 <button type="button" name="clear" id="clear" onclick="clearForm();return false;" class="btn btn-default btn-warning">Reset</button>
-                <button type="submit" name="submit" id="submit" onclick="onAddNewSportsTeamButtonClick();return false;" class="btn btn-default btn-primary">Add</button>
+
+                <button type="submit" name="submit" id="submit" onclick="onAddNewSportsTeamButtonClick();" class="btn btn-default btn-primary">Add</button>
+
                 <button type="button" name="update" id="update" onclick="onUpdateSportsTeamButtonClick();return false;" class="btn btn-default btn-info">Update</button>
 
                 <button type="button" name="render" id="render" onclick="onRenderButtonClick();return false;" class="btn btn-default btn-success">Render</button>
@@ -562,6 +564,7 @@
         var onAddTeamSuccess = data => {
             console.log("onAddTeamSuccess", data);
             console.log("Added new id: ", data.data.item);
+            clearForm();
             getAndRenderAll();
             //alert("onAddTeamSuccess " + JSON.stringify(data));
             return data;
