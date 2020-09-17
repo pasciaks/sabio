@@ -263,27 +263,31 @@
 
         // TODO limit business logic in click events, make functions to do the work
         function onEditTeamClicked(event) {
+
             event.preventDefault();
             console.log("onEditTeamClicked...", event.target.closest(".card"));
-            var selected = $(event.target.closest(".card"));
+
+            var selectedCard = $(event.target.closest(".card"));
 
             $(".isSelected").removeClass("isSelected");
-            selected.toggleClass("isSelected");
+            selectedCard.toggleClass("isSelected");
 
-            console.log(selected.attr("data-id"));
+            var selectedId = selectedCard.attr("data-id");
 
-            var objParse = JSON.parse(selected.attr("data"));
+            getOneTeam(selectedId); // getOneTeam(9999999999); // force error
+
+            console.log("edit selected...", selectedId);
+
+            var objParse = JSON.parse(selectedCard.attr("data"));
             $('#team').val(objParse.team);
             $('#sport').val(objParse.sport);
             $('#city').val(objParse.city);
-            $('#teamId').val(objParse.id);
+
+            $('#teamId').val(selectedId);
 
             // TODO set edit properties and enable update button
 
             emptyErrors();
-
-
-
 
             window.scrollTo(0, 0);
         }
@@ -348,8 +352,6 @@
 
             emptyErrors();
 
-
-
             var teamName = getAndTrimFormText('#team');
             var sportName = getAndTrimFormText('#sport');
             var cityName = getAndTrimFormText('#city');
@@ -399,7 +401,7 @@
 
         }
 
-        // no need for async , await yet
+        // POSSIBLY no need for async , await yet
 
         async function renderView() {
 
@@ -409,39 +411,44 @@
                 .then(onGetAllTeamsSuccess)
                 .catch(onGetAllTeamsError);
 
+            console.log("result of renderView() ...", result);
+
+            return result;
+        }
+
+        async function getAndRenderAll() {
+            let result = await renderView();
+            console.log("result of getAndRenderAll() ...", result);
             return result;
         }
 
         async function onRenderButtonClick() {
-
-            let result = await renderView(); // returns promise
-
+            let result = await getAndRenderAll(); // returns promise
             console.log("onRenderButtonClick", result);
-
-            // todo capture the getAll as object, then call render function separately
-
         }
 
-        function getOneTeam(teamId) {
+        async function getOneTeam(teamId) {
 
             // call backend to /api/teams/<id>
 
             // use results to append
 
-            teamsService.get(teamId)
+            let result = teamsService.get(teamId)
                 .then(onGetOneTeamSuccess)
                 .catch(onGetOneTeamError)
 
+            console.log("getOneTeam...", result);
+
+            return result;
 
         }
 
         function onGetOneTeamSuccess(data) {
             console.log(data);
-
         }
 
-        function onGetOneTeamError(data) {
-            console.log(data);
+        function onGetOneTeamError(response) {
+            console.warn(response);
         }
 
         function testAppendOneTeam() {
@@ -475,8 +482,7 @@
 
             console.log("onAddNewSportsTeamButtonClick...");
 
-            var selectedId = $('#teamId').val();
-
+            var selectedId = $('#teamId').val(); // hidden form value that is set based on selecting edit in card view
 
             var formValidationResult = formValidation();
 
@@ -491,7 +497,7 @@
                 }
             }
 
-            // add new sport
+            // add new sport // note - trimming and setting proper values is done on a call within the validation function
 
             var newTeam = {
                 team: $('#team').val(),
@@ -499,9 +505,11 @@
                 city: $('#city').val()
             }
 
-            console.log(`add will be invoked with ${JSON.stringify(newTeam)}`);
+            console.log(`addTeam(newTeam); will be invoked with ${JSON.stringify(newTeam)}`);
 
-            addTeam(newTeam);
+            let result = addTeam(newTeam);
+
+            console.log("add team result...", result);
 
         }
 
@@ -554,14 +562,15 @@
         var onAddTeamSuccess = data => {
             console.log("onAddTeamSuccess", data);
             console.log("Added new id: ", data.data.item);
-            alert("onAddTeamSuccess " + JSON.stringify(data));
+            getAndRenderAll();
+            //alert("onAddTeamSuccess " + JSON.stringify(data));
             return data;
 
         }
 
         var onAddTeamError = err => {
-            console.log("onAddTeamError", err);
-            alert("onAddTeamError " + JSON.stringify(data));
+            console.warn("onAddTeamError", err);
+            alert("onAddTeamError " + JSON.stringify(err));
             return err;
         }
 
@@ -583,15 +592,14 @@
         var onUpdateTeamSuccess = data => {
             console.log("onUpdateTeamSuccess", data);
             console.log(data);
-
-            alert("onUpdateTeamSuccess " + JSON.stringify(data));
+            getAndRenderAll();
+            //alert("onUpdateTeamSuccess " + JSON.stringify(data));
             return data;
         }
 
         var onUpdateTeamError = err => {
-            console.log("onUpdateTeamError", err);
-
-            alert("onUpdateTeamError " + JSON.stringify(data));
+            console.warn("onUpdateTeamError", err);
+            alert("onUpdateTeamError " + JSON.stringify(err));
             return err;
         }
 
@@ -609,15 +617,14 @@
         var onDeleteTeamSuccess = data => {
             console.log("onDeleteTeamSuccess", data);
             console.log(data);
-
-            alert("onDeleteTeamSuccess " + JSON.stringify(data));
+            getAndRenderAll();
+            //alert("onDeleteTeamSuccess " + JSON.stringify(data));
             return data;
         }
 
         var onDeleteTeamError = err => {
-            console.log("onDeleteTeamError", err);
-
-            alert("onDeleteTeamError " + JSON.stringify(data));
+            console.warn("onDeleteTeamError", err);
+            alert("onDeleteTeamError " + JSON.stringify(err));
             return err;
         }
 

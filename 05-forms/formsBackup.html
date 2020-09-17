@@ -60,7 +60,7 @@
 
         <div class="container">
 
-            <div id="errors" class="alert alert-danger"></div>
+            <div id="errors"></div>
 
             <form id="formSports">
 
@@ -109,9 +109,18 @@
 
     <!--👇🏻 All your JavaScript code goes below here inside this script tag 👇🏻 -->
     <script id="candidateCode">
+        var services = {
+            blogsService: blogsService,
+            teamsService: teamsService
+        }
+
         function startUp() {
 
             console.log("startUp...");
+
+            emptyErrors();
+
+            clearForm();
 
             wireUpEvents();
 
@@ -119,10 +128,10 @@
 
             var result = test()
                 .then(function(data) {
-                    console.log(data);
+                    console.log("random test result...", data);
                 })
                 .catch(function(data) {
-                    console.log(data);
+                    console.log("random test result...", data);
                 })
 
             console.log("after test");
@@ -131,72 +140,93 @@
 
         }
 
+        /*
+
+            interesting behaviour to observe... 
+            
+                when the something promise is rejected (catch case), it seems to exit the function and return to the catch that called it
+                when the something promise is fullfilled, it seems to return to the then with proper results
+        */
         async function test() {
             var result = await something();
-            console.log("result", result);
+            console.log("inside random test result...", result);
             return result;
         }
 
+        // Test function that returns error result 50% of the time
         function something() {
             return new Promise(function(resolve, reject) {
-
                 var random = Math.random();
-
                 if (random > .5) {
                     resolve({
-                        name: 'object name',
+                        name: 'object name ' + Date.now(),
                         status: 'success'
                     });
                 } else {
-                    //reject(new Error("Error"));
-                    reject("error message");
+                    reject("error message " + Date.now()); //reject(new Error("Error"));
                 }
-
-
-
             });
         }
 
-        // function onlyBasketball(team, option) {
-        //     return team.sport.indexOf("ball") > -1;
-        // }
+
+
+        /*
+
+        NOTES - POSSIBLE FUTURE CODE IMPLEMENTATIONS
+
+            // resultSet = response.data.items.filter(onlyBasketball);
+
+            // function onlyBasketball(team, option) {
+            //     consider lowercase/uppercase implications
+            //     return team.sport.indexOf("Basketball") > -1;
+            // }
+
+        */
+
 
         function onGetAllTeamsSuccess(response) {
-
-            // console.log({
-            //     teams: response.data.items
-            // });
-
             var resultSet = response.data.items;
-
-            //resultSet = response.data.items.filter(onlyBasketball);
-
             processArrayByMapping(resultSet);
+            return resultSet;
 
-            // var teamsArray = response.data.items;
+            /*
+                BELOW CODE OPTIMIZED/REFACTORED BY THE CODE ABOVE
 
-            // teamsArray.forEach(team => {
-            //     console.log(team);
-            //     var testTemplate = getTemplate();
-            //     // testTemplate = modifyTemplate(testTemplate, {
-            //     //     'team': team.team,
-            //     //     'city': team.city,
-            //     //     'sport': team.sport
-            //     // });
-            //     testTemplate = modifyTemplate(testTemplate, team);
-            //     $(".clone-container").append(testTemplate);
-            // });
+                    // var teamsArray = response.data.items;
+
+                    // teamsArray.forEach(team => {
+                    //     console.log(team);
+                    //     var testTemplate = getTemplate();
+
+                    //     // --------THE ENCLOSED CODE WAS REFACTORED BY 'modifyTemplate(template,team)'---------
+                    //     // testTemplate = modifyTemplate(testTemplate, {
+                    //     //     'team': team.team,
+                    //     //     'city': team.city,
+                    //     //     'sport': team.sport
+                    //     // });
+                    //     // --------THE ENCLOSED CODE WAS REFACTORED BY 'modifyTemplate(template,team)'---------
+                    //     testTemplate = modifyTemplate(testTemplate, team);
+                    //     $(".clone-container").append(testTemplate);
+                    // });                
+
+            */
+
         }
 
         function onGetAllTeamsError(response) {
             console.warn({
                 error: response
             })
+
+            return response;
         }
 
         function wireUpEvents() {
-            $('#team').focus();
+
             console.log("wireUpEvents...");
+
+            $('#team').focus();
+
             $('.clone-container').on("click", ".deleteTeam", onDeleteTeamClicked);
             $('.clone-container').on("click", ".editTeam", onEditTeamClicked);
 
@@ -205,60 +235,74 @@
             });
         }
 
-        function updateView() {
-            // todo // TODO get this working without timeout -- rely on callback/promise/async
-            setTimeout(function() {
-                renderView();
-            }, 1500);
-        }
+        // function updateView() {
+
+        //     // todo // TODO get this working without timeout -- rely on callback/promise/async
+        //     // todo // TODO get this working without timeout -- rely on callback/promise/async
+        //     // todo // TODO get this working without timeout -- rely on callback/promise/async
+
+        //     // setTimeout(function() {
+        //     //     renderView();
+        //     // }, 1500);
+
+        //     renderView();
+
+        // }
 
         function onDeleteTeamClicked(event) {
             event.preventDefault();
-            console.log("onDeleteTeamClicked...", event.target.closest(".card"));
+
             var selected = $(event.target.closest(".card"));
-            console.log(selected.attr("data-id"));
+            console.log("onDeleteTeamClicked...", selected.attr("data-id"));
 
             var selectedTeamId = selected.attr("data-id");
 
-            // TODO set edit properties and enable delete confirmation
             deleteTeam(selectedTeamId);
-
-            // TODO - NOTE - these are async, so the result is undefined -- need to implement as a promise
-            updateView();
 
         }
 
-
+        // TODO limit business logic in click events, make functions to do the work
         function onEditTeamClicked(event) {
+
             event.preventDefault();
             console.log("onEditTeamClicked...", event.target.closest(".card"));
-            var selected = $(event.target.closest(".card"));
+
+            var selectedCard = $(event.target.closest(".card"));
 
             $(".isSelected").removeClass("isSelected");
-            selected.toggleClass("isSelected");
+            selectedCard.toggleClass("isSelected");
 
-            console.log(selected.attr("data-id"));
+            var selectedId = selectedCard.attr("data-id");
 
-            var objParse = JSON.parse(selected.attr("data"));
+            getOneTeam(selectedId); // getOneTeam(9999999999); // force error
+
+            console.log("edit selected...", selectedId);
+
+            var objParse = JSON.parse(selectedCard.attr("data"));
             $('#team').val(objParse.team);
             $('#sport').val(objParse.sport);
             $('#city').val(objParse.city);
-            $('#teamId').val(objParse.id);
+
+            $('#teamId').val(selectedId);
 
             // TODO set edit properties and enable update button
 
             emptyErrors();
 
-            hideErrors();
-
             window.scrollTo(0, 0);
         }
 
 
+        /*
+
+
+        */
         function getTemplate() {
             var template = $('#teamTemplate').html()
             return $(template);
         }
+
+        /* Initial raw version of populating html template */
 
         // function modifyTemplate(template, objProperties) {
         //     template.find('.card-team').text(objProperties.team);
@@ -267,9 +311,14 @@
         //     return template;
         // }
 
+
+        /*
+
+
+        */
         function modifyTemplate(template, team) {
-            template.attr("data-id", team.id);
-            template.attr("data", JSON.stringify(team));
+            template.attr("data-id", team.id); // useful for individual access with unique id identifier
+            template.attr("data", JSON.stringify(team)); // overkill to keep entire object properties here
             template.find('.card-team').text(team.team);
             template.find('.card-sport').text(team.sport);
             template.find('.card-city').text(team.city);
@@ -282,7 +331,8 @@
             $('#teamId').val(-1);
             $(".isSelected").removeClass("isSelected");
             emptyErrors();
-            hideErrors();
+
+
             return true;
         }
 
@@ -297,16 +347,18 @@
         function formValidation() {
 
             var hasErrors = false;
+
             var errors = [];
 
             emptyErrors();
-            hideErrors();
 
             var teamName = getAndTrimFormText('#team');
             var sportName = getAndTrimFormText('#sport');
             var cityName = getAndTrimFormText('#city');
 
             console.log(teamName, sportName, cityName);
+
+            // NOTE - better implementation is to use IN-CONTEXT Error Messages, add hasError class
 
             if ((teamName == null) || (teamName == "") || (teamName.length < 2) || (teamName.length > 50)) {
                 hasErrors = true;
@@ -330,26 +382,26 @@
 
         }
 
-        function hideErrors() {
-            $('#errors').hide();
-        }
+        // TODO - organize, order and sort/group functions for readability
 
-        function showErrors() {
-            $('#errors').show();
-        }
+        // NOTE - consider a views object instead of all these global hoisted functions
+        // NOTE - framwork like react will help here so no worries
+
+
 
         function emptyErrors() {
             $('#errors').empty();
         }
 
-        function findFormErrors(formValidationResult) {
+        function showFormValidationErrors(formValidationResult) {
 
             formValidationResult.errors.forEach((error) => {
-                $('#errors').append(`<p>${error}</p>`);
+                $('#errors').append(`<p class="alert alert-danger">${error}</p>`);
             });
 
-            showErrors();
         }
+
+        // POSSIBLY no need for async , await yet
 
         async function renderView() {
 
@@ -359,17 +411,59 @@
                 .then(onGetAllTeamsSuccess)
                 .catch(onGetAllTeamsError);
 
+            console.log("result of renderView() ...", result);
+
+            return result;
+        }
+
+        async function getAndRenderAll() {
+            let result = await renderView();
+            console.log("result of getAndRenderAll() ...", result);
             return result;
         }
 
         async function onRenderButtonClick() {
-
-            let result = await renderView(); // returns promise
-
+            let result = await getAndRenderAll(); // returns promise
             console.log("onRenderButtonClick", result);
+        }
 
-            // todo capture the getAll as object, then call render function separately
+        async function getOneTeam(teamId) {
 
+            // call backend to /api/teams/<id>
+
+            // use results to append
+
+            let result = teamsService.get(teamId)
+                .then(onGetOneTeamSuccess)
+                .catch(onGetOneTeamError)
+
+            console.log("getOneTeam...", result);
+
+            return result;
+
+        }
+
+        function onGetOneTeamSuccess(data) {
+            console.log(data);
+        }
+
+        function onGetOneTeamError(response) {
+            console.warn(response);
+        }
+
+        function testAppendOneTeam() {
+            var newTeam = {
+                team: "team name",
+                sport: "sport name",
+                city: "city name"
+            }
+            appendOneTeam(newTeam)
+        }
+
+        function appendOneTeam(team) {
+            var arrayOfOne = [team];
+            let singleJqTemplate = arrayOfOne.map(mapSingleItem);
+            $(".clone-container").append(singleJqTemplate);
         }
 
         function mapSingleItem(team) {
@@ -380,33 +474,20 @@
         }
 
         function processArrayByMapping(arrayOfData) {
-
-            //mapSingleItem is missing. you need to write that function
             let arrayofJqTemplates = arrayOfData.map(mapSingleItem);
             $(".clone-container").append(arrayofJqTemplates);
-
-            // for (let i = 0; i < arrayOfData.length; i++) {
-            //     const address = arrayOfData[i];
-            //     var templateClone = getTemplate();
-            //     //code here to change template
-            //     $(".clone-container").append(templateClone);
-            // }
         }
 
         function onAddNewSportsTeamButtonClick() {
 
-            // TODO hide the button to prevent extra clicks
-
-            var selectedId = $('#teamId').val();
-
-            // todo - dynamically hide and show add or update buttons according to selections and reset / clear / render / update 'un-selections' - perhaps an updateView function that is always called on changes
-
             console.log("onAddNewSportsTeamButtonClick...");
+
+            var selectedId = $('#teamId').val(); // hidden form value that is set based on selecting edit in card view
 
             var formValidationResult = formValidation();
 
             if (formValidationResult.hasErrors) {
-                findFormErrors(formValidationResult);
+                showFormValidationErrors(formValidationResult);
                 return false; // form isn't posted/submitted
             }
 
@@ -416,7 +497,7 @@
                 }
             }
 
-            // add new sport
+            // add new sport // note - trimming and setting proper values is done on a call within the validation function
 
             var newTeam = {
                 team: $('#team').val(),
@@ -424,40 +505,32 @@
                 city: $('#city').val()
             }
 
-            console.log(`add will be invoked with ${JSON.stringify(newTeam)}`);
+            console.log(`addTeam(newTeam); will be invoked with ${JSON.stringify(newTeam)}`);
 
-            addTeam(newTeam)
-                .then(function() {
-                    alert('success');
-                })
-                .catch(function() {
-                    alert('error');
-                })
+            let result = addTeam(newTeam);
 
-            // TODO - NOTE - these are async, so the result is undefined -- need to implement as a promise
-            updateView();
+            console.log("add team result...", result);
 
         }
 
         function onUpdateSportsTeamButtonClick() {
+
             console.log("onUpdateSportsTeamButtonClick...");
 
             var formValidationResult = formValidation();
 
             if (formValidationResult.hasErrors) {
-                findFormErrors(formValidationResult);
-                return false; // form isn't posted/submitted
+                showFormValidationErrors(formValidationResult);
+                return false;
             }
 
             var updateId = $('#teamId').val();
 
-            if (updateId == -1) {
-                $('#errors').append(`<p>You must select an existing team to UPDATE, or use ADD to create a new team.</p>`);
-                showErrors();
+            if (updateId < 0) {
+                $('#errors').append(`<p class="alert alert-danger">You must select an existing team to UPDATE, or use ADD to create a new team.</p>`);
+
                 return false;
             }
-
-            // update current sport
 
             var updateObject = {
                 team: $('#team').val(),
@@ -465,26 +538,21 @@
                 city: $('#city').val()
             }
 
-            console.log(`update will be invoked with ${JSON.stringify(updateObject)}`);
+            console.log(`Update will be invoked with id: ${updateId} data: ${JSON.stringify(updateObject)}`);
 
             updateTeam(updateId, updateObject);
 
-            // TODO - NOTE - these are async, so the result is undefined -- need to implement as a promise
-            updateView();
-
         }
 
-        // teams // add // POST //---------------------------------------------------------------------
-
         var addTeam = (team) => {
-            console.log("addTeam");
+
+            console.log("addTeam", team);
+
             var payload = {
                 team: team.team,
                 sport: team.sport,
                 city: team.city
             };
-
-            // todo consider another revolve,reject promise here perhaps
 
             return teamsService.add(payload)
                 .then(onAddTeamSuccess)
@@ -493,18 +561,20 @@
 
         var onAddTeamSuccess = data => {
             console.log("onAddTeamSuccess", data);
-            console.log(data);
-            clearForm();
+            console.log("Added new id: ", data.data.item);
+            getAndRenderAll();
+            //alert("onAddTeamSuccess " + JSON.stringify(data));
             return data;
+
         }
 
         var onAddTeamError = err => {
-            console.log("onAddTeamError", err);
+            console.warn("onAddTeamError", err);
+            alert("onAddTeamError " + JSON.stringify(err));
             return err;
         }
 
-        // teams // update // PUT //---------------------------------------------------------------------
-        // TODO - Once the data is update in the form, you should allow the user to click a second "Update" button or the same Submit button from the original form so that they can initiate an actual update.
+        // TODO - ON EDIT - Once the data is updated in the form, you should allow the user to click a second "Update" button or the same Submit button from the original form so that they can initiate an actual update.
 
         var updateTeam = (teamId, team) => {
             console.log("updateTeam");
@@ -522,20 +592,22 @@
         var onUpdateTeamSuccess = data => {
             console.log("onUpdateTeamSuccess", data);
             console.log(data);
-            clearForm();
+            getAndRenderAll();
+            //alert("onUpdateTeamSuccess " + JSON.stringify(data));
             return data;
         }
 
         var onUpdateTeamError = err => {
-            console.log("onUpdateTeamError", err);
+            console.warn("onUpdateTeamError", err);
+            alert("onUpdateTeamError " + JSON.stringify(err));
             return err;
         }
 
-        // teams // delete // DELETE //---------------------------------------------------------------------
         // TODO - It should remove the entity from the database and the DOM when the operation is successful, not before.
 
         var deleteTeam = (teamId) => {
-            console.log("deleteTeam");
+
+            console.log("deleteTeam", teamId); // teamId = 235151523512; // FORCE ERROR CHECK
 
             return teamsService.delete(teamId)
                 .then(onDeleteTeamSuccess)
@@ -545,12 +617,14 @@
         var onDeleteTeamSuccess = data => {
             console.log("onDeleteTeamSuccess", data);
             console.log(data);
-            clearForm();
+            getAndRenderAll();
+            //alert("onDeleteTeamSuccess " + JSON.stringify(data));
             return data;
         }
 
         var onDeleteTeamError = err => {
-            console.log("onDeleteTeamError", err);
+            console.warn("onDeleteTeamError", err);
+            alert("onDeleteTeamError " + JSON.stringify(err));
             return err;
         }
 
