@@ -31,6 +31,10 @@
         .isSelected {
             border: 1px solid green;
         }
+        
+        .hasErrors {
+            border: 1px solid red;
+        }
     </style>
 
 
@@ -84,7 +88,9 @@
 
                 <!-- NOTE Observe this nuance of submit, validation, etc -->
                 <button type="button" name="clear" id="clear" onclick="clearForm();return false;" class="btn btn-default btn-warning">Reset</button>
-                <button type="submit" name="submit" id="submit" onclick="onAddNewSportsTeamButtonClick();return false;" class="btn btn-default btn-primary">Add</button>
+
+                <button type="submit" name="submit" id="submit" onclick="onAddNewSportsTeamButtonClick();" class="btn btn-default btn-primary">Add</button>
+
                 <button type="button" name="update" id="update" onclick="onUpdateSportsTeamButtonClick();return false;" class="btn btn-default btn-info">Update</button>
 
                 <button type="button" name="render" id="render" onclick="onRenderButtonClick();return false;" class="btn btn-default btn-success">Render</button>
@@ -225,14 +231,14 @@
 
             console.log("wireUpEvents...");
 
-            $('#team').focus();
-
             $('.clone-container').on("click", ".deleteTeam", onDeleteTeamClicked);
             $('.clone-container').on("click", ".editTeam", onEditTeamClicked);
 
             $("#formSports").submit(function(event) {
                 event.preventDefault();
             });
+
+            clearForm();
         }
 
         // function updateView() {
@@ -327,11 +333,16 @@
 
         function clearForm() {
             console.log("reset...");
+
             $("#formSports")[0].reset();
             $('#teamId').val(-1);
             $(".isSelected").removeClass("isSelected");
+
             emptyErrors();
 
+            $('.hasErrors').removeClass('hasErrors');
+
+            $('#team').focus();
 
             return true;
         }
@@ -363,16 +374,25 @@
             if ((teamName == null) || (teamName == "") || (teamName.length < 2) || (teamName.length > 50)) {
                 hasErrors = true;
                 errors.push("Team name must be 2-50 characters."); // todo consider in context-error messages
+                $('#team').addClass('hasErrors');
+            } else {
+                $('#team').removeClass('hasErrors');
             }
 
             if ((sportName.length < 2) || (sportName.length > 50)) {
                 hasErrors = true;
                 errors.push("Sport name must be 2-50 characters.");
+                $('#sport').addClass('hasErrors');
+            } else {
+                $('#sport').removeClass('hasErrors');
             }
 
             if ((cityName.length < 2) || (cityName.length > 50)) {
                 hasErrors = true;
                 errors.push("City name must be 2-50 characters.");
+                $('#city').addClass('hasErrors');
+            } else {
+                $('#city').removeClass('hasErrors');
             }
 
             return {
@@ -562,6 +582,7 @@
         var onAddTeamSuccess = data => {
             console.log("onAddTeamSuccess", data);
             console.log("Added new id: ", data.data.item);
+            clearForm();
             getAndRenderAll();
             //alert("onAddTeamSuccess " + JSON.stringify(data));
             return data;
@@ -592,6 +613,7 @@
         var onUpdateTeamSuccess = data => {
             console.log("onUpdateTeamSuccess", data);
             console.log(data);
+            clearForm();
             getAndRenderAll();
             //alert("onUpdateTeamSuccess " + JSON.stringify(data));
             return data;
@@ -617,6 +639,7 @@
         var onDeleteTeamSuccess = data => {
             console.log("onDeleteTeamSuccess", data);
             console.log(data);
+            clearForm();
             getAndRenderAll();
             //alert("onDeleteTeamSuccess " + JSON.stringify(data));
             return data;
