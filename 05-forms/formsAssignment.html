@@ -554,12 +554,14 @@
         var onAddTeamSuccess = data => {
             console.log("onAddTeamSuccess", data);
             console.log("Added new id: ", data.data.item);
+            alert("onAddTeamSuccess " + JSON.stringify(data));
             return data;
 
         }
 
         var onAddTeamError = err => {
             console.log("onAddTeamError", err);
+            alert("onAddTeamError " + JSON.stringify(data));
             return err;
         }
 
@@ -581,11 +583,15 @@
         var onUpdateTeamSuccess = data => {
             console.log("onUpdateTeamSuccess", data);
             console.log(data);
+
+            alert("onUpdateTeamSuccess " + JSON.stringify(data));
             return data;
         }
 
         var onUpdateTeamError = err => {
             console.log("onUpdateTeamError", err);
+
+            alert("onUpdateTeamError " + JSON.stringify(data));
             return err;
         }
 
@@ -603,11 +609,15 @@
         var onDeleteTeamSuccess = data => {
             console.log("onDeleteTeamSuccess", data);
             console.log(data);
+
+            alert("onDeleteTeamSuccess " + JSON.stringify(data));
             return data;
         }
 
         var onDeleteTeamError = err => {
             console.log("onDeleteTeamError", err);
+
+            alert("onDeleteTeamError " + JSON.stringify(data));
             return err;
         }
 
