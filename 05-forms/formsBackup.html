@@ -50,26 +50,20 @@
         </div>
     </script>
 
-
 </head>
 
 <body class="sabio" data-ins="pw-00">
     <!-- Do Not Edit or Remove this nav element -->
     <nav class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio"></nav>
 
-
     <main class="container">
 
         <p>Sports Teams Form</p>
 
         <div class="container">
-
             <div id="errors"></div>
-
             <form id="formSports">
-
                 <input type="hidden" id="teamId" name="teamId" disabled class="d-none" value="-1">
-
                 <div class="form-group">
                     <label for="team">Team Name:</label>
                     <input type="text" class="form-control" id="team" name="team" required minlength="2" maxlength="50">
@@ -87,16 +81,11 @@
                 </div>
 
                 <!-- NOTE Observe this nuance of submit, validation, etc -->
-                <button type="button" name="clear" id="clear" onclick="clearForm();return false;" class="btn btn-default btn-warning">Reset</button>
-
+                <button type="button" name="clear" id="clear" onclick="clearForm();" class="btn btn-default btn-warning">Reset</button>
                 <button type="submit" name="submit" id="submit" onclick="onAddNewSportsTeamButtonClick();" class="btn btn-default btn-primary">Add</button>
-
-                <button type="button" name="update" id="update" onclick="onUpdateSportsTeamButtonClick();return false;" class="btn btn-default btn-info">Update</button>
-
-                <button type="button" name="render" id="render" onclick="onRenderButtonClick();return false;" class="btn btn-default btn-success">Render</button>
-
+                <button type="button" name="update" id="update" onclick="onUpdateSportsTeamButtonClick();" class="btn btn-default btn-info">Update</button>
+                <button type="button" name="render" id="render" onclick="onRenderButtonClick();" class="btn btn-default btn-dark">Get All</button>
             </form>
-
         </div>
 
         <hr>
@@ -243,11 +232,7 @@
 
         // function updateView() {
 
-        //     // todo // TODO get this working without timeout -- rely on callback/promise/async
-        //     // todo // TODO get this working without timeout -- rely on callback/promise/async
-        //     // todo // TODO get this working without timeout -- rely on callback/promise/async
-
-        //     // setTimeout(function() {
+        //     // setTimeout(function() { // NOTE this was an easy wrong, early solution
         //     //     renderView();
         //     // }, 1500);
 
@@ -258,29 +243,42 @@
         function onDeleteTeamClicked(event) {
             event.preventDefault();
 
+            console.log("onDeleteTeamClicked...", selectedId);
+
             var selected = $(event.target.closest(".card"));
-            console.log("onDeleteTeamClicked...", selected.attr("data-id"));
+            var selectedId = selected.attr("data-id");
 
-            var selectedTeamId = selected.attr("data-id");
+            deleteTeam(selectedId);
 
-            deleteTeam(selectedTeamId);
+            console.log("after delete team success");
+
+            //$(".card[data-id='" + selectedId + "']").remove();
 
         }
 
+
+
+        function selectCardById(selectedId) {
+            $(".isSelected").removeClass("isSelected");
+            $(".card[data-id='" + selectedId + "']").addClass("isSelected");
+        }
+
+        // TODO limit business logic in click events, make functions to do the work
         // TODO limit business logic in click events, make functions to do the work
         function onEditTeamClicked(event) {
 
             event.preventDefault();
+
             console.log("onEditTeamClicked...", event.target.closest(".card"));
 
             var selectedCard = $(event.target.closest(".card"));
 
-            $(".isSelected").removeClass("isSelected");
-            selectedCard.toggleClass("isSelected");
-
             var selectedId = selectedCard.attr("data-id");
 
-            getOneTeam(selectedId); // getOneTeam(9999999999); // force error
+            //$(".isSelected").removeClass("isSelected");
+            //selectedCard.toggleClass("isSelected");
+
+            selectCardById(selectedId);
 
             console.log("edit selected...", selectedId);
 
@@ -289,9 +287,7 @@
             $('#sport').val(objParse.sport);
             $('#city').val(objParse.city);
 
-            $('#teamId').val(selectedId);
-
-            // TODO set edit properties and enable update button
+            $('#teamId').val(selectedId); // hidden field holding current selected id
 
             emptyErrors();
 
@@ -308,6 +304,10 @@
             return $(template);
         }
 
+        function getExistingTemplateById(selectedId) {
+            return $(".card[data-id='" + selectedId + "']").eq(0);
+        }
+
         /* Initial raw version of populating html template */
 
         // function modifyTemplate(template, objProperties) {
@@ -322,8 +322,8 @@
 
 
         */
-        function modifyTemplate(template, team) {
-            template.attr("data-id", team.id); // useful for individual access with unique id identifier
+        function modifyTemplate(template, id, team) {
+            template.attr("data-id", id); // useful for individual access with unique id identifier
             template.attr("data", JSON.stringify(team)); // overkill to keep entire object properties here
             template.find('.card-team').text(team.team);
             template.find('.card-sport').text(team.sport);
@@ -340,7 +340,7 @@
 
             emptyErrors();
 
-            $('.hasErrors').removeClass('hasErrors');
+            //$('.hasErrors').removeClass('hasErrors');
 
             $('#team').focus();
 
@@ -411,6 +411,8 @@
 
         function emptyErrors() {
             $('#errors').empty();
+
+            $('.hasErrors').removeClass('hasErrors');
         }
 
         function showFormValidationErrors(formValidationResult) {
@@ -421,13 +423,15 @@
 
         }
 
-        // POSSIBLY no need for async , await yet
 
-        async function renderView() {
+
+        function getAllAndRenderFreshView() {
+
+            console.log("getAllAndRenderFreshView() Called - Invokes getAll /api/entities/teams");
 
             $(".clone-container").empty();
 
-            let result = await teamsService.getAll()
+            let result = teamsService.getAll()
                 .then(onGetAllTeamsSuccess)
                 .catch(onGetAllTeamsError);
 
@@ -436,51 +440,36 @@
             return result;
         }
 
-        async function getAndRenderAll() {
-            let result = await renderView();
-            console.log("result of getAndRenderAll() ...", result);
-            return result;
+        function onRenderButtonClick() {
+            getAllAndRenderFreshView();
         }
 
-        async function onRenderButtonClick() {
-            let result = await getAndRenderAll(); // returns promise
-            console.log("onRenderButtonClick", result);
-        }
-
-        async function getOneTeam(teamId) {
-
-            // call backend to /api/teams/<id>
-
-            // use results to append
-
+        function getOneTeamAndAdd(teamId) { // get and append one team, called after successful add to backend
             let result = teamsService.get(teamId)
-                .then(onGetOneTeamSuccess)
-                .catch(onGetOneTeamError)
-
-            console.log("getOneTeam...", result);
-
+                .then(onGetOneTeamAndAddSuccess)
+                .catch(onGetOneTeamAndAddError)
+            console.log("getOneTeamAndAdd...", result);
             return result;
-
         }
 
-        function onGetOneTeamSuccess(data) {
+        function onGetOneTeamAndAddSuccess(data) {
+            console.log("onGetOneTeamAndAddSuccess", data);
             console.log(data);
+            appendOneTeam(data.data.item.id, data.data.item);
         }
 
-        function onGetOneTeamError(response) {
+        function onGetOneTeamAndAddError(response) {
+            console.log("onGetOneTeamAndAddError", response);
             console.warn(response);
         }
 
-        function testAppendOneTeam() {
-            var newTeam = {
-                team: "team name",
-                sport: "sport name",
-                city: "city name"
-            }
-            appendOneTeam(newTeam)
-        }
 
-        function appendOneTeam(team) {
+
+
+        function appendOneTeam(id, team) {
+            if (!team.id) {
+                team.id = id
+            }
             var arrayOfOne = [team];
             let singleJqTemplate = arrayOfOne.map(mapSingleItem);
             $(".clone-container").append(singleJqTemplate);
@@ -489,7 +478,8 @@
         function mapSingleItem(team) {
             console.log(team);
             var testTemplate = getTemplate();
-            testTemplate = modifyTemplate(testTemplate, team);
+            var id = team.id;
+            testTemplate = modifyTemplate(testTemplate, id, team);
             return testTemplate;
         }
 
@@ -498,23 +488,25 @@
             $(".clone-container").append(arrayofJqTemplates);
         }
 
+        // todo move most of this business logic into function and out of click handler
+
         function onAddNewSportsTeamButtonClick() {
 
             console.log("onAddNewSportsTeamButtonClick...");
 
             var selectedId = $('#teamId').val(); // hidden form value that is set based on selecting edit in card view
 
+            if (selectedId != -1) { // todo - this is possibly clumsy use of variables for state information
+                if (confirm("Warning. You have an existing element selected. Are you sure you want to ADD instead of UPDATE ?") == false) {
+                    return false;
+                }
+            }
+
             var formValidationResult = formValidation();
 
             if (formValidationResult.hasErrors) {
                 showFormValidationErrors(formValidationResult);
                 return false; // form isn't posted/submitted
-            }
-
-            if (selectedId != -1) { // todo - this is possibly clumsy use of variables for state information
-                if (confirm("Warning. You have an existing element selected. Are you sure you want to ADD instead of UPDATE ?") == false) {
-                    return false;
-                }
             }
 
             // add new sport // note - trimming and setting proper values is done on a call within the validation function
@@ -562,19 +554,21 @@
 
             updateTeam(updateId, updateObject);
 
+
+
         }
 
         var addTeam = (team) => {
 
             console.log("addTeam", team);
 
-            var payload = {
+            var newTeam = {
                 team: team.team,
                 sport: team.sport,
                 city: team.city
             };
 
-            return teamsService.add(payload)
+            return teamsService.add(newTeam)
                 .then(onAddTeamSuccess)
                 .catch(onAddTeamError);
         }
@@ -583,7 +577,11 @@
             console.log("onAddTeamSuccess", data);
             console.log("Added new id: ", data.data.item);
             clearForm();
-            getAndRenderAll();
+
+
+            getOneTeamAndAdd(data.data.item); // gets newly added and appends
+            //getAndRenderAll(); // this is now handled individually by call above
+
             //alert("onAddTeamSuccess " + JSON.stringify(data));
             return data;
 
@@ -600,21 +598,34 @@
         var updateTeam = (teamId, team) => {
             console.log("updateTeam");
             var payload = {
+                id: teamId,
                 team: team.team,
                 sport: team.sport,
                 city: team.city
             };
 
-            return teamsService.update(teamId, payload)
+            return teamsService.update(payload)
                 .then(onUpdateTeamSuccess)
                 .catch(onUpdateTeamError);
         }
 
         var onUpdateTeamSuccess = data => {
             console.log("onUpdateTeamSuccess", data);
+
             console.log(data);
+
             clearForm();
-            getAndRenderAll();
+
+            // todo handle in DOM update here
+
+            console.log("---------------------------");
+            var payloadData = JSON.parse(data.config.data);
+            console.log("---------------------------", payloadData);
+
+            var updateTemplate = getExistingTemplateById(payloadData.id);
+
+            modifyTemplate(updateTemplate, payloadData.id, payloadData);
+
             //alert("onUpdateTeamSuccess " + JSON.stringify(data));
             return data;
         }
@@ -625,7 +636,6 @@
             return err;
         }
 
-        // TODO - It should remove the entity from the database and the DOM when the operation is successful, not before.
 
         var deleteTeam = (teamId) => {
 
@@ -640,7 +650,17 @@
             console.log("onDeleteTeamSuccess", data);
             console.log(data);
             clearForm();
-            getAndRenderAll();
+
+            console.log("delete ......");
+            console.log("delete ......");
+            console.log("delete ......");
+            console.log(data.config.url);
+
+            // TODO - It should remove the entity from the database and the DOM when the operation is successful, not before.
+            var recentlyDeletedId = data.config.url.substr(data.config.url.lastIndexOf("/") + 1);
+            $(".card[data-id='" + recentlyDeletedId + "']").remove();
+
+            //getAndRenderAll(); // this is now handled individually upon delete success
             //alert("onDeleteTeamSuccess " + JSON.stringify(data));
             return data;
         }

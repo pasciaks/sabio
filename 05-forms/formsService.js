@@ -87,6 +87,7 @@ update an existing team
     var teamId = 1353252;
 
     var payload = {
+        id : 12342,
         team: "team name",
         sport: "sport name",
         city: "city name"
@@ -94,12 +95,12 @@ update an existing team
 
 
 */
-teamsService.update = (teamId, payload) => {
-    console.log("teamsService.update is executing ", teamId, payload);
+teamsService.update = (payload) => {
+    console.log("teamsService.update is executing ", payload);
 
     const config = {
         method: "PUT",
-        url: teamsService.endpoint + "/" + teamId,
+        url: teamsService.endpoint + "/" + payload.id,
         data: payload,
         crossdomain: true,
         headers: { "Content-Type": "application/json" }

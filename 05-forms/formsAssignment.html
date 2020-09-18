@@ -50,26 +50,20 @@
         </div>
     </script>
 
-
 </head>
 
 <body class="sabio" data-ins="pw-00">
     <!-- Do Not Edit or Remove this nav element -->
     <nav class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio"></nav>
 
-
     <main class="container">
 
         <p>Sports Teams Form</p>
 
         <div class="container">
-
             <div id="errors"></div>
-
             <form id="formSports">
-
                 <input type="hidden" id="teamId" name="teamId" disabled class="d-none" value="-1">
-
                 <div class="form-group">
                     <label for="team">Team Name:</label>
                     <input type="text" class="form-control" id="team" name="team" required minlength="2" maxlength="50">
@@ -88,15 +82,10 @@
 
                 <!-- NOTE Observe this nuance of submit, validation, etc -->
                 <button type="button" name="clear" id="clear" onclick="clearForm();" class="btn btn-default btn-warning">Reset</button>
-
                 <button type="submit" name="submit" id="submit" onclick="onAddNewSportsTeamButtonClick();" class="btn btn-default btn-primary">Add</button>
-
                 <button type="button" name="update" id="update" onclick="onUpdateSportsTeamButtonClick();" class="btn btn-default btn-info">Update</button>
-
-                <button type="button" name="render" id="render" onclick="onRenderButtonClick();" class="btn btn-default btn-success">Render</button>
-
+                <button type="button" name="render" id="render" onclick="onRenderButtonClick();" class="btn btn-default btn-dark">Get All</button>
             </form>
-
         </div>
 
         <hr>
@@ -243,11 +232,7 @@
 
         // function updateView() {
 
-        //     // todo // TODO get this working without timeout -- rely on callback/promise/async
-        //     // todo // TODO get this working without timeout -- rely on callback/promise/async
-        //     // todo // TODO get this working without timeout -- rely on callback/promise/async
-
-        //     // setTimeout(function() {
+        //     // setTimeout(function() { // NOTE this was an easy wrong, early solution
         //     //     renderView();
         //     // }, 1500);
 
@@ -267,7 +252,7 @@
 
             console.log("after delete team success");
 
-            $(".card[data-id='" + selectedId + "']").remove();
+            //$(".card[data-id='" + selectedId + "']").remove();
 
         }
 
@@ -438,13 +423,15 @@
 
         }
 
-        // POSSIBLY no need for async , await yet
 
-        async function renderView() {
+
+        function getAllAndRenderFreshView() {
+
+            console.log("getAllAndRenderFreshView() Called - Invokes getAll /api/entities/teams");
 
             $(".clone-container").empty();
 
-            let result = await teamsService.getAll()
+            let result = teamsService.getAll()
                 .then(onGetAllTeamsSuccess)
                 .catch(onGetAllTeamsError);
 
@@ -453,41 +440,26 @@
             return result;
         }
 
-        async function getAndRenderAll() {
-            let result = await renderView();
-            console.log("result of getAndRenderAll() ...", result);
-            return result;
+        function onRenderButtonClick() {
+            getAllAndRenderFreshView();
         }
 
-        async function onRenderButtonClick() {
-            let result = await getAndRenderAll(); // returns promise
-            console.log("onRenderButtonClick", result);
-        }
-
-        async function getOneTeamAndAdd(teamId) { // get and append one team, called after successful add to backend
-
-            // call backend to /api/teams/<id>
-
-            // use results to append
-
+        function getOneTeamAndAdd(teamId) { // get and append one team, called after successful add to backend
             let result = teamsService.get(teamId)
-                .then(onGetOneTeamSuccess)
-                .catch(onGetOneTeamError)
-
+                .then(onGetOneTeamAndAddSuccess)
+                .catch(onGetOneTeamAndAddError)
             console.log("getOneTeamAndAdd...", result);
-
             return result;
-
         }
 
-        function onGetOneTeamSuccess(data) {
-            console.log("onGetOneTeamSuccess", data);
+        function onGetOneTeamAndAddSuccess(data) {
+            console.log("onGetOneTeamAndAddSuccess", data);
             console.log(data);
             appendOneTeam(data.data.item.id, data.data.item);
         }
 
-        function onGetOneTeamError(response) {
-            console.log("onGetOneTeamError", response);
+        function onGetOneTeamAndAddError(response) {
+            console.log("onGetOneTeamAndAddError", response);
             console.warn(response);
         }
 
@@ -582,12 +554,7 @@
 
             updateTeam(updateId, updateObject);
 
-            // TODO update on DOM using updateId and updateObject without complete refresh
 
-            var updateTemplate = getExistingTemplateById(updateId);
-
-            // TODO this modify should be within the success of the update.. because if it fails the dom might still be updated.. yikes!
-            modifyTemplate(updateTemplate, updateId, updateObject);
 
         }
 
@@ -631,24 +598,34 @@
         var updateTeam = (teamId, team) => {
             console.log("updateTeam");
             var payload = {
+                id: teamId,
                 team: team.team,
                 sport: team.sport,
                 city: team.city
             };
 
-            return teamsService.update(teamId, payload)
+            return teamsService.update(payload)
                 .then(onUpdateTeamSuccess)
                 .catch(onUpdateTeamError);
         }
 
         var onUpdateTeamSuccess = data => {
             console.log("onUpdateTeamSuccess", data);
+
             console.log(data);
+
             clearForm();
 
             // todo handle in DOM update here
 
-            //getAndRenderAll();
+            console.log("---------------------------");
+            var payloadData = JSON.parse(data.config.data);
+            console.log("---------------------------", payloadData);
+
+            var updateTemplate = getExistingTemplateById(payloadData.id);
+
+            modifyTemplate(updateTemplate, payloadData.id, payloadData);
+
             //alert("onUpdateTeamSuccess " + JSON.stringify(data));
             return data;
         }
@@ -659,7 +636,6 @@
             return err;
         }
 
-        // TODO - It should remove the entity from the database and the DOM when the operation is successful, not before.
 
         var deleteTeam = (teamId) => {
 
@@ -674,6 +650,16 @@
             console.log("onDeleteTeamSuccess", data);
             console.log(data);
             clearForm();
+
+            console.log("delete ......");
+            console.log("delete ......");
+            console.log("delete ......");
+            console.log(data.config.url);
+
+            // TODO - It should remove the entity from the database and the DOM when the operation is successful, not before.
+            var recentlyDeletedId = data.config.url.substr(data.config.url.lastIndexOf("/") + 1);
+            $(".card[data-id='" + recentlyDeletedId + "']").remove();
+
             //getAndRenderAll(); // this is now handled individually upon delete success
             //alert("onDeleteTeamSuccess " + JSON.stringify(data));
             return data;
