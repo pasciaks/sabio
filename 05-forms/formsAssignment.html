@@ -87,13 +87,13 @@
                 </div>
 
                 <!-- NOTE Observe this nuance of submit, validation, etc -->
-                <button type="button" name="clear" id="clear" onclick="clearForm();return false;" class="btn btn-default btn-warning">Reset</button>
+                <button type="button" name="clear" id="clear" onclick="clearForm();" class="btn btn-default btn-warning">Reset</button>
 
                 <button type="submit" name="submit" id="submit" onclick="onAddNewSportsTeamButtonClick();" class="btn btn-default btn-primary">Add</button>
 
-                <button type="button" name="update" id="update" onclick="onUpdateSportsTeamButtonClick();return false;" class="btn btn-default btn-info">Update</button>
+                <button type="button" name="update" id="update" onclick="onUpdateSportsTeamButtonClick();" class="btn btn-default btn-info">Update</button>
 
-                <button type="button" name="render" id="render" onclick="onRenderButtonClick();return false;" class="btn btn-default btn-success">Render</button>
+                <button type="button" name="render" id="render" onclick="onRenderButtonClick();" class="btn btn-default btn-success">Render</button>
 
             </form>
 
@@ -258,29 +258,42 @@
         function onDeleteTeamClicked(event) {
             event.preventDefault();
 
+            console.log("onDeleteTeamClicked...", selectedId);
+
             var selected = $(event.target.closest(".card"));
-            console.log("onDeleteTeamClicked...", selected.attr("data-id"));
+            var selectedId = selected.attr("data-id");
 
-            var selectedTeamId = selected.attr("data-id");
+            deleteTeam(selectedId);
 
-            deleteTeam(selectedTeamId);
+            console.log("after delete team success");
+
+            $(".card[data-id='" + selectedId + "']").remove();
 
         }
 
+
+
+        function selectCardById(selectedId) {
+            $(".isSelected").removeClass("isSelected");
+            $(".card[data-id='" + selectedId + "']").addClass("isSelected");
+        }
+
+        // TODO limit business logic in click events, make functions to do the work
         // TODO limit business logic in click events, make functions to do the work
         function onEditTeamClicked(event) {
 
             event.preventDefault();
+
             console.log("onEditTeamClicked...", event.target.closest(".card"));
 
             var selectedCard = $(event.target.closest(".card"));
 
-            $(".isSelected").removeClass("isSelected");
-            selectedCard.toggleClass("isSelected");
-
             var selectedId = selectedCard.attr("data-id");
 
-            getOneTeam(selectedId); // getOneTeam(9999999999); // force error
+            //$(".isSelected").removeClass("isSelected");
+            //selectedCard.toggleClass("isSelected");
+
+            selectCardById(selectedId);
 
             console.log("edit selected...", selectedId);
 
@@ -289,9 +302,7 @@
             $('#sport').val(objParse.sport);
             $('#city').val(objParse.city);
 
-            $('#teamId').val(selectedId);
-
-            // TODO set edit properties and enable update button
+            $('#teamId').val(selectedId); // hidden field holding current selected id
 
             emptyErrors();
 
@@ -308,6 +319,10 @@
             return $(template);
         }
 
+        function getExistingTemplateById(selectedId) {
+            return $(".card[data-id='" + selectedId + "']").eq(0);
+        }
+
         /* Initial raw version of populating html template */
 
         // function modifyTemplate(template, objProperties) {
@@ -322,8 +337,8 @@
 
 
         */
-        function modifyTemplate(template, team) {
-            template.attr("data-id", team.id); // useful for individual access with unique id identifier
+        function modifyTemplate(template, id, team) {
+            template.attr("data-id", id); // useful for individual access with unique id identifier
             template.attr("data", JSON.stringify(team)); // overkill to keep entire object properties here
             template.find('.card-team').text(team.team);
             template.find('.card-sport').text(team.sport);
@@ -340,7 +355,7 @@
 
             emptyErrors();
 
-            $('.hasErrors').removeClass('hasErrors');
+            //$('.hasErrors').removeClass('hasErrors');
 
             $('#team').focus();
 
@@ -411,6 +426,8 @@
 
         function emptyErrors() {
             $('#errors').empty();
+
+            $('.hasErrors').removeClass('hasErrors');
         }
 
         function showFormValidationErrors(formValidationResult) {
@@ -447,7 +464,7 @@
             console.log("onRenderButtonClick", result);
         }
 
-        async function getOneTeam(teamId) {
+        async function getOneTeamAndAdd(teamId) { // get and append one team, called after successful add to backend
 
             // call backend to /api/teams/<id>
 
@@ -457,30 +474,30 @@
                 .then(onGetOneTeamSuccess)
                 .catch(onGetOneTeamError)
 
-            console.log("getOneTeam...", result);
+            console.log("getOneTeamAndAdd...", result);
 
             return result;
 
         }
 
         function onGetOneTeamSuccess(data) {
+            console.log("onGetOneTeamSuccess", data);
             console.log(data);
+            appendOneTeam(data.data.item.id, data.data.item);
         }
 
         function onGetOneTeamError(response) {
+            console.log("onGetOneTeamError", response);
             console.warn(response);
         }
 
-        function testAppendOneTeam() {
-            var newTeam = {
-                team: "team name",
-                sport: "sport name",
-                city: "city name"
-            }
-            appendOneTeam(newTeam)
-        }
 
-        function appendOneTeam(team) {
+
+
+        function appendOneTeam(id, team) {
+            if (!team.id) {
+                team.id = id
+            }
             var arrayOfOne = [team];
             let singleJqTemplate = arrayOfOne.map(mapSingleItem);
             $(".clone-container").append(singleJqTemplate);
@@ -489,7 +506,8 @@
         function mapSingleItem(team) {
             console.log(team);
             var testTemplate = getTemplate();
-            testTemplate = modifyTemplate(testTemplate, team);
+            var id = team.id;
+            testTemplate = modifyTemplate(testTemplate, id, team);
             return testTemplate;
         }
 
@@ -498,23 +516,25 @@
             $(".clone-container").append(arrayofJqTemplates);
         }
 
+        // todo move most of this business logic into function and out of click handler
+
         function onAddNewSportsTeamButtonClick() {
 
             console.log("onAddNewSportsTeamButtonClick...");
 
             var selectedId = $('#teamId').val(); // hidden form value that is set based on selecting edit in card view
 
+            if (selectedId != -1) { // todo - this is possibly clumsy use of variables for state information
+                if (confirm("Warning. You have an existing element selected. Are you sure you want to ADD instead of UPDATE ?") == false) {
+                    return false;
+                }
+            }
+
             var formValidationResult = formValidation();
 
             if (formValidationResult.hasErrors) {
                 showFormValidationErrors(formValidationResult);
                 return false; // form isn't posted/submitted
-            }
-
-            if (selectedId != -1) { // todo - this is possibly clumsy use of variables for state information
-                if (confirm("Warning. You have an existing element selected. Are you sure you want to ADD instead of UPDATE ?") == false) {
-                    return false;
-                }
             }
 
             // add new sport // note - trimming and setting proper values is done on a call within the validation function
@@ -562,19 +582,26 @@
 
             updateTeam(updateId, updateObject);
 
+            // TODO update on DOM using updateId and updateObject without complete refresh
+
+            var updateTemplate = getExistingTemplateById(updateId);
+
+            // TODO this modify should be within the success of the update.. because if it fails the dom might still be updated.. yikes!
+            modifyTemplate(updateTemplate, updateId, updateObject);
+
         }
 
         var addTeam = (team) => {
 
             console.log("addTeam", team);
 
-            var payload = {
+            var newTeam = {
                 team: team.team,
                 sport: team.sport,
                 city: team.city
             };
 
-            return teamsService.add(payload)
+            return teamsService.add(newTeam)
                 .then(onAddTeamSuccess)
                 .catch(onAddTeamError);
         }
@@ -583,7 +610,11 @@
             console.log("onAddTeamSuccess", data);
             console.log("Added new id: ", data.data.item);
             clearForm();
-            getAndRenderAll();
+
+
+            getOneTeamAndAdd(data.data.item); // gets newly added and appends
+            //getAndRenderAll(); // this is now handled individually by call above
+
             //alert("onAddTeamSuccess " + JSON.stringify(data));
             return data;
 
@@ -614,7 +645,10 @@
             console.log("onUpdateTeamSuccess", data);
             console.log(data);
             clearForm();
-            getAndRenderAll();
+
+            // todo handle in DOM update here
+
+            //getAndRenderAll();
             //alert("onUpdateTeamSuccess " + JSON.stringify(data));
             return data;
         }
@@ -640,7 +674,7 @@
             console.log("onDeleteTeamSuccess", data);
             console.log(data);
             clearForm();
-            getAndRenderAll();
+            //getAndRenderAll(); // this is now handled individually upon delete success
             //alert("onDeleteTeamSuccess " + JSON.stringify(data));
             return data;
         }
