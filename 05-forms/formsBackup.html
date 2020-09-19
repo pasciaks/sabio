@@ -106,6 +106,14 @@
 
             <div id="errors"></div>
 
+            <div class="container">
+                <p>Login</p>
+            </div>
+
+            <div class="container">
+                <p>Register</p>
+            </div>
+
             <form id="formSports">
 
                 <input type="hidden" id="teamId" name="teamId" disabled class="d-none" value="-1">
@@ -147,19 +155,37 @@
     </main>
 
     <!-- Do Not Edit or Remove this footer element -->
-    <footer class="do-not-remove container-fluid footer mx-auto  fb-targert sabio d-none">
+    <footer class="do-not-remove container-fluid footer mx-auto  fb-targert sabio">
         <p class="text-center">© Sabio.la 2019</p>
     </footer>
+
+    <div class="container avatars">
+
+    </div>
 
     <!--👇🏻 All your JavaScript code goes below here inside this script tag 👇🏻 -->
     <script id="candidateCode">
         // TODO -- address all service calls as services.teamsService -- etc
 
-        var userLogin = () => {
+        var getUsers = () => {
+            const config = {
+                method: "GET",
+                url: "https://api.remotebootcamp.dev/api/users/?pageIndex=0&pageSize=9999",
+                crossdomain: true,
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            };
+
+            return axios(config)
+
+        }
+
+        var userLogin = (userObject) => {
             var payload = {
-                "email": "sabio@sabio.la",
-                "password": "Sabiopassword1!",
-                "tenantId": "bootcamp1"
+                "email": userObject.email,
+                "password": userObject.password,
+                "tenantId": userObject.tenantId
             }
             const config = {
                 method: "POST",
@@ -172,12 +198,32 @@
             };
 
             return axios(config)
-                .then(function(data) {
-                    console.log(data)
-                })
-                .catch(function(data) {
-                    console.warn(data)
-                })
+
+        };
+
+
+        var userRegister = (payload) => {
+            var registerPayload = {
+                "firstName": payload.firstName,
+                "lastName": payload.lastName,
+                "email": payload.email,
+                "password": payload.password,
+                "passwordConfirm": payload.passwordConfirm,
+                "avatarUrl": payload.avatarUrl,
+                "tenantId": payload.tenantId
+            }
+
+            const config = {
+                method: "POST",
+                url: "https://api.remotebootcamp.dev/api/users/register",
+                data: registerPayload,
+                crossdomain: true,
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            };
+
+            return axios(config)
         };
 
         var services = {
@@ -187,7 +233,49 @@
 
         function startUp() {
 
-            userLogin();
+            getUsers()
+                .then(function(data) {
+                    console.log(data.data.item.pagedItems);
+
+                    var arrayOfResults = data.data.item.pagedItems;
+
+                    arrayOfResults.forEach((object) => {
+                        //$('.avatars').append(`<img src="${object.avatarUrl}" style="width:1px;" title="${JSON.stringify(object)}">`);
+                        $('.avatars').append(` &nbsp; <span>${(object.email)}</span>`);
+                        //$('.avatars').append(`<img src="${object.avatarUrl}" style="width:1px;" title="${JSON.stringify(object)}"> &nbsp; <span>${(object.email)}</span>`);
+                    })
+
+                })
+                .catch(function(data) {
+                    console.warn(data)
+                })
+
+            var registerPayload = {
+                "firstName": "Sheldon",
+                "lastName": "Pasciak",
+                "email": "new@pasciak.com",
+                "password": "Sabiopassword1!",
+                "passwordConfirm": "Sabiopassword1!",
+                "avatarUrl": "https://api.remotebootcamp.dev/apihelp/rbclogo.png",
+                "tenantId": "bootcamp1"
+            }
+
+            userRegister(registerPayload)
+                .then(function(data) {
+                    console.log(data);
+                })
+                .catch(function(err) {
+                    console.log(err);
+                })
+
+
+            var payload = {
+                "email": "sabio@sabio.la",
+                "password": "Sabiopassword1!",
+                "tenantId": "bootcamp1"
+            }
+
+            userLogin(payload);
 
             console.log("startUp...");
 
