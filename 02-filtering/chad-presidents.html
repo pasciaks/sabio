@@ -308,8 +308,6 @@
             "tm": "2017-"
         }]
 
-
-
         var newPresidents = presidents.map(mapPresidents)
 
         function mapPresidents(tempPresident) {
@@ -320,12 +318,18 @@
             } else {
                 lName = tempName[1];
             }
+
+            // NOTES - REGARDING ABOVE - Consider the name (GEORGE H. W. BUSH) That's definitely a curve ball thrown in there.  I solved it in my code, but once again I've put a TON of time in here.  It's definitely a full blown assignment that is a good challenge indeed.   Equally as hard as my OSUT 19D Cavalry Scout boot-camp back in 1990 at Fort Knox Kentucky!
+
             var tempYears = tempPresident.tm.split("-");
             if (tempYears.length > 1) {
                 var calcYear = (parseInt(tempYears[1]) - parseInt(tempYears[0]))
             } else {
                 var calcYear = 1
             }
+
+            // NOTES - CONSIDER TRUMP ( TERM IN OFFICE IS '2016' )
+
             var newPresident = {
                 "id": tempPresident.id,
                 "number": tempPresident.president,
