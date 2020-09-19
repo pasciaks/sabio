@@ -6,6 +6,111 @@
 
 */
 
+var userLogin = (payload) => {
+
+    const config = {
+        method: "POST",
+        url: "https://api.remotebootcamp.dev/api/users/login",
+        data: payload,
+        crossdomain: true,
+        headers: {
+            "Content-Type": "application/json"
+        }
+    };
+
+    return axios(config)
+
+};
+
+
+var userLogout = () => {
+    const config = {
+        method: "GET",
+        url: "https://api.remotebootcamp.dev/api/users/logout",
+        crossdomain: true,
+        headers: {
+            "Content-Type": "application/json"
+        }
+    };
+
+    return axios(config)
+}
+
+// var registerPayload = {
+//     "firstName": "Sheldon",
+//     "lastName": "Pasciak",
+//     "email": "new@pasciak.com",
+//     "password": "Sabiopassword1!",
+//     "passwordConfirm": "Sabiopassword1!",
+//     "avatarUrl": "https://api.remotebootcamp.dev/apihelp/rbclogo.png",
+//     "tenantId": "bootcamp1"
+// }
+
+// userRegister(registerPayload)
+//     .then(function(data) {
+//         console.log(data);
+//     })
+//     .catch(function(err) {
+//         console.log(err);
+//     })
+
+var userRegister = (payload) => {
+    // var registerPayload = {
+    //     "firstName": payload.firstName,
+    //     "lastName": payload.lastName,
+    //     "email": payload.email,
+    //     "password": payload.password,
+    //     "passwordConfirm": payload.passwordConfirm,
+    //     "avatarUrl": payload.avatarUrl,
+    //     "tenantId": payload.tenantId
+    // }
+
+    const config = {
+        method: "POST",
+        url: "https://api.remotebootcamp.dev/api/users/register",
+        data: payload,
+        crossdomain: true,
+        headers: {
+            "Content-Type": "application/json"
+        }
+    };
+
+    return axios(config)
+};
+
+//https://api.remotebootcamp.dev/api/users/current
+
+
+var getCurrentUser = () => {
+    const config = {
+        method: "GET",
+        url: "https://api.remotebootcamp.dev/api/users/current",
+        crossdomain: true,
+        headers: {
+            "Content-Type": "application/json"
+        }
+    };
+
+    return axios(config)
+
+}
+
+
+
+var getUsers = () => {
+    const config = {
+        method: "GET",
+        url: "https://api.remotebootcamp.dev/api/users/?pageIndex=0&pageSize=9999",
+        crossdomain: true,
+        headers: {
+            "Content-Type": "application/json"
+        }
+    };
+
+    return axios(config)
+
+}
+
 var teamsService = {
     endpoint: "https://api.remotebootcamp.dev/api/entities/teams"
 };

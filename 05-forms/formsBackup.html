@@ -42,6 +42,10 @@
         .isSelected {
             border: 1px solid green;
         }
+        
+        .main {
+            display: none;
+        }
         /* Extra small devices (phones, 600px and down) */
         
         @media only screen and (max-width: 600px) {
@@ -98,21 +102,47 @@
     <!-- Do Not Edit or Remove this nav element -->
     <nav class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio"></nav>
 
-    <main class="container">
+    <div class="container">
 
-        <p class="example">Sports Teams Form - by Sheldon Pasciak</p>
+        <p class="example">Sports Teams Form - by Sheldon Pasciak</p>Current User: <span id="currentUser"></span>
+
+        <div class="container">
+
+            <button type="button" id="loginFormButton" class="btn btn-info d-inline" data-toggle="collapse" data-target="#login">Login Form</button>
+
+        </div>
+
+        <!-- <button type="button" class="btn btn-info d-inline" data-toggle="collapse" data-target="#register">Register Form</button> -->
+
+        <div class="container">
+            <div id="login" class="collapse my-3">
+                <div class="form-group">
+                    <label>Login Email: <input class="form-control" type="text" name="loginEmail" id="loginEmail" placeholder="email" value="sabio@sabio.la"></label>
+                    <label>Password: <input class="form-control" type="password" name="loginPassword" id="loginPassword" placeholder="password" value="Sabiopassword1!"></label>
+                    <label>TenantId: <input class="form-control" type="text" name="loginTenantId" id="loginTenantId" placeholder="bootcamp1" value="bootcamp1"></label>
+
+                    <button type="button" class="btn btn-info d-inline" onclick="loginUser();">Login</button>
+                    <button type="button" class="btn btn-info d-inline" onclick="logoutUser();">Logout</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="container">
+            <div id="register" class="collapse my-3">
+                <label>Register Email: <input type="text" name="registerEmail" placeholder="email"></label>
+                <label>Password: <input type="password" name="registerPassword" placeholder="password"></label>
+                <input type="button" name="registerButton" value="Register">
+            </div>
+        </div> -->
+
+    </div>
+
+
+    <main class="container main">
 
         <div class="container">
 
             <div id="errors"></div>
-
-            <div class="container">
-                <p>Login</p>
-            </div>
-
-            <div class="container">
-                <p>Register</p>
-            </div>
 
             <form id="formSports">
 
@@ -155,84 +185,83 @@
     </main>
 
     <!-- Do Not Edit or Remove this footer element -->
-    <footer class="do-not-remove container-fluid footer mx-auto  fb-targert sabio">
+    <footer class="do-not-remove container-fluid footer mx-auto  fb-targert sabio d-none">
         <p class="text-center">© Sabio.la 2019</p>
     </footer>
 
-    <div class="container avatars">
-
-    </div>
+    <div class="container avatars"></div>
 
     <!--👇🏻 All your JavaScript code goes below here inside this script tag 👇🏻 -->
     <script id="candidateCode">
         // TODO -- address all service calls as services.teamsService -- etc
-
-        var getUsers = () => {
-            const config = {
-                method: "GET",
-                url: "https://api.remotebootcamp.dev/api/users/?pageIndex=0&pageSize=9999",
-                crossdomain: true,
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            };
-
-            return axios(config)
-
-        }
-
-        var userLogin = (userObject) => {
-            var payload = {
-                "email": userObject.email,
-                "password": userObject.password,
-                "tenantId": userObject.tenantId
-            }
-            const config = {
-                method: "POST",
-                url: "https://api.remotebootcamp.dev/api/users/login",
-                data: payload,
-                crossdomain: true,
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            };
-
-            return axios(config)
-
-        };
-
-
-        var userRegister = (payload) => {
-            var registerPayload = {
-                "firstName": payload.firstName,
-                "lastName": payload.lastName,
-                "email": payload.email,
-                "password": payload.password,
-                "passwordConfirm": payload.passwordConfirm,
-                "avatarUrl": payload.avatarUrl,
-                "tenantId": payload.tenantId
-            }
-
-            const config = {
-                method: "POST",
-                url: "https://api.remotebootcamp.dev/api/users/register",
-                data: registerPayload,
-                crossdomain: true,
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            };
-
-            return axios(config)
-        };
 
         var services = {
             blogsService: blogsService,
             teamsService: teamsService
         }
 
-        function startUp() {
+        function loginUser() {
 
+            var payload = {
+                "email": "sabio@sabio.la",
+                "password": "Sabiopassword1!",
+                "tenantId": "bootcamp1"
+            }
+
+            console.log(payload);
+
+            payload["email"] = $('#loginEmail').val();
+            payload["password"] = $('#loginPassword').val();
+            payload["tenantId"] = $('#loginTenantId').val();
+
+            console.log(payload);
+
+            userLogin(payload)
+                .then(function(data) {
+                    console.log(data);
+
+                    $('#loginFormButton').click(); // toggle
+
+                    // BE DRY // TODO
+                    setTimeout(function() {
+                        getCurrentUser()
+                            .then(onGetCurrentUserSuccess)
+                            .catch(onGetCurrentUserError)
+                    }, 0);
+
+                })
+                .catch(function(err) {
+                    console.log(err);
+                    $('#currentUser').html(`<span>Invalid - Please Login</span>`);
+                    $('.main').hide();
+                })
+
+        }
+
+        function logoutUser() {
+            userLogout()
+            $('#currentUser').html(`<span>Please Login</span>`);
+            $('.main').hide();
+
+            $('#loginFormButton').click(); // toggle
+        }
+        var onGetCurrentUserSuccess = (result) => {
+            console.log(JSON.stringify(result));
+            $('#currentUser').html([result.data.item].map(mapLoggedInUser));
+            $('.main').show();
+        }
+
+        var onGetCurrentUserError = (result) => {
+            console.log(JSON.stringify(result));
+            $('#currentUser').html(`<span>Please Login</span>`);
+            $('.main').hide();
+        }
+
+        var mapLoggedInUser = (userRecord) => {
+            return `ID: <strong>${userRecord.id}</strong> ${userRecord.name} (${userRecord.tenantId})`;
+        }
+
+        function getUsers() {
             getUsers()
                 .then(function(data) {
                     console.log(data.data.item.pagedItems);
@@ -249,35 +278,18 @@
                 .catch(function(data) {
                     console.warn(data)
                 })
-
-            var registerPayload = {
-                "firstName": "Sheldon",
-                "lastName": "Pasciak",
-                "email": "new@pasciak.com",
-                "password": "Sabiopassword1!",
-                "passwordConfirm": "Sabiopassword1!",
-                "avatarUrl": "https://api.remotebootcamp.dev/apihelp/rbclogo.png",
-                "tenantId": "bootcamp1"
-            }
-
-            userRegister(registerPayload)
-                .then(function(data) {
-                    console.log(data);
-                })
-                .catch(function(err) {
-                    console.log(err);
-                })
+        }
 
 
-            var payload = {
-                "email": "sabio@sabio.la",
-                "password": "Sabiopassword1!",
-                "tenantId": "bootcamp1"
-            }
 
-            userLogin(payload);
+        function startUp() {
+
 
             console.log("startUp...");
+
+            getCurrentUser()
+                .then(onGetCurrentUserSuccess)
+                .catch(onGetCurrentUserError)
 
             emptyErrors();
 
