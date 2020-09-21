@@ -313,6 +313,8 @@
 
 
 
+        console.log(presidents);
+
         function deriveNameObject(strFullName) {
             strFullName = strFullName || "";
             var nameParts = strFullName.split(" ");
@@ -346,18 +348,12 @@
         }
 
         function calculateYearsInOffice(strTerm) {
-
             strTerm = strTerm || "";
 
-            // ""
-            // 1234
-            // 1234-
-            // 1234-1234
+            // "" // 1234 // 1234- // 1234-1234
 
             var yearParts = strTerm.split("-");
-
             var currentYear = Math.floor(new Date().getFullYear());
-
             var y1 = Math.floor(yearParts[0]);
             var y2 = Math.floor(yearParts[1]);
 
@@ -379,7 +375,7 @@
                     break;
             }
 
-            return 0;
+            return 0; // note - this likely never runs because of all catch cases (default) above
         }
 
         function mapPresidents(aPresident) {
@@ -440,6 +436,7 @@
 
             var result = false;
 
+            // note - consider .toLowerCase() for obvious reasons
             var isDemocrat = (aPresident.party.indexOf("Democrat") >= 0);
             var isMoreThanFour = (aPresident.yearsInOffice > 4)
 

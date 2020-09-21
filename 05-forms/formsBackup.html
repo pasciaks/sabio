@@ -109,31 +109,54 @@
         <div class="container">
 
             <button type="button" id="loginFormButton" class="btn btn-info d-inline" data-toggle="collapse" data-target="#login">Login Form</button>
+            <button type="button" class="btn btn-info d-inline" data-toggle="collapse" data-target="#register">Register Form</button>
 
         </div>
 
-        <!-- <button type="button" class="btn btn-info d-inline" data-toggle="collapse" data-target="#register">Register Form</button> -->
-
-        <div class="container">
+        <div class="container m-3">
             <div id="login" class="collapse my-3">
                 <div class="form-group">
-                    <label>Login Email: <input class="form-control" type="text" name="loginEmail" id="loginEmail" placeholder="email" value="sabio@sabio.la"></label>
-                    <label>Password: <input class="form-control" type="password" name="loginPassword" id="loginPassword" placeholder="password" value="Sabiopassword1!"></label>
-                    <label>TenantId: <input class="form-control" type="text" name="loginTenantId" id="loginTenantId" placeholder="bootcamp1" value="bootcamp1"></label>
+                    <form id="formLogin">
+                        <label>Login Email: <input class="form-control" type="text" name="loginEmail" id="loginEmail" placeholder="email" value="sabio@sabio.la"></label>
+                        <label>Password: <input class="form-control" type="password" name="loginPassword" id="loginPassword" placeholder="password" value="Sabiopassword1!"></label>
+                        <label>TenantId: <input class="form-control" type="text" name="loginTenantId" id="loginTenantId" placeholder="bootcamp1" value="bootcamp1"></label>
 
-                    <button type="button" class="btn btn-info d-inline" onclick="loginUser();">Login</button>
-                    <button type="button" class="btn btn-info d-inline" onclick="logoutUser();">Logout</button>
+                        <button type="button" class="btn-primary" class="btn btn-info d-inline" onclick="loginUser();">Login</button>
+                        <button type="button" class="btn-danger" class="btn btn-info d-inline" onclick="logoutUser();">Logout</button>
+                        <button type="button" class="btn-warning" class="btn btn-info d-inline" onclick="clearLoginFormFields();">Reset</button>
+                    </form>
                 </div>
             </div>
         </div>
 
-        <!-- <div class="container">
+        <!-- 
+            // var registerPayload = {
+            //     "firstName": "Sheldon",
+            //     "lastName": "Pasciak",
+            //     "email": "new@pasciak.com",
+            //     "password": "Sabiopassword1!",
+            //     "passwordConfirm": "Sabiopassword1!",
+            //     "avatarUrl": "https://api.remotebootcamp.dev/apihelp/rbclogo.png",
+            //     "tenantId": "bootcamp1"
+            // } 
+        -->
+
+        <div class="container m-3">
             <div id="register" class="collapse my-3">
-                <label>Register Email: <input type="text" name="registerEmail" placeholder="email"></label>
-                <label>Password: <input type="password" name="registerPassword" placeholder="password"></label>
-                <input type="button" name="registerButton" value="Register">
+                <label>Register First Name: <input type="text" class="form-control" name="registerFirst" id="registerFirst" placeholder="Firstname"></label>
+                <label>Register Last Name: <input type="text" class="form-control" name="registerLast"  id="registerLast" placeholder="Lastname"></label>
+
+                <label>Register Email: <input type="text" class="form-control" name="registerEmail" id="registerEmail"  placeholder="email"></label>
+
+                <label>Password: <input type="password" class="form-control" name="registerPassword" id="registerPassword"  placeholder="password"></label>
+                <label>Confirm Password: <input type="password" class="form-control" name="registerConfirmPassword" id="registerConfirmPassword"  placeholder="password"></label>
+
+                <label>Register Avatar Url: <input type="text" class="form-control" name="registerAvatar" id="registerAvatar" placeholder="http://lostwords.org/images/penguin.png"></label>
+                <label>Register Tenant Id: <input type="text" class="form-control" name="registerTenant" id="registerTenant" placeholder="bootcamp1"></label>
+
+                <input disabled type="button" class="form-control btn-warning" name="registerButton" id="registerButton" onclick="registerUser();" value="Register">
             </div>
-        </div> -->
+        </div>
 
     </div>
 
@@ -194,6 +217,8 @@
     <!--👇🏻 All your JavaScript code goes below here inside this script tag 👇🏻 -->
     <script id="candidateCode">
         // TODO -- address all service calls as services.teamsService -- etc
+
+        // TODO -- add user registration, possibly user search/user profile
 
         var services = {
             blogsService: blogsService,
@@ -284,6 +309,8 @@
 
         function startUp() {
 
+            // todo - use console.error for errors
+
 
             console.log("startUp...");
 
@@ -293,7 +320,7 @@
 
             emptyErrors();
 
-            clearFormFields();
+            clearSportsFormFields();
 
             wireUpEvents();
 
@@ -366,7 +393,7 @@
                 event.preventDefault();
             });
 
-            clearFormFields();
+            clearSportsFormFields();
         }
 
         function onDeleteTeamClicked(event) {
@@ -393,7 +420,7 @@
         // TODO limit business logic in click events, make functions to do the work
         function onEditTeamClicked(event) {
 
-            clearFormFields();
+            clearSportsFormFields();
 
             event.preventDefault();
 
@@ -459,7 +486,11 @@
             return template;
         }
 
-        function clearFormFields() {
+        function clearLoginFormFields() {
+            $("#formLogin")[0].reset();
+        }
+
+        function clearSportsFormFields() {
             $("#formSports")[0].reset();
             $('#teamId').val(-1);
             $('#team').focus();
@@ -468,7 +499,7 @@
         }
 
         function onResetFormClick() {
-            clearFormFields();
+            clearSportsFormFields();
             return true;
         }
 
@@ -738,7 +769,7 @@
 
             console.log("Added new id: ", newId);
 
-            clearFormFields();
+            clearSportsFormFields();
 
             console.log("---------------------------");
             var payloadData = JSON.parse(data.config.data);
@@ -790,7 +821,7 @@
             console.log("onUpdateTeamSuccess", data);
             console.log(data);
 
-            clearFormFields();
+            clearSportsFormFields();
 
             console.log("---------------------------");
             var payloadData = JSON.parse(data.config.data);
@@ -823,7 +854,7 @@
             console.log("onDeleteTeamSuccess", data);
             console.log(data);
 
-            clearFormFields();
+            clearSportsFormFields();
 
             console.log(data.config.url);
 
