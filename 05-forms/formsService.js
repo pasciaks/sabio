@@ -18,7 +18,19 @@ var userLogin = (payload) => {
         }
     };
 
+    //return axios(config)
+
     return axios(config)
+        .then(function (data) {
+            var additionalPayloadInfo = "user login success using payload " + JSON.stringify(payload);
+            console.log(additionalPayloadInfo);
+            return { data, additionalPayloadInfo };
+        })
+        .catch(function (data) {
+            var myErrorInfo = "user login failure using payload " + JSON.stringify(payload);
+            console.log(myErrorInfo);
+            return { data, myErrorInfo }
+        })
 
 };
 
