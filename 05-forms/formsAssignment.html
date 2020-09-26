@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="https://sabio.la/Sabio.png">
     <link rel="icon" type="image/png" href="https://sabio.la/Sabio.png" />
     <!-- Do Not Change the HTML title or anything between this line and the line with the 💘's -->
-    <title>PW Execise Template</title>
+    <title>Pasciak - Forms , Jquery , Axios</title>
     <link href="https://pw.sabio.la/dist/all-site.css" rel="stylesheet" />
     <script src="https://pw.sabio.la/api/js/site"></script>
     <!-- #endregion -->
@@ -172,8 +172,8 @@
 
         <div class="container">
 
-            <button type="button" id="loginFormButton" class="btn btn-info d-inline" data-toggle="collapse" data-target="#login" ACCESSKEY="L"><U>L</U>ogin Form</button>
-            <button type="button" id="registerFormButton" class="btn btn-info d-inline" data-toggle="collapse" data-target="#register" ACCESSKEY="R"><U>R</U>egister Form</button>
+            <button type="button" id="loginFormButton" class="btn btn-info d-inline" data-toggle="collapse" data-target="#login" ACCESSKEY="L"><U>L</U>ogin</button>
+            <button type="button" id="registerFormButton" class="btn btn-info d-inline" data-toggle="collapse" data-target="#register" ACCESSKEY="R"><U>R</U>egister</button>
 
         </div>
 
@@ -475,8 +475,10 @@
             var choices = ["Baseball", "Basketball", "Football", "Soccer", "Tennis", "Rugby"];
 
             choices.forEach(function(sport) {
-                $('#sportChoiceButtonsControl').append(`<span class="sportChoiceSpan" onclick="$('#sport').val('${sport}');"><img src="${sport.toLowerCase()}.jpg" class="sportChoiceImage" alt="${sport}">${sport}</span>`)
+                $('#sportChoiceButtonsControl').append(`<span title="${sport}" class="sportChoiceSpan" onclick="$('#sport').val('${sport}');"><img src="${sport.toLowerCase()}.jpg" class="sportChoiceImage" alt="${sport}"></span>`)
             })
+
+            $('#sportChoiceButtonsControl').append(`<small><p>TODO - Possible filter view by sport type, drop-downs, images on cards, etc</p></small>`);
 
         }
 
