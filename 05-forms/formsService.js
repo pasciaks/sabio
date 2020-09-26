@@ -87,6 +87,8 @@ var userRegister = (payload) => {
         }
     };
 
+    //error.response.data.errors
+
     return axios(config)
 };
 

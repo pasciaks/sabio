@@ -27,6 +27,22 @@
             font-size: x-small;
         }
         
+        .card {
+            border-radius: 0 !important;
+            border: 0 none;
+            -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+            -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+            margin-left: 1px;
+            margin-right: 1px;
+        }
+        
+        .card-colums {
+            -webkit-column-count: 3;
+            -moz-column-count: 3;
+            column-count: 3;
+        }
+        
         .example {
             padding: 10px;
             margin: 10px;
@@ -81,6 +97,38 @@
                 background: pink;
             }
         }
+        
+        @media (min-width: 34em) {
+            .card-columns {
+                -webkit-column-count: 2;
+                -moz-column-count: 2;
+                column-count: 2;
+            }
+        }
+        
+        @media (min-width: 48em) {
+            .card-columns {
+                -webkit-column-count: 3;
+                -moz-column-count: 3;
+                column-count: 3;
+            }
+        }
+        
+        @media (min-width: 62em) {
+            .card-columns {
+                -webkit-column-count: 4;
+                -moz-column-count: 4;
+                column-count: 4;
+            }
+        }
+        
+        @media (min-width: 75em) {
+            .card-columns {
+                -webkit-column-count: 5;
+                -moz-column-count: 5;
+                column-count: 5;
+            }
+        }
     </style>
 
     <script id="teamTemplate" type="text/template">
@@ -108,8 +156,8 @@
 
         <div class="container">
 
-            <button type="button" id="loginFormButton" class="btn btn-info d-inline" data-toggle="collapse" data-target="#login">Login Form</button>
-            <button type="button" class="btn btn-info d-inline" data-toggle="collapse" data-target="#register">Register Form</button>
+            <button type="button" id="loginFormButton" class="btn btn-info d-inline" data-toggle="collapse" data-target="#login" ACCESSKEY="L"><U>L</U>ogin Form</button>
+            <button type="button" id="registerFormButton" class="btn btn-info d-inline" data-toggle="collapse" data-target="#register" ACCESSKEY="R"><U>R</U>egister Form</button>
 
         </div>
 
@@ -121,9 +169,9 @@
                         <label>Password: <input class="form-control" type="password" name="loginPassword" id="loginPassword" placeholder="password" value="Sabiopassword1!"></label>
                         <label>TenantId: <input class="form-control" type="text" name="loginTenantId" id="loginTenantId" placeholder="bootcamp1" value="bootcamp1"></label>
 
-                        <button type="button" class="btn-primary" class="btn btn-info d-inline" onclick="loginUser();">Login</button>
-                        <button type="button" class="btn-danger" class="btn btn-info d-inline" onclick="logoutUser();">Logout</button>
-                        <button type="button" class="btn-warning" class="btn btn-info d-inline" onclick="clearLoginFormFields();">Reset</button>
+                        <button type="button" class="btn-primary" class="btn btn-info d-inline" onclick="onClickUserLogin();" ACCESSKEY="I">Log<U>i</U>n</button>
+                        <button type="button" class="btn-danger" class="btn btn-info d-inline" onclick="onClickUserLogout();" ACCESSKEY="O">Log<U>o</U>ut</button>
+                        <button type="button" class="btn-warning" class="btn btn-info d-inline" onclick="onClickClearFields();">Reset</button>
                     </form>
                 </div>
             </div>
@@ -154,7 +202,7 @@
                 <label>Register Avatar Url: <input type="text" class="form-control" name="registerAvatar" id="registerAvatar" placeholder="http://lostwords.org/images/penguin.png"></label>
                 <label>Register Tenant Id: <input type="text" class="form-control" name="registerTenant" id="registerTenant" placeholder="bootcamp1"></label>
 
-                <input disabled type="button" class="form-control btn-warning" name="registerButton" id="registerButton" onclick="registerUser();" value="Register">
+                <input type="button" class="form-control btn-warning" name="registerButton" id="registerButton" onclick="onClickRegisterUser();" value="Register">
             </div>
         </div>
 
@@ -200,8 +248,10 @@
 
         <hr>
 
-        <div class="card-columns">
-            <div class="clone-container">
+        <div class="container">
+            <div class="row">
+                <div class="clone-container card-columns">
+                </div>
             </div>
         </div>
 
@@ -225,7 +275,23 @@
             teamsService: teamsService
         }
 
-        function loginUser() {
+        function onClickRegisterUser() {
+
+            //error.response.data.errors
+
+            var payload = {};
+
+            userRegister(payload)
+                .then(function(data) {
+                    console.log("success ", data);
+                })
+                .catch(function(err) {
+                    console.log("error ", err.response.data.errors);
+                    alert("NOT YET IMPLEMENTED!\n\n" + err.response.data.errors);
+                })
+        }
+
+        function onClickUserLogin() {
 
             var payload = {
                 "email": "sabio@sabio.la",
@@ -263,7 +329,7 @@
 
         }
 
-        function logoutUser() {
+        function onClickUserLogout() {
             userLogout()
             $('#currentUser').html(`<span>Please Login</span>`);
             $('.main').hide();
@@ -484,6 +550,10 @@
             template.find('.card-sport').text(team.sport);
             template.find('.card-city').text(team.city);
             return template;
+        }
+
+        function onClickClearFields() {
+            clearLoginFormFields();
         }
 
         function clearLoginFormFields() {
