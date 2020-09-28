@@ -6,6 +6,12 @@
 
 */
 
+
+/*
+
+    userLogin - Note the optional return type with transposed return data
+
+*/
 var userLogin = (payload) => {
 
     const config = {
@@ -22,14 +28,18 @@ var userLogin = (payload) => {
 
     return axios(config)
         .then(function (data) {
+            alert("Successful Login\n\nPlease enter data carefully, for example purposes this account and data can be accessed by all the use this site.");
+            var hasErrors = false;
             var additionalPayloadInfo = "user login success using payload " + JSON.stringify(payload);
             console.log(additionalPayloadInfo);
-            return { data, additionalPayloadInfo };
+            return { data, additionalPayloadInfo, hasErrors };
         })
         .catch(function (data) {
+            alert("Error logging in\n\nPlease verify your credentials.");
+            var hasErrors = true;
             var myErrorInfo = "user login failure using payload " + JSON.stringify(payload);
             console.log(myErrorInfo);
-            return { data, myErrorInfo }
+            return { data, myErrorInfo, hasErrors }
         })
 
 };

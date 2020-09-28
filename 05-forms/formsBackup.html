@@ -31,19 +31,22 @@
         }
         
         .card {
-            border-radius: 0 !important;
-            border: 0 none;
+            border-radius: 10px !important;
+            /* border: 0 none; */
             -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
             -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
             box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
             margin-left: 1px;
             margin-right: 1px;
+            cursor: pointer;
         }
         
-        .card-colums {
-            -webkit-column-count: 3;
-            -moz-column-count: 3;
-            column-count: 3;
+        .card:hover {
+            border: 1px solid gold;
+        }
+        
+        .card.isSelected:hover {
+            border: 1px solid green;
         }
         
         .example {
@@ -147,8 +150,8 @@
         }
     </style>
 
+    <!-- NOTE, this card will be populated with [data-id] and [data] based on the data contents it will hold -->
     <script id="teamTemplate" type="text/template">
-        <!-- NOTE, this card will be populated with [data-id] and [data] based on the data contents it will hold -->
         <div class="card">
             <div class="card-body">
                 <span class="card-city"></span>
@@ -268,11 +271,7 @@
 
         <hr>
 
-        <div class="container">
-            <div class="row">
-                <div class="clone-container card-columns">
-                </div>
-            </div>
+        <div class="card-columns clone-container">
         </div>
 
     </main>
@@ -311,6 +310,12 @@
                 })
         }
 
+        function updateUserStatus() {
+            getCurrentUser()
+                .then(onGetCurrentUserSuccess)
+                .catch(onGetCurrentUserError)
+        }
+
         function onClickUserLogin() {
 
             var payload = {
@@ -331,29 +336,53 @@
                 .then(function(data) {
                     console.log(data);
 
-                    $('#loginFormButton').click(); // toggle
+                    if (data.hasErrors) {
+                        console.log("login error.....", data, data.myErrorInfo, data.hasErrors);
+                        $('#formLogin').ping();
+                        // note consider map single object error
+                    } else {
+                        console.log("login success.....", data, data.additionalPayloadInfo, data.hasErrors);
+                        $('#loginFormButton').click(); // toggle visibility of login form
+                        // note consider map single object success
+                    }
 
-                    // BE DRY // TODO
-                    setTimeout(function() {
-                        getCurrentUser()
-                            .then(onGetCurrentUserSuccess)
-                            .catch(onGetCurrentUserError)
-                    }, 0);
+                    updateUserStatus();
 
                 })
-                .catch(function(err) {
-                    console.log(err);
-                    $('#currentUser').html(`<span>Invalid - Please Login</span>`);
-                    $('.main').hide();
-                })
+
+            //--------------------------------------------------------------------------------
+            // NOTE - I don't like this, kind of clumsy/loaded annonymous function usage
+            // validate that error case never returns from formsService ??
+            // userLogin(payload)
+            //     .then(function(data) {
+            //         console.log(data);
+            //         alert("login success", data);
+            //         $('#loginFormButton').click(); // toggle visibility of login form
+            //         updateUserStatus();
+
+            //     })
+            //     .catch(function(err) {
+            //         console.log(err);
+            //         alert("login error", err);
+            //         $('#currentUser').html(`<span>Invalid - Please Login</span>`);
+            //         $('.main').hide();
+            //     })
+
+            //--------------------------------------------------------------------------------
 
         }
 
         function onClickUserLogout() {
             userLogout()
+                .then(function(data) {
+                    console.log("userLogout Success case ", data);
+                })
+                .catch(function(data) {
+                    console.log("userLogout Catch case ", data);
+                })
+
             $('#currentUser').html(`<span>Please Login</span>`);
             $('.main').hide();
-
             $('#loginFormButton').click(); // toggle
         }
         var onGetCurrentUserSuccess = (result) => {
@@ -402,9 +431,11 @@
 
             console.log("startUp...");
 
-            getCurrentUser()
-                .then(onGetCurrentUserSuccess)
-                .catch(onGetCurrentUserError)
+            // getCurrentUser()
+            //     .then(onGetCurrentUserSuccess)
+            //     .catch(onGetCurrentUserError)
+
+            updateUserStatus();
 
             emptyErrors();
 
@@ -556,6 +587,11 @@
             return $(template);
         }
 
+
+        /*
+
+
+        */
         function getExistingTemplateById(selectedId) {
             return $(".card[data-id='" + selectedId + "']").eq(0);
         }
