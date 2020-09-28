@@ -24,8 +24,46 @@ var userLogin = (payload) => {
         }
     };
 
-    //return axios(config)
+    /*
+        NOTE - If simply implemented like this, the calling result catches with .then and .catch
+    */
+    // return axios(config)
 
+    /*
+        NOTE - If implemented like this, manipulation can be handled here and still allow .catch case in calling function.
+    */
+    return new Promise(function (resolve, reject) {
+
+        return axios(config)
+            .then(function (data) {
+                alert("Successful Login\n\nPlease enter data carefully, for example purposes this account and data can be accessed by all the use this site.");
+                var hasErrors = false;
+                var additionalPayloadInfo = "user login success using payload " + JSON.stringify(payload);
+                console.log(additionalPayloadInfo);
+
+                resolve({ data, additionalPayloadInfo, hasErrors });
+            })
+            .catch(function (data) {
+                alert("Error logging in\n\nPlease verify your credentials.");
+                var hasErrors = true;
+                var myErrorInfo = "user login failure using payload " + JSON.stringify(payload);
+                console.log(myErrorInfo);
+
+                reject({ data, myErrorInfo, hasErrors });
+            })
+
+    });
+
+
+    /*
+        note - if implemented like below, a call to userLogin always returns a then case (I think) -- the catch case doesn't bubble up if called.
+
+        // this then apparantly requires a 'data result flag' like hasErrors be implemented.
+
+            userLogin()
+            .then(function(data){})
+            .catch(function(data){})
+    */
     return axios(config)
         .then(function (data) {
             alert("Successful Login\n\nPlease enter data carefully, for example purposes this account and data can be accessed by all the use this site.");
@@ -33,13 +71,14 @@ var userLogin = (payload) => {
             var additionalPayloadInfo = "user login success using payload " + JSON.stringify(payload);
             console.log(additionalPayloadInfo);
             return { data, additionalPayloadInfo, hasErrors };
+
         })
         .catch(function (data) {
             alert("Error logging in\n\nPlease verify your credentials.");
             var hasErrors = true;
             var myErrorInfo = "user login failure using payload " + JSON.stringify(payload);
             console.log(myErrorInfo);
-            return { data, myErrorInfo, hasErrors }
+            return { data, myErrorInfo, hasErrors };
         })
 
 };

@@ -334,21 +334,32 @@
 
             userLogin(payload)
                 .then(function(data) {
-                    console.log(data);
-
-                    if (data.hasErrors) {
-                        console.log("login error.....", data, data.myErrorInfo, data.hasErrors);
-                        $('#formLogin').ping();
-                        // note consider map single object error
-                    } else {
-                        console.log("login success.....", data, data.additionalPayloadInfo, data.hasErrors);
-                        $('#loginFormButton').click(); // toggle visibility of login form
-                        // note consider map single object success
-                    }
-
+                    $('#loginFormButton').click();
                     updateUserStatus();
-
+                    //alert("resolved " + JSON.stringify(data));
                 })
+                .catch(function(data) {
+                    $('#formLogin').ping();
+                    updateUserStatus();
+                    //alert("rejected " + JSON.stringify(data));
+                })
+
+            // userLogin(payload)
+            //     .then(function(data) {
+            //         console.log(data);
+            //         if (data.hasErrors) {
+            //             console.log("login error.....", data, data.myErrorInfo, data.hasErrors);
+            //             $('#formLogin').ping();
+            //             // note consider map single object error
+            //         } else {
+            //             console.log("login success.....", data, data.additionalPayloadInfo, data.hasErrors);
+            //             $('#loginFormButton').click(); // toggle visibility of login form
+            //             // note consider map single object success
+            //         }
+
+            //         updateUserStatus();
+
+            //     })
 
             //--------------------------------------------------------------------------------
             // NOTE - I don't like this, kind of clumsy/loaded annonymous function usage
