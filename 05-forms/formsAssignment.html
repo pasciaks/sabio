@@ -184,8 +184,8 @@
             <div id="login" class="collapse my-3">
                 <div class="form-group">
                     <form id="formLogin">
-                        <label>Login Email: <input class="form-control" type="text" name="loginEmail" id="loginEmail" placeholder="email" value="sabio@sabio.la"></label>
-                        <label>Password: <input class="form-control" type="password" name="loginPassword" id="loginPassword" placeholder="password" value="Sabiopassword1!"></label>
+                        <label>Login Email: <input class="form-control" autocomplete="email" type="text" name="loginEmail" id="loginEmail" placeholder="email" value="sabio@sabio.la"></label>
+                        <label>Password: <input class="form-control" autocomplete="current-password" type="password" name="loginPassword" id="loginPassword" placeholder="password" value="Sabiopassword1!"></label>
                         <label>TenantId: <input class="form-control" type="text" name="loginTenantId" id="loginTenantId" placeholder="bootcamp1" value="bootcamp1"></label>
 
                         <button type="button" class="btn-primary" class="btn btn-info d-inline" onclick="onClickUserLogin();" ACCESSKEY="I">Log<U>i</U>n</button>
@@ -211,18 +211,20 @@
 
         <div class="container m-3">
             <div id="register" class="collapse my-3">
-                <label>Register First Name: <input type="text" class="form-control" name="registerFirst" id="registerFirst" placeholder="Firstname"></label>
-                <label>Register Last Name: <input type="text" class="form-control" name="registerLast"  id="registerLast" placeholder="Lastname"></label>
+                <form id="formRegister">
+                    <label>Register First Name: <input type="text" class="form-control" name="registerFirst" id="registerFirst" placeholder="Firstname"></label>
+                    <label>Register Last Name: <input type="text" class="form-control" name="registerLast"  id="registerLast" placeholder="Lastname"></label>
 
-                <label>Register Email: <input type="text" class="form-control" name="registerEmail" id="registerEmail"  placeholder="email"></label>
+                    <label>Register Email: <input type="text" class="form-control" autocomplete="email" name="registerEmail" id="registerEmail"  placeholder="email"></label>
 
-                <label>Password: <input type="password" class="form-control" name="registerPassword" id="registerPassword"  placeholder="password"></label>
-                <label>Confirm Password: <input type="password" class="form-control" name="registerConfirmPassword" id="registerConfirmPassword"  placeholder="password"></label>
+                    <label>Password: <input type="password" class="form-control" autocomplete="current-password" name="registerPassword" id="registerPassword"  placeholder="password"></label>
+                    <label>Confirm Password: <input type="password" class="form-control" autocomplete="current-password" name="registerConfirmPassword" id="registerConfirmPassword"  placeholder="password"></label>
 
-                <label>Register Avatar Url: <input type="text" class="form-control" name="registerAvatar" id="registerAvatar" placeholder="http://lostwords.org/images/penguin.png"></label>
-                <label>Register Tenant Id: <input type="text" class="form-control" name="registerTenant" id="registerTenant" placeholder="bootcamp1"></label>
+                    <label>Register Avatar Url: <input type="text" class="form-control" name="registerAvatar" id="registerAvatar" placeholder="http://lostwords.org/images/penguin.png"></label>
+                    <label>Register Tenant Id: <input type="text" class="form-control" name="registerTenant" id="registerTenant" placeholder="bootcamp1"></label>
 
-                <input type="button" class="form-control btn-warning" name="registerButton" id="registerButton" onclick="onClickRegisterUser();" value="Register">
+                    <input type="button" class="form-control btn-warning" name="registerButton" id="registerButton" onclick="onClickRegisterUser();" value="Register">
+                </form>
             </div>
         </div>
 
@@ -479,13 +481,24 @@
                 when the something promise is fullfilled, it seems to return to the then with proper results - allow inside to execute successfully
         */
         async function test() {
-            var result = await something();
+            //var result = await something();
+            result = await something()
+                .then(function(data) {
+                    console.log('*** test then', data);
+                    return data;
+                })
+                .catch(function(data) {
+                    console.log('*** test catch', data);
+                    return data;
+                })
+
             console.log("inside random test result...", result);
             return result;
         }
 
         // Test function that returns error result 50% of the time
         function something() {
+            console.log("*** The start of something....");
             return new Promise(function(resolve, reject) {
                 var random = Math.random();
                 if (random > .5) {
