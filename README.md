@@ -12,7 +12,7 @@ Link to => [Forms](https://github.com/pasciaks/sabio/tree/master/05-forms)
 
 Within this folder is the lab assignment to use the entities endpoint. Add, Update and Delete are implemented using a jQuery form and axios methods to communicate with the back end.
 
-- [ ] Numerous TODO's still need addressed.
+- [X] Numerous TODO's still need addressed.
 
 ## Full_Of_Bugs_v3
 
@@ -20,9 +20,38 @@ Link to => [Debugging Bugs](https://github.com/pasciaks/sabio/tree/master/Full_O
 
 Within this folder are the debugging ajax calls exercises and debugged solutions.
 
-#
+# SCRUM
 
-#
+	What did you accomplish
+	What are you going to accomplish
+	What are you blockers
+
+# October 1st, 2020
+
+### ----- ACCOMPLISHED -----
+
+	Completed code review
+    mapping/filtering (sports, presidents, cakes)
+    people view (
+    custom entities
+
+	Begin work on C93 starter tasks board
+
+		Watched the Intro Topics Video.	
+		Watched the Daily Stand Up video.
+		Reviewed/Watched the mapping/filtering videos.
+
+		Started mandatory steps on my custom copy of the C93 Starter Board.
+		(read wiki help api postman documentation, saved postman collection, etc)
+
+### ----- WILL ACCOMPLISH -----
+
+I will get through first main portion of START (A) mandatory board.
+
+### ----- BLOCKERS -----
+
+Meticulous and Slow paced learning of new concepts - focusing on quality code.
+
 
 #
 
