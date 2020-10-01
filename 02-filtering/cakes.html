@@ -270,6 +270,10 @@
             result.name = aCake.name;
             result.ppu = aCake.ppu;
 
+            // todo look at this map instead of verbose way
+            result.batters = aCake.batters ? aCake.batters.batter.map(bat => bat.type).join(", ") : [];
+
+
             console.log(` id: ${aCake.id} Name: ${aCake.name} Type: ${aCake.type} ppu: ${aCake.ppu} `);
 
             var stringOfBatterTypes = "";
@@ -319,6 +323,8 @@
 
 
             result.countOfFillings = 0;
+
+
             if (aCake.fillings) {
                 if (aCake.fillings.filling) {
                     result.countOfFillings = aCake.fillings.filling.length;

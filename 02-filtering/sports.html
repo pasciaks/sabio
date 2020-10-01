@@ -174,7 +174,6 @@
         var mappedSports = sports.map(mapSports);
         console.log(mappedSports);
 
-
         // Sports
         // You should do the mapping code and then the filtering code. The target sports model is below.
 
@@ -182,9 +181,17 @@
         // Generate an array that contains only the soccer and baseball teams.
 
         function filterTeam(sport) {
-            if ((sport.name == "Soccer") || (sport.name == "Baseball")) {
-                return true;
-            }
+
+            // if ((sport.name == "Soccer") || (sport.name == "Baseball")) {
+            //     return true;
+            // } else {
+            //     return false;
+            // }
+
+            // more concise
+            return (sport.name == "Soccer") || (sport.name == "Baseball");
+
+
         }
 
         var selectedTeams = mappedSports.filter(filterTeam);
