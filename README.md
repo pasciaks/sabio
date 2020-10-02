@@ -30,7 +30,7 @@ Within this folder are the debugging ajax calls exercises and debugged solutions
 
 ### ----- ACCOMPLISHED -----
 
-	Completed code review
+Completed code review
     mapping/filtering (sports, presidents, cakes)
     people view (
     custom entities
@@ -43,10 +43,11 @@ Within this folder are the debugging ajax calls exercises and debugged solutions
 
 		Started mandatory steps on my custom copy of the C93 Starter Board.
 		(read wiki help api postman documentation, saved postman collection, etc)
+		(made it up to "For Every Card")
 
 ### ----- WILL ACCOMPLISH -----
 
-I will get through first main portion of START (A) mandatory board.
+I will finish the START (A) mandatory board and start work on (B)
 
 ### ----- BLOCKERS -----
 
