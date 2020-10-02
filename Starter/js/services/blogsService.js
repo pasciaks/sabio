@@ -1,3 +1,6 @@
+/*    
+    Sheldon Pasciak, October 2020
+*/
 
 var blogsService = {
     endpoint: "https://api.remotebootcamp.dev/api/blogs"

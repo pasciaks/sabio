@@ -1,11 +1,21 @@
-/*
+/*    
+    Sheldon Pasciak, October 2020
+*/
+
+var authService = {
+    endpoint: "https://api.remotebootcamp.dev/api/users"
+};
+
+/*  
+    authService.js, 
+
     userLogin - Note the optional return type with transposed return data
 */
-var userLogin = (payload) => {
+authService.userLogin = (payload) => {
 
     const config = {
         method: "POST",
-        url: "https://api.remotebootcamp.dev/api/users/login",
+        url: authService.endpoint + "/" + "login",
         data: payload,
         crossdomain: true,
         headers: {
@@ -19,35 +29,25 @@ var userLogin = (payload) => {
     // return axios(config)
 
     /*
-        NOTE - If implemented like this, manipulation can be handled here and still allow .catch case in calling function.
+        NOTE - If implemented like this, manipulation can be handled here and still allow .then and .catch case in calling function.
     */
     return new Promise(function (resolve, reject) {
-
         return axios(config)
             .then(function (data) {
-
-                // Display a success toast, with a title
-                toastr.success('Successful Login\n\nPlease enter data carefully, for example purposes this account and data can be accessed by all the use this site.', 'Login Success!')
-                //alert("Successful Login\n\nPlease enter data carefully, for example purposes this account and data can be accessed by all the use this site.");
+                // NOTE - don't put view mechanisms here , pure code , reusable , separate UI/UX from business logic!!!
+                // toastr.success('Successful Login\n\nPlease enter data carefully, for example purposes this account and data can be accessed by all the use this site.', 'Login Success!')
                 var hasErrors = false;
                 var additionalPayloadInfo = "user login success using payload " + JSON.stringify(payload);
-                console.log(additionalPayloadInfo);
-
                 resolve({ data, additionalPayloadInfo, hasErrors });
             })
             .catch(function (data) {
-                toastr.error("Error logging in\n\nPlease verify your credentials.", "Error");
-                //alert("Error logging in\n\nPlease verify your credentials.");
-
+                // NOTE - don't put view mechanisms here , pure code , reusable , separate UI/UX from business logic!!!
+                // toastr.error("Error logging in\n\nPlease verify your credentials.", "Error");
                 var hasErrors = true;
                 var myErrorInfo = "user login failure using payload " + JSON.stringify(payload);
-                console.log(myErrorInfo);
-
                 reject({ data, myErrorInfo, hasErrors });
             })
-
     });
-
 
     /*
         note - if implemented like below, a call to userLogin always returns a then case (I think) -- the catch case doesn't bubble up if called.
@@ -58,30 +58,28 @@ var userLogin = (payload) => {
             .then(function(data){})
             .catch(function(data){})
     */
-    return axios(config)
-        .then(function (data) {
-            alert("Successful Login\n\nPlease enter data carefully, for example purposes this account and data can be accessed by all the use this site.");
-            var hasErrors = false;
-            var additionalPayloadInfo = "user login success using payload " + JSON.stringify(payload);
-            console.log(additionalPayloadInfo);
-            return { data, additionalPayloadInfo, hasErrors };
-
-        })
-        .catch(function (data) {
-            alert("Error logging in\n\nPlease verify your credentials.");
-            var hasErrors = true;
-            var myErrorInfo = "user login failure using payload " + JSON.stringify(payload);
-            console.log(myErrorInfo);
-            return { data, myErrorInfo, hasErrors };
-        })
+    // return axios(config)
+    //     .then(function (data) {
+    //         alert("Successful Login\n\nPlease enter data carefully, for example purposes this account and data can be accessed by all the use this site.");
+    //         var hasErrors = false;
+    //         var additionalPayloadInfo = "user login success using payload " + JSON.stringify(payload);
+    //         console.log(additionalPayloadInfo);
+    //         return { data, additionalPayloadInfo, hasErrors };
+    //     })
+    //     .catch(function (data) {
+    //         alert("Error logging in\n\nPlease verify your credentials.");
+    //         var hasErrors = true;
+    //         var myErrorInfo = "user login failure using payload " + JSON.stringify(payload);
+    //         console.log(myErrorInfo);
+    //         return { data, myErrorInfo, hasErrors };
+    //     })
 
 };
 
-
-var userLogout = () => {
+authService.userLogout = () => {
     const config = {
         method: "GET",
-        url: "https://api.remotebootcamp.dev/api/users/logout",
+        url: authService.endpoint + "/" + "logout", //"https://api.remotebootcamp.dev/api/users/logout",
         crossdomain: true,
         headers: {
             "Content-Type": "application/json"
@@ -90,6 +88,10 @@ var userLogout = () => {
 
     return axios(config)
 }
+
+/*
+    Register user example/implementation
+*/
 
 // var registerPayload = {
 //     "firstName": "Sheldon",
@@ -109,7 +111,8 @@ var userLogout = () => {
 //         console.log(err);
 //     })
 
-var userRegister = (payload) => {
+authService.userRegister = (payload) => {
+
     // var registerPayload = {
     //     "firstName": payload.firstName,
     //     "lastName": payload.lastName,
@@ -122,7 +125,7 @@ var userRegister = (payload) => {
 
     const config = {
         method: "POST",
-        url: "https://api.remotebootcamp.dev/api/users/register",
+        url: authService.endpoint + "/" + "register", //"https://api.remotebootcamp.dev/api/users/register",
         data: payload,
         crossdomain: true,
         headers: {
@@ -137,33 +140,26 @@ var userRegister = (payload) => {
 
 //https://api.remotebootcamp.dev/api/users/current
 
-
-var getCurrentUser = () => {
+authService.getCurrentUser = () => {
     const config = {
         method: "GET",
-        url: "https://api.remotebootcamp.dev/api/users/current",
+        url: authService.endpoint + "/" + "current", //"https://api.remotebootcamp.dev/api/users/current",
         crossdomain: true,
         headers: {
             "Content-Type": "application/json"
         }
     };
-
     return axios(config)
-
 }
 
-
-
-var getUsers = () => {
+authService.getUsers = (pageIndex = 0, pageSize = 10) => {
     const config = {
         method: "GET",
-        url: "https://api.remotebootcamp.dev/api/users/?pageIndex=0&pageSize=9999",
+        url: authService.endpoint + "/" + `?pageIndex=${pageIndex}&pageSize=${pageSize}`, // "https://api.remotebootcamp.dev/api/users/?pageIndex=0&pageSize=9999",
         crossdomain: true,
         headers: {
             "Content-Type": "application/json"
         }
     };
-
     return axios(config)
-
 }
