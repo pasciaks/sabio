@@ -36,7 +36,10 @@ var userLogin = (payload) => {
 
         return axios(config)
             .then(function (data) {
-                alert("Successful Login\n\nPlease enter data carefully, for example purposes this account and data can be accessed by all the use this site.");
+
+                // Display a success toast, with a title
+                toastr.success('Successful Login\n\nPlease enter data carefully, for example purposes this account and data can be accessed by all the use this site.', 'Login Success!')
+                //alert("Successful Login\n\nPlease enter data carefully, for example purposes this account and data can be accessed by all the use this site.");
                 var hasErrors = false;
                 var additionalPayloadInfo = "user login success using payload " + JSON.stringify(payload);
                 console.log(additionalPayloadInfo);
@@ -44,7 +47,9 @@ var userLogin = (payload) => {
                 resolve({ data, additionalPayloadInfo, hasErrors });
             })
             .catch(function (data) {
-                alert("Error logging in\n\nPlease verify your credentials.");
+                toastr.error("Error logging in\n\nPlease verify your credentials.", "Error");
+                //alert("Error logging in\n\nPlease verify your credentials.");
+
                 var hasErrors = true;
                 var myErrorInfo = "user login failure using payload " + JSON.stringify(payload);
                 console.log(myErrorInfo);

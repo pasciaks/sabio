@@ -12,14 +12,11 @@ Link to => [Forms](https://github.com/pasciaks/sabio/tree/master/05-forms)
 
 Within this folder is the lab assignment to use the entities endpoint. Add, Update and Delete are implemented using a jQuery form and axios methods to communicate with the back end.
 
-- [X] Numerous TODO's still need addressed.
-
 ## Full_Of_Bugs_v3
 
 Link to => [Debugging Bugs](https://github.com/pasciaks/sabio/tree/master/Full_Of_Bugs_v3)
 
 Within this folder are the debugging ajax calls exercises and debugged solutions.
-
 
 #
 
