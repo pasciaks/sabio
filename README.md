@@ -30,20 +30,23 @@ Within this folder are the debugging ajax calls exercises and debugged solutions
 
 ### ----- ACCOMPLISHED -----
 
-Completed code review
-    mapping/filtering (sports, presidents, cakes)
-    people view (
-    custom entities
+	Completed code review
+	
+	    mapping/filtering (sports, presidents, cakes)
+	    people view (
+	    custom entities
 
 	Begin work on C93 starter tasks board
 
-		Watched the Intro Topics Video.	
-		Watched the Daily Stand Up video.
-		Reviewed/Watched the mapping/filtering videos.
+	Watched the Intro Topics Video.	
+	Watched the Daily Stand Up video.
+	Reviewed/Watched the mapping/filtering videos.
+	
+	Created new 'starter' project building from previous Entities assignment.
 
-		Started mandatory steps on my custom copy of the C93 Starter Board.
-		(read wiki help api postman documentation, saved postman collection, etc)
-		(made it up to "For Every Card")
+	Started mandatory steps on my custom copy of the C93 Starter Board.
+	(read wiki help api postman documentation, saved postman collection, etc)
+	(made it up to "For Every Card")
 
 ### ----- WILL ACCOMPLISH -----
 
