@@ -1,0 +1,130 @@
+/* 
+    main.css
+    
+    💡 NOTE these class names are alphabetical 
+    
+*/
+
+.btn-small {
+  height: 25px;
+  font-size: x-small;
+}
+
+.card {
+  border-radius: 10px !important;
+  /* border: 0 none; */
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+  margin-left: 1px;
+  margin-right: 1px;
+  cursor: pointer;
+}
+
+.card:hover {
+  border: 1px solid gold;
+}
+
+.card.isSelected:hover {
+  border: 1px solid green;
+}
+
+.example {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+}
+
+.hasErrors {
+  border: 1px solid red;
+}
+
+.isSelected {
+  border: 1px solid green;
+}
+
+.main {
+  display: none;
+}
+
+.sportChoiceImage {
+  cursor: pointer;
+  margin: 5px;
+  padding: 5px;
+  width: 50px;
+  height: 50px;
+}
+
+.sportChoiceSpan {
+  cursor: pointer;
+  display: inline-block;
+}
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+  .example {
+    background: red;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 600px) {
+  .example {
+    background: green;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {
+  .example {
+    background: blue;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 992px) {
+  .example {
+    background: orange;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {
+  .example {
+    background: pink;
+  }
+}
+
+@media (min-width: 34em) {
+  .card-columns {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+}
+
+@media (min-width: 48em) {
+  .card-columns {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+  }
+}
+
+@media (min-width: 62em) {
+  .card-columns {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+  }
+}
+
+@media (min-width: 75em) {
+  .card-columns {
+    -webkit-column-count: 5;
+    -moz-column-count: 5;
+    column-count: 5;
+  }
+}
