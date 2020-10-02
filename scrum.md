@@ -4,6 +4,14 @@
     What are you going to accomplish
     What are you blockers
 
+# October 2nd, 2020
+
+### ----- ACCOMPLISHED -----
+
+### ----- WILL ACCOMPLISH -----
+
+### ----- BLOCKERS -----
+
 # October 1st, 2020
 
 ### ----- ACCOMPLISHED -----
@@ -39,5 +47,13 @@ Meticulous and Slow paced learning of new concepts - focusing on quality code.
 #
 
 #
+
+# Month, DD, YYYY
+
+### ----- ACCOMPLISHED -----
+
+### ----- WILL ACCOMPLISH -----
+
+### ----- BLOCKERS -----
 
 #
