@@ -5,6 +5,10 @@
     
 */
 
+body {
+  background-color: aliceblue;
+}
+
 .btn-small {
   height: 25px;
   font-size: x-small;
@@ -45,8 +49,36 @@
   border: 1px solid green;
 }
 
+.loginFormContainer {
+  text-align: center;
+  width: 80%;
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.loginWelcome {
+  padding: 15px;
+  background-color: blue;
+  color: white;
+}
+
 .main {
   display: none;
+}
+
+.registerFormContainer {
+  text-align: center;
+  width: 80%;
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.registerWelcome {
+  padding: 15px;
+  background-color: blue;
+  color: white;
 }
 
 .sportChoiceImage {

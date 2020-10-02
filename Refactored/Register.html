@@ -65,6 +65,60 @@
 
     <div w3-include-html="./includes/nav.html"></div>
 
+    <div class="container registerFormContainer">
+
+        <form id="formRegister" class="was-validated">
+
+            <p class="registerWelcome">Please Register Your Information Below</p>
+
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">First Name: </label>
+                <div class="col-sm-9">
+                    <input required type="text" class="form-control" name="registerFirst" id="registerFirst" placeholder="Firstname">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Last Name: </label>
+                <div class="col-sm-9">
+                    <input required type="text" class="form-control" name="registerLast" id="registerLast" placeholder="Lastname">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Email: </label>
+                <div class="col-sm-9">
+                    <input required type="text" class="form-control" autocomplete="email" name="registerEmail" id="registerEmail" placeholder="email">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Password: </label>
+                <div class="col-sm-9">
+                    <input required type="password" class="form-control" autocomplete="current-password" name="registerPassword" id="registerPassword" placeholder="password">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Confirm Password: </label>
+                <div class="col-sm-9">
+                    <input required type="password" class="form-control" autocomplete="current-password" name="registerConfirmPassword" id="registerConfirmPassword" placeholder="password">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <input type="button" class="form-control btn-warning" name="registerButton" id="registerButton" onclick="onClickRegisterUser();" value="Register">
+            </div>
+
+            <div class="form-group">
+                <label>Avatar Url: <input disabled type="text" class="form-control" name="registerAvatar" id="registerAvatar" placeholder="http://lostwords.org/images/penguin.png"></label>
+                <label>Tenant Id: <input disabled type="text" class="form-control" name="registerTenant" id="registerTenant" placeholder="bootcamp1"></label>
+            </div>
+
+        </form>
+
+    </div>
+
     <script>
         var services = {
             authService: authService,

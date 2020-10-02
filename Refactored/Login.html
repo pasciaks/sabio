@@ -16,11 +16,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <!-- <script src="https://pw.sabio.la/api/js/site"></script> -->
@@ -64,6 +61,28 @@
     <nav class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio d-none"></nav>
 
     <div w3-include-html="./includes/nav.html"></div>
+
+    <div class="container loginFormContainer">
+        <form id="loginForm" class="was-validated">
+            <p class="loginWelcome">Welcome</p>
+            <p>Sign In To Continue</p>
+            <div class="form-group">
+                <label>Login Email: </label>
+                <input required class="form-control" autocomplete="email" type="text" name="loginEmail" id="loginEmail" placeholder="yourname@somewhere.com" value="sabio@sabio.la">
+            </div>
+            <div class="form-group">
+                <label>Password: </label>
+                <input required class="form-control" autocomplete="current-password" type="password" name="loginPassword" id="loginPassword" placeholder="password" value="Sabiopassword1!">
+            </div>
+
+            <button type="button" class="btn btn-success btn-lg btn-block m-1">Login</button>
+
+            <p>Need to sign up?</p>
+
+            <button type="button" onclick="window.location='./Register.html';" class="btn btn-secondary btn-lg btn-block m-1">Register Now</button>
+        </form>
+
+    </div>
 
     <script>
         var services = {

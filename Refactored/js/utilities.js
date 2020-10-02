@@ -26,3 +26,17 @@ function includeHTML() {
         }
     }
 };
+
+function updateUserStatus() {
+    services.authService.getCurrentUser()
+        .then(onGetCurrentUserSuccess)
+        .catch(onGetCurrentUserError)
+}
+
+function onGetCurrentUserSuccess(response) {
+    //toastr.success(response, "Success."); // map response
+}
+
+function onGetCurrentUserError(error) {
+    //toastr.warning(error.Message, "You must login to use this site.");
+}
