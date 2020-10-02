@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" href="https://sabio.la/Sabio.png" />
     <!-- Do Not Change the HTML title or anything between this line and the line with the 💘's -->
     <title>Pasciak - Forms , Jquery , Axios</title>
+
     <link href="https://pw.sabio.la/dist/all-site.css" rel="stylesheet" />
 
     <link href="./css/toastr.css" rel="stylesheet" />
@@ -21,11 +22,22 @@
     <!-- I 💘 Code, You 💘 Code, We all 💘 Code -->
 
     <script src="https://unpkg.com/axios@0.19.2/dist/axios.min.js"></script>
+
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script src="./js/toastr.min.js"></script>
 
-    <script src="./js/starterService.js"></script>
+    <!-- Import Services -->
+
+    <script src="./js/services/authService.js"></script>
+    <script src="./js/services/blogsService.js"></script>
+    <script src="./js/services/emailsService.js"></script>
+    <script src="./js/services/eventsService.js"></script>
+    <script src="./js/services/filesService.js"></script>
+    <script src="./js/services/friendsService.js"></script>
+    <script src="./js/services/jobsService.js"></script>
+    <script src="./js/services/teamsService.js"></script>
+    <script src="./js/services/techcompaniesService.js"></script>
 
     <!-- 💡 All your CSS in here -->
 
@@ -293,6 +305,9 @@
 
     <!--👇🏻 All your JavaScript code goes below here inside this script tag 👇🏻 -->
     <script id="candidateCode">
+        // TODO //  - refactor starterService - consider the need for other entities
+        // TODO // friends jobs techcompanies events events map emails file upload
+
         // TODO -- address all service calls as services.teamsService -- etc
         // TODO -- add user registration, possibly user search/user profile
 
@@ -402,7 +417,7 @@
             userLogout()
                 .then(function(data) {
                     console.log("userLogout Success case ", data);
-                    toastr.success('User Logged Out', 'Logout Success! ' + JSON.stringify(data));
+                    toastr.success('User Logged Out', 'Logout Success!');
                 })
                 .catch(function(err) {
                     console.log("userLogout Catch case ", err);
