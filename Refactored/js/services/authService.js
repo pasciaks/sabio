@@ -9,6 +9,12 @@ var authService = {
 /*  
     authService.js, 
 
+    var payload = {
+    email: "sabio@sabio.la",
+    password: "Sabiopassword1!",
+    tenantId: "bootcamp1"
+    }
+
     userLogin - Note the optional return type with transposed return data
 */
 authService.userLogin = (payload) => {
@@ -36,16 +42,18 @@ authService.userLogin = (payload) => {
             .then(function (data) {
                 // NOTE - don't put view mechanisms here , pure code , reusable , separate UI/UX from business logic!!!
                 // toastr.success('Successful Login\n\nPlease enter data carefully, for example purposes this account and data can be accessed by all the use this site.', 'Login Success!')
+                console.log(data);
                 var hasErrors = false;
                 var additionalPayloadInfo = "user login success using payload " + JSON.stringify(payload);
                 resolve({ data, additionalPayloadInfo, hasErrors });
             })
-            .catch(function (data) {
+            .catch(function (error) {
                 // NOTE - don't put view mechanisms here , pure code , reusable , separate UI/UX from business logic!!!
                 // toastr.error("Error logging in\n\nPlease verify your credentials.", "Error");
+                console.log(error);
                 var hasErrors = true;
                 var myErrorInfo = "user login failure using payload " + JSON.stringify(payload);
-                reject({ data, myErrorInfo, hasErrors });
+                reject({ error, myErrorInfo, hasErrors });
             })
     });
 
@@ -133,9 +141,26 @@ authService.userRegister = (payload) => {
         }
     };
 
-    //error.response.data.errors
+    //error.response.data.errors ???
 
-    return axios(config)
+    //return axios(config)
+
+    // trying to get error info on registration fail
+
+    return new Promise(function (resolve, reject) {
+
+        return axios(config)
+            .then(function (data) {
+                console.log(data);
+                resolve(data);
+            })
+            .catch(function (err) {
+                console.log(err.response.data.errors);
+                reject(err.response.data.errors);
+            })
+
+    })
+
 };
 
 //https://api.remotebootcamp.dev/api/users/current
@@ -143,13 +168,27 @@ authService.userRegister = (payload) => {
 authService.getCurrentUser = () => {
     const config = {
         method: "GET",
-        url: authService.endpoint + "/" + "current", //"https://api.remotebootcamp.dev/api/users/current",
+        url: "https://api.remotebootcamp.dev/api/users/current",  //https://api.remotebootcamp.dev/api/users/current
         crossdomain: true,
         headers: {
             "Content-Type": "application/json"
         }
     };
-    return axios(config)
+
+    return new Promise(function (resolve, reject) {
+
+        return axios(config)
+            .then(function (data) {
+                console.log(data);
+                resolve(data);
+            })
+            .catch(function (err) {
+                console.log(err.response.data.errors);
+                reject(err.response.data.errors);
+            })
+
+    })
+
 }
 
 authService.getUsers = (pageIndex = 0, pageSize = 10) => {
