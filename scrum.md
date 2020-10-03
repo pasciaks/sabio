@@ -2,7 +2,7 @@
 
     What did you accomplish
     What are you going to accomplish
-    What are you blockers
+    What are your blockers
 
 # October 2nd, 2020
 
@@ -32,7 +32,7 @@
 
 ### ----- BLOCKERS -----
 
-        Failing to focus on the task at hand and working towards future can be a show-stopper for me.
+        Failing to focus on the task at hand and working towards future tasks/optimization can be a show-stopper for me.
 
 # October 1st, 2020
 
