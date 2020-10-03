@@ -45,19 +45,31 @@
 
     <link href="./css/main.css" rel="stylesheet" />
 
-    <link href="./css/sidebar.css" rel="stylesheet" />
+
+
 
 </head>
 
 <body>
 
-
-    <div id="loggedInView">Logged In</div>
-    <div id="loggedOutView">Logged Out</div>
-
     <nav class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio d-none"></nav>
 
     <div w3-include-html="./includes/nav.html"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2">
+                <div id="loggedIn">
+                    <button onclick="onLogoutClicked();" type="button" class="btn btn-danger">Logout</button>
+                </div>
+            </div>
+            <div class="col-10">
+                <div id="loggedOut">
+                    <button onclick="onLoginClicked();" type="button" class="btn btn-success">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
         var services = {
@@ -72,21 +84,36 @@
             techcompaniesService: techcompaniesService
         }
 
-        $(document).ready(function() {
-
-            //executeTests();
-
-            startUp();
-
-        });
-
         function startUp() {
             includeHTML(); // Note - this will run on every page, better served with views/routing/local storage perhaps
             updateUserStatus();
         }
 
+        function onLoginClicked() {
+            window.location = "./Login.html";
+        }
+
+        function onLogoutClicked() {
+            services.authService.userLogout()
+                .then(onUserLogoutSuccess)
+                .catch(onUserLogoutError)
+        }
+
+        function onUserLogoutSuccess(response) {
+            // todo -- update user status view            
+            //toastr.success(response, "User Logout Success"); // map response current user
+
+            window.location = "./Login.html";
+        }
+
+        function onUserLogoutError(error) {
+            // todo -- update user status view
+            //toastr.error(error, "User Logout Error - Perhaps the user is already logged out."); // map response current user
+
+            window.location = "./Login.html";
+        }
+
         function updateUserStatus() {
-            // NOTE - optimize this -- check for local storage, session timeouts etc -- don't call every time or every page
             services.authService.getCurrentUser()
                 .then(onGetCurrentUserSuccess)
                 .catch(onGetCurrentUserError)
@@ -94,12 +121,35 @@
 
         function onGetCurrentUserSuccess(response) {
             console.log(response);
-            // todo get / map current user, show logged in view
+
+            $('#loggedIn').show();
+            $('#loggedOut').hide();
+
+            var loggedInUserId = response.data.item.id;
+            getUser(loggedInUserId);
         }
 
         function onGetCurrentUserError(error) {
             console.log(error);
-            // todo unmap / reset current user view, show logged out view
+
+            $('#loggedIn').hide();
+            $('#loggedOut').show();
+        }
+
+        function getUser(userId) {
+            services.authService.getUser(userId)
+                .then(onGetUserSuccess)
+                .catch(onGetUserError)
+        }
+
+        function onGetUserSuccess(response) {
+            console.log("onGetUserSuccess", response);
+
+            $('body').append(JSON.stringify(response));
+        }
+
+        function onGetUserError(error) {
+            console.log("onGetUserError", error);
         }
     </script>
 

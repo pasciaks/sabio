@@ -43,17 +43,19 @@ authService.userLogin = (payload) => {
                 // NOTE - don't put view mechanisms here , pure code , reusable , separate UI/UX from business logic!!!
                 // toastr.success('Successful Login\n\nPlease enter data carefully, for example purposes this account and data can be accessed by all the use this site.', 'Login Success!')
                 console.log(data);
-                var hasErrors = false;
-                var additionalPayloadInfo = "user login success using payload " + JSON.stringify(payload);
-                resolve({ data, additionalPayloadInfo, hasErrors });
+                //var hasErrors = false;
+                //var additionalPayloadInfo = "user login success using payload " + JSON.stringify(payload);
+                //resolve({ data, additionalPayloadInfo, hasErrors });
+                resolve(data);
             })
             .catch(function (error) {
                 // NOTE - don't put view mechanisms here , pure code , reusable , separate UI/UX from business logic!!!
                 // toastr.error("Error logging in\n\nPlease verify your credentials.", "Error");
                 console.log(error);
-                var hasErrors = true;
-                var myErrorInfo = "user login failure using payload " + JSON.stringify(payload);
-                reject({ error, myErrorInfo, hasErrors });
+                //var hasErrors = true;
+                //var myErrorInfo = "user login failure using payload " + JSON.stringify(payload);
+                //reject({ error, myErrorInfo, hasErrors });
+                reject(error);
             })
     });
 
@@ -94,7 +96,20 @@ authService.userLogout = () => {
         }
     };
 
-    return axios(config)
+
+    return new Promise(function (resolve, reject) {
+
+        return axios(config)
+            .then(function (data) {
+                console.log(data);
+                resolve(data);
+            })
+            .catch(function (error) {
+                console.log(error);
+                reject(error);
+            })
+
+    })
 }
 
 /*
@@ -154,9 +169,9 @@ authService.userRegister = (payload) => {
                 console.log(data);
                 resolve(data);
             })
-            .catch(function (err) {
-                console.log(err.response.data.errors);
-                reject(err.response.data.errors);
+            .catch(function (error) {
+                console.log(error);
+                reject(error);
             })
 
     })
@@ -176,7 +191,6 @@ authService.getCurrentUser = () => {
     };
 
     return new Promise(function (resolve, reject) {
-
         return axios(config)
             .then(function (data) {
                 console.log(data);
@@ -186,7 +200,6 @@ authService.getCurrentUser = () => {
                 console.log(err.response.data.errors);
                 reject(err.response.data.errors);
             })
-
     })
 
 }
@@ -202,3 +215,30 @@ authService.getUsers = (pageIndex = 0, pageSize = 10) => {
     };
     return axios(config)
 }
+
+
+authService.getUser = (userId) => {
+    const config = {
+        method: "GET",
+        url: authService.endpoint + "/" + `${userId}`, // "https://api.remotebootcamp.dev/api/users/4",
+        crossdomain: true,
+        headers: {
+            "Content-Type": "application/json"
+        }
+    };
+
+    return new Promise(function (resolve, reject) {
+        return axios(config)
+            .then(function (data) {
+                console.log(data);
+                resolve(data);
+            })
+            .catch(function (err) {
+                console.log(err.response.data.errors);
+                reject(err.response.data.errors);
+            })
+    })
+
+}
+
+

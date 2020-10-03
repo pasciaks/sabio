@@ -45,7 +45,6 @@
 
     <link href="./css/main.css" rel="stylesheet" />
 
-    <link href="./css/sidebar.css" rel="stylesheet" />
 
 </head>
 
@@ -67,14 +66,6 @@
             teamsService: teamsService,
             techcompaniesService: techcompaniesService
         }
-
-        $(document).ready(function() {
-
-            //executeTests();
-
-            startUp();
-
-        });
 
         function startUp() {
             includeHTML(); // Note - this will run on every page, better served with views/routing/local storage perhaps

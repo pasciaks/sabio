@@ -6,7 +6,7 @@
 */
 
 body {
-  background-color: aliceblue;
+  font-family: "Lato", sans-serif;
 }
 
 .btn-small {
@@ -68,7 +68,7 @@ body {
 }
 
 nav.navbar {
-  background-color: white !important;
+  background-color: aliceblue !important;
 }
 
 .registerFormContainer {
