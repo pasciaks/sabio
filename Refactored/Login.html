@@ -76,7 +76,7 @@
             <hr>
             <p>Need to sign up?</p>
 
-            <button type="button" onclick="window.location='./Register.html';" class="btn btn-secondary btn-lg btn-block m-1">Register Now</button>
+            <button type="button" onclick="location.href='./Register.html';" class="btn btn-secondary btn-lg btn-block m-1">Register Now</button>
         </form>
 
     </div>
@@ -139,11 +139,14 @@
 
         function onLoginUserSuccess(response) {
 
-            toastr.success(response, "User Login Success."); // map response current user
 
-            setTimeout(function() {
-                window.location = "./Home.html";
-            }, 1000);
+            toastr.options.onHidden = function() {
+                location.href = "./Home.html";
+            }
+
+            toastr.success(response, "User Login Success.", {
+                timeOut: 1000
+            });
 
             // services.authService.getCurrentUser()
             //     .then(function(data) {

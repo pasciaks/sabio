@@ -42,7 +42,7 @@ authService.userLogin = (payload) => {
             .then(function (data) {
                 // NOTE - don't put view mechanisms here , pure code , reusable , separate UI/UX from business logic!!!
                 // toastr.success('Successful Login\n\nPlease enter data carefully, for example purposes this account and data can be accessed by all the use this site.', 'Login Success!')
-                console.log(data);
+                //console.log(data);
                 //var hasErrors = false;
                 //var additionalPayloadInfo = "user login success using payload " + JSON.stringify(payload);
                 //resolve({ data, additionalPayloadInfo, hasErrors });
@@ -51,7 +51,7 @@ authService.userLogin = (payload) => {
             .catch(function (error) {
                 // NOTE - don't put view mechanisms here , pure code , reusable , separate UI/UX from business logic!!!
                 // toastr.error("Error logging in\n\nPlease verify your credentials.", "Error");
-                console.log(error);
+                //console.log(error);
                 //var hasErrors = true;
                 //var myErrorInfo = "user login failure using payload " + JSON.stringify(payload);
                 //reject({ error, myErrorInfo, hasErrors });
@@ -101,11 +101,11 @@ authService.userLogout = () => {
 
         return axios(config)
             .then(function (data) {
-                console.log(data);
+                //console.log(data);
                 resolve(data);
             })
             .catch(function (error) {
-                console.log(error);
+                //console.log(error);
                 reject(error);
             })
 
@@ -166,11 +166,11 @@ authService.userRegister = (payload) => {
 
         return axios(config)
             .then(function (data) {
-                console.log(data);
+                //console.log(data);
                 resolve(data);
             })
             .catch(function (error) {
-                console.log(error);
+                //console.log(error);
                 reject(error);
             })
 
@@ -193,11 +193,11 @@ authService.getCurrentUser = () => {
     return new Promise(function (resolve, reject) {
         return axios(config)
             .then(function (data) {
-                console.log(data);
+                //console.log(data);
                 resolve(data);
             })
             .catch(function (err) {
-                console.log(err.response.data.errors);
+                //console.log(err.response.data.errors);
                 reject(err.response.data.errors);
             })
     })
@@ -230,11 +230,11 @@ authService.getUser = (userId) => {
     return new Promise(function (resolve, reject) {
         return axios(config)
             .then(function (data) {
-                console.log(data);
+                //console.log(data);
                 resolve(data);
             })
             .catch(function (err) {
-                console.log(err.response.data.errors);
+                //console.log(err.response.data.errors);
                 reject(err.response.data.errors);
             })
     })

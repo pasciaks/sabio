@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>HOME-C93 Starter Vanilla JS</title>
+    <title>FRIENDS-C93 Starter Vanilla JS</title>
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -67,6 +67,8 @@
         </div>
     </div>
 
+    <div id="debugInfo"></div>
+
     <script>
         var services = {
             authService: authService,
@@ -81,8 +83,87 @@
         }
 
         function startUp() {
+
             includeHTML(); // Note - this will run on every page, better served with views/routing/local storage perhaps
+
             getCurrentUser();
+
+            testFriends();
+        }
+
+        function testFriends() {
+
+            var payload = {
+                "title": "This is a test",
+                "bio": "This is the bio",
+                "summary": "Summary of the friends api record",
+                "headline": "Now is the time for a headline",
+                "slug": Date.now(),
+                "statusId": "NotSet",
+                "primaryImage": "https://api.remotebootcamp.dev/apihelp/rbclogo.png"
+            }
+
+            services.friendsService.add(payload)
+                .then(function(response) {
+                    console.log(response);
+                    $('#debugInfo').append(`<br><hr><br>`);
+                    $('#debugInfo').append(JSON.stringify(response));
+                })
+                .catch(function(error) {
+                    console.log(error);
+                    $('#debugInfo').append(`<br><hr><br>`);
+                    $('#debugInfo').append(JSON.stringify(error));
+                })
+
+
+
+            services.friendsService.get(4976)
+                .then(function(response) {
+                    console.log(response);
+                    $('#debugInfo').append(`<br><hr><br>`);
+                    $('#debugInfo').append(`<br><hr>Friends get - ${4976} <br><hr>${JSON.stringify(response.data.item)}`);
+                })
+                .catch(function(error) {
+                    console.log(error);
+                    $('#debugInfo').append(`<br><hr><br>`);
+                    $('#debugInfo').append(JSON.stringify(error));
+                })
+
+
+
+            // services.friendsService.search(0, 13, "a") // NOTE - if there is no search parameter, use normal paging
+            //     .then(function(response) {
+            //         console.log(response.data.item.pagedItems.length + ' Friends found');
+            //         $('#debugInfo').append(`<br><hr><br>`);
+            //         $('#debugInfo').append(response.data.item.pagedItems.map(mapFriend))
+            //     })
+            //     .catch(function(error) {
+            //         console.log(error);
+            //         $('#debugInfo').append(`<br><hr><br>`);
+            //         $('#debugInfo').append(JSON.stringify(error));
+            //     })
+
+
+
+            services.friendsService.delete(6354) //55555
+                .then(function(response) {
+                    console.log(response);
+                    $('#debugInfo').append(`<br><hr><br>`);
+                    $('#debugInfo').append(JSON.stringify(response));
+                })
+                .catch(function(error) {
+                    console.log(error);
+                    $('#debugInfo').append(`<br><hr><br>`);
+                    $('#debugInfo').append(JSON.stringify(error));
+                })
+        }
+
+        function mapFriend(aFriend) {
+            // USE EXTENSIVE MAPPING, ETC TO DO THE FOLLOWING
+            // get Template
+            // modify Template
+            // append Template
+            return `${JSON.stringify(aFriend)}`;
         }
 
         function onLoginClicked() {

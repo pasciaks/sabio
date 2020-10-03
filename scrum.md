@@ -8,13 +8,16 @@
 
 ### ----- ACCOMPLISHED -----
 
-        FINISHED Very clean version of A
+        FINISHED clean version of A
 
-        Started B Friends
+        Started C93 (B) Friends
+        Created and Tested services for .add .delete .get .search .getPageOfFriends
 
 ### ----- WILL ACCOMPLISH -----
 
-        Finish B Friends and Start B Jobs
+        Finish C93 Starter (B) Friends and Begin C93 Starter (B) Jobs
+
+        Get Code Review for A, B
 
 ### ----- BLOCKERS -----
 

@@ -177,7 +177,7 @@
             toastr.success(response, "User Registered Successfully."); // map response current user
 
             setTimeout(function() {
-                window.location = "./Login.html";
+                location.href = "./Login.html";
             }, 1000);
         }
 
@@ -192,7 +192,6 @@
             } catch (e) {
                 toastr.warning(`Error`, `Undetermined Error Has Occurred.`);
             }
-
 
         }
 
