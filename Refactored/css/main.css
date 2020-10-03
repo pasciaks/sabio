@@ -67,6 +67,10 @@ body {
   display: none;
 }
 
+nav.navbar {
+  background-color: white !important;
+}
+
 .registerFormContainer {
   text-align: center;
   width: 80%;

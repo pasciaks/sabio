@@ -98,6 +98,8 @@
 
             //executeTests();
 
+            services.authService.userLogout();
+
             startUp();
 
         });
@@ -140,18 +142,20 @@
         }
 
         function onLoginUserSuccess(response) {
+
             toastr.success(response, "User Login Success."); // map response current user
-            //window.location = "./Home.html";
 
-            services.authService.getCurrentUser()
-                .then(function(data) {
-                    console.log(data);
-                })
-                .catch(function(data) {
-                    console.log(data);
-                })
+            setTimeout(function() {
+                window.location = "./Home.html";
+            }, 1000);
 
-
+            // services.authService.getCurrentUser()
+            //     .then(function(data) {
+            //         console.log(data);
+            //     })
+            //     .catch(function(data) {
+            //         console.log(data);
+            //     })
 
         }
 

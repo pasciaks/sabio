@@ -51,6 +51,10 @@
 
 <body>
 
+
+    <div id="loggedInView">Logged In</div>
+    <div id="loggedOutView">Logged Out</div>
+
     <nav class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio d-none"></nav>
 
     <div w3-include-html="./includes/nav.html"></div>
@@ -90,10 +94,12 @@
 
         function onGetCurrentUserSuccess(response) {
             console.log(response);
+            // todo get / map current user, show logged in view
         }
 
         function onGetCurrentUserError(error) {
             console.log(error);
+            // todo unmap / reset current user view, show logged out view
         }
     </script>
 

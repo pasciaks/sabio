@@ -28,7 +28,7 @@
 
         Finalize (A) - Get in the Q for code-review of (A)
 
-        Move on to (B) and finish the majority of (B).
+        Move on to (B) and get the Friends (peopleView) working.
 
 ### ----- BLOCKERS -----
 
