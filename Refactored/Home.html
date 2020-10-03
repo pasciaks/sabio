@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>Pasciak-C93 Starter Vanilla JS</title>
+    <title>HOME-C93 Starter Vanilla JS</title>
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -57,17 +57,13 @@
     <div w3-include-html="./includes/nav.html"></div>
 
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-2">
-                <div id="loggedIn">
-                    <button onclick="onLogoutClicked();" type="button" class="btn btn-danger">Logout</button>
-                </div>
-            </div>
-            <div class="col-10">
-                <div id="loggedOut">
-                    <button onclick="onLoginClicked();" type="button" class="btn btn-success">Login</button>
-                </div>
-            </div>
+        <div id="loggedIn" style="display:none;">
+            <div id="loggedInUserInfo"></div>
+            <button onclick="onLogoutClicked();" type="button" class="btn btn-danger">Logout</button>
+        </div>
+        <div id="loggedOut" style="display:none;">
+            <div id="loggedOutUserInfo"></div>
+            <button onclick="onLoginClicked();" type="button" class="btn btn-success">Login</button>
         </div>
     </div>
 
@@ -86,7 +82,7 @@
 
         function startUp() {
             includeHTML(); // Note - this will run on every page, better served with views/routing/local storage perhaps
-            updateUserStatus();
+            getCurrentUser();
         }
 
         function onLoginClicked() {
@@ -113,11 +109,14 @@
             window.location = "./Login.html";
         }
 
-        function updateUserStatus() {
+        function getCurrentUser() {
+
             services.authService.getCurrentUser()
                 .then(onGetCurrentUserSuccess)
                 .catch(onGetCurrentUserError)
         }
+
+
 
         function onGetCurrentUserSuccess(response) {
             console.log(response);
@@ -134,6 +133,10 @@
 
             $('#loggedIn').hide();
             $('#loggedOut').show();
+
+            var userStatus = `Please log in.`;
+            $('#loggedOutUserInfo').html(userStatus);
+
         }
 
         function getUser(userId) {
@@ -144,12 +147,14 @@
 
         function onGetUserSuccess(response) {
             console.log("onGetUserSuccess", response);
-
-            $('body').append(JSON.stringify(response));
+            var userStatus = `<img style="max-height:100px;max-width:200px;" src="${response.data.item.avatarUrl}"><p>${response.data.item.firstName} ${response.data.item.lastName} </p><p>${response.data.item.email} </p>`
+            $('#loggedInUserInfo').html(userStatus);
         }
 
         function onGetUserError(error) {
             console.log("onGetUserError", error);
+            var userStatus = `Please log in.`
+            $('#loggedOutUserInfo').html(userStatus);
         }
     </script>
 

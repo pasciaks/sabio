@@ -4,6 +4,22 @@
     What are you going to accomplish
     What are your blockers
 
+# October 3rd, 2020
+
+### ----- ACCOMPLISHED -----
+
+        FINISHED Very clean version of A
+
+        Started B Friends
+
+### ----- WILL ACCOMPLISH -----
+
+        Finish B Friends and Start B Jobs
+
+### ----- BLOCKERS -----
+
+        I'm on track, no blockers anticipated.
+
 # October 2nd, 2020
 
 ### ----- ACCOMPLISHED -----
