@@ -597,9 +597,11 @@
 
             console.log("wireUpEvents...");
 
+            // the below items wire-up a click on a card to edit it or delete it
             $('.clone-container').on("click", ".deleteTeam", onDeleteTeamClicked);
             $('.clone-container').on("click", ".editTeam", onEditTeamClicked);
 
+            // the below item disables the 'submit' feature of the form (there's a button specifically called to type="submit")
             $("#formSports").submit(function(event) {
                 event.preventDefault();
             });

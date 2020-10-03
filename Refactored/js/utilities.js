@@ -1,4 +1,14 @@
+/*
 
+    This function is used as a way to re-use nav
+
+    ./includes/nav.html
+
+    This file contains a single nav that is reused in separate files -- perhaps there's a better include that doesn't need Javascript ?
+
+    MVC view engine structure with react will overcome the need for this most likey.
+
+*/
 function includeHTML() {
     var z, i, elmnt, file, xhttp;
     /*loop through a collection of all HTML elements:*/

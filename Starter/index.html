@@ -2,31 +2,24 @@
 <html lang="en">
 
 <head>
-
-    <title>Pasciak-C93 Starter Vanilla JS</title>
-
+    <!-- #region Sabio Code - You can Fold this region to remove it from sight -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
     <meta name="description" content="Sabio Coding Bootcamp" />
     <meta itemprop="image" content="https://sabio.la/Sabio.png">
     <link rel="shortcut icon" href="https://sabio.la/Sabio.png">
     <link rel="icon" type="image/png" href="https://sabio.la/Sabio.png" />
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-    <script src="https://pw.sabio.la/api/js/site"></script>
+    <!-- Do Not Change the HTML title or anything between this line and the line with the 💘's -->
+    <title>Pasciak - Forms , Jquery , Axios</title>
 
     <link href="https://pw.sabio.la/dist/all-site.css" rel="stylesheet" />
 
     <link href="./css/toastr.css" rel="stylesheet" />
 
-    <script src="./js/utilities.js"></script>
+    <script src="https://pw.sabio.la/api/js/site"></script>
+    <!-- #endregion -->
+
+    <!-- I 💘 Code, You 💘 Code, We all 💘 Code -->
 
     <script src="https://unpkg.com/axios@0.19.2/dist/axios.min.js"></script>
 
@@ -34,7 +27,7 @@
 
     <script src="./js/toastr.min.js"></script>
 
-    <!-- Import my javascript services code -->
+    <!-- Import Services -->
 
     <script src="./js/services/authService.js"></script>
     <script src="./js/services/blogsService.js"></script>
@@ -48,9 +41,133 @@
 
     <!-- 💡 All your CSS in here -->
 
-    <link href="./css/main.css" rel="stylesheet" />
+    <!-- 💡 NOTE these class names are alphabetical -->
 
-    <link href="./css/sidebar.css" rel="stylesheet" />
+    <style>
+        .btn-small {
+            height: 25px;
+            font-size: x-small;
+        }
+        
+        .card {
+            border-radius: 10px !important;
+            /* border: 0 none; */
+            -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+            -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+            margin-left: 1px;
+            margin-right: 1px;
+            cursor: pointer;
+        }
+        
+        .card:hover {
+            border: 1px solid gold;
+        }
+        
+        .card.isSelected:hover {
+            border: 1px solid green;
+        }
+        
+        .example {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+        }
+        
+        .hasErrors {
+            border: 1px solid red;
+        }
+        
+        .isSelected {
+            border: 1px solid green;
+        }
+        
+        .main {
+            display: none;
+        }
+        
+        .sportChoiceImage {
+            cursor: pointer;
+            margin: 5px;
+            padding: 5px;
+            width: 50px;
+            height: 50px
+        }
+        
+        .sportChoiceSpan {
+            cursor: pointer;
+            display: inline-block;
+        }
+        /* Extra small devices (phones, 600px and down) */
+        
+        @media only screen and (max-width: 600px) {
+            .example {
+                background: red;
+            }
+        }
+        /* Small devices (portrait tablets and large phones, 600px and up) */
+        
+        @media only screen and (min-width: 600px) {
+            .example {
+                background: green;
+            }
+        }
+        /* Medium devices (landscape tablets, 768px and up) */
+        
+        @media only screen and (min-width: 768px) {
+            .example {
+                background: blue;
+            }
+        }
+        /* Large devices (laptops/desktops, 992px and up) */
+        
+        @media only screen and (min-width: 992px) {
+            .example {
+                background: orange;
+            }
+        }
+        /* Extra large devices (large laptops and desktops, 1200px and up) */
+        
+        @media only screen and (min-width: 1200px) {
+            .example {
+                background: pink;
+            }
+        }
+        
+        @media (min-width: 34em) {
+            .card-columns {
+                -webkit-column-count: 2;
+                -moz-column-count: 2;
+                column-count: 2;
+            }
+        }
+        
+        @media (min-width: 48em) {
+            .card-columns {
+                -webkit-column-count: 3;
+                -moz-column-count: 3;
+                column-count: 3;
+            }
+        }
+        
+        @media (min-width: 62em) {
+            .card-columns {
+                -webkit-column-count: 4;
+                -moz-column-count: 4;
+                column-count: 4;
+            }
+        }
+        
+        @media (min-width: 75em) {
+            .card-columns {
+                -webkit-column-count: 5;
+                -moz-column-count: 5;
+                column-count: 5;
+            }
+        }
+    </style>
 
     <!-- NOTE, this card will be populated with [data-id] and [data] based on the data contents it will hold -->
     <script id="teamTemplate" type="text/template">
@@ -67,31 +184,943 @@
 
 </head>
 
-<body>
+<body class="sabio" data-ins="pw-00">
+    <!-- Do Not Edit or Remove this nav element -->
+    <nav class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio"></nav>
 
-    <nav class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio d-none"></nav>
+    <div class="container">
 
-    <div w3-include-html="./includes/nav.html"></div>
+        <p class="example">Sports Teams Form - by Sheldon Pasciak - Current User: <span id="currentUser"></span></p>
 
-    <script>
-        var services = {
-            teamsService: teamsService
-        }
+        <div class="container">
+            <button type="button" id="loginFormButton" class="btn btn-info d-inline" data-toggle="collapse" data-target="#login" ACCESSKEY="L"><U>L</U>ogin</button>
+            <!-- <button type="button" id="registerFormButton" class="btn btn-info d-inline" data-toggle="collapse" data-target="#register" ACCESSKEY="R"><U>R</U>egister</button> -->
+        </div>
 
-        $(document).ready(function() {
-            startUp();
-        });
+        <div class="container m-3">
+            <div id="login" class="collapse my-3">
 
-        function startUp() {
-            includeHTML();
-        }
-    </script>
+                <form id="formLogin">
+                    <div class="form-group">
+                        <label>Login Email: <input class="form-control" autocomplete="email" type="text" name="loginEmail" id="loginEmail" placeholder="email" value="sabio@sabio.la"></label>
+                        <label>Password: <input class="form-control" autocomplete="current-password" type="password" name="loginPassword" id="loginPassword" placeholder="password" value="Sabiopassword1!"></label>
+                        <label>TenantId: <input class="form-control" type="text" name="loginTenantId" id="loginTenantId" placeholder="bootcamp1" value="bootcamp1"></label>
+
+                        <button type="button" class="btn-primary" id="userLoginButton" class="btn btn-info d-inline" onclick="onClickUserLogin();" ACCESSKEY="I">Log<U>i</U>n</button>
+                        <button type="button" class="btn-danger" id="userLogoutButton" class="btn btn-info d-inline" onclick="onClickUserLogout();" ACCESSKEY="O">Log<U>o</U>ut</button>
+                        <button type="button" class="btn-warning" id="userClearFieldsButton" class="btn btn-info d-inline" onclick="onClickClearFields();">Reset</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+        <!-- 
+            // var registerPayload = {
+            //     "firstName": "Sheldon",
+            //     "lastName": "Pasciak",
+            //     "email": "new@pasciak.com",
+            //     "password": "Sabiopassword1!",
+            //     "passwordConfirm": "Sabiopassword1!",
+            //     "avatarUrl": "https://api.remotebootcamp.dev/apihelp/rbclogo.png",
+            //     "tenantId": "bootcamp1"
+            // } 
+        -->
+
+        <div class="container m-3">
+            <div id="register" class="collapse my-3">
+                <form id="formRegister">
+                    <div class="form-group">
+                        <label>Register First Name: <input type="text" class="form-control" name="registerFirst" id="registerFirst" placeholder="Firstname"></label>
+                        <label>Register Last Name: <input type="text" class="form-control" name="registerLast"  id="registerLast" placeholder="Lastname"></label>
+
+                        <label>Register Email: <input type="text" class="form-control" autocomplete="email" name="registerEmail" id="registerEmail"  placeholder="email"></label>
+
+                        <label>Password: <input type="password" class="form-control" autocomplete="current-password" name="registerPassword" id="registerPassword"  placeholder="password"></label>
+                        <label>Confirm Password: <input type="password" class="form-control" autocomplete="current-password" name="registerConfirmPassword" id="registerConfirmPassword"  placeholder="password"></label>
+
+                        <label>Register Avatar Url: <input type="text" class="form-control" name="registerAvatar" id="registerAvatar" placeholder="http://lostwords.org/images/penguin.png"></label>
+                        <label>Register Tenant Id: <input type="text" class="form-control" name="registerTenant" id="registerTenant" placeholder="bootcamp1"></label>
+
+                        <input type="button" class="form-control btn-warning" name="registerButton" id="registerButton" onclick="onClickRegisterUser();" value="Register">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <main class="container main">
+
+        <div class="container">
+
+            <div id="errors"></div>
+
+            <form id="formSports">
+
+                <input type="hidden" id="teamId" name="teamId" disabled class="d-none" value="-1">
+
+                <div class="form-group">
+                    <label for="team">Team Name:</label>
+                    <input type="text" class="form-control" id="team" name="team" required minlength="2" maxlength="50">
+                    <small id="teamhelp" class="form-text text-muted">Team Name is required (2-50).</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="sport">Sport:</label>
+                    <input type="text" class="form-control" id="sport" name="sport" required minlength="2" maxlength="50">
+                    <small id="sporthelp" class="form-text text-muted">Sport type is required (2-50).</small>
+
+                    <span id="sportChoiceButtonsControl"></span>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    <input type="text" class="form-control" id="city" name="city" required minlength="2" maxlength="50">
+                    <small id="cityhelp" class="form-text text-muted">City name is required (2-50).</small>
+                </div>
+
+                <!-- NOTE Observe this nuance of submit, validation, etc -->
+                <button type="submit" name="submit" id="submit" onclick="onAddNewSportsTeamButtonClick();" class="btn btn-default btn-primary">Add</button>
+                <button type="button" name="clear" id="clear" onclick="onResetFormClick();" class="btn btn-default btn-warning">Reset</button>
+                <button type="button" name="update" id="update" onclick="onUpdateSportsTeamButtonClick();" class="btn btn-default btn-info">Update</button>
+                <button type="button" name="render" id="render" onclick="onRenderButtonClick();" class="btn btn-default btn-dark">Get All</button>
+            </form>
+        </div>
+
+        <hr>
+
+        <div class="card-columns clone-container">
+        </div>
+
+    </main>
 
     <!-- Do Not Edit or Remove this footer element -->
     <footer class="do-not-remove container-fluid footer mx-auto  fb-targert sabio d-none">
         <p class="text-center">© Sabio.la 2019</p>
     </footer>
 
+    <div class="container avatars"></div>
+
+    <!--👇🏻 All your JavaScript code goes below here inside this script tag 👇🏻 -->
+    <script id="candidateCode">
+        // TODO //  - refactor starterService - consider the need for other entities
+        // TODO // friends jobs techcompanies events events map emails file upload
+
+        // TODO -- address all service calls as services.teamsService -- etc
+        // TODO -- add user registration, possibly user search/user profile
+
+        var services = {
+            teamsService: teamsService,
+            authService: authService
+        }
+
+        function onClickRegisterUser() {
+
+            //error.response.data.errors
+
+            // Display a warning toast, with no title
+            // toastr.warning('My name is Inigo Montoya. You killed my father, prepare to die!')
+
+            // Display a success toast, with a title
+            // toastr.success('Have fun storming the castle!', 'Miracle Max Says')
+
+            // Display an error toast, with a title
+            // toastr.error('I do not think that word means what you think it means.', 'Inconceivable!')
+
+            var payload = {};
+
+            services.authService.userRegister(payload)
+                .then(function(data) {
+                    console.log("success ", data);
+                })
+                .catch(function(err) {
+                    console.log("error ", err.response.data.errors);
+                    // alert("NOT YET IMPLEMENTED!\n\n" + err.response.data.errors);
+                })
+        }
+
+        function updateUserStatus() {
+            services.authService.getCurrentUser()
+                .then(onGetCurrentUserSuccess)
+                .catch(onGetCurrentUserError)
+        }
+
+        function onClickUserLogin() {
+
+            var payload = {
+                "email": "sabio@sabio.la",
+                "password": "Sabiopassword1!",
+                "tenantId": "bootcamp1"
+            }
+
+            console.log(payload);
+
+            payload["email"] = $('#loginEmail').val();
+            payload["password"] = $('#loginPassword').val();
+            payload["tenantId"] = $('#loginTenantId').val();
+
+            console.log(payload);
+
+            services.authService.userLogin(payload)
+                .then(function(data) {
+                    $('#loginFormButton').click();
+                    updateUserStatus();
+                    toastr.success('Successful Login\n\nPlease enter data carefully, for example purposes this account and data can be accessed by all the use this site.', 'Login Success!')
+                        //alert("resolved " + JSON.stringify(data));
+                })
+                .catch(function(data) {
+                    $('#formLogin').ping();
+                    updateUserStatus();
+                    toastr.error("Error logging in\n\nPlease verify your credentials.", "Error");
+                    //alert("rejected " + JSON.stringify(data));
+                })
+
+            // userLogin(payload)
+            //     .then(function(data) {
+            //         console.log(data);
+            //         if (data.hasErrors) {
+            //             console.log("login error.....", data, data.myErrorInfo, data.hasErrors);
+            //             $('#formLogin').ping();
+            //             // note consider map single object error
+            //         } else {
+            //             console.log("login success.....", data, data.additionalPayloadInfo, data.hasErrors);
+            //             $('#loginFormButton').click(); // toggle visibility of login form
+            //             // note consider map single object success
+            //         }
+
+            //         updateUserStatus();
+
+            //     })
+
+            //--------------------------------------------------------------------------------
+            // NOTE - I don't like this, kind of clumsy/loaded annonymous function usage
+            // validate that error case never returns from formsService ??
+            // userLogin(payload)
+            //     .then(function(data) {
+            //         console.log(data);
+            //         alert("login success", data);
+            //         $('#loginFormButton').click(); // toggle visibility of login form
+            //         updateUserStatus();
+
+            //     })
+            //     .catch(function(err) {
+            //         console.log(err);
+            //         alert("login error", err);
+            //         $('#currentUser').html(`<span>Invalid - Please Login</span>`);
+            //         $('.main').hide();
+            //     })
+
+            //--------------------------------------------------------------------------------
+
+        }
+
+        function onClickUserLogout() {
+            services.authService.userLogout()
+                .then(function(data) {
+                    console.log("userLogout Success case ", data);
+                    toastr.success('User Logged Out', 'Logout Success!');
+                })
+                .catch(function(err) {
+                    console.log("userLogout Catch case ", err);
+                    toastr.error('User Log Out Failed - Is user currently/already logged out?', 'Logout Failure! ');
+                })
+
+            $('#currentUser').html(`<span>Please Login</span>`);
+            $('.main').hide();
+            $('#loginFormButton').click(); // toggle
+        }
+        var onGetCurrentUserSuccess = (result) => {
+            console.log(JSON.stringify(result));
+            $('#currentUser').html([result.data.item].map(mapLoggedInUser));
+            $('.main').show();
+        }
+
+        var onGetCurrentUserError = (result) => {
+            console.log(JSON.stringify(result));
+            $('#currentUser').html(`<span>Please Login</span>`);
+            $('.main').hide();
+        }
+
+        var mapLoggedInUser = (userRecord) => {
+            return `ID: <strong>${userRecord.id}</strong> ${userRecord.name} (${userRecord.tenantId})`;
+        }
+
+        function getUsers() {
+            getUsers()
+                .then(function(data) {
+                    console.log(data.data.item.pagedItems);
+
+                    var arrayOfResults = data.data.item.pagedItems;
+
+                    arrayOfResults.forEach((object) => {
+                        //$('.avatars').append(`<img src="${object.avatarUrl}" style="width:1px;" title="${JSON.stringify(object)}">`);
+                        $('.avatars').append(` &nbsp; <span>${(object.email)}</span>`);
+                        //$('.avatars').append(`<img src="${object.avatarUrl}" style="width:1px;" title="${JSON.stringify(object)}"> &nbsp; <span>${(object.email)}</span>`);
+                    })
+
+                })
+                .catch(function(data) {
+                    console.warn(data)
+                })
+        }
+
+        function testAddTeamRecord() {
+            var cities = ['Chicago', 'Los Angeles', 'Culver', 'West Jordan', 'Atlanta'];
+            var sports = ['Basketball', 'Football', 'Soccer', 'Tennis', 'Rubby', 'Golf', 'Baseball'];
+            var teams = ['Bears', 'Cubs', 'Pirates', 'Sharks', 'Tigers', 'Lions', 'Dogs', 'Cats'];
+
+            function randomCity() {
+                return cities[(Math.floor(Math.random() * cities.length))];
+            }
+
+            function randomSport() {
+                return sports[(Math.floor(Math.random() * sports.length))];
+            }
+
+            function randomTeam() {
+                return teams[(Math.floor(Math.random() * teams.length))];
+            }
+            var newTeam = {
+                team: randomTeam(),
+                sport: randomSport(),
+                city: randomCity()
+            }
+
+            addTeam(newTeam)
+                .then(function(data) {
+                    console.log(data);
+                })
+                .catch(function(err) {
+                    console.log(err);
+                })
+
+        }
+
+        function startUp() {
+
+            appendSportChoiceButtons();
+
+            console.log("startUp...");
+
+            updateUserStatus();
+
+            emptyErrors();
+
+            clearSportsFormFields();
+
+            wireUpEvents();
+
+            // -------------- [ interesting things to look at regarding async/await ] --------------------------
+
+            console.log("before async/await test...");
+
+            var result = test()
+                .then(function(data) {
+                    console.log("random test result...", data);
+                })
+                .catch(function(data) {
+                    console.log("random test result...", data);
+                })
+
+            console.log("after async/await test...");
+
+            console.log(result);
+
+        }
+
+        /*
+            interesting behaviour to observe... 
+            
+                when the something promise is rejected (catch case), it seems to exit the function and return to the catch that called it
+                when the something promise is fullfilled, it seems to return to the then with proper results - allow inside to execute successfully
+        */
+        async function test() {
+            //var result = await something();
+            result = await something()
+                .then(function(data) {
+                    console.log('*** test then', data);
+                    return data;
+                })
+                .catch(function(data) {
+                    console.log('*** test catch', data);
+                    return data;
+                })
+
+            console.log("inside random test result...", result);
+            return result;
+        }
+
+        // Test function that returns error result 50% of the time
+        function something() {
+            console.log("*** The start of something....");
+            return new Promise(function(resolve, reject) {
+                var random = Math.random();
+                if (random > .5) {
+                    resolve({
+                        name: 'object name ' + Date.now(),
+                        status: 'success'
+                    });
+                } else {
+                    reject("error message " + Date.now()); //reject(new Error("Error"));
+                }
+            });
+        }
+
+        /*
+
+        NOTES - POSSIBLE FUTURE CODE IMPLEMENTATIONS
+
+            // resultSet = response.data.items.filter(onlyBasketball);
+
+            // function onlyBasketball(team) {
+            //     // note - consider lowercase/uppercase implications
+            //     return team.sport.indexOf("Basketball") > -1;
+            // }
+
+        */
+
+        function appendSportChoiceButtons() {
+
+            var choices = ["Baseball", "Basketball", "Football", "Soccer", "Tennis", "Rugby"];
+
+            choices.forEach(function(sport) {
+                $('#sportChoiceButtonsControl').append(`<span title="${sport}" class="sportChoiceSpan" onclick="$('#sport').val('${sport}');"><img src="./images/${sport.toLowerCase()}.jpg" class="sportChoiceImage" alt="${sport}"></span>`)
+            })
+
+            // $('#sportChoiceButtonsControl').append(`<small><p>TODO - Possible filter view by sport type, drop-downs, images on cards, etc</p></small>`);
+
+        }
+
+        function wireUpEvents() {
+
+            console.log("wireUpEvents...");
+
+            // the below items wire-up a click on a card to edit it or delete it
+            $('.clone-container').on("click", ".deleteTeam", onDeleteTeamClicked);
+            $('.clone-container').on("click", ".editTeam", onEditTeamClicked);
+
+            // the below item disables the 'submit' feature of the form (there's a button specifically called to type="submit")
+            $("#formSports").submit(function(event) {
+                event.preventDefault();
+            });
+
+            clearSportsFormFields();
+        }
+
+        function onDeleteTeamClicked(event) {
+
+            swal({
+                    title: "Are you sure you want to delete this team record ?",
+                    text: "Once deleted, you will not be able to recover this team!",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        var selected = $(event.target.closest(".card"));
+                        var selectedId = selected.attr("data-id");
+
+                        console.log("onDeleteTeamClicked...", selectedId);
+
+                        deleteTeam(selectedId);
+
+                        swal("Poof! Your team record has been deleted!", {
+                            icon: "success",
+                        });
+                    } else {
+                        swal("Your team record is safe!");
+                    }
+                });
+
+        }
+
+        /*
+
+            Select only one card at a time -- based on data id, remove all others selected, then select the card with [data-id=####]
+
+        */
+        function selectCardById(selectedId) {
+            $(".isSelected").removeClass("isSelected");
+            $(".card[data-id='" + selectedId + "']").addClass("isSelected");
+        }
+
+        // TODO limit business logic in click events, make functions to do the work
+        function onEditTeamClicked(event) {
+
+            clearSportsFormFields();
+
+            event.preventDefault();
+
+            console.log("onEditTeamClicked...", event.target.closest(".card"));
+
+            var selectedCard = $(event.target.closest(".card"));
+
+            var selectedId = selectedCard.attr("data-id");
+
+            selectCardById(selectedId);
+
+            console.log("edit selected...", selectedId);
+
+            var objParse = JSON.parse(selectedCard.attr("data"));
+            $('#team').val(objParse.team);
+            $('#sport').val(objParse.sport);
+            $('#city').val(objParse.city);
+
+            $('#teamId').val(selectedId); // hidden field holding current selected id
+
+            emptyErrors();
+
+            window.scrollTo(0, 0);
+        }
+
+
+        /*
+
+
+        */
+        function getTemplate() {
+            var template = $('#teamTemplate').html()
+            return $(template);
+        }
+
+
+        /*
+
+
+        */
+        function getExistingTemplateById(selectedId) {
+            return $(".card[data-id='" + selectedId + "']").eq(0);
+        }
+
+        /* Initial raw version of populating html template */
+
+        // function modifyTemplate(template, objProperties) {
+        //     template.find('.card-team').text(objProperties.team);
+        //     template.find('.card-sport').text(objProperties.sport);
+        //     template.find('.card-city').text(objProperties.city);
+        //     return template;
+        // }
+
+
+        /*
+
+
+        */
+        function modifyTemplate(template, id, team) {
+
+            // todo - an update calls this template modify as well - CAPTURE any existing data within [data], set updated [data] and set [data] again
+
+            template.attr("data-id", id); // useful for individual access with unique id identifier
+            template.attr("data", JSON.stringify(team)); // overkill to keep entire object properties here
+            template.find('.card-team').text(team.team);
+            template.find('.card-sport').text(team.sport);
+            template.find('.card-city').text(team.city);
+            return template;
+        }
+
+        function onClickClearFields() {
+            clearLoginFormFields();
+        }
+
+        function clearLoginFormFields() {
+            $("#formLogin")[0].reset();
+        }
+
+        function clearSportsFormFields() {
+            $("#formSports")[0].reset();
+            $('#teamId').val(-1);
+            $('#team').focus();
+            selectCardById(-1);
+            emptyErrors();
+        }
+
+        function onResetFormClick() {
+
+
+            clearSportsFormFields();
+            return true;
+        }
+
+        // TODO check for proper consistency with use of   '   or    "   // todo     Stick to    "    and use    `     often.
+
+        function getAndTrimFormText(selector) {
+            var strOut = $(selector).val();
+            strOut = strOut.trim();
+            $(selector).val(strOut);
+            console.log(" value for " + selector + " is [" + strOut + "]");
+            console.log(" Consider sentence case ");
+            return strOut;
+        }
+
+        /*
+            function that reads form data -- client side form validation not necessary yet - will be used in react
+        */
+        function formValidation() {
+
+            var hasErrors = false;
+
+            var errors = [];
+
+            emptyErrors();
+
+            var teamName = getAndTrimFormText('#team');
+            var sportName = getAndTrimFormText('#sport');
+            var cityName = getAndTrimFormText('#city');
+
+            console.log(teamName, sportName, cityName);
+
+            // NOTE - better implementation is to use IN-CONTEXT Error Messages (show error below each named input field)
+
+            if ((teamName == null) || (teamName == "") || (teamName.length < 2) || (teamName.length > 50)) {
+                hasErrors = true;
+                errors.push("Team name must be 2-50 characters."); // todo consider in context-error messages
+                $('#team').addClass('hasErrors');
+            } else {
+                $('#team').removeClass('hasErrors');
+            }
+
+            if ((sportName.length < 2) || (sportName.length > 50)) {
+                hasErrors = true;
+                errors.push("Sport name must be 2-50 characters.");
+                $('#sport').addClass('hasErrors');
+            } else {
+                $('#sport').removeClass('hasErrors');
+            }
+
+            if ((cityName.length < 2) || (cityName.length > 50)) {
+                hasErrors = true;
+                errors.push("City name must be 2-50 characters.");
+                $('#city').addClass('hasErrors');
+            } else {
+                $('#city').removeClass('hasErrors');
+            }
+
+            return {
+                hasErrors: hasErrors,
+                errors: errors
+            }
+
+        }
+
+        // TODO - organize, order and sort/group functions for readability.
+
+        // NOTE - consider a views object instead of all these global hoisted functions.
+
+        // NOTE - framework like react might/will help here so no worries ??
+
+        function emptyErrors() {
+            $('#errors').empty();
+            $('.hasErrors').removeClass('hasErrors');
+        }
+
+        function showFormValidationErrors(formValidationResult) {
+
+            formValidationResult.errors.forEach((error) => {
+                $('#errors').append(`<p class="alert alert-danger">${error}</p>`);
+            });
+
+        }
+
+        /*
+
+            NOTE: Possible heavy backend/database use, so use this call sparingly
+
+        */
+        function getAllAndRenderFreshView() {
+            console.log("getAllAndRenderFreshView() Called - Invokes getAll /api/entities/teams");
+            $(".clone-container").empty();
+            let result = teamsService.getAll()
+                .then(onGetAllTeamsSuccess)
+                .catch(onGetAllTeamsError);
+            console.log("result of renderView() ...", result);
+            return result;
+        }
+
+        function onGetAllTeamsSuccess(response) {
+            var resultSet = response.data.items;
+            processArrayByMapping(resultSet);
+            return resultSet;
+
+            /*
+                BELOW CODE OPTIMIZED/REFACTORED BY THE CODE ABOVE
+
+                    // var teamsArray = response.data.items;
+
+                    // teamsArray.forEach(team => {
+                    //     console.log(team);
+                    //     var testTemplate = getTemplate();
+
+                    //     // --------THE ENCLOSED CODE WAS REFACTORED BY 'modifyTemplate(template,team)'---------
+                    //     // testTemplate = modifyTemplate(testTemplate, {
+                    //     //     'team': team.team,
+                    //     //     'city': team.city,
+                    //     //     'sport': team.sport
+                    //     // });
+                    //     // --------THE ENCLOSED CODE WAS REFACTORED BY 'modifyTemplate(template,team)'---------
+                    //     testTemplate = modifyTemplate(testTemplate, team);
+                    //     $(".clone-container").append(testTemplate);
+                    // });                
+
+            */
+
+        }
+
+        function onGetAllTeamsError(response) {
+            console.warn({
+                error: response
+            })
+
+            return response;
+        }
+
+        function onRenderButtonClick() {
+            getAllAndRenderFreshView();
+        }
+
+        // NOTE I used this first because I didn't notice the data.config.data as part of response object that can be used without a new DB call
+
+        function getOneTeamAndAdd(teamId) { // get and append one team, called after successful add to backend
+            let result = teamsService.get(teamId)
+                .then(onGetOneTeamAndAddSuccess)
+                .catch(onGetOneTeamAndAddError)
+            console.log("getOneTeamAndAdd...", result); // probably undefined here...
+            return result;
+        }
+
+        function onGetOneTeamAndAddSuccess(data) {
+            console.log("onGetOneTeamAndAddSuccess", data);
+            console.log(data);
+            appendOneTeam(data.data.item.id, data.data.item);
+        }
+
+        function onGetOneTeamAndAddError(response) {
+            console.log("onGetOneTeamAndAddError", response);
+            console.warn(response);
+        }
+
+        function appendOneTeam(id, team) {
+            if (!team.id) {
+                team.id = id
+            }
+            var arrayOfOne = [team];
+            let singleJqTemplate = arrayOfOne.map(mapSingleItem);
+            $(".clone-container").append(singleJqTemplate);
+        }
+
+        function mapSingleItem(team) {
+            console.log(team);
+            var testTemplate = getTemplate();
+            var id = team.id;
+            testTemplate = modifyTemplate(testTemplate, id, team);
+            return testTemplate;
+        }
+
+        function processArrayByMapping(arrayOfData) {
+            let arrayofJqTemplates = arrayOfData.map(mapSingleItem);
+            $(".clone-container").append(arrayofJqTemplates);
+        }
+
+        // todo move most of this business logic into function and out of click handler
+
+        function onAddNewSportsTeamButtonClick() {
+
+            console.log("onAddNewSportsTeamButtonClick...");
+
+            var selectedId = $('#teamId').val(); // hidden form value that is set based on selecting edit in card view
+
+            if (selectedId != -1) { // todo - this is possibly clumsy use of variables for state information
+                if (confirm("Warning. You have an existing element selected. Are you sure you want to ADD instead of UPDATE ?") == false) {
+                    return false;
+                }
+            }
+
+            var formValidationResult = formValidation();
+
+            if (formValidationResult.hasErrors) {
+                showFormValidationErrors(formValidationResult);
+                return false; // form isn't posted/submitted
+            }
+
+            // add new sport // note - trimming and setting proper values is done on a call within the validation function
+
+            var newTeam = {
+                team: $('#team').val(),
+                sport: $('#sport').val(),
+                city: $('#city').val()
+            }
+
+            console.log(`addTeam(newTeam); will be invoked with ${JSON.stringify(newTeam)}`);
+
+            let result = addTeam(newTeam);
+
+            console.log("add team result...", result);
+
+        }
+
+        function onUpdateSportsTeamButtonClick() {
+
+            console.log("onUpdateSportsTeamButtonClick...");
+
+            var formValidationResult = formValidation();
+
+            if (formValidationResult.hasErrors) {
+                showFormValidationErrors(formValidationResult);
+                return false;
+            }
+
+            var updateId = $('#teamId').val();
+
+            if (updateId < 0) {
+                $('#errors').append(`<p class="alert alert-danger">You must select an existing team to UPDATE, or use ADD to create a new team.</p>`);
+
+                return false;
+            }
+
+            var updateObject = {
+                team: $('#team').val(),
+                sport: $('#sport').val(),
+                city: $('#city').val()
+            }
+
+            console.log(`Update will be invoked with id: ${updateId} data: ${JSON.stringify(updateObject)}`);
+
+            updateTeam(updateId, updateObject);
+
+        }
+
+        var addTeam = (team) => {
+
+            console.log("addTeam", team);
+
+            var newTeam = {
+                team: team.team,
+                sport: team.sport,
+                city: team.city
+            };
+
+            return teamsService.add(newTeam)
+                .then(onAddTeamSuccess)
+                .catch(onAddTeamError);
+        }
+
+        var onAddTeamSuccess = data => {
+            console.log("onAddTeamSuccess", data);
+
+            var newId = data.data.item;
+
+            console.log("Added new id: ", newId);
+
+            toastr.success('Add Team Success', 'success!');
+
+            clearSportsFormFields();
+
+            console.log("---------------------------");
+            var payloadData = JSON.parse(data.config.data);
+            console.log("---------------------------", payloadData);
+
+            // NOTE - this uses original payload and call to modify to update existing DOM element
+
+            console.log("-------------------------------------------------------------------------------------", payloadData);
+
+            appendOneTeam(newId, payloadData);
+
+            //------ [ old below, refactored above ] -----------[  appendOneTeam(newId, payloadData); ] ---------------------------------------------------------------------------------------
+            // NOTE - with this method (getOneTeamAndAdd()), the returned object data is added to [data]
+            // NOTE - compare to update - a new DB call isn't used and changed properties result in loss of additional DB context retrieved items.
+            // {"id":"1145591531","team":"The Bulls","sport":"Basketball","city":"Chicago","dateModified":"2020-09-18T17:11:42.5899647+00:00","dateAdded":"2020-09-15T19:43:41.5418329+00:00"}
+            // NOTE - this queries the DB for the one newly created entity and adds to DOM using modifyTemplate(template,id,team);
+            //getOneTeamAndAdd(newId); // gets newly added and appends new DOM element
+            //------ [ old below, refactored above ] ------------------------------------------------------------------------------------------------------------------------------------------
+
+            return data;
+
+        }
+
+        var onAddTeamError = err => {
+            console.warn("onAddTeamError", err);
+            //alert("onAddTeamError " + JSON.stringify(err));
+            toastr.error('Add Team Error', 'error!');
+
+
+            return err;
+        }
+
+        // TODO - ON EDIT - Once the data is updated in the form, you should allow the user to click a second "Update" button or the same Submit button from the original form so that they can initiate an actual update.
+
+        // TODO - // TODO - hide and show .update. button based on if one is selected or not
+
+        var updateTeam = (teamId, team) => {
+            console.log("updateTeam");
+            var payload = {
+                id: teamId,
+                team: team.team,
+                sport: team.sport,
+                city: team.city
+            };
+
+            return teamsService.update(payload)
+                .then(onUpdateTeamSuccess)
+                .catch(onUpdateTeamError);
+        }
+
+        var onUpdateTeamSuccess = data => {
+            console.log("onUpdateTeamSuccess", data);
+            console.log(data);
+
+            clearSportsFormFields();
+
+            console.log("---------------------------");
+            var payloadData = JSON.parse(data.config.data);
+            console.log("---------------------------", payloadData);
+
+            // NOTE - this uses original payload and call to modify to update existing DOM element
+            var updateTemplate = getExistingTemplateById(payloadData.id);
+            modifyTemplate(updateTemplate, payloadData.id, payloadData);
+
+            return data;
+        }
+
+        var onUpdateTeamError = err => {
+            console.warn("onUpdateTeamError", err);
+            alert("onUpdateTeamError " + JSON.stringify(err));
+            return err;
+        }
+
+        var deleteTeam = (teamId) => {
+
+            console.log("deleteTeam", teamId); // teamId = 235151523512; // FORCE ERROR CHECK
+
+            return teamsService.delete(teamId)
+                .then(onDeleteTeamSuccess)
+                .catch(onDeleteTeamError);
+        }
+
+        var onDeleteTeamSuccess = data => {
+
+            console.log("onDeleteTeamSuccess", data);
+            console.log(data);
+
+            clearSportsFormFields();
+
+            console.log(data.config.url);
+
+            // NOTE - It should remove the entity from the database and the DOM when the operation is successful, not before.
+
+            var recentlyDeletedId = data.config.url.substr(data.config.url.lastIndexOf("/") + 1);
+            $(".card[data-id='" + recentlyDeletedId + "']").remove();
+
+            return data;
+        }
+
+        var onDeleteTeamError = err => {
+            console.warn("onDeleteTeamError", err);
+            alert("onDeleteTeamError " + JSON.stringify(err));
+            return err;
+        }
+    </script>
     <!-- 🛑 Do Not Write Any Code Below here -->
 </body>
 

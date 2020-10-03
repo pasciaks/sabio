@@ -8,9 +8,31 @@
 
 ### ----- ACCOMPLISHED -----
 
+        FELL SHORT of completing Starter cards (A) to my satisfaction.
+
+        CREATED Login, Register, Home and Nav system for Starter Cards (A).
+        Incorporated Sweet Alerts and Toastr, stubbed in examples for their use.
+        Separated and stubbed out services for coming end points and future pages.
+
+        FIXED SELF INDUCED BUGS
+        (stumbled on some crazy self-induced bugs by starting entire project from scratch and not using sabio starter template)
+
+        HACKED AWAY AT BOOTSTRAP and CSS for NAV and Forms.
+        (spent too much time trying to make it look as bad as it currently does)
+
+        COMPLETELY REFACTORED my custom Teams entities assignment, realized it wasn't necessary for this one,
+        then refactored again, but lessons learned help build my growing services structure and drive home the
+        idea of bubbling up catch cases within services.
+
 ### ----- WILL ACCOMPLISH -----
 
+        Finalize (A) - Get in the Q for code-review of (A)
+
+        Move on to (B) and finish the majority of (B).
+
 ### ----- BLOCKERS -----
+
+        Failing to focus on the task at hand and working towards future can be a show-stopper for me.
 
 # October 1st, 2020
 
