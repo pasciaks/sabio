@@ -26,7 +26,7 @@
 
 ### ----- WILL ACCOMPLISH -----
 
-        Finalize (A) - Get in the Q for code-review of (A)
+        Finalize (A)  (MINIMAL TASKS REMAIN - mostly just validating what I already have.)
 
         Move on to (B) and get the Friends (peopleView) working.
 
