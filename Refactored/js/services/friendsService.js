@@ -2,6 +2,9 @@
     Sheldon Pasciak, October 2020
 */
 
+// TODO verify the NON_NEED for return new promises around each axios - only needed if I want to further transpose data
+// based on data from Axios
+
 var friendsService = {
     endpoint: "https://api.remotebootcamp.dev/api/friends"
 };
@@ -10,7 +13,8 @@ var friendsService = {
 /*
     get a specific record by id
 
-    var id = 4976;
+    var id = 4976;  
+
 */
 friendsService.get = (id) => {
     console.log("friendsService.get is executing ", id);
@@ -84,6 +88,7 @@ friendsService.search = (pageIndex, pageSize, searchString) => {
             })
     })
 };
+
 
 //GET friends by slug - ??? - 77546
 

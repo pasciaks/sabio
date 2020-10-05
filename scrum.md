@@ -11,9 +11,14 @@
         FINISHED clean version of A
 
         Started C93 (B) Friends
+
         Created and Tested services for .add .delete .get .search .getPageOfFriends
 
 ### ----- WILL ACCOMPLISH -----
+
+        Monday October 5, 2020
+
+        // Do full test of my use of return a promise outside Axios calls -- not happy
 
         Finish C93 Starter (B) Friends and Begin C93 Starter (B) Jobs
 
@@ -21,7 +26,7 @@
 
 ### ----- BLOCKERS -----
 
-        I'm on track, no blockers anticipated.
+        I'm on track, no blockers anticipated.  I'm learning how to keep focused, not get bogged down in a loop of unproductivity.
 
 # October 2nd, 2020
 

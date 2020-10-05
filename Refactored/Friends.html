@@ -21,6 +21,8 @@
 
     <script src="./js/tests.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.1.0/uuidv4.min.js"></script>
+
     <script src="./js/utilities.js"></script>
 
     <script src="https://unpkg.com/axios@0.19.2/dist/axios.min.js"></script>
@@ -89,16 +91,19 @@
             getCurrentUser();
 
             testFriends();
+
         }
 
         function testFriends() {
+
+            var uniqueID = uuidv4(); // Date.now();
 
             var payload = {
                 "title": "This is a test",
                 "bio": "This is the bio",
                 "summary": "Summary of the friends api record",
                 "headline": "Now is the time for a headline",
-                "slug": Date.now(),
+                "slug": uniqueID,
                 "statusId": "NotSet",
                 "primaryImage": "https://api.remotebootcamp.dev/apihelp/rbclogo.png"
             }
