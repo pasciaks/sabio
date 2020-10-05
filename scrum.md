@@ -4,6 +4,26 @@
     What are you going to accomplish
     What are your blockers
 
+# Month, DD, YYYY
+
+### ----- ACCOMPLISHED -----
+
+### ----- WILL ACCOMPLISH -----
+
+### ----- BLOCKERS -----
+
+# October 5, 2020
+
+### ----- ACCOMPLISHED -----
+
+        Refactored login/register/home
+        ((...finished Starter 93 (A) Friends))
+
+
+### ----- WILL ACCOMPLISH -----
+
+### ----- BLOCKERS -----
+
 # October 3rd, 2020
 
 ### ----- ACCOMPLISHED -----

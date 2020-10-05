@@ -45,9 +45,6 @@
 
     <link href="./css/main.css" rel="stylesheet" />
 
-
-
-
 </head>
 
 <body>
@@ -59,11 +56,11 @@
     <div class="container-fluid">
         <div id="loggedIn" style="display:none;">
             <div id="loggedInUserInfo"></div>
-            <button onclick="onLogoutClicked();" type="button" class="btn btn-danger">Logout</button>
+            <button id="logoutButton" type="button" class="btn btn-danger">Logout</button>
         </div>
         <div id="loggedOut" style="display:none;">
             <div id="loggedOutUserInfo"></div>
-            <button onclick="onLoginClicked();" type="button" class="btn btn-success">Login</button>
+            <button id="loginButton" type="button" class="btn btn-success">Login</button>
         </div>
     </div>
 
@@ -81,62 +78,56 @@
         }
 
         function startUp() {
+            wireUpEvents();
             includeHTML(); // Note - this will run on every page, better served with views/routing/local storage perhaps
             getCurrentUser();
         }
 
-        function onLoginClicked() {
-            location.href = "./Login.html";
+        function wireUpEvents() {
+            $('#logoutButton').on("click", onLogoutClicked);
+            $('#loginButton').on("click", onLoginClicked);
         }
 
-        function onLogoutClicked() {
+        function loginUser() {
+            location.href = "Login.html";
+        }
+
+        function logoutUser() {
             services.authService.userLogout()
                 .then(onUserLogoutSuccess)
                 .catch(onUserLogoutError)
         }
 
-        function onUserLogoutSuccess(response) {
-            // todo -- update user status view            
-            //toastr.success(response, "User Logout Success"); // map response current user
+        function onLoginClicked(event) {
+            loginUser();
+        }
 
-            location.href = "./Login.html";
+        function onLogoutClicked(event) {
+            logoutUser();
+        }
+
+        function onUserLogoutSuccess(response) {
+            location.href = "Login.html";
         }
 
         function onUserLogoutError(error) {
-            // todo -- update user status view
-            //toastr.error(error, "User Logout Error - Perhaps the user is already logged out."); // map response current user
-
-            location.href = "./Login.html";
+            toastr.error(error, "User Logout Error - Perhaps the user is already logged out.");
+            userIsLoggedIn(false);
         }
 
         function getCurrentUser() {
-
             services.authService.getCurrentUser()
                 .then(onGetCurrentUserSuccess)
                 .catch(onGetCurrentUserError)
         }
 
-
-
         function onGetCurrentUserSuccess(response) {
-            //console.log(response);
-
-            $('#loggedIn').show();
-            $('#loggedOut').hide();
-
             var loggedInUserId = response.data.item.id;
             getUser(loggedInUserId);
         }
 
         function onGetCurrentUserError(error) {
-            //console.log(error);
-
-            $('#loggedIn').hide();
-            $('#loggedOut').show();
-
-            var userStatus = `Please log in.`;
-            $('#loggedOutUserInfo').html(userStatus);
-
+            userIsLoggedIn(false); // show the logged out view //location.href = "Login.html";
         }
 
         function getUser(userId) {
@@ -146,15 +137,27 @@
         }
 
         function onGetUserSuccess(response) {
-            //console.log("onGetUserSuccess", response);
-            var userStatus = `<img style="max-height:100px;max-width:200px;" src="${response.data.item.avatarUrl}"><p>${response.data.item.firstName} ${response.data.item.lastName} </p><p>${response.data.item.email} </p>`
+            var user = response.data.item;
+            var userStatus = `<img style="max-height:100px;max-width:200px;" src="${user.avatarUrl}"><p>${user.firstName} ${user.lastName} </p><p>${user.email} </p>`
             $('#loggedInUserInfo').html(userStatus);
+            userIsLoggedIn(true); // show the logged in view
         }
 
         function onGetUserError(error) {
-            //console.log("onGetUserError", error);
-            var userStatus = `Please log in.`
-            $('#loggedOutUserInfo').html(userStatus);
+            toastr.error(error, "???");
+            var userStatus = `<p>Please log in.</p>`;
+            $('#loggedInUserInfo').html(userStatus);
+            userIsLoggedIn(false); // show the logged out view
+        }
+
+        function userIsLoggedIn(isLoggedIn) {
+            if (isLoggedIn) {
+                $('#loggedIn').show();
+                $('#loggedOut').hide();
+            } else {
+                $('#loggedIn').hide();
+                $('#loggedOut').show();
+            }
         }
     </script>
 

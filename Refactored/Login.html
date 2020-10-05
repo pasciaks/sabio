@@ -9,24 +9,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="Sabio Coding Bootcamp" />
     <meta itemprop="image" content="https://sabio.la/Sabio.png">
-
     <link rel="shortcut icon" href="https://sabio.la/Sabio.png">
     <link rel="icon" type="image/png" href="https://sabio.la/Sabio.png" />
-
     <script src="https://pw.sabio.la/api/js/site"></script>
-
     <link href="https://pw.sabio.la/dist/all-site.css" rel="stylesheet" />
 
     <link href="./css/toastr.css" rel="stylesheet" />
-
     <script src="./js/tests.js"></script>
-
     <script src="./js/utilities.js"></script>
 
     <script src="https://unpkg.com/axios@0.19.2/dist/axios.min.js"></script>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
     <script src="./js/toastr.min.js"></script>
 
     <!-- Import my javascript services code -->
@@ -44,7 +38,6 @@
     <!-- 💡 All your CSS in here -->
 
     <link href="./css/main.css" rel="stylesheet" />
-
 
 </head>
 
@@ -68,20 +61,22 @@
             </div>
 
             <div class="form-group">
-                <label>Tenant Id: <input type="text" class="form-control" name="loginTenant" id="loginTenant" placeholder="bootcamp" value="bootcamp1"></label>
+                <label>Tenant Id: <input type="text" class="form-control" name="loginTenant" id="loginTenant" placeholder="TenantId" value="bootcamp1"></label>
             </div>
 
-            <button id="loginButton" type="submit" class="btn btn-success btn-lg btn-block m-1" onclick="onClickLoginUser();return true;">Login</button>
+            <button id="loginButton" type="submit" class="btn btn-success btn-block m-1">Login</button>
 
             <hr>
             <p>Need to sign up?</p>
+            <hr>
 
-            <button type="button" onclick="location.href='./Register.html';" class="btn btn-secondary btn-lg btn-block m-1">Register Now</button>
+            <button id="registerButton" type="button" class="btn btn-secondary btn-block m-1">Register Now</button>
         </form>
 
     </div>
 
     <script>
+        // My Slack ID - U01BTATB8UC
         var services = {
             authService: authService,
             blogsService: blogsService,
@@ -95,86 +90,73 @@
         }
 
         function startUp() {
-            includeHTML(); // Note - this will run on every page, better served with views/routing/local storage perhaps
+
+            // Note - Loads nav menu - This will run on every page, better served with future React component views/routing
+            includeHTML();
+
+            // Note - Wire up button event handlers
             wireUpEvents();
         }
 
         function wireUpEvents() {
+
+            $('#loginButton').on("click", onClickLoginUser);
+            $('#registerButton').on("click", onClickRegisterUser);
+
             $("#loginForm").submit(function(event) {
                 event.preventDefault();
             });
         }
 
-        function readLoginFormData() {
+        function onClickRegisterUser(event) {
+            location.href = "Register.html";
+        }
 
-            // successful payload example
-            var loginFormData = {
-                "email": "sabio@sabio.la",
-                "password": "Sabiopassword1!",
-                "tenantId": "bootcamp1"
-            }
+        function onClickLoginUser(event) {
+            loginUser();
+        }
+
+        function readLoginFormData() {
 
             var loginEmail = $('#loginEmail').val() || "";
             var loginPassword = $('#loginPassword').val() || "";
             var loginTenant = $('#loginTenant').val() || "";
 
+            var loginFormData = {};
+
             loginFormData.email = loginEmail;
             loginFormData.password = loginPassword;
             loginFormData.tenantId = loginTenant;
-
-            console.log(loginFormData);
 
             return loginFormData;
         }
 
         function loginUser() {
-
             var userPayload = readLoginFormData();
-
             services.authService.userLogin(userPayload)
                 .then(onLoginUserSuccess)
                 .catch(onLoginUserError)
-
         }
 
         function onLoginUserSuccess(response) {
-
-
-            toastr.options.onHidden = function() {
-                location.href = "./Home.html";
-            }
-
-            toastr.success(response, "User Login Success.", {
-                timeOut: 1000
-            });
-
-            // services.authService.getCurrentUser()
-            //     .then(function(data) {
-            //         console.log(data);
-            //     })
-            //     .catch(function(data) {
-            //         console.log(data);
-            //     })
-
+            location.href = "./Home.html";
         }
 
-        function onLoginUserError(error) {
+        function mapErrors(theError) {
+            if (theError.indexOf("Invalid Email or Unconfirmed Account") > -1) {
+                theError = "Invalid Email or Unconfirmed Account";
+            } else if (theError.indexOf("Invalid Credentials") > -1) {
+                theError = "Invalid Credentials";
 
-            // error.response.data.errors.map((errorMessage) => {
-            //     toastr.error(errorMessage, errorMessage, {
-            //         timeOut: 0,
-            //         closeButton: true,
-            //         extendedTimeOut: 0
-            //     });
-            // });
-
-            toastr.error(`<br><br>Error ${error}`, `Error Logging In, please verify your information.`, {
+            }
+            toastr.error(`${theError}`, `Error !!!`, {
                 timeOut: 3500
             });
         }
 
-        function onClickLoginUser() {
-            loginUser();
+        function onLoginUserError(error) {
+            var errors = error.response.data.errors;
+            errors.map(mapErrors);
         }
     </script>
 

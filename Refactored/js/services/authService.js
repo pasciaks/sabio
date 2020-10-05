@@ -18,7 +18,6 @@ var authService = {
     userLogin - Note the optional return type with transposed return data
 */
 authService.userLogin = (payload) => {
-
     const config = {
         method: "POST",
         url: authService.endpoint + "/" + "login",
@@ -28,62 +27,7 @@ authService.userLogin = (payload) => {
             "Content-Type": "application/json"
         }
     };
-
-    /*
-        NOTE - If simply implemented like this, the calling result catches with .then and .catch
-    */
-    // return axios(config)
-
-    /*
-        NOTE - If implemented like this, manipulation can be handled here and still allow .then and .catch case in calling function.
-    */
-    return new Promise(function (resolve, reject) {
-        return axios(config)
-            .then(function (data) {
-                // NOTE - don't put view mechanisms here , pure code , reusable , separate UI/UX from business logic!!!
-                // toastr.success('Successful Login\n\nPlease enter data carefully, for example purposes this account and data can be accessed by all the use this site.', 'Login Success!')
-                //console.log(data);
-                //var hasErrors = false;
-                //var additionalPayloadInfo = "user login success using payload " + JSON.stringify(payload);
-                //resolve({ data, additionalPayloadInfo, hasErrors });
-                resolve(data);
-            })
-            .catch(function (error) {
-                // NOTE - don't put view mechanisms here , pure code , reusable , separate UI/UX from business logic!!!
-                // toastr.error("Error logging in\n\nPlease verify your credentials.", "Error");
-                //console.log(error);
-                //var hasErrors = true;
-                //var myErrorInfo = "user login failure using payload " + JSON.stringify(payload);
-                //reject({ error, myErrorInfo, hasErrors });
-                reject(error);
-            })
-    });
-
-    /*
-        note - if implemented like below, a call to userLogin always returns a then case (I think) -- the catch case doesn't bubble up if called.
-
-        // this then apparantly requires a 'data result flag' like hasErrors be implemented.
-
-            userLogin()
-            .then(function(data){})
-            .catch(function(data){})
-    */
-    // return axios(config)
-    //     .then(function (data) {
-    //         alert("Successful Login\n\nPlease enter data carefully, for example purposes this account and data can be accessed by all the use this site.");
-    //         var hasErrors = false;
-    //         var additionalPayloadInfo = "user login success using payload " + JSON.stringify(payload);
-    //         console.log(additionalPayloadInfo);
-    //         return { data, additionalPayloadInfo, hasErrors };
-    //     })
-    //     .catch(function (data) {
-    //         alert("Error logging in\n\nPlease verify your credentials.");
-    //         var hasErrors = true;
-    //         var myErrorInfo = "user login failure using payload " + JSON.stringify(payload);
-    //         console.log(myErrorInfo);
-    //         return { data, myErrorInfo, hasErrors };
-    //     })
-
+    return axios(config)
 };
 
 authService.userLogout = () => {
@@ -95,21 +39,7 @@ authService.userLogout = () => {
             "Content-Type": "application/json"
         }
     };
-
-
-    return new Promise(function (resolve, reject) {
-
-        return axios(config)
-            .then(function (data) {
-                //console.log(data);
-                resolve(data);
-            })
-            .catch(function (error) {
-                //console.log(error);
-                reject(error);
-            })
-
-    })
+    return axios(config)
 }
 
 /*
@@ -135,17 +65,6 @@ authService.userLogout = () => {
 //     })
 
 authService.userRegister = (payload) => {
-
-    // var registerPayload = {
-    //     "firstName": payload.firstName,
-    //     "lastName": payload.lastName,
-    //     "email": payload.email,
-    //     "password": payload.password,
-    //     "passwordConfirm": payload.passwordConfirm,
-    //     "avatarUrl": payload.avatarUrl,
-    //     "tenantId": payload.tenantId
-    // }
-
     const config = {
         method: "POST",
         url: authService.endpoint + "/" + "register", //"https://api.remotebootcamp.dev/api/users/register",
@@ -155,27 +74,8 @@ authService.userRegister = (payload) => {
             "Content-Type": "application/json"
         }
     };
-
-    //error.response.data.errors ???
-
-    //return axios(config)
-
-    // trying to get error info on registration fail
-
-    return new Promise(function (resolve, reject) {
-
-        return axios(config)
-            .then(function (data) {
-                //console.log(data);
-                resolve(data);
-            })
-            .catch(function (error) {
-                //console.log(error);
-                reject(error);
-            })
-
-    })
-
+    // NOTE - in the catch case the return of error.response.data.errors
+    return axios(config)
 };
 
 //https://api.remotebootcamp.dev/api/users/current
@@ -189,22 +89,10 @@ authService.getCurrentUser = () => {
             "Content-Type": "application/json"
         }
     };
-
-    return new Promise(function (resolve, reject) {
-        return axios(config)
-            .then(function (data) {
-                //console.log(data);
-                resolve(data);
-            })
-            .catch(function (err) {
-                //console.log(err.response.data.errors);
-                reject(err.response.data.errors);
-            })
-    })
-
+    return axios(config)
 }
 
-authService.getUsers = (pageIndex = 0, pageSize = 10) => {
+authService.getUsers = (pageIndex, pageSize) => {
     const config = {
         method: "GET",
         url: authService.endpoint + "/" + `?pageIndex=${pageIndex}&pageSize=${pageSize}`, // "https://api.remotebootcamp.dev/api/users/?pageIndex=0&pageSize=9999",
@@ -216,7 +104,6 @@ authService.getUsers = (pageIndex = 0, pageSize = 10) => {
     return axios(config)
 }
 
-
 authService.getUser = (userId) => {
     const config = {
         method: "GET",
@@ -226,19 +113,5 @@ authService.getUser = (userId) => {
             "Content-Type": "application/json"
         }
     };
-
-    return new Promise(function (resolve, reject) {
-        return axios(config)
-            .then(function (data) {
-                //console.log(data);
-                resolve(data);
-            })
-            .catch(function (err) {
-                //console.log(err.response.data.errors);
-                reject(err.response.data.errors);
-            })
-    })
-
+    return axios(config)
 }
-
-

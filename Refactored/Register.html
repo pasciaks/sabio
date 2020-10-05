@@ -12,21 +12,16 @@
 
     <link rel="shortcut icon" href="https://sabio.la/Sabio.png">
     <link rel="icon" type="image/png" href="https://sabio.la/Sabio.png" />
-
     <script src="https://pw.sabio.la/api/js/site"></script>
-
     <link href="https://pw.sabio.la/dist/all-site.css" rel="stylesheet" />
 
     <link href="./css/toastr.css" rel="stylesheet" />
 
     <script src="./js/tests.js"></script>
-
     <script src="./js/utilities.js"></script>
 
     <script src="https://unpkg.com/axios@0.19.2/dist/axios.min.js"></script>
-
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
     <script src="./js/toastr.min.js"></script>
 
     <!-- Import my javascript services code -->
@@ -44,7 +39,6 @@
     <!-- 💡 All your CSS in here -->
 
     <link href="./css/main.css" rel="stylesheet" />
-
 
 </head>
 
@@ -75,7 +69,7 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-sm-3 col-form-label" onclick="setRandomEmail();"><u>Email:</u> </label>
+                <label class="col-sm-3 col-form-label">Email: </label>
                 <div class="col-sm-9">
                     <input required type="text" class="form-control" autocomplete="email" name="registerEmail" id="registerEmail" placeholder="email" value="someone1@pasciak.com">
                 </div>
@@ -96,7 +90,7 @@
             </div>
 
             <div class="form-group row">
-                <input type="submit" class="form-control btn-success" name="registerButton" id="registerButton" onclick="onClickRegisterUser();return true;" value="Register">
+                <input type="submit" class="form-control btn-success" name="registerButton" id="registerButton" value="Register">
             </div>
 
             <div class="form-group">
@@ -127,17 +121,19 @@
         }
 
         function wireUpEvents() {
+
+            $('#registerButton').on("click", onClickRegisterUser);
+
             $("#registerForm").submit(function(event) {
                 event.preventDefault();
             });
         }
 
-        function setRandomEmail() {
-            $('#registerEmail').val(Date.now() + "_user@pasciak.com");
+        function onClickRegisterUser(event) {
+            registerUser();
         }
 
         function readRegisterFormData() {
-
             var regFirstName = $('#registerFirst').val() || "";
             var regLastName = $('#registerLast').val() || "";
             var regEmail = $('#registerEmail').val() || "";
@@ -161,42 +157,38 @@
             return registerFormData;
         }
 
-        function registerNewUser() {
-
+        function registerUser() {
             var userPayload = readRegisterFormData();
-
             services.authService.userRegister(userPayload)
                 .then(onRegisterUserSuccess)
                 .catch(onRegisterUserError)
         }
 
         function onRegisterUserSuccess(response) {
-            console.log(response);
-            console.log(JSON.stringify(response));
+            var onHidden = function() {
+                location.href = "Login.html";
+            }
+            toastr.success(response, "User Registered Successfully. You will be redirected to login.", {
+                onHidden: onHidden,
+                timeOut: 2500
+            });
+        }
 
-            toastr.success(response, "User Registered Successfully."); // map response current user
-
-            setTimeout(function() {
-                location.href = "./Login.html";
-            }, 1000);
+        function mapErrors(theError) {
+            console.log(theError);
+            var theErrorTitle = "Error!";
+            if (theError.indexOf("Cannot insert duplicate key") > -1) {
+                theErrorTitle = "Already Registered";
+                theError = "Please verify your information, this user email may already be registered.";
+            }
+            toastr.error(`${theError}`, theErrorTitle, {
+                timeOut: 3500
+            });
         }
 
         function onRegisterUserError(error) {
-
-            try {
-                var errorMessages = error.response.data.errors || [];
-                errorMessages.map((oneErrorMessage) => {
-                    console.log("****", oneErrorMessage);
-                    toastr.warning(`Error ${oneErrorMessage}`, `Error registering your account, please verify your information.`);
-                });
-            } catch (e) {
-                toastr.warning(`Error`, `Undetermined Error Has Occurred.`);
-            }
-
-        }
-
-        function onClickRegisterUser() {
-            registerNewUser();
+            var errors = error.response.data.errors;
+            errors.map(mapErrors);
         }
     </script>
 

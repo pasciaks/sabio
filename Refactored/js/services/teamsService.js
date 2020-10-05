@@ -9,10 +9,8 @@ var teamsService = {
 
 /*
 
-get a specific team record
-
+    get a specific team record
     var teamId = 5325235;
-
 */
 teamsService.get = (teamId) => {
     console.log("teamsService.get is executing ", teamId);
@@ -22,14 +20,11 @@ teamsService.get = (teamId) => {
         crossdomain: true,
         headers: { "Content-Type": "application/json" }
     };
-
     return axios(config);
 };
 
 /*
-
-get all team records
-
+    get all team records
 */
 teamsService.getAll = () => {
     console.log("teamsService.getAll is executing ");
@@ -39,13 +34,11 @@ teamsService.getAll = () => {
         crossdomain: true,
         headers: { "Content-Type": "application/json" }
     };
-
     return axios(config);
 };
 
 /*
-
-add a new team
+    add a new team
 
     var payload = {
         team: "team name",
@@ -64,31 +57,22 @@ teamsService.add = payload => {
         crossdomain: true,
         headers: { "Content-Type": "application/json" }
     };
-
-    // NOTE -- a transform might be nice because I'd like to also get back the payload I sent initially in addition to the returned new ID
-
     return axios(config);
 };
 
-
 /*
-
-update an existing team
+    update an existing team
 
     var teamId = 1353252;
-
     var payload = {
         id : 12342,
         team: "team name",
         sport: "sport name",
         city: "city name"
     }
-
-
 */
 teamsService.update = (payload) => {
     console.log("teamsService.update is executing ", payload);
-
     const config = {
         method: "PUT",
         url: teamsService.endpoint + "/" + payload.id,
@@ -96,27 +80,22 @@ teamsService.update = (payload) => {
         crossdomain: true,
         headers: { "Content-Type": "application/json" }
     };
-
     return axios(config);
 };
 
 /*
 
-delete a team entity
+    delete a team entity
 
     var teamId = 1145591531;
-
 */
 teamsService.delete = (teamId) => {
     console.log("teamsService.delete is executing ", teamId);
-
     const config = {
         method: "DELETE",
         url: teamsService.endpoint + "/" + teamId,
         crossdomain: true,
         headers: { "Content-Type": "application/json" }
     };
-
     return axios(config);
 };
-

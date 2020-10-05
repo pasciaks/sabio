@@ -2,9 +2,6 @@
     Sheldon Pasciak, October 2020
 */
 
-// TODO verify the NON_NEED for return new promises around each axios - only needed if I want to further transpose data
-// based on data from Axios
-
 var friendsService = {
     endpoint: "https://api.remotebootcamp.dev/api/friends"
 };
@@ -12,9 +9,7 @@ var friendsService = {
 //GET friends by id- https://api.remotebootcamp.dev/api/friends/4976
 /*
     get a specific record by id
-
     var id = 4976;  
-
 */
 friendsService.get = (id) => {
     console.log("friendsService.get is executing ", id);
@@ -24,49 +19,28 @@ friendsService.get = (id) => {
         crossdomain: true,
         headers: { "Content-Type": "application/json" }
     };
-    return new Promise(function (resolve, reject) {
-        return axios(config)
-            .then(function (data) {
-                //console.log(data);
-                resolve(data);
-            })
-            .catch(function (err) {
-                //console.log(err.response.data.errors);
-                reject(err);
-            })
-    })
+    return axios(config)
 };
 
 //GET friends getPageOfFriends - https://api.remotebootcamp.dev/api/friends?pageIndex=0&pageSize=33
-
 /*
     get page of friends
-
 */
 friendsService.getPageOfFriends = (pageIndex, pageSize) => {
     console.log("friendsService.getPageOfFriends is executing ", pageIndex, pageSize);
     const config = {
         method: "GET",
-        url: friendsService.endpoint + "/" + `search?pageIndex=${pageIndex}&pageSize=${pageSize}`,
+        url: friendsService.endpoint + "/" + `?pageIndex=${pageIndex}&pageSize=${pageSize}`,
         crossdomain: true,
         headers: { "Content-Type": "application/json" }
     };
-    return new Promise(function (resolve, reject) {
-        return axios(config)
-            .then(function (data) {
-                //console.log(data);
-                resolve(data);
-            })
-            .catch(function (err) {
-                //console.log(err.response.data.errors);
-                reject(err);
-            })
-    })
+    return axios(config)
 };
 
 //GET friends search - https://api.remotebootcamp.dev/api/friends/search?pageIndex=0&pageSize=15&q=raised
 /*
     search friends - consider optimization that uses a call to traditional paging OR this paging with search parameter
+    case insensitive search of bio field ?
 */
 friendsService.search = (pageIndex, pageSize, searchString) => {
     console.log("friendsService.search is executing ", pageIndex, pageSize, searchString);
@@ -76,35 +50,26 @@ friendsService.search = (pageIndex, pageSize, searchString) => {
         crossdomain: true,
         headers: { "Content-Type": "application/json" }
     };
-    return new Promise(function (resolve, reject) {
-        return axios(config)
-            .then(function (data) {
-                //console.log(data);
-                resolve(data);
-            })
-            .catch(function (err) {
-                //console.log(err.response.data.errors);
-                reject(err);
-            })
-    })
+    return axios(config)
 };
 
 
-//GET friends by slug - ??? - 77546
+/*
+    ADD a friend
+    POST - https://api.remotebootcamp.dev/api/friends
+    
+    {
+        "title": "This is a test",
+        "bio": "This is the bio",
+        "summary": "Summary of the friends api record",
+        "headline": "Now is the time for a headline",
+        "slug": "56333333", // must be unique
+        "statusId": "NotSet",
+        "primaryImage": "https://api.remotebootcamp.dev/apihelp/rbclogo.png"
+    }
+*/
 
-
-//POST - https://api.remotebootcamp.dev/api/friends
-// {
-//     "title": "This is a test",
-//     "bio": "This is the bio",
-//     "summary": "Summary of the friends api record",
-//     "headline": "Now is the time for a headline",
-//     "slug": "56333333", // must be unique
-//     "statusId": "NotSet",
-//     "primaryImage": "https://api.remotebootcamp.dev/apihelp/rbclogo.png"
-//   }
 friendsService.add = (payload) => {
-
     const config = {
         method: "POST",
         url: friendsService.endpoint,
@@ -114,20 +79,14 @@ friendsService.add = (payload) => {
             "Content-Type": "application/json"
         }
     };
-
-    return new Promise(function (resolve, reject) {
-        return axios(config)
-            .then(function (data) {
-                resolve(data);
-            })
-            .catch(function (error) {
-                reject(error);
-            })
-    });
-
+    return axios(config)
 };
 
+/*
 
+    Update existing friend
+
+*/
 //PUT - https://api.remotebootcamp.dev/api/friends/6211
 // {
 //     "id": 6211,
@@ -140,18 +99,21 @@ friendsService.add = (payload) => {
 //     "primaryImage": "https://api.remotebootcamp.dev/apihelp/rbclogo.png"
 //   }
 
-//PUT - update friends status - https://api.remotebootcamp.dev/api/friends/6211/Active
-// id / NotSet, Active, Deleted, Flagged 
 
+/*
+    Update friend status
+
+    PUT - update friends status - https://api.remotebootcamp.dev/api/friends/6211/Active
+
+    id / NotSet, Active, Deleted, Flagged 
+
+*/
 
 //DELETE - https://api.remotebootcamp.dev/api/friends/4976
 /*
     delete a friend record by id
-
     Note that delete is successful if a record with that ID exists - it's status is set to "statusId":"Deleted"
-
     Note that delete errors if the record ID doesn't exist
-
     var id = 4976;
 */
 friendsService.delete = (id) => {
@@ -162,16 +124,7 @@ friendsService.delete = (id) => {
         crossdomain: true,
         headers: { "Content-Type": "application/json" }
     };
-    return new Promise(function (resolve, reject) {
-        return axios(config)
-            .then(function (data) {
-                //console.log(data);
-                resolve(data);
-            })
-            .catch(function (err) {
-                //console.log(err.response.data.errors);
-                reject(err);
-            })
-    })
+    return axios(config)
 };
 
+//GET friends by slug - ??? - 77546

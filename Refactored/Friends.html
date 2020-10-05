@@ -9,26 +9,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="Sabio Coding Bootcamp" />
     <meta itemprop="image" content="https://sabio.la/Sabio.png">
-
     <link rel="shortcut icon" href="https://sabio.la/Sabio.png">
     <link rel="icon" type="image/png" href="https://sabio.la/Sabio.png" />
-
     <script src="https://pw.sabio.la/api/js/site"></script>
-
     <link href="https://pw.sabio.la/dist/all-site.css" rel="stylesheet" />
-
     <link href="./css/toastr.css" rel="stylesheet" />
-
     <script src="./js/tests.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.1.0/uuidv4.min.js"></script>
-
     <script src="./js/utilities.js"></script>
-
     <script src="https://unpkg.com/axios@0.19.2/dist/axios.min.js"></script>
-
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
     <script src="./js/toastr.min.js"></script>
 
     <!-- Import my javascript services code -->
@@ -47,9 +37,6 @@
 
     <link href="./css/main.css" rel="stylesheet" />
 
-
-
-
 </head>
 
 <body>
@@ -57,17 +44,6 @@
     <nav class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio d-none"></nav>
 
     <div w3-include-html="./includes/nav.html"></div>
-
-    <div class="container-fluid">
-        <div id="loggedIn" style="display:none;">
-            <div id="loggedInUserInfo"></div>
-            <button onclick="onLogoutClicked();" type="button" class="btn btn-danger">Logout</button>
-        </div>
-        <div id="loggedOut" style="display:none;">
-            <div id="loggedOutUserInfo"></div>
-            <button onclick="onLoginClicked();" type="button" class="btn btn-success">Login</button>
-        </div>
-    </div>
 
     <div id="debugInfo"></div>
 
@@ -86,61 +62,57 @@
 
         function startUp() {
 
-            includeHTML(); // Note - this will run on every page, better served with views/routing/local storage perhaps
+            wireUpEvents();
 
-            getCurrentUser();
+            includeHTML(); // Note - this will run on every page, better served with react components/views/routing
 
             testFriends();
 
         }
 
+        function wireUpEvents() {
+
+        }
+
         function testFriends() {
 
-            var uniqueID = uuidv4(); // Date.now();
-
-            var payload = {
-                "title": "This is a test",
-                "bio": "This is the bio",
-                "summary": "Summary of the friends api record",
-                "headline": "Now is the time for a headline",
-                "slug": uniqueID,
-                "statusId": "NotSet",
-                "primaryImage": "https://api.remotebootcamp.dev/apihelp/rbclogo.png"
+            var exampleFriend = {
+                "id": 6211,
+                "bio": "Updated Bio",
+                "title": "Updated test",
+                "summary": "Updated Summary",
+                "headline": "Updated Headline",
+                "entityTypeId": 1,
+                "statusId": "Active",
+                "slug": "1238675209",
+                "skills": null,
+                "primaryImage": {
+                    "id": 5401,
+                    "entityId": 6211,
+                    "imageTypeId": "Main",
+                    "imageUrl": "https://api.remotebootcamp.dev/apihelp/rbclogo.png"
+                },
+                "dateCreated": "2020-10-01T23:54:18.17",
+                "dateModified": "2020-10-02T00:03:57.9266667"
             }
 
-            services.friendsService.add(payload)
-                .then(function(response) {
-                    console.log(response);
-                    $('#debugInfo').append(`<br><hr><br>`);
-                    $('#debugInfo').append(JSON.stringify(response));
-                })
-                .catch(function(error) {
-                    console.log(error);
-                    $('#debugInfo').append(`<br><hr><br>`);
-                    $('#debugInfo').append(JSON.stringify(error));
-                })
+            // var uniqueID = uuidv4(); // Date.now();
 
+            // var payload = {
+            //     "title": "This is a test",
+            //     "bio": "This is the bio",
+            //     "summary": "Summary of the friends api record",
+            //     "headline": "Now is the time for a headline",
+            //     "slug": uniqueID,
+            //     "statusId": "NotSet",
+            //     "primaryImage": "https://api.remotebootcamp.dev/apihelp/rbclogo.png"
+            // }
 
-
-            services.friendsService.get(4976)
-                .then(function(response) {
-                    console.log(response);
-                    $('#debugInfo').append(`<br><hr><br>`);
-                    $('#debugInfo').append(`<br><hr>Friends get - ${4976} <br><hr>${JSON.stringify(response.data.item)}`);
-                })
-                .catch(function(error) {
-                    console.log(error);
-                    $('#debugInfo').append(`<br><hr><br>`);
-                    $('#debugInfo').append(JSON.stringify(error));
-                })
-
-
-
-            // services.friendsService.search(0, 13, "a") // NOTE - if there is no search parameter, use normal paging
+            // services.friendsService.add(payload)
             //     .then(function(response) {
-            //         console.log(response.data.item.pagedItems.length + ' Friends found');
+            //         console.log(response);
             //         $('#debugInfo').append(`<br><hr><br>`);
-            //         $('#debugInfo').append(response.data.item.pagedItems.map(mapFriend))
+            //         $('#debugInfo').append(JSON.stringify(response));
             //     })
             //     .catch(function(error) {
             //         console.log(error);
@@ -148,99 +120,58 @@
             //         $('#debugInfo').append(JSON.stringify(error));
             //     })
 
+            // services.friendsService.get(4976)
+            //     .then(function(response) {
+            //         console.log(response);
+            //         $('#debugInfo').append(`<br><hr><br>`);
+            //         $('#debugInfo').append(`<br><hr>Friends get - ${4976} <br><hr>${JSON.stringify(response.data.item)}`);
+            //     })
+            //     .catch(function(error) {
+            //         console.log(error);
+            //         $('#debugInfo').append(`<br><hr><br>`);
+            //         $('#debugInfo').append(JSON.stringify(error));
+            //     })
 
-
-            services.friendsService.delete(6354) //55555
+            services.friendsService.getPageOfFriends(0, 999)
                 .then(function(response) {
-                    console.log(response);
+                    console.log(response.data.item.pagedItems.length + ' Friends found');
                     $('#debugInfo').append(`<br><hr><br>`);
-                    $('#debugInfo').append(JSON.stringify(response));
+                    $('#debugInfo').append(response.data.item.pagedItems.map(mapFriend))
                 })
                 .catch(function(error) {
                     console.log(error);
                     $('#debugInfo').append(`<br><hr><br>`);
                     $('#debugInfo').append(JSON.stringify(error));
                 })
+
+            services.friendsService.search(0, 999, "%") // NOTE - if there is no search parameter, use normal paging
+                .then(function(response) {
+                    console.log(response.data.item.pagedItems.length + ' Friends found');
+                    $('#debugInfo').append(`<br><hr><br>`);
+                    $('#debugInfo').append(response.data.item.pagedItems.map(mapFriend))
+                })
+                .catch(function(error) {
+                    console.log(error);
+                    $('#debugInfo').append(`<br><hr><br>`);
+                    $('#debugInfo').append(JSON.stringify(error));
+                })
+
+            // services.friendsService.delete(6354) //55555
+            //     .then(function(response) {
+            //         console.log(response);
+            //         $('#debugInfo').append(`<br><hr><br>`);
+            //         $('#debugInfo').append(JSON.stringify(response));
+            //     })
+            //     .catch(function(error) {
+            //         console.log(error);
+            //         $('#debugInfo').append(`<br><hr><br>`);
+            //         $('#debugInfo').append(JSON.stringify(error));
+            //     })
+
         }
 
         function mapFriend(aFriend) {
-            // USE EXTENSIVE MAPPING, ETC TO DO THE FOLLOWING
-            // get Template
-            // modify Template
-            // append Template
             return `${JSON.stringify(aFriend)}`;
-        }
-
-        function onLoginClicked() {
-            location.href = "./Login.html";
-        }
-
-        function onLogoutClicked() {
-            services.authService.userLogout()
-                .then(onUserLogoutSuccess)
-                .catch(onUserLogoutError)
-        }
-
-        function onUserLogoutSuccess(response) {
-            // todo -- update user status view            
-            //toastr.success(response, "User Logout Success"); // map response current user
-
-            location.href = "./Login.html";
-        }
-
-        function onUserLogoutError(error) {
-            // todo -- update user status view
-            //toastr.error(error, "User Logout Error - Perhaps the user is already logged out."); // map response current user
-
-            location.href = "./Login.html";
-        }
-
-        function getCurrentUser() {
-
-            services.authService.getCurrentUser()
-                .then(onGetCurrentUserSuccess)
-                .catch(onGetCurrentUserError)
-        }
-
-
-
-        function onGetCurrentUserSuccess(response) {
-            //console.log(response);
-
-            $('#loggedIn').show();
-            $('#loggedOut').hide();
-
-            var loggedInUserId = response.data.item.id;
-            getUser(loggedInUserId);
-        }
-
-        function onGetCurrentUserError(error) {
-            //console.log(error);
-
-            $('#loggedIn').hide();
-            $('#loggedOut').show();
-
-            var userStatus = `Please log in.`;
-            $('#loggedOutUserInfo').html(userStatus);
-
-        }
-
-        function getUser(userId) {
-            services.authService.getUser(userId)
-                .then(onGetUserSuccess)
-                .catch(onGetUserError)
-        }
-
-        function onGetUserSuccess(response) {
-            //console.log("onGetUserSuccess", response);
-            var userStatus = `<img style="max-height:100px;max-width:200px;" src="${response.data.item.avatarUrl}"><p>${response.data.item.firstName} ${response.data.item.lastName} </p><p>${response.data.item.email} </p>`
-            $('#loggedInUserInfo').html(userStatus);
-        }
-
-        function onGetUserError(error) {
-            //console.log("onGetUserError", error);
-            var userStatus = `Please log in.`
-            $('#loggedOutUserInfo').html(userStatus);
         }
     </script>
 
