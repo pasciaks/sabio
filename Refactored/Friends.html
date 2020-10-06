@@ -59,6 +59,13 @@
     <div w3-include-html="./includes/nav.html"></div>
 
     <div class="container">
+        <form id="searchForm">
+            <input type="text" placeholder="Search.." name="searchInput" id="searchInput">
+            <button type="submit" id="friendSearchButton"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+
+    <div class="container">
         <div class="card-deck clone-container">
         </div>
     </div>
@@ -84,7 +91,7 @@
 
             includeHTML(); // Note - this will run on every page, better served with react components/views/routing
 
-            emptyFriends();
+            //emptyFriends();
 
             //updateFriendTest();
 
@@ -92,7 +99,6 @@
 
             getFriends(0, 999);
 
-            //searchFriends(0, 999, "bio");
 
         }
 
@@ -112,7 +118,8 @@
                 })
                 .catch(function(error) {
                     console.log(error);
-                    toastr.error(`<p>Are you sure you're logged in ?</p>${error}`, `Error !!!`, {
+                    // TODO - consider search for error types  404 - no friends 500 - bad request - example 
+                    toastr.error(`<p>No Friends found.</p>${error}`, `Error !!!`, {
                         timeOut: 3500
                     });
                 })
@@ -136,6 +143,21 @@
         function wireUpEvents() {
             $('.clone-container').on("click", ".deleteFriend", onDeleteFriendClicked);
             $('.clone-container').on("click", ".editFriend", onEditFriendClicked);
+
+            $('#friendSearchButton').on("click", onSearchButtonClick);
+
+
+        }
+
+        function onSearchButtonClick(event) {
+            event.preventDefault();
+            searchFriendsUsingSearchInputField();
+        }
+
+        function searchFriendsUsingSearchInputField() {
+            emptyFriends();
+            var searchText = $('#searchInput').val();
+            searchFriends(0, 999, searchText);
         }
 
         function getTemplate() {
