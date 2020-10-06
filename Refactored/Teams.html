@@ -4,21 +4,23 @@
 <head>
     <!-- #region Sabio Code - You can Fold this region to remove it from sight -->
     <meta charset="utf-8" />
+
+    <title>Teams</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="Sabio Coding Bootcamp" />
     <meta itemprop="image" content="https://sabio.la/Sabio.png">
     <link rel="shortcut icon" href="https://sabio.la/Sabio.png">
     <link rel="icon" type="image/png" href="https://sabio.la/Sabio.png" />
-    <!-- Do Not Change the HTML title or anything between this line and the line with the 💘's -->
-    <title>Pasciak - Forms , Jquery , Axios</title>
 
     <link href="https://pw.sabio.la/dist/all-site.css" rel="stylesheet" />
+    <script src="https://pw.sabio.la/api/js/site"></script>
 
+    <!-- Do Not Change the HTML title or anything between this line and the line with the 💘's -->
+    <title>Pasciak - Forms , Jquery , Axios</title>
     <link href="./css/toastr.css" rel="stylesheet" />
 
     <script src="./js/utilities.js"></script>
 
-    <script src="https://pw.sabio.la/api/js/site"></script>
     <!-- #endregion -->
 
     <!-- I 💘 Code, You 💘 Code, We all 💘 Code -->
@@ -26,7 +28,6 @@
     <script src="https://unpkg.com/axios@0.19.2/dist/axios.min.js"></script>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
     <script src="./js/toastr.min.js"></script>
 
     <!-- Import Services -->
@@ -42,6 +43,9 @@
     <script src="./js/services/techcompaniesService.js"></script>
 
     <!-- 💡 All your CSS in here -->
+
+
+    <link href="./css/main.css" rel="stylesheet" />
 
     <!-- 💡 NOTE these class names are alphabetical -->
 
@@ -198,7 +202,7 @@
 
         <div class="container">
             <button type="button" id="loginFormButton" class="btn btn-info d-inline" data-toggle="collapse" data-target="#login" ACCESSKEY="L"><U>L</U>ogin</button>
-            <!-- <button type="button" id="registerFormButton" class="btn btn-info d-inline" data-toggle="collapse" data-target="#register" ACCESSKEY="R"><U>R</U>egister</button> -->
+            <button type="button" id="registerFormButton" class="btn btn-info d-inline" data-toggle="collapse" data-target="#register" ACCESSKEY="R"><U>R</U>egister</button>
         </div>
 
         <div class="container m-3">
@@ -206,9 +210,9 @@
 
                 <form id="formLogin">
                     <div class="form-group">
-                        <label>Login Email: <input class="form-control" autocomplete="email" type="text" name="loginEmail" id="loginEmail" placeholder="email" value="someone1@pasciak.com"></label>
+                        <label>Login Email: <input class="form-control" autocomplete="email" type="text" name="loginEmail" id="loginEmail" placeholder="email" value="sheldon@pasciak.com"></label>
                         <label>Password: <input class="form-control" autocomplete="current-password" type="password" name="loginPassword" id="loginPassword" placeholder="password" value="Sabiopassword1!"></label>
-                        <label>TenantId: <input class="form-control" type="text" name="loginTenantId" id="loginTenantId" placeholder="bootcamp1" value="U01BTATB8UC"></label>
+                        <label>TenantId: <input class="form-control" type="text" name="loginTenantId" id="loginTenantId" placeholder="U01BTATB8UC" value="U01BTATB8UC"></label>
 
                         <!-- // TODO - don't use inline wire-ups use function wireUpEvents -->
                         <button type="button" class="btn-primary" id="userLoginButton" class="btn btn-info d-inline" onclick="onClickUserLogin();" ACCESSKEY="I">Log<U>i</U>n</button>
@@ -228,7 +232,7 @@
             //     "password": "Sabiopassword1!",
             //     "passwordConfirm": "Sabiopassword1!",
             //     "avatarUrl": "https://api.remotebootcamp.dev/apihelp/rbclogo.png",
-            //     "tenantId": "bootcamp1"
+            //     "tenantId": "U01BTATB8UC"
             // } 
         -->
 
@@ -245,7 +249,7 @@
                         <label>Confirm Password: <input type="password" class="form-control" autocomplete="current-password" name="registerConfirmPassword" id="registerConfirmPassword"  placeholder="password"></label>
 
                         <label>Register Avatar Url: <input type="text" class="form-control" name="registerAvatar" id="registerAvatar" placeholder="http://lostwords.org/images/penguin.png"></label>
-                        <label>Register Tenant Id: <input type="text" class="form-control" name="registerTenant" id="registerTenant" placeholder="bootcamp1"></label>
+                        <label>Register Tenant Id: <input type="text" class="form-control" name="registerTenant" id="registerTenant" placeholder="U01BTATB8UC"></label>
 
                         <input type="button" class="form-control btn-warning" name="registerButton" id="registerButton" onclick="onClickRegisterUser();" value="Register">
                     </div>
@@ -336,14 +340,18 @@
 
             var payload = {};
 
-            services.authService.userRegister(payload)
-                .then(function(data) {
-                    console.log("success ", data);
-                })
-                .catch(function(err) {
-                    console.log("error ", err.response.data.errors);
-                    // alert("NOT YET IMPLEMENTED!\n\n" + err.response.data.errors);
-                })
+            toastr.success('Not Implemented!', 'Not Implemented!');
+
+            // services.authService.userRegister(payload)
+            //     .then(function(data) {
+            //         console.log("success ", data);
+            //         toastr.warning('Not Implemented!', 'Not Implemented!');
+            //     })
+            //     .catch(function(err) {
+            //         console.log("error ", err.response.data.errors);
+            //         toastr.error(err.response.data.errors, 'Not Implemented!');
+            //     })
+
         }
 
         function updateUserStatus() {
@@ -355,9 +363,9 @@
         function onClickUserLogin() {
 
             var payload = {
-                "email": "sabio@sabio.la",
+                "email": "sheldon@pasciak.com",
                 "password": "Sabiopassword1!",
-                "tenantId": "bootcamp1"
+                "tenantId": "U01BTATB8UC"
             }
 
             console.log(payload);
@@ -370,16 +378,23 @@
 
             services.authService.userLogin(payload)
                 .then(function(data) {
-                    $('#loginFormButton').click();
                     updateUserStatus();
                     toastr.success('Successful Login\n\nPlease enter data carefully, for example purposes this account and data can be accessed by all the use this site.', 'Login Success!')
-                        //alert("resolved " + JSON.stringify(data));
                 })
                 .catch(function(data) {
                     $('#formLogin').ping();
                     updateUserStatus();
-                    toastr.error("Error logging in\n\nPlease verify your credentials.", "Error");
-                    //alert("rejected " + JSON.stringify(data));
+                    const onHidden = () => {
+                        logoutUser();
+                    }
+                    const onShown = () => {
+                        $('.main').hide();
+                    }
+                    toastr.error("Error logging in\n\nPlease verify your credentials.", "Error", {
+                        onHidden: onHidden,
+                        timeOut: 1500,
+                        onShown: onShown
+                    });
                 })
 
             // userLogin(payload)
@@ -421,7 +436,7 @@
 
         }
 
-        function onClickUserLogout() {
+        function logoutUser() {
             services.authService.userLogout()
                 .then(function(data) {
                     console.log("userLogout Success case ", data);
@@ -434,7 +449,11 @@
 
             $('#currentUser').html(`<span>Please Login</span>`);
             $('.main').hide();
-            $('#loginFormButton').click(); // toggle
+
+        }
+
+        function onClickUserLogout() {
+            logoutUser();
         }
         var onGetCurrentUserSuccess = (result) => {
             console.log(JSON.stringify(result));
@@ -506,7 +525,6 @@
         function startUp() {
 
             includeHTML(); // Note - this will run on every page, better served with react components/views/routing
-
 
             appendSportChoiceButtons();
 
@@ -1055,10 +1073,6 @@
 
             return err;
         }
-
-        // TODO - ON EDIT - Once the data is updated in the form, you should allow the user to click a second "Update" button or the same Submit button from the original form so that they can initiate an actual update.
-
-        // TODO - // TODO - hide and show .update. button based on if one is selected or not
 
         var updateTeam = (teamId, team) => {
             console.log("updateTeam");

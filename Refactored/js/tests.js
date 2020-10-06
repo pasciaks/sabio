@@ -1,4 +1,4 @@
-var executeTests = () => {
+const executeTests = () => {
 
     swal({
         title: "Do you want to run tests?",
@@ -26,7 +26,7 @@ var executeTests = () => {
 
 }
 
-var runTests = () => {
+const runTests = () => {
 
     // Display a warning toast, with no title
     toastr.warning('My name is Inigo Montoya. You killed my father, prepare to die!')

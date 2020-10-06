@@ -9,41 +9,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="Sabio Coding Bootcamp" />
     <meta itemprop="image" content="https://sabio.la/Sabio.png">
-
     <link rel="shortcut icon" href="https://sabio.la/Sabio.png">
     <link rel="icon" type="image/png" href="https://sabio.la/Sabio.png" />
-
     <script src="https://pw.sabio.la/api/js/site"></script>
-
     <link href="https://pw.sabio.la/dist/all-site.css" rel="stylesheet" />
-
     <link href="./css/toastr.css" rel="stylesheet" />
+    <script src="https://unpkg.com/axios@0.19.2/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./js/toastr.min.js"></script>
+
+    <!-- Import my javascript utilities and test code -->
 
     <script src="./js/tests.js"></script>
-
     <script src="./js/utilities.js"></script>
-
-    <script src="https://unpkg.com/axios@0.19.2/dist/axios.min.js"></script>
-
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-    <script src="./js/toastr.min.js"></script>
 
     <!-- Import my javascript services code -->
 
     <script src="./js/services/authService.js"></script>
-    <script src="./js/services/blogsService.js"></script>
-    <script src="./js/services/emailsService.js"></script>
-    <script src="./js/services/eventsService.js"></script>
-    <script src="./js/services/filesService.js"></script>
-    <script src="./js/services/friendsService.js"></script>
     <script src="./js/services/jobsService.js"></script>
-    <script src="./js/services/teamsService.js"></script>
     <script src="./js/services/techcompaniesService.js"></script>
 
     <!-- 💡 All your CSS in here -->
 
     <link href="./css/main.css" rel="stylesheet" />
+    <link href="./css/jobs.css" rel="stylesheet" />
 
 </head>
 
@@ -65,23 +54,36 @@
     </div>
 
     <script>
-        var services = {
+        // Note - only include services that are needed here.
+        const services = {
             authService: authService,
-            blogsService: blogsService,
-            emailsService: emailsService,
-            eventsService: eventsService,
-            filesService: filesService,
-            friendsService: friendsService,
             jobsService: jobsService,
-            teamsService: teamsService,
             techcompaniesService: techcompaniesService
         }
 
         function startUp() {
-            wireUpEvents();
             includeHTML(); // Note - this will run on every page, better served with views/routing/local storage perhaps
-            getCurrentUser();
+            wireUpEvents(); // Note - dynamic wire up of event handlers
+            getCurrentUser(); // Note - check if user is currently logged in - log in required.
+
+            testTechcompanies(); // Note - this will run techcompanies api tests
         }
+
+        let testTechcompanies = () => {
+            services.techcompaniesService.getPageOfTechcompanies(0, 999)
+                .then(onGetPageOfTechcompaniesSuccess)
+                .then(onGetPageOfTechcompaniesError)
+        }
+
+        let onGetPageOfTechcompaniesSuccess = (response) => {
+            console.log(response);
+        }
+
+        let onGetPageOfTechcompaniesError = (error) => {
+            console.log(error);
+        }
+
+        //-------------------------------------------------------------------------------------------
 
         function wireUpEvents() {
             $('#logoutButton').on("click", onLogoutClicked);
@@ -122,12 +124,12 @@
         }
 
         function onGetCurrentUserSuccess(response) {
-            var loggedInUserId = response.data.item.id;
+            const loggedInUserId = response.data.item.id;
             getUser(loggedInUserId);
         }
 
         function onGetCurrentUserError(error) {
-            userIsLoggedIn(false); // show the logged out view //location.href = "Login.html";
+            userIsLoggedIn(false);
         }
 
         function getUser(userId) {
@@ -137,17 +139,16 @@
         }
 
         function onGetUserSuccess(response) {
-            var user = response.data.item;
-            var userStatus = `<img style="max-height:100px;max-width:200px;" src="${user.avatarUrl}"><p>${user.firstName} ${user.lastName} </p><p>${user.email} </p>`
+            const user = response.data.item;
+            const userStatus = `<img style="max-height:100px;max-width:200px;" src="${user.avatarUrl}"><p>${user.firstName} ${user.lastName} </p><p>${user.email} </p>`
             $('#loggedInUserInfo').html(userStatus);
-            userIsLoggedIn(true); // show the logged in view
+            userIsLoggedIn(true);
         }
 
         function onGetUserError(error) {
-            toastr.error(error, "???");
-            var userStatus = `<p>Please log in.</p>`;
+            const userStatus = `<p>Please log in.</p>`;
             $('#loggedInUserInfo').html(userStatus);
-            userIsLoggedIn(false); // show the logged out view
+            userIsLoggedIn(false);
         }
 
         function userIsLoggedIn(isLoggedIn) {

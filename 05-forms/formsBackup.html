@@ -184,9 +184,9 @@
             <div id="login" class="collapse my-3">
                 <div class="form-group">
                     <form id="formLogin">
-                        <label>Login Email: <input class="form-control" autocomplete="email" type="text" name="loginEmail" id="loginEmail" placeholder="email" value="sabio@sabio.la"></label>
+                        <label>Login Email: <input class="form-control" autocomplete="email" type="text" name="loginEmail" id="loginEmail" placeholder="email" value="sheldon@pasciak.com"></label>
                         <label>Password: <input class="form-control" autocomplete="current-password" type="password" name="loginPassword" id="loginPassword" placeholder="password" value="Sabiopassword1!"></label>
-                        <label>TenantId: <input class="form-control" type="text" name="loginTenantId" id="loginTenantId" placeholder="bootcamp1" value="bootcamp1"></label>
+                        <label>TenantId: <input class="form-control" type="text" name="loginTenantId" id="loginTenantId" placeholder="U01BTATB8UC" value="U01BTATB8UC"></label>
 
                         <button type="button" class="btn-primary" class="btn btn-info d-inline" onclick="onClickUserLogin();" ACCESSKEY="I">Log<U>i</U>n</button>
                         <button type="button" class="btn-danger" class="btn btn-info d-inline" onclick="onClickUserLogout();" ACCESSKEY="O">Log<U>o</U>ut</button>
@@ -205,7 +205,7 @@
             //     "password": "Sabiopassword1!",
             //     "passwordConfirm": "Sabiopassword1!",
             //     "avatarUrl": "https://api.remotebootcamp.dev/apihelp/rbclogo.png",
-            //     "tenantId": "bootcamp1"
+            //     "tenantId": "U01BTATB8UC"
             // } 
         -->
 
@@ -221,7 +221,7 @@
                     <label>Confirm Password: <input type="password" class="form-control" autocomplete="current-password" name="registerConfirmPassword" id="registerConfirmPassword"  placeholder="password"></label>
 
                     <label>Register Avatar Url: <input type="text" class="form-control" name="registerAvatar" id="registerAvatar" placeholder="http://lostwords.org/images/penguin.png"></label>
-                    <label>Register Tenant Id: <input type="text" class="form-control" name="registerTenant" id="registerTenant" placeholder="bootcamp1"></label>
+                    <label>Register Tenant Id: <input type="text" class="form-control" name="registerTenant" id="registerTenant" placeholder="U01BTATB8UC"></label>
 
                     <input type="button" class="form-control btn-warning" name="registerButton" id="registerButton" onclick="onClickRegisterUser();" value="Register">
                 </form>
@@ -321,7 +321,7 @@
         function onClickUserLogin() {
 
             var payload = {
-                "email": "sabio@sabio.la",
+                "email": "sheldon@pasciak.com",
                 "password": "Sabiopassword1!",
                 "tenantId": "bootcamp1"
             }

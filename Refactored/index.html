@@ -31,16 +31,6 @@
 
     <!-- Import my javascript services code -->
 
-    <script src="./js/services/authService.js"></script>
-    <script src="./js/services/blogsService.js"></script>
-    <script src="./js/services/emailsService.js"></script>
-    <script src="./js/services/eventsService.js"></script>
-    <script src="./js/services/filesService.js"></script>
-    <script src="./js/services/friendsService.js"></script>
-    <script src="./js/services/jobsService.js"></script>
-    <script src="./js/services/teamsService.js"></script>
-    <script src="./js/services/techcompaniesService.js"></script>
-
     <!-- 💡 All your CSS in here -->
 
     <link href="./css/main.css" rel="stylesheet" />
@@ -55,7 +45,6 @@
         }
     </style>
 
-
 </head>
 
 <body>
@@ -69,20 +58,9 @@
     </div>
 
     <script>
-        var services = {
-            authService: authService,
-            blogsService: blogsService,
-            emailsService: emailsService,
-            eventsService: eventsService,
-            filesService: filesService,
-            friendsService: friendsService,
-            jobsService: jobsService,
-            teamsService: teamsService,
-            techcompaniesService: techcompaniesService
-        }
-
         function startUp() {
             includeHTML(); // Note - this will run on every page, better served with views/routing/local storage perhaps
+            executeTests(); // Note - this will run the tests module
         }
     </script>
 

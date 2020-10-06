@@ -100,11 +100,11 @@ var userLogout = () => {
 // var registerPayload = {
 //     "firstName": "Sheldon",
 //     "lastName": "Pasciak",
-//     "email": "new@pasciak.com",
+//     "email": "sheldon@pasciak.com",
 //     "password": "Sabiopassword1!",
 //     "passwordConfirm": "Sabiopassword1!",
 //     "avatarUrl": "https://api.remotebootcamp.dev/apihelp/rbclogo.png",
-//     "tenantId": "bootcamp1"
+//     "tenantId": "U01BTATB8UC"
 // }
 
 // userRegister(registerPayload)
