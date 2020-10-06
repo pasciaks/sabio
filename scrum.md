@@ -17,12 +17,19 @@
 ### ----- ACCOMPLISHED -----
 
         Refactored login/register/home
-        ((...finished Starter 93 (A) Friends))
-
+        Finished Starter 93 (A) Friends
+        Started techcompanies
+        Found bug in Friends for Status and Skills
 
 ### ----- WILL ACCOMPLISH -----
 
+        Fix bug on status/skills, get in Q for Friends Code Review
+
+        Finish 1/4 to 1/2 of Tech Companies.
+
 ### ----- BLOCKERS -----
+
+        Time - It just takes time
 
 # October 3rd, 2020
 
