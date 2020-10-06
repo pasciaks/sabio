@@ -206,6 +206,7 @@
                         <label>Password: <input class="form-control" autocomplete="current-password" type="password" name="loginPassword" id="loginPassword" placeholder="password" value="Sabiopassword1!"></label>
                         <label>TenantId: <input class="form-control" type="text" name="loginTenantId" id="loginTenantId" placeholder="bootcamp1" value="U01BTATB8UC"></label>
 
+                        <!-- // TODO - don't use inline wire-ups use function wireUpEvents -->
                         <button type="button" class="btn-primary" id="userLoginButton" class="btn btn-info d-inline" onclick="onClickUserLogin();" ACCESSKEY="I">Log<U>i</U>n</button>
                         <button type="button" class="btn-danger" id="userLogoutButton" class="btn btn-info d-inline" onclick="onClickUserLogout();" ACCESSKEY="O">Log<U>o</U>ut</button>
                         <button type="button" class="btn-warning" id="userClearFieldsButton" class="btn btn-info d-inline" onclick="onClickClearFields();">Reset</button>
@@ -1090,28 +1091,21 @@
         }
 
         var deleteTeam = (teamId) => {
-
             console.log("deleteTeam", teamId); // teamId = 235151523512; // FORCE ERROR CHECK
-
             return teamsService.delete(teamId)
                 .then(onDeleteTeamSuccess)
                 .catch(onDeleteTeamError);
         }
 
         var onDeleteTeamSuccess = data => {
-
             console.log("onDeleteTeamSuccess", data);
             console.log(data);
-
             clearSportsFormFields();
-
             console.log(data.config.url);
 
             // NOTE - It should remove the entity from the database and the DOM when the operation is successful, not before.
-
             var recentlyDeletedId = data.config.url.substr(data.config.url.lastIndexOf("/") + 1);
             $(".card[data-id='" + recentlyDeletedId + "']").remove();
-
             return data;
         }
 

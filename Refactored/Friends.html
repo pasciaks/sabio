@@ -36,14 +36,32 @@
     <!-- 💡 All your CSS in here -->
 
     <link href="./css/main.css" rel="stylesheet" />
+    <link href="./css/cards.css" rel="stylesheet" />
 
 </head>
+
+<script id="friendTemplate" type="text/template">
+    <div class="card">
+        <div class="card-body">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <h3 class="card-title"></h3>
+            <p class="card-bio"></p>
+            <button type="button" class="editFriend btn btn-default btn-success btn-small">Edit</button>
+            <button type="button" class="deleteFriend btn btn-default btn-danger btn-small">Delete</button>
+        </div>
+    </div>
+</script>
 
 <body>
 
     <nav class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio d-none"></nav>
 
     <div w3-include-html="./includes/nav.html"></div>
+
+    <div class="container">
+        <div class="card-deck clone-container">
+        </div>
+    </div>
 
     <div id="debugInfo"></div>
 
@@ -66,35 +84,262 @@
 
             includeHTML(); // Note - this will run on every page, better served with react components/views/routing
 
-            testFriends();
+            emptyFriends();
+
+            //updateFriendTest();
+
+            //updateFriendStatusTest();
+
+            getFriends(0, 999);
+
+            //searchFriends(0, 999, "bio");
 
         }
 
-        function wireUpEvents() {
+        function emptyFriends() {
+            $(".clone-container").empty();
+        }
 
+        function searchFriends(pageIndex, pageSize, searchString) {
+
+            searchString = searchString || "%";
+
+            services.friendsService.search(pageIndex, pageSize, searchString) // NOTE - if there is no search parameter, use normal paging
+                .then(function(response) {
+                    console.log(response.data.item.pagedItems.length + ' Friends found');
+                    var arrayOfFriends = response.data.item.pagedItems;
+                    renderFriends(arrayOfFriends);
+                })
+                .catch(function(error) {
+                    console.log(error);
+                    toastr.error(`<p>Are you sure you're logged in ?</p>${error}`, `Error !!!`, {
+                        timeOut: 3500
+                    });
+                })
+        }
+
+        function getFriends(pageIndex, pageSize) {
+            services.friendsService.getPageOfFriends(pageIndex, pageSize)
+                .then(function(response) {
+                    console.log(response.data.item.pagedItems.length + ' Friends found');
+                    var arrayOfFriends = response.data.item.pagedItems;
+                    renderFriends(arrayOfFriends);
+                })
+                .catch(function(error) {
+                    console.log(error);
+                    toastr.error(`<p>No Friends Found.</p>${error}`, `Error !!!`, {
+                        timeOut: 3500
+                    });
+                })
+        }
+
+        function wireUpEvents() {
+            $('.clone-container').on("click", ".deleteFriend", onDeleteFriendClicked);
+            $('.clone-container').on("click", ".editFriend", onEditFriendClicked);
+        }
+
+        function getTemplate() {
+            var template = $('#friendTemplate').html()
+            return $(template);
+        }
+
+        function mapFriend(aFriend) {
+            var currentTemplate = getTemplate();
+            currentTemplate.attr("data-id", aFriend.id);
+            currentTemplate.attr("title", JSON.stringify(aFriend));
+            currentTemplate.find(".card-img-top").attr("src", `${aFriend.primaryImage.imageUrl}`);
+            currentTemplate.find(".card-title").text(`${aFriend.title}`);
+            currentTemplate.find(".card-bio").text(`${aFriend.bio}`);
+            return currentTemplate
+        }
+
+        function renderFriends(arrayOfFriends) {
+            arrayOfFriends = arrayOfFriends || [];
+            var templates = arrayOfFriends.map(mapFriend);
+            $(".clone-container").append(templates);
+        }
+
+        function addFriendCard(friend) {
+            var friendArray = [friend];
+            var template = friendArray.map(mapFriend);
+            $(".clone-container").append(template);
+        }
+
+        function onEditFriendClicked(event) {
+            event.preventDefault();
+
+            console.log("onEditFriendClicked...", event.target.closest(".card"));
+            var selectedCard = $(event.target.closest(".card"));
+            var selectedId = selectedCard.attr("data-id");
+            console.log("...id", selectedId);
+
+            location.href = "FriendsEdit.html?edit=" + selectedId;
+
+        }
+
+        function updateFriendStatusTest() {
+
+            var friendId = 6211;
+            var status = "Active"; // NotSet, Active, Deleted, Flagged  // 0,1,2,3
+
+            services.friendsService.updateStatus(friendId, status)
+                .then(function(response) {
+                    console.log(response);
+                    toastr.success('Success - Update Status Test', 'Success ' + JSON.stringify(response) + `<p>${JSON.stringify(response)}</p>`);
+                })
+                .catch(function(error) {
+                    console.log(error);
+                    toastr.error('Error - Update Status Test', 'Error ' + JSON.stringify(error));
+                })
+
+        }
+
+        function updateFriendTest() {
+
+            var friendId = 6211;
+
+            var friend = {
+                "id": 6211,
+                "title": "Updated 111",
+                "bio": "Updated 111",
+                "summary": "Updated 111",
+                "headline": "Updated 111",
+                "slug": "4212122314233",
+                "statusId": "Active",
+                "primaryImage": "https://api.remotebootcamp.dev/apihelp/rbclogo.png"
+            }
+
+            // NOTE - TEST CASE // var failSlug = "00196"; friend.slug = failSlug;
+
+            updateFriend(friendId, friend);
+
+        }
+
+        function addFriendTest() {
+
+            var uniqueID = uuidv4();
+
+            var friend = {
+                "title": "This is a test",
+                "bio": "This is the bio",
+                "summary": "Summary of the friends api record",
+                "headline": "Now is the time for a headline",
+                "slug": uniqueID,
+                "statusId": "Active", // NotSet, Active, Deleted, Flagged 
+                "primaryImage": "https://via.placeholder.com/150"
+            }
+
+            var payload = {
+                "title": friend.title,
+                "bio": friend.bio,
+                "summary": friend.summary,
+                "headline": friend.headline,
+                "slug": friend.slug,
+                "statusId": friend.statusId, // NotSet, Active, Deleted, Flagged 
+                "primaryImage": friend.primaryImage,
+                "skills": friend.skills || null // null or [ {id,name},{id,null} ]
+            }
+
+            services.friendsService.add(payload)
+                .then(function(response) {
+                    console.log(response);
+                    toastr.success('Added', 'Added ' + JSON.stringify(payload) + `<p>${JSON.stringify(response)}</p>`);
+                })
+                .catch(function(error) {
+                    console.log(error);
+                    toastr.error('Error', 'Error ' + JSON.stringify(error));
+                })
+
+        }
+
+        function onDeleteFriendClicked(event) {
+
+            event.preventDefault();
+
+            swal({
+                    title: "Are you sure you want to delete this friend record ?",
+                    text: "Once deleted, you will not be able to recover this friend record!",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+
+                        console.log("onDeleteFriendClicked...", event.target.closest(".card"));
+                        var selectedCard = $(event.target.closest(".card"));
+                        var selectedId = selectedCard.attr("data-id");
+                        console.log("...id", selectedId);
+
+                        deleteFriend(selectedId);
+
+                        swal("Poof! Your record has been deleted!", {
+                            icon: "success",
+                        });
+                    } else {
+                        swal("Your record is safe!");
+                    }
+                });
+        }
+
+        var deleteFriend = (friendId) => {
+            console.log("deleteFriend", friendId);
+            return services.friendsService.delete(friendId)
+                .then(onDeleteFriendSuccess)
+                .catch(onDeleteFriendError);
+        }
+
+        var onDeleteFriendSuccess = response => {
+            console.log("onDeleteFriendSuccess", response);
+            var recentlyDeletedId = response.config.url.substr(response.config.url.lastIndexOf("/") + 1);
+            $(".card[data-id='" + recentlyDeletedId + "']").remove();
+        }
+
+        var onDeleteFriendError = error => {
+            console.log("onDeleteFriendError", error);
+            toastr.error('Error', 'Error ' + `<p>${JSON.stringify(error)}</p>`);
+        }
+
+        var updateFriend = (friendId, friend) => {
+            console.log("updateFriend");
+            return services.friendsService.update(friendId, friend)
+                .then(onUpdateFriendSuccess)
+                .catch(onUpdateFriendError);
+        }
+
+        var onUpdateFriendSuccess = response => {
+            console.log("onUpdateFriendSuccess", response);
+            toastr.success('Updated', 'Updated ' + `<p>${JSON.stringify(response)}</p>`);
+        }
+
+        var onUpdateFriendError = error => {
+            var errors = error.response.data.errors;
+            console.log("onUpdateFriendError", error);
+            toastr.error('Error', 'Error ' + `<p>${JSON.stringify(error)}</p>`);
+            toastr.error('Errors', 'Errors ' + `<p>${JSON.stringify(errors)}</p>`);
         }
 
         function testFriends() {
 
-            var exampleFriend = {
-                "id": 6211,
-                "bio": "Updated Bio",
-                "title": "Updated test",
-                "summary": "Updated Summary",
-                "headline": "Updated Headline",
-                "entityTypeId": 1,
-                "statusId": "Active",
-                "slug": "1238675209",
-                "skills": null,
-                "primaryImage": {
-                    "id": 5401,
-                    "entityId": 6211,
-                    "imageTypeId": "Main",
-                    "imageUrl": "https://api.remotebootcamp.dev/apihelp/rbclogo.png"
-                },
-                "dateCreated": "2020-10-01T23:54:18.17",
-                "dateModified": "2020-10-02T00:03:57.9266667"
-            }
+            // var exampleFriend = {
+            //     "id": 6211,
+            //     "bio": "Updated Bio",
+            //     "title": "Updated test",
+            //     "summary": "Updated Summary",
+            //     "headline": "Updated Headline",
+            //     "entityTypeId": 1,
+            //     "statusId": "Active",
+            //     "slug": "1238675209",
+            //     "skills": null,
+            //     "primaryImage": {
+            //         "id": 5401,
+            //         "entityId": 6211,
+            //         "imageTypeId": "Main",
+            //         "imageUrl": "https://api.remotebootcamp.dev/apihelp/rbclogo.png"
+            //     },
+            //     "dateCreated": "2020-10-01T23:54:18.17",
+            //     "dateModified": "2020-10-02T00:03:57.9266667"
+            // }
 
             // var uniqueID = uuidv4(); // Date.now();
 
@@ -132,29 +377,23 @@
             //         $('#debugInfo').append(JSON.stringify(error));
             //     })
 
-            services.friendsService.getPageOfFriends(0, 999)
-                .then(function(response) {
-                    console.log(response.data.item.pagedItems.length + ' Friends found');
-                    $('#debugInfo').append(`<br><hr><br>`);
-                    $('#debugInfo').append(response.data.item.pagedItems.map(mapFriend))
-                })
-                .catch(function(error) {
-                    console.log(error);
-                    $('#debugInfo').append(`<br><hr><br>`);
-                    $('#debugInfo').append(JSON.stringify(error));
-                })
+            // services.friendsService.getPageOfFriends(0, 999)
+            //     .then(function(response) {
+            //         console.log(response.data.item.pagedItems.length + ' Friends found');
+            //         var pageOfFriends = response.data.item.pagedItems;
+            //         renderFriends(pageOfFriends);
+            //     })
+            //     .catch(function(error) {
+            //         console.log(error);
+            //     })
 
-            services.friendsService.search(0, 999, "%") // NOTE - if there is no search parameter, use normal paging
-                .then(function(response) {
-                    console.log(response.data.item.pagedItems.length + ' Friends found');
-                    $('#debugInfo').append(`<br><hr><br>`);
-                    $('#debugInfo').append(response.data.item.pagedItems.map(mapFriend))
-                })
-                .catch(function(error) {
-                    console.log(error);
-                    $('#debugInfo').append(`<br><hr><br>`);
-                    $('#debugInfo').append(JSON.stringify(error));
-                })
+            // services.friendsService.search(0, 999, "%") // NOTE - if there is no search parameter, use normal paging
+            //     .then(function(response) {
+            //         console.log(response.data.item.pagedItems.length + ' Friends found');
+            //     })
+            //     .catch(function(error) {
+            //         console.log(error);
+            //     })
 
             // services.friendsService.delete(6354) //55555
             //     .then(function(response) {
@@ -168,10 +407,6 @@
             //         $('#debugInfo').append(JSON.stringify(error));
             //     })
 
-        }
-
-        function mapFriend(aFriend) {
-            return `${JSON.stringify(aFriend)}`;
         }
     </script>
 

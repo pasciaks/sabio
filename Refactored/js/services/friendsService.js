@@ -9,7 +9,8 @@ var friendsService = {
 //GET friends by id- https://api.remotebootcamp.dev/api/friends/4976
 /*
     get a specific record by id
-    var id = 4976;  
+    var id = 4976; 
+
 */
 friendsService.get = (id) => {
     console.log("friendsService.get is executing ", id);
@@ -19,6 +20,7 @@ friendsService.get = (id) => {
         crossdomain: true,
         headers: { "Content-Type": "application/json" }
     };
+
     return axios(config)
 };
 
@@ -83,9 +85,7 @@ friendsService.add = (payload) => {
 };
 
 /*
-
     Update existing friend
-
 */
 //PUT - https://api.remotebootcamp.dev/api/friends/6211
 // {
@@ -98,7 +98,18 @@ friendsService.add = (payload) => {
 //     "statusId": "NotSet",
 //     "primaryImage": "https://api.remotebootcamp.dev/apihelp/rbclogo.png"
 //   }
-
+friendsService.update = (id, payload) => {
+    const config = {
+        method: "PUT",
+        url: friendsService.endpoint + "/" + id,
+        data: payload,
+        crossdomain: true,
+        headers: {
+            "Content-Type": "application/json"
+        }
+    };
+    return axios(config)
+};
 
 /*
     Update friend status
@@ -108,6 +119,18 @@ friendsService.add = (payload) => {
     id / NotSet, Active, Deleted, Flagged 
 
 */
+friendsService.updateStatus = (id, status) => {
+    const config = {
+        method: "PUT",
+        url: friendsService.endpoint + "/" + id + "/" + status,
+        data: payload,
+        crossdomain: true,
+        headers: {
+            "Content-Type": "application/json"
+        }
+    };
+    return axios(config)
+};
 
 //DELETE - https://api.remotebootcamp.dev/api/friends/4976
 /*
@@ -127,4 +150,4 @@ friendsService.delete = (id) => {
     return axios(config)
 };
 
-//GET friends by slug - ??? - 77546
+//GET friends by slug - ??? - 77546 ???
