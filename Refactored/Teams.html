@@ -202,12 +202,11 @@
 
         <div class="container">
             <button type="button" id="loginFormButton" class="btn btn-info d-inline" data-toggle="collapse" data-target="#login" ACCESSKEY="L"><U>L</U>ogin</button>
-            <button type="button" id="registerFormButton" class="btn btn-info d-inline" data-toggle="collapse" data-target="#register" ACCESSKEY="R"><U>R</U>egister</button>
+            <!-- <button type="button" id="registerFormButton" class="btn btn-info d-inline" data-toggle="collapse" data-target="#register" ACCESSKEY="R"><U>R</U>egister</button> -->
         </div>
 
         <div class="container m-3">
             <div id="login" class="collapse my-3">
-
                 <form id="formLogin">
                     <div class="form-group">
                         <label>Login Email: <input class="form-control" autocomplete="email" type="text" name="loginEmail" id="loginEmail" placeholder="email" value="sheldon@pasciak.com"></label>
@@ -220,7 +219,6 @@
                         <button type="button" class="btn-warning" id="userClearFieldsButton" class="btn btn-info d-inline" onclick="onClickClearFields();">Reset</button>
                     </div>
                 </form>
-
             </div>
         </div>
 
@@ -270,24 +268,40 @@
                 <input type="hidden" id="teamId" name="teamId" disabled class="d-none" value="-1">
 
                 <div class="form-group">
-                    <label for="team">Team Name:</label>
-                    <input type="text" class="form-control" id="team" name="team" required minlength="2" maxlength="50">
-                    <small id="teamhelp" class="form-text text-muted">Team Name is required (2-50).</small>
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="team">Team Name:</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" id="team" name="team" required minlength="2" maxlength="50">
+                            <!-- <small id="teamhelp" class="form-text text-muted">Team Name is required (2-50).</small> -->
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="sport">Sport:</label>
-                    <input type="text" class="form-control" id="sport" name="sport" required minlength="2" maxlength="50">
-                    <small id="sporthelp" class="form-text text-muted">Sport type is required (2-50).</small>
-
-                    <span id="sportChoiceButtonsControl"></span>
-
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="sport">Sport:</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" id="sport" name="sport" required minlength="2" maxlength="50">
+                            <!-- <small id="sporthelp" class="form-text text-muted">Sport type is required (2-50).</small> -->
+                            <span id="sportChoiceButtonsControl"></span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="city">City:</label>
-                    <input type="text" class="form-control" id="city" name="city" required minlength="2" maxlength="50">
-                    <small id="cityhelp" class="form-text text-muted">City name is required (2-50).</small>
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="city">City:</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" id="city" name="city" required minlength="2" maxlength="50">
+                            <!-- <small id="cityhelp" class="form-text text-muted">City name is required (2-50).</small> -->
+                        </div>
+                    </div>
                 </div>
 
                 <!-- NOTE Observe this nuance of submit, validation, etc -->
@@ -342,16 +356,6 @@
 
             toastr.success('Not Implemented!', 'Not Implemented!');
 
-            // services.authService.userRegister(payload)
-            //     .then(function(data) {
-            //         console.log("success ", data);
-            //         toastr.warning('Not Implemented!', 'Not Implemented!');
-            //     })
-            //     .catch(function(err) {
-            //         console.log("error ", err.response.data.errors);
-            //         toastr.error(err.response.data.errors, 'Not Implemented!');
-            //     })
-
         }
 
         function updateUserStatus() {
@@ -361,6 +365,10 @@
         }
 
         function onClickUserLogin() {
+            loginUser();
+        }
+
+        function loginUser() {
 
             var payload = {
                 "email": "sheldon@pasciak.com",
@@ -380,6 +388,7 @@
                 .then(function(data) {
                     updateUserStatus();
                     toastr.success('Successful Login\n\nPlease enter data carefully, for example purposes this account and data can be accessed by all the use this site.', 'Login Success!')
+                    $('#loginFormButton').click(); // toggle login form view
                 })
                 .catch(function(data) {
                     $('#formLogin').ping();
@@ -396,44 +405,6 @@
                         onShown: onShown
                     });
                 })
-
-            // userLogin(payload)
-            //     .then(function(data) {
-            //         console.log(data);
-            //         if (data.hasErrors) {
-            //             console.log("login error.....", data, data.myErrorInfo, data.hasErrors);
-            //             $('#formLogin').ping();
-            //             // note consider map single object error
-            //         } else {
-            //             console.log("login success.....", data, data.additionalPayloadInfo, data.hasErrors);
-            //             $('#loginFormButton').click(); // toggle visibility of login form
-            //             // note consider map single object success
-            //         }
-
-            //         updateUserStatus();
-
-            //     })
-
-            //--------------------------------------------------------------------------------
-            // NOTE - I don't like this, kind of clumsy/loaded annonymous function usage
-            // validate that error case never returns from formsService ??
-            // userLogin(payload)
-            //     .then(function(data) {
-            //         console.log(data);
-            //         alert("login success", data);
-            //         $('#loginFormButton').click(); // toggle visibility of login form
-            //         updateUserStatus();
-
-            //     })
-            //     .catch(function(err) {
-            //         console.log(err);
-            //         alert("login error", err);
-            //         $('#currentUser').html(`<span>Invalid - Please Login</span>`);
-            //         $('.main').hide();
-            //     })
-
-            //--------------------------------------------------------------------------------
-
         }
 
         function logoutUser() {
@@ -441,6 +412,7 @@
                 .then(function(data) {
                     console.log("userLogout Success case ", data);
                     toastr.success('User Logged Out', 'Logout Success!');
+                    $('#loginFormButton').click(); // toggle login form view
                 })
                 .catch(function(err) {
                     console.log("userLogout Catch case ", err);

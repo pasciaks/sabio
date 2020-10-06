@@ -65,8 +65,6 @@
             includeHTML(); // Note - this will run on every page, better served with views/routing/local storage perhaps
             wireUpEvents(); // Note - dynamic wire up of event handlers
             getCurrentUser(); // Note - check if user is currently logged in - log in required.
-
-            testTechcompanies(); // Note - this will run techcompanies api tests
         }
 
         let testTechcompanies = () => {
@@ -155,6 +153,9 @@
             if (isLoggedIn) {
                 $('#loggedIn').show();
                 $('#loggedOut').hide();
+
+                testTechcompanies(); // Note - this will run techcompanies api tests
+
             } else {
                 $('#loggedIn').hide();
                 $('#loggedOut').show();
