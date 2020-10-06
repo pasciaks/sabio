@@ -147,10 +147,9 @@
                 theError = "Invalid Email or Unconfirmed Account";
             } else if (theError.indexOf("Invalid Credentials") > -1) {
                 theError = "Invalid Credentials";
-
             }
             toastr.error(`${theError}`, `Error !!!`, {
-                timeOut: 3500
+                timeOut: 2000
             });
         }
 

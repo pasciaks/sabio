@@ -2,42 +2,51 @@
 <html lang="en">
 
 <head>
-    <!-- #region Sabio Code - You can Fold this region to remove it from sight -->
+
+    <title>FRIENDS ADD/EDIT-C93 Starter Vanilla JS</title>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="Sabio Coding Bootcamp" />
     <meta itemprop="image" content="https://sabio.la/Sabio.png">
     <link rel="shortcut icon" href="https://sabio.la/Sabio.png">
     <link rel="icon" type="image/png" href="https://sabio.la/Sabio.png" />
-    <!-- Do Not Change the HTML title or anything between this line and the line with the 💘's -->
-    <title>PW Execise Template</title>
-    <link href="https://pw.sabio.la/dist/all-site.css" rel="stylesheet" />
     <script src="https://pw.sabio.la/api/js/site"></script>
+    <link href="https://pw.sabio.la/dist/all-site.css" rel="stylesheet" />
+    <link href="./css/toastr.css" rel="stylesheet" />
+    <script src="./js/tests.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.1.0/uuidv4.min.js"></script>
+    <script src="./js/utilities.js"></script>
+    <script src="https://unpkg.com/axios@0.19.2/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./js/toastr.min.js"></script>
 
-    <!-- #endregion -->
-    <!-- I 💘 Code, You 💘 Code, We all 💘 Code -->
+    <!-- Import my javascript services code -->
+
+    <script src="./js/services/authService.js"></script>
+    <script src="./js/services/blogsService.js"></script>
+    <script src="./js/services/emailsService.js"></script>
+    <script src="./js/services/eventsService.js"></script>
+    <script src="./js/services/filesService.js"></script>
+    <script src="./js/services/friendsService.js"></script>
+    <script src="./js/services/jobsService.js"></script>
+    <script src="./js/services/teamsService.js"></script>
+    <script src="./js/services/techcompaniesService.js"></script>
 
     <!-- 💡 All your CSS in here -->
-    <style>
 
-    </style>
+    <link href="./css/main.css" rel="stylesheet" />
+    <link href="./css/cards.css" rel="stylesheet" />
+    <link href="./css/friends.css" rel="stylesheet" />
 
-    <script>
-        function getParameterByName(name, url) {
-            if (!url) url = window.location.href;
-            name = name.replace(/[\[\]]/g, '\\$&');
-            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, ' '));
-        }
-    </script>
+
 </head>
 
 <body class="sabio" data-ins="pw-00">
     <!-- Do Not Edit or Remove this nav element -->
-    <nav class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio"></nav>
+    <nav class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio d-none"></nav>
+
+    <div w3-include-html="./includes/nav.html"></div>
 
     <div class="container">
 
@@ -45,7 +54,10 @@
             <p>User Profile</p>
         </div>
 
-        <form>
+        <form id="friendProfileForm">
+
+            <input type="hidden" id="friendId" name="friendId" value="">
+
             <div class="form-group">
                 <label for="friendTitle">Title</label>
                 <input type="text" class="form-control" id="friendTitle" aria-describedby="friendTitle" placeholder="Title">
@@ -93,12 +105,15 @@
             </div>
 
             <div class="form-group">
+                <img id="previewImg" src="https://via.placeholder.com/150" style="width:100px;height:100px;">
                 <label for="friendPrimaryImageText">Image Url</label>
                 <input type="text" class="form-control" id="friendPrimaryImageText" aria-describedby="friendPrimaryImageText" placeholder="filename.png">
             </div>
 
-            <button type="submit" class="btn btn-primary">Add</button>
-            <button type="button" class="btn btn-primary">Update</button>
+            <button type="button" id="addFriendButton" disabled class="btn btn-primary">Add</button>
+            <button type="button" id="updateFriendButton" disabled class="btn btn-primary">Update</button>
+
+            <button type="button" id="cancelButton" class="btn btn-warning">Cancel</button>
         </form>
 
     </div>
@@ -108,10 +123,201 @@
         <p class="text-center">© Sabio.la 2019</p>
     </footer>
 
+
+
     <!--👇🏻 All your JavaScript code goes below here inside this script tag 👇🏻 -->
     <script id="candidateCode">
+        function toDataURL(src, callback, outputFormat) {
+            var img = new Image();
+            img.crossOrigin = 'Anonymous';
+            img.onload = function() {
+                var canvas = document.createElement('CANVAS');
+                var ctx = canvas.getContext('2d');
+                var dataURL;
+                canvas.height = this.naturalHeight;
+                canvas.width = this.naturalWidth;
+                ctx.drawImage(this, 0, 0);
+                dataURL = canvas.toDataURL(outputFormat);
+                callback(dataURL);
+            };
+            img.src = src;
+            if (img.complete || img.complete === undefined) {
+                img.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+                img.src = src;
+            }
+        }
+
+        function previewFile(input) {
+            var file = $("input[type=file]").get(0).files[0];
+
+            if (file) {
+                var reader = new FileReader();
+
+                reader.onload = function() {
+                    $("#previewImg").attr("src", reader.result);
+
+                    //base64
+                    toDataURL(
+                        $("#previewImg").attr("src"),
+                        function(dataUrl) {
+                            console.log('RESULT:', dataUrl)
+                        }
+                    )
+
+                }
+
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        var services = {
+            authService: authService,
+            blogsService: blogsService,
+            emailsService: emailsService,
+            eventsService: eventsService,
+            filesService: filesService,
+            friendsService: friendsService,
+            jobsService: jobsService,
+            teamsService: teamsService,
+            techcompaniesService: techcompaniesService
+        }
+
         function startUp() {
-            alert(getParameterByName("edit"));
+
+            wireUpEvents();
+
+            includeHTML(); // Note - this will run on every page, better served with react components/views/routing
+
+            var editId = getParameterByName("edit") || -1;
+
+            if (editId >= 0) {
+                $('#friendId').val(editId);
+                editFriendById(editId);
+            } else {
+                addFriend();
+            }
+        }
+
+        function wireUpEvents() {
+
+            $('#friendPrimaryImage').on("change", onFileInputChanged);
+
+            //addFriendButton
+            $('#addFriendButton').on("click", onAddFriendButtonClick);
+
+            //updateFriendButton
+            $('#updateFriendButton').on("click", onUpdateFriendButtonClick);
+
+            //cancelButton
+            $('#cancelButton').on("click", onCancelButtonClick);
+
+            $('#friendProfileForm').on("submit", onSubmitFriendProfileForm);
+        }
+
+        function onFileInputChanged(event) {
+
+            $('#friendPrimaryImageText').val(event.target.value);
+            previewFile(event);
+        }
+
+        function onAddFriendButtonClick(event) {
+            var friendDataPayload = readFriendProfileForm();
+            $('#friendProfileForm').submit();
+        }
+
+        function onUpdateFriendButtonClick(event) {
+            var friendDataPayload = readFriendProfileForm();
+            $('#friendProfileForm').submit();
+        }
+
+        function onCancelButtonClick() {
+            window.history.back();
+        }
+
+        function onSubmitFriendProfileForm(event) {
+            event.preventDefault();
+        }
+
+        function editFriendById(friendId) {
+            getFriend(friendId);
+            $('#updateFriendButton').prop('disabled', false);
+        }
+
+        function addFriend() { // TODO RENAME
+            $('#friendProfileForm')[0].reset();
+            $('#addFriendButton').prop('disabled', false);
+        }
+
+        var getFriend = (friendId) => {
+            console.log("getFriend", friendId);
+            return services.friendsService.get(friendId)
+                .then(onGetFriendSuccess)
+                .catch(onGetFriendError);
+        }
+
+        function readFriendProfileForm() {
+
+            // var updateFriendObject = {   
+            //     "title": "Updated test",
+            //     "bio": "Updated Bio",
+            //     "summary": "Updated Summary",
+            //     "headline": "Updated Headline",
+            //     "slug": "1238675209",
+            //     "statusId": "NotSet",
+            //     "primaryImage": "https://api.remotebootcamp.dev/apihelp/rbclogo.png"
+            // }
+
+            var friend = {}
+
+            friend.title = $('#friendTitle').val();
+            friend.bio = $('#friendBio').val();
+            friend.summary = $('#friendSummary').val();
+            friend.headline = $('#friendHeadline').val();
+            friend.slug = $('#friendSlug').val();
+            friend.statusId = $("#friendStatus option:selected").text();
+            friend.primaryImage = $('#friendPrimaryImageText').val();
+
+            return friend;
+        }
+
+        function onGetFriendSuccess(response) {
+
+            // TODO -- set selection of status based on data retrieved.
+
+            var friend = response.data.item;
+
+            var friendTitle = friend.title;
+            var friendBio = friend.bio;
+            var friendSummary = friend.summary;
+            var friendHeadline = friend.headline;
+            var friendSlug = friend.slug;
+            var friendStatus = "";
+            var friendSkills = friend.skills || null;
+            var friendPrimaryImageText = friend.primaryImage.imageUrl;
+
+            $('#friendTitle').val(friendTitle).ping();
+            $('#friendBio').val(friendBio).ping();
+            $('#friendSummary').val(friendSummary).ping();
+            $('#friendHeadline').val(friendHeadline).ping();
+            $('#friendSlug').val(friendSlug).ping();
+            $('#friendStatus').val(friendStatus).ping();
+            $('#friendSkills').val(friendSkills).ping();
+            $('#friendPrimaryImageText').val(friendPrimaryImageText).ping();
+
+        }
+
+        function onGetFriendError(error) {
+            console.log(error);
         }
     </script>
     <!-- 🛑 Do Not Write Any Code Below here -->

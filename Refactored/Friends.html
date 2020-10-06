@@ -59,11 +59,22 @@
     <div w3-include-html="./includes/nav.html"></div>
 
     <div class="container">
-        <form id="searchForm">
-            <input type="text" placeholder="Search.." name="searchInput" id="searchInput">
-            <button type="submit" id="friendSearchButton"><i class="fa fa-search"></i></button>
-        </form>
+        <div class="row">
+            <div class="col text-center">
+                <form id="searchForm">
+                    <input id="searchInput" class="form-control-inline" type="text" placeholder="Search.." value="Sheldon">
+                    <button id="friendsSearchButton" class="btn-info" type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <div class="col text-center">
+                <button id="friendsShowAllButton" type="button" class="addFriend btn btn-default btn-success">Show All</button>
+            </div>
+            <div class="col text-center">
+                <button id="addFriendButton" type="button" class="addFriend btn btn-default btn-success">Add a Friend</button>
+            </div>
+        </div>
     </div>
+
 
     <div class="container">
         <div class="card-deck clone-container">
@@ -72,7 +83,7 @@
 
     <div id="debugInfo"></div>
 
-    <script>
+    <script id="candidateCode">
         var services = {
             authService: authService,
             blogsService: blogsService,
@@ -91,15 +102,18 @@
 
             includeHTML(); // Note - this will run on every page, better served with react components/views/routing
 
-            //emptyFriends();
+            showAllFriends();
 
-            //updateFriendTest();
+        }
 
-            //updateFriendStatusTest();
+        function onShowAllButtonClicked(event) {
+            event.preventDefault();
+            showAllFriends();
+        }
 
+        function showAllFriends() {
+            emptyFriends();
             getFriends(0, 999);
-
-
         }
 
         function emptyFriends() {
@@ -118,9 +132,9 @@
                 })
                 .catch(function(error) {
                     console.log(error);
-                    // TODO - consider search for error types  404 - no friends 500 - bad request - example 
-                    toastr.error(`<p>No Friends found.</p>${error}`, `Error !!!`, {
-                        timeOut: 3500
+                    var errors = error.response.data.errors;
+                    toastr.error(`${error}`, `Error !!! Are you logged in?`, {
+                        timeOut: 2000
                     });
                 })
         }
@@ -134,8 +148,9 @@
                 })
                 .catch(function(error) {
                     console.log(error);
-                    toastr.error(`<p>No Friends Found.</p>${error}`, `Error !!!`, {
-                        timeOut: 3500
+                    var errors = error.response.data.errors;
+                    toastr.error(`${error}`, `Error !!! Are you logged in?`, {
+                        timeOut: 2000
                     });
                 })
         }
@@ -144,12 +159,18 @@
             $('.clone-container').on("click", ".deleteFriend", onDeleteFriendClicked);
             $('.clone-container').on("click", ".editFriend", onEditFriendClicked);
 
-            $('#friendSearchButton').on("click", onSearchButtonClick);
+            $('#addFriendButton').on("click", onAddFriendButtonClicked);
 
+            $('#friendsSearchButton').on("click", onSearchButtonClicked);
+            $('#friendsShowAllButton').on("click", onShowAllButtonClicked);
 
         }
 
-        function onSearchButtonClick(event) {
+        function onAddFriendButtonClicked(event) {
+            location.href = "FriendsEdit.html";
+        }
+
+        function onSearchButtonClicked(event) {
             event.preventDefault();
             searchFriendsUsingSearchInputField();
         }
@@ -231,9 +252,12 @@
                 "primaryImage": "https://api.remotebootcamp.dev/apihelp/rbclogo.png"
             }
 
-            // NOTE - TEST CASE // var failSlug = "00196"; friend.slug = failSlug;
+            // NOTE - TEST CASE 
+            var failSlug = "00196"; // friend.slug = failSlug;
 
-            updateFriend(friendId, friend);
+            // TODO - WALK THROUGH AND WATCH THESE RETURNS, THEN, CATCH, ETC FOR BEHAVIOR CLARIFICATION
+
+            updateFriend(friendId, friend)
 
         }
 
@@ -306,7 +330,7 @@
 
         var deleteFriend = (friendId) => {
             console.log("deleteFriend", friendId);
-            return services.friendsService.delete(friendId)
+            services.friendsService.delete(friendId)
                 .then(onDeleteFriendSuccess)
                 .catch(onDeleteFriendError);
         }
@@ -324,7 +348,8 @@
 
         var updateFriend = (friendId, friend) => {
             console.log("updateFriend");
-            return services.friendsService.update(friendId, friend)
+
+            services.friendsService.update(friendId, friend)
                 .then(onUpdateFriendSuccess)
                 .catch(onUpdateFriendError);
         }
@@ -332,6 +357,7 @@
         var onUpdateFriendSuccess = response => {
             console.log("onUpdateFriendSuccess", response);
             toastr.success('Updated', 'Updated ' + `<p>${JSON.stringify(response)}</p>`);
+
         }
 
         var onUpdateFriendError = error => {
@@ -339,6 +365,7 @@
             console.log("onUpdateFriendError", error);
             toastr.error('Error', 'Error ' + `<p>${JSON.stringify(error)}</p>`);
             toastr.error('Errors', 'Errors ' + `<p>${JSON.stringify(errors)}</p>`);
+
         }
 
         function testFriends() {
