@@ -4,9 +4,15 @@
     What are you going to accomplish
     What are your blockers
 
-# Month, DD, YYYY
+# October 6, 2020
 
 ### ----- ACCOMPLISHED -----
+
+        Fixed bugs in friends for Status and Bio.
+
+        Completed code review for friends....
+
+        ...jobs
 
 ### ----- WILL ACCOMPLISH -----
 
@@ -16,16 +22,18 @@
 
 ### ----- ACCOMPLISHED -----
 
+        Going in to today, I was finished with login, register and home.
         Refactored login/register/home
-        Finished Starter 93 (A) Friends
-        Started techcompanies
-        Found bug in Friends for Status and Skills
+        Finished Starter 93 (A) Friends.
+        Started JOBS (reading through it)
+        While revisiting/testing friends,I found bug in Friends for Status, skills,
+        and multi-line view of the textarea field for Bio.
 
 ### ----- WILL ACCOMPLISH -----
 
-        Fix bug on status/skills, get in Q for Friends Code Review
+        Get in Q for Friends Code Review (consider implementing Skills)
 
-        Finish 1/4 to 1/2 of Tech Companies.
+        Finish 1/4 to 1/2 of Jobs.
 
 ### ----- BLOCKERS -----
 

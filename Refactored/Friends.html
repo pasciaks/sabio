@@ -37,6 +37,7 @@
 
     <link href="./css/main.css" rel="stylesheet" />
     <link href="./css/cards.css" rel="stylesheet" />
+    <link href="./css/friends.css" rel="stylesheet" />
 
 </head>
 
@@ -58,23 +59,24 @@
 
     <div w3-include-html="./includes/nav.html"></div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col text-center">
-                <form id="searchForm">
-                    <input id="searchInput" class="form-control-inline" type="text" placeholder="Search.." value="Sheldon">
-                    <button id="friendsSearchButton" class="btn-info" type="submit"><i class="fa fa-search"></i></button>
-                </form>
-            </div>
-            <div class="col text-center">
-                <button id="friendsShowAllButton" type="button" class="addFriend btn btn-default btn-success">Show All</button>
-            </div>
-            <div class="col text-center">
-                <button id="addFriendButton" type="button" class="addFriend btn btn-default btn-success">Add a Friend</button>
+    <div class="friendMenu">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <form id="searchForm">
+                        <input id="searchInput" class="form-control-inline" type="text" placeholder="Search.." value="Sheldon">
+                        <button id="friendsSearchButton" class="btn-info" type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="col text-center">
+                    <button id="friendsShowAllButton" type="button" class="addFriend btn btn-default btn-success inline-block">Show All</button>
+                </div>
+                <div class="col text-center">
+                    <button id="addFriendButton" type="button" class="addFriend btn btn-default btn-success inline-block">Add a Friend</button>
+                </div>
             </div>
         </div>
     </div>
-
 
     <div class="container">
         <div class="card-deck clone-container">

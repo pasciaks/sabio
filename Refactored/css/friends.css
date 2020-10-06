@@ -1,5 +1,11 @@
+.friendMenu {
+  margin: 20px;
+  text-align: center;
+}
+
 #friendProfileForm {
-  border: 1px solid red;
+  border: 2px solid silver;
+  background-color: whitesmoke;
   margin: 10px;
   padding: 10px;
 }

@@ -59,54 +59,111 @@
             <input type="hidden" id="friendId" name="friendId" value="">
 
             <div class="form-group">
-                <label for="friendTitle">Title</label>
-                <input type="text" class="form-control" id="friendTitle" aria-describedby="friendTitle" placeholder="Title">
+                <div class="row">
+                    <div class="col-3">
+                        <label for="friendTitle">Title</label>
+                    </div>
+                    <div class="col-9">
+                        <input type="text" class="form-control" id="friendTitle" aria-describedby="friendTitle" placeholder="Title">
+                    </div>
+                </div>
+
             </div>
 
             <div class="form-group">
-                <label for="friendBio">Bio</label>
-                <textarea class="form-control" id="friendBio" rows="4">Bio...</textarea>
+                <div class="row">
+                    <div class="col-3">
+                        <label for="friendBio">Bio</label>
+                    </div>
+                    <div class="col-9">
+                        <textarea style="white-space: pre-wrap;" class="form-control" id="friendBio" rows="4"></textarea>
+                    </div>
+                </div>
             </div>
 
             <div class="form-group">
-                <label for="friendSummary">Summary</label>
-                <input type="text" class="form-control" id="friendSummary" aria-describedby="friendSummary" placeholder="Summary">
+                <div class="row">
+                    <div class="col-3">
+                        <label for="friendSummary">Summary</label>
+                    </div>
+                    <div class="col-9">
+                        <input type="text" class="form-control" id="friendSummary" aria-describedby="friendSummary" placeholder="Summary">
+                    </div>
+                </div>
             </div>
 
             <div class="form-group">
-                <label for="friendHeadline">Headline</label>
-                <input type="text" class="form-control" id="friendHeadline" aria-describedby="friendHeadline" placeholder="Headline">
+                <div class="row">
+                    <div class="col-3">
+                        <label for="friendHeadline">Headline</label>
+                    </div>
+                    <div class="col-9">
+                        <input type="text" class="form-control" id="friendHeadline" aria-describedby="friendHeadline" placeholder="Headline">
+                    </div>
+                </div>
             </div>
 
             <div class="form-group">
-                <label for="friendSlug">Slug</label>
-                <input type="text" class="form-control" id="friendSlug" aria-describedby="friendSlug" placeholder="http://unique/">
+                <div class="row">
+                    <div class="col-3">
+                        <label style="cursor:pointer;" onclick="setNewRandomSlug();" for="friendSlug"><u title="Click for new random slug.">Slug</u></label>
+                    </div>
+
+                    <div class="col-9">
+                        <input type="text" class="form-control" id="friendSlug" aria-describedby="friendSlug" placeholder="http://unique/">
+                    </div>
+                </div>
             </div>
 
             <div class="form-group">
-                <label for="friendStatus">Status</label>
-                <select class="form-control" id="friendStatus">    
-              <option value="0">NotSet</option>
-              <option value="1">Active</option>
-              <option value="2">Deleted</option>
-              <option value="3">Flagged</option>
-            </select>
+                <div class="row">
+                    <div class="col-3">
+                        <label for="friendStatus">Status</label>
+                    </div>
+
+                    <div class="col-9">
+                        <select class="form-control" id="friendStatus">    
+                            <option value="NotSet">NotSet</option>
+                            <option value="Active">Active</option>
+                            <option value="Deleted">Deleted</option>
+                            <option value="Flagged">Flagged</option>
+                          </select>
+                    </div>
+                </div>
             </div>
 
             <div class="form-group">
-                <label for="friendSkills">Skills</label>
-                <input type="text" class="form-control" id="friendSkills" aria-describedby="friendSkills" placeholder="Skill, Ability, Competency">
+                <div class="row">
+                    <div class="col-3">
+                        <label for="friendSkills">Skills</label>
+                    </div>
+                    <div class="col-9">
+                        <input type="text" class="form-control" id="friendSkills" aria-describedby="friendSkills" placeholder="Skill, Ability, Competency">
+                    </div>
+                </div>
             </div>
 
             <div class="form-group">
-                <label for="friendPrimaryImage">Primary Image</label>
-                <input type="file" class="form-control-file" id="friendPrimaryImage">
+                <div class="row">
+                    <div class="col-3">
+                        <label for="friendPrimaryImage">Primary Image</label>
+                    </div>
+                    <div class="col-9">
+                        <input type="file" class="form-control-file" id="friendPrimaryImage">
+                    </div>
+                </div>
             </div>
 
             <div class="form-group">
-                <img id="previewImg" src="https://via.placeholder.com/150" style="width:100px;height:100px;">
-                <label for="friendPrimaryImageText">Image Url</label>
-                <input type="text" class="form-control" id="friendPrimaryImageText" aria-describedby="friendPrimaryImageText" placeholder="filename.png">
+                <div class="row">
+                    <div class="col-3">
+                        <img id="previewImg" src="https://via.placeholder.com/150" style="width:100px;">
+                        <label for="friendPrimaryImageText">Image Url</label>
+                    </div>
+                    <div class="col-9">
+                        <input type="text" class="form-control" id="friendPrimaryImageText" aria-describedby="friendPrimaryImageText" placeholder="filename.png">
+                    </div>
+                </div>
             </div>
 
             <button type="button" id="addFriendButton" disabled class="btn btn-primary">Add</button>
@@ -211,6 +268,9 @@
 
             $('#friendPrimaryImage').on("change", onFileInputChanged);
 
+            $('#friendPrimaryImageText').on("change", onFileTextChanged);
+
+
             //addFriendButton
             $('#addFriendButton').on("click", onAddFriendButtonClick);
 
@@ -224,9 +284,13 @@
         }
 
         function onFileInputChanged(event) {
-
             $('#friendPrimaryImageText').val(event.target.value);
             previewFile(event);
+        }
+
+
+        function onFileTextChanged(event) {
+            $("#previewImg").attr("src", $('#friendPrimaryImageText').val());
         }
 
         function onAddFriendButtonClick(event) {
@@ -239,23 +303,26 @@
             services.friendsService.add(friendDataPayload)
                 .then(onAddFriendSuccess)
                 .catch(onAddFriendError)
-
-
-
         }
 
         function onAddFriendSuccess(response) {
             console.log(response);
-            // todo nice response, return to friends page
+            var onHidden = function() {
+                location.href = "Friends.html";
+            }
+            toastr.success(`Success`, `${JSON.stringify(response)}`, {
+                timeOut: 4000,
+                onHidden: onHidden
+            });
         }
 
         function onAddFriendError(error) {
             console.log(error);
-            // todo nice error trapping
             var errors = error.response.data.errors;
-            alert(errors);
+            toastr.error(`Error`, `${JSON.stringify(errors)}`, {
+                timeOut: 4000
+            });
         }
-
 
         function onUpdateFriendButtonClick(event) {
             var friendDataPayload = readFriendProfileForm();
@@ -274,15 +341,21 @@
 
         function onUpdateFriendSuccess(response) {
             console.log(response);
-            // todo nice response, return to friends page
+            var onHidden = function() {
+                location.href = "Friends.html";
+            }
+            toastr.success(`Success`, `${JSON.stringify(response)}`, {
+                timeOut: 3000,
+                onHidden: onHidden
+            });
         }
 
         function onUpdateFriendError(error) {
             console.log(error);
-            // todo nice error trapping
             var errors = error.response.data.errors;
-            alert(errors);
-
+            toastr.error(`Error`, `${JSON.stringify(errors)}`, {
+                timeOut: 2000
+            });
         }
 
         function onCancelButtonClick() {
@@ -301,6 +374,13 @@
         function addFriend() { // TODO RENAME
             $('#friendProfileForm')[0].reset();
             $('#addFriendButton').prop('disabled', false);
+            setNewRandomSlug();
+            $("#friendStatus").val(`Active`);
+        }
+
+        function setNewRandomSlug() {
+            var uniqueID = uuidv4();
+            $('#friendSlug').val(uniqueID);
         }
 
         var getFriend = (friendId) => {
@@ -311,9 +391,7 @@
         }
 
         function readFriendProfileForm() {
-
             var friend = {}
-
             friend.title = $('#friendTitle').val();
             friend.bio = $('#friendBio').val();
             friend.summary = $('#friendSummary').val();
@@ -322,25 +400,27 @@
             friend.statusId = $("#friendStatus option:selected").val();
             friend.skills = $('#friendSkills').val();
             friend.primaryImage = $('#friendPrimaryImageText').val();
-
-
             return friend;
         }
 
         function onGetFriendSuccess(response) {
 
-            // TODO -- set selection of status based on data retrieved.
-
             var friend = response.data.item;
+
+            console.log("onGetFriendSuccess");
+            console.log(friend);
+            console.log(friend.statusId);
 
             var friendTitle = friend.title;
             var friendBio = friend.bio;
             var friendSummary = friend.summary;
             var friendHeadline = friend.headline;
             var friendSlug = friend.slug;
-            var friendStatus = friend.status;
+            var friendStatus = friend.statusId;
             var friendSkills = friend.skills || null;
             var friendPrimaryImageText = friend.primaryImage.imageUrl;
+
+            $("#previewImg").attr("src", friendPrimaryImageText);
 
             $('#friendTitle').val(friendTitle).ping();
             $('#friendBio').val(friendBio).ping();
@@ -348,19 +428,19 @@
             $('#friendHeadline').val(friendHeadline).ping();
             $('#friendSlug').val(friendSlug).ping();
 
-
-
-            try {
-                $('friendStatus option[value=`${friend.statusId}`]').attr('selected', 'selected');
-            } catch {
-                $('friendStatus option[value=NotSet]').attr('selected', 'selected');
-            }
-
-
-
-            $('#friendStatus').val(friendStatus).ping();
+            // TODO bug fixes needed
+            // New lines in text area (/n)
+            // statusId
+            // Skills
 
             $('#friendSkills').val(friendSkills).ping();
+
+            try {
+                $("#friendStatus").val(`${friend.statusId}`);
+            } catch {
+                $("#friendStatus").val(`NotSet`);
+            }
+
             $('#friendPrimaryImageText').val(friendPrimaryImageText).ping();
 
         }
