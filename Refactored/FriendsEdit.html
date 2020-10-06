@@ -65,7 +65,7 @@
 
             <div class="form-group">
                 <label for="friendBio">Bio</label>
-                <textarea class="form-control" id="friendBio" rows="4"></textarea>
+                <textarea class="form-control" id="friendBio" rows="4">Bio...</textarea>
             </div>
 
             <div class="form-group">
@@ -85,8 +85,7 @@
 
             <div class="form-group">
                 <label for="friendStatus">Status</label>
-                <select class="form-control" id="friendStatus">
-              <!-- <option selected>Choose...</option> -->
+                <select class="form-control" id="friendStatus">    
               <option value="0">NotSet</option>
               <option value="1">Active</option>
               <option value="2">Deleted</option>
@@ -232,18 +231,62 @@
 
         function onAddFriendButtonClick(event) {
             var friendDataPayload = readFriendProfileForm();
-            alert("todo - POST back to api then redirect to friends page.\n\n" + JSON.stringify(friendDataPayload));
-            $('#friendProfileForm').submit();
+
+            //$('#friendProfileForm').submit();
+
+            console.log("add friend " + JSON.stringify(friendDataPayload));
+
+            services.friendsService.add(friendDataPayload)
+                .then(onAddFriendSuccess)
+                .catch(onAddFriendError)
+
+
+
         }
+
+        function onAddFriendSuccess(response) {
+            console.log(response);
+            // todo nice response, return to friends page
+        }
+
+        function onAddFriendError(error) {
+            console.log(error);
+            // todo nice error trapping
+            var errors = error.response.data.errors;
+            alert(errors);
+        }
+
 
         function onUpdateFriendButtonClick(event) {
             var friendDataPayload = readFriendProfileForm();
-            alert("todo - PUT back to api then redirect to friends page.\n\n" + JSON.stringify(friendDataPayload));
-            $('#friendProfileForm').submit();
+
+            //$('#friendProfileForm').submit();
+
+            console.log("update friend " + JSON.stringify(friendDataPayload));
+
+            var friendId = $('#friendId').val();
+
+            services.friendsService.update(friendId, friendDataPayload)
+                .then(onUpdateFriendSuccess)
+                .catch(onUpdateFriendError)
+        }
+
+
+        function onUpdateFriendSuccess(response) {
+            console.log(response);
+            // todo nice response, return to friends page
+        }
+
+        function onUpdateFriendError(error) {
+            console.log(error);
+            // todo nice error trapping
+            var errors = error.response.data.errors;
+            alert(errors);
+
         }
 
         function onCancelButtonClick() {
-            window.history.back();
+            location.href = "Friends.html";
         }
 
         function onSubmitFriendProfileForm(event) {
@@ -269,16 +312,6 @@
 
         function readFriendProfileForm() {
 
-            // var updateFriendObject = {   
-            //     "title": "Updated test",
-            //     "bio": "Updated Bio",
-            //     "summary": "Updated Summary",
-            //     "headline": "Updated Headline",
-            //     "slug": "1238675209",
-            //     "statusId": "NotSet",
-            //     "primaryImage": "https://api.remotebootcamp.dev/apihelp/rbclogo.png"
-            // }
-
             var friend = {}
 
             friend.title = $('#friendTitle').val();
@@ -286,8 +319,10 @@
             friend.summary = $('#friendSummary').val();
             friend.headline = $('#friendHeadline').val();
             friend.slug = $('#friendSlug').val();
-            friend.statusId = $("#friendStatus option:selected").text();
+            friend.statusId = $("#friendStatus option:selected").val();
+            friend.skills = $('#friendSkills').val();
             friend.primaryImage = $('#friendPrimaryImageText').val();
+
 
             return friend;
         }
@@ -303,7 +338,7 @@
             var friendSummary = friend.summary;
             var friendHeadline = friend.headline;
             var friendSlug = friend.slug;
-            var friendStatus = "";
+            var friendStatus = friend.status;
             var friendSkills = friend.skills || null;
             var friendPrimaryImageText = friend.primaryImage.imageUrl;
 
@@ -312,7 +347,19 @@
             $('#friendSummary').val(friendSummary).ping();
             $('#friendHeadline').val(friendHeadline).ping();
             $('#friendSlug').val(friendSlug).ping();
+
+
+
+            try {
+                $('friendStatus option[value=`${friend.statusId}`]').attr('selected', 'selected');
+            } catch {
+                $('friendStatus option[value=NotSet]').attr('selected', 'selected');
+            }
+
+
+
             $('#friendStatus').val(friendStatus).ping();
+
             $('#friendSkills').val(friendSkills).ping();
             $('#friendPrimaryImageText').val(friendPrimaryImageText).ping();
 

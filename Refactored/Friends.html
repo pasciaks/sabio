@@ -190,7 +190,18 @@
             var currentTemplate = getTemplate();
             currentTemplate.attr("data-id", aFriend.id);
             currentTemplate.attr("title", JSON.stringify(aFriend));
-            currentTemplate.find(".card-img-top").attr("src", `${aFriend.primaryImage.imageUrl}`);
+
+            var imagePath = aFriend.primaryImage.imageUrl.toLowerCase();
+
+            if (imagePath.indexOf("file://") == -1) {
+                currentTemplate.find(".card-img-top").attr("src", `${aFriend.primaryImage.imageUrl}`);
+
+            } else {
+                currentTemplate.find(".card-img-top").attr("src", `https://via.placeholder.com/100`);
+
+            }
+
+
             currentTemplate.find(".card-title").text(`${aFriend.title}`);
             currentTemplate.find(".card-bio").text(`${aFriend.bio}`);
             return currentTemplate
