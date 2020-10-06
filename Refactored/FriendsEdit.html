@@ -232,11 +232,13 @@
 
         function onAddFriendButtonClick(event) {
             var friendDataPayload = readFriendProfileForm();
+            alert("todo - POST back to api then redirect to friends page.\n\n" + JSON.stringify(friendDataPayload));
             $('#friendProfileForm').submit();
         }
 
         function onUpdateFriendButtonClick(event) {
             var friendDataPayload = readFriendProfileForm();
+            alert("todo - PUT back to api then redirect to friends page.\n\n" + JSON.stringify(friendDataPayload));
             $('#friendProfileForm').submit();
         }
 
