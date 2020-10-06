@@ -284,13 +284,20 @@
         }
 
         function onFileInputChanged(event) {
-            $('#friendPrimaryImageText').val(event.target.value);
-            previewFile(event);
+            try {
+                $('#friendPrimaryImageText').val(event.target.value);
+                previewFile(event);
+            } catch (e) {
+                alert('error ' + JSON.stringify(e));
+            }
         }
 
-
         function onFileTextChanged(event) {
-            $("#previewImg").attr("src", $('#friendPrimaryImageText').val());
+            try {
+                $("#previewImg").attr("src", $('#friendPrimaryImageText').val());
+            } catch (e) {
+                alert('error ' + JSON.stringify(e));
+            }
         }
 
         function onAddFriendButtonClick(event) {
@@ -376,6 +383,7 @@
             $('#addFriendButton').prop('disabled', false);
             setNewRandomSlug();
             $("#friendStatus").val(`Active`);
+            $("#friendPrimaryImageText").val(`https://via.placeholder.com/150`);
         }
 
         function setNewRandomSlug() {

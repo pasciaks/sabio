@@ -16,6 +16,8 @@
 
     <link href="./css/toastr.css" rel="stylesheet" />
 
+    <script src="./js/utilities.js"></script>
+
     <script src="https://pw.sabio.la/api/js/site"></script>
     <!-- #endregion -->
 
@@ -186,7 +188,9 @@
 
 <body class="sabio" data-ins="pw-00">
     <!-- Do Not Edit or Remove this nav element -->
-    <nav class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio"></nav>
+    <nav class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio d-none"></nav>
+
+    <div w3-include-html="./includes/nav.html"></div>
 
     <div class="container">
 
@@ -500,6 +504,9 @@
         }
 
         function startUp() {
+
+            includeHTML(); // Note - this will run on every page, better served with react components/views/routing
+
 
             appendSportChoiceButtons();
 

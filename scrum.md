@@ -12,9 +12,21 @@
 
         Completed code review for friends....
 
-        ...jobs
+                // code review notes
+
+                ON TRACK TO MOVE AHEAD TO JOBS
+                PHASE out the use of var.
+                Use let, const and arrow functions .
+                Only include services that are being used.
+                Use named functions in .then --- avoid anonymous functions always!!!
+
+        Finished small portion of jobs
+
+        Watched videos about response/request lifecycle
 
 ### ----- WILL ACCOMPLISH -----
+
+        Finish most if not all of jobs
 
 ### ----- BLOCKERS -----
 
