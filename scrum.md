@@ -4,31 +4,44 @@
     What are you going to accomplish
     What are your blockers
 
+# October 7, 2020
+
+### ----- ACCOMPLISHED -----
+
+### ----- WILL ACCOMPLISH -----
+
+### ----- BLOCKERS -----
+
 # October 6, 2020
 
 ### ----- ACCOMPLISHED -----
 
-        Fixed bugs in friends for Status and Bio.
+        Fixed bugs in friends for Status and Bio, Finished Friends.
+
+        Watched videos about response/request lifecycle (too early)
 
         Completed code review for friends....
 
-                // code review notes
+                // code review notes -
 
                 ON TRACK TO MOVE AHEAD TO JOBS
-                PHASE out the use of var.
-                Use let, const and arrow functions .
+
+                PHASE out the use of var., Use let, const and arrow functions.
                 Only include services that are being used.
                 Use named functions in .then --- avoid anonymous functions always!!!
 
-        Finished small portion of jobs
+        Finished small portion of jobs, then we moved on to React!
 
-        Watched videos about response/request lifecycle
+        Watched and coded along with 35% of React Videos
 
 ### ----- WILL ACCOMPLISH -----
 
-        Finish most if not all of jobs
+        Complete the REACT Basics Course, coding along, etc.
+        (Move on to React JS course, Git Course, or Starter Cards A in React) ??
 
 ### ----- BLOCKERS -----
+
+        None Really, but note that having only one screen means a lot of switching between watching video and coding along.
 
 # October 5, 2020
 
