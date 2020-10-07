@@ -36,8 +36,8 @@
 
 ### ----- WILL ACCOMPLISH -----
 
-        Complete the REACT Basics Course, coding along, etc.
-        (Move on to React JS course, Git Course, or Starter Cards A in React) ??
+        Work on the REACT Basics Course, coding along, etc.
+        Get to next assignment video after setState and Routing
 
 ### ----- BLOCKERS -----
 
