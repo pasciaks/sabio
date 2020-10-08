@@ -8,9 +8,21 @@
 
 ### ----- ACCOMPLISHED -----
 
+        Finished React Basics videos up to 54% (Read Me)
+
+        (SF.React Start Here - code along) - install, components, services, state, routing
+
+        Finished (Starter.react-componentize - Components, Routing, Axios)
+
+        Started C93 for React (Help Documentation, stubbed out Components for Login, Register, Home, Axios Auth Service)
+
 ### ----- WILL ACCOMPLISH -----
 
+        Will finish C93 Starter Cards for React (A) Login, Register, Home
+
 ### ----- BLOCKERS -----
+
+        None
 
 # October 6, 2020
 
