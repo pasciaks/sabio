@@ -16,11 +16,12 @@
 
         Started C93 for React (Help Documentation, stubbed out Components for Login, Register, Home, Axios Auth Service)
 
-        Watched videos and code along Binding State to Text Inputs, Separating Form Data in State, Select Drop Downs, Check Boxes, Radios
+        Watched videos and code along Binding State to Text Inputs, Separating Form Data in State, Select Drop Downs
 
 ### ----- WILL ACCOMPLISH -----
 
         Will finish C93 Starter Cards for React (A) Login, Register, Home
+        [ ] Possibly watch Check Boxes, Radios videos for forms.
 
 ### ----- BLOCKERS -----
 
