@@ -4,6 +4,19 @@
     What are you going to accomplish
     What are your blockers
 
+# October 10, 2020
+
+### ----- ACCOMPLISHED -----
+
+        [ ] Implement friend add/edit form
+        [ ] Implement Search
+        [ ] Implement Paging
+        (( shave at lunch, and get a haircut at 2:30 pst ))
+
+### ----- WILL ACCOMPLISH -----
+
+### ----- BLOCKERS -----
+
 # October 9, 2020
 
 ### ----- ACCOMPLISHED -----
