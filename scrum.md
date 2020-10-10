@@ -4,6 +4,66 @@
     What are you going to accomplish
     What are your blockers
 
+# October 9, 2020
+
+### ----- ACCOMPLISHED -----
+
+        [X] Completed Q code review of home/login/register
+
+        [X] Jacked up a lot of my login/home/app because of refactoring based on code review comments
+
+        [X] Created friends service
+
+        [X] Watched - Rendering Array's via Map Calls
+
+        [X] Finished React Basics Course Videos
+
+        [X] Created friends and friend component
+
+        [X] Got friends to view and edit/delete buttons wired up
+
+### ----- WILL ACCOMPLISH -----
+
+        [ ] Implement friend add/edit form
+
+        [ ] Implement Search
+
+        [ ] Implement Paging
+
+        (( shave at lunch, and get a haircut at 2:30 pst ))
+
+### ----- BLOCKERS -----
+
+        Ouch!
+
+# October 8, 2020
+
+### ----- ACCOMPLISHED -----
+
+        [X] Finished C93 Starter Cards for React (A) Login, Register, Home
+
+        [X] Watched the Check Boxes and Radios videos for forms, coded along.
+
+        [X] Started Friends ( created friends service)
+
+        In the Q for code review on Starter Card A
+
+### ----- WILL ACCOMPLISH -----
+
+        [X] Watch - Rendering Array's via Map Calls
+
+        [X] Finish React Basics Course Videos
+
+        [ ] Finish Friends
+
+        [ ] Implement Skills Control, include in Friends
+
+        [ ] Implement image upload api
+
+### ----- BLOCKERS -----
+
+        none
+
 # October 7, 2020
 
 ### ----- ACCOMPLISHED -----
@@ -21,7 +81,7 @@
 
 ### ----- WILL ACCOMPLISH -----
 
-        Will finish C93 Starter Cards for React (A) Login, Register, Home
+        [ ] Will finish C93 Starter Cards for React (A) Login, Register, Home
 
         [] Possibly watch Check Boxes, Radios videos for forms.
 
