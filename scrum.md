@@ -8,14 +8,23 @@
 
 ### ----- ACCOMPLISHED -----
 
-        [ ] Implement friend add/edit form
-        [ ] Implement Search
-        [ ] Implement Paging
+        [X] Created friends and friend component
+        [x] Completed revised friends backend (+ stubbed out Skills, Tech companies and Jobs api backend for the 1st time)
+        [X] Got friends to view and edit/delete buttons wired up
+        [x] Stubbed out friends add/edit form
+        [X] re-read instructions and more refactored login/home/register
+        [X] Cleaned up code, got rid of old comments, code examples, et
         (( shave at lunch, and get a haircut at 2:30 pst ))
 
 ### ----- WILL ACCOMPLISH -----
 
+        wire up the friends add/edit with backend
+        implement search and paging
+        Q for code review by this afternoon/evening or tomorrow am at the latest
+
 ### ----- BLOCKERS -----
+
+        mouse dongle missing (I moved to new temporary place)
 
 # October 9, 2020
 
