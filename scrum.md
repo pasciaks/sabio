@@ -18,6 +18,7 @@
 
 ### ----- WILL ACCOMPLISH -----
 
+        create skills controls
         wire up the friends add/edit with backend
         implement search and paging
         Q for code review by this afternoon/evening or tomorrow am at the latest
