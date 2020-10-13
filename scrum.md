@@ -4,6 +4,30 @@
     What are you going to accomplish
     What are your blockers
 
+# October 12, 2020
+
+### ----- ACCOMPLISHED -----
+
+        [x] Implemented react-icons
+        [x] fixed programmatic navigation bug ( due to two BrowserRouter (index and app))
+        [ ] add
+        [ ] delete
+        [ ] edit
+        [ ] paginate
+        [x] Started skills control (mapped,etc) - will be needed for complete friends process
+        [X] Refactored field names for login/register to match payload model (Brijesh code review)
+        [x] implemented search, show all
+        [x] Created blank/template versions of TechCompanies Events Jobs Blogs Skills
+
+### ----- WILL ACCOMPLISH -----
+
+        [ ] Code review to this point (1st thing)
+        [ ] Finalize my global updates on login, etc in app state on changes! ( perhaps handler callback function ...)
+
+
+
+### ----- BLOCKERS -----
+
 # October 10, 2020
 
 ### ----- ACCOMPLISHED -----
