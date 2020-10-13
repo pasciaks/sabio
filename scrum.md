@@ -24,8 +24,6 @@
         [ ] Code review to this point (1st thing)
         [ ] Finalize my global updates on login, etc in app state on changes! ( perhaps handler callback function ...)
 
-
-
 ### ----- BLOCKERS -----
 
 # October 10, 2020
