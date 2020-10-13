@@ -10,10 +10,10 @@
 
         [x] Implemented react-icons
         [x] fixed programmatic navigation bug ( due to two BrowserRouter (index and app))
-        [ ] add
-        [ ] delete
-        [ ] edit
-        [ ] paginate
+        [x] add - edit component wired up form fields for add
+
+        [x] edit - edit component wired up form fields for edit
+        [x] cancel - button wired to goBack
         [x] Started skills control (mapped,etc) - will be needed for complete friends process
         [X] Refactored field names for login/register to match payload model (Brijesh code review)
         [x] implemented search, show all
@@ -22,6 +22,9 @@
 ### ----- WILL ACCOMPLISH -----
 
         [ ] Code review to this point (1st thing)
+        [ ] post the add/edit
+        [ ] post the delete
+        [ ] paginate
         [ ] Finalize my global updates on login, etc in app state on changes! ( perhaps handler callback function ...)
 
 ### ----- BLOCKERS -----
