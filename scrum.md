@@ -4,6 +4,22 @@
     What are you going to accomplish
     What are your blockers
 
+# October 13, 2020
+
+### ----- ACCOMPLISHED -----
+
+        [ ] Code review to this point (quick question)
+        [ ] Finalize my global updates on login, etc in app state on changes! ( perhaps handler callback function ...)
+        [ ] post the add/edit (already have service, just need to post and update)
+        [ ] post the delete (already have service, just need to delete)
+        [ ] paginate (included, just needs configured appropriately)
+
+### ----- WILL ACCOMPLISH -----
+
+### ----- BLOCKERS -----
+
+        Still no mouse, only laptop touchpad, but it seems to help me make better progress believe it or not!
+
 # October 12, 2020
 
 ### ----- ACCOMPLISHED -----
@@ -25,7 +41,6 @@
         [ ] post the add/edit (already have service, just need to post and update)
         [ ] post the delete (already have service, just need to delete)
         [ ] paginate (included, just needs configured appropriately)
-
 
 ### ----- BLOCKERS -----
 
