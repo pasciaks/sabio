@@ -9,23 +9,23 @@
 ### ----- ACCOMPLISHED -----
 
         [x] Implemented react-icons
-        [x] fixed programmatic navigation bug ( due to two BrowserRouter (index and app))
-        [x] add - edit component wired up form fields for add
-
+        [x] fixed programmatic navigation bug ( due to two BrowserRouters (index and app))
+        [x] add - used edit component for wire up form fields for add
         [x] edit - edit component wired up form fields for edit
         [x] cancel - button wired to goBack
-        [x] Started skills control (mapped,etc) - will be needed for complete friends process
         [X] Refactored field names for login/register to match payload model (Brijesh code review)
-        [x] implemented search, show all
+        [x] Implemented search, show all
+        [x] Started skills control (mapped,etc) - will be needed for complete friends process
         [x] Created blank/template versions of TechCompanies Events Jobs Blogs Skills
 
 ### ----- WILL ACCOMPLISH -----
 
-        [ ] Code review to this point (1st thing)
-        [ ] post the add/edit
-        [ ] post the delete
-        [ ] paginate
+        [ ] Code review to this point (quick question)
         [ ] Finalize my global updates on login, etc in app state on changes! ( perhaps handler callback function ...)
+        [ ] post the add/edit (already have service, just need to post and update)
+        [ ] post the delete (already have service, just need to delete)
+        [ ] paginate (included, just needs configured appropriately)
+
 
 ### ----- BLOCKERS -----
 
