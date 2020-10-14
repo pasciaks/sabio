@@ -8,6 +8,96 @@
 
 ### ----- ACCOMPLISHED -----
 
+        [ ] Started jobs
+                [x] created 5 tech companies
+                [x] created Jobs.jsx, Job.jsx, JobForm.jsx (blank starts using Friends example)
+                [x] created TechCompanies.jsx, TechCompany.jsx, TechCompanyForm.jsx (blank starts using Friends example)
+
+        [x] Create jobService with axios calls for { get, getPage, search, add, update, updateStatus, deleteItem, getBySlug };
+        [x] Create techCompanyService with axios calls for { get, getPage, search, add, update, updateStatus, deleteItem, getBySlug };
+
+        [x] created jobs add form, dynamic population of drop down options for choosing tech company id
+
+        [ ] moved on to events...
+                [x] completed events service
+                [ ] started event form (layed out fields, working form inputs and wire up...)
+
+        ----------------------------------------------------------------------------------------------------------------
+        ## ----- code talk ----- ----- code talk ----- ----- code talk ----- ----- code talk ----- ----- code talk -----
+        ----------------------------------------------------------------------------------------------------------------
+
+        CODE TALK TOPICS CODE TALK TOPICS CODE TALK TOPICS CODE TALK TOPICS CODE TALK TOPICS CODE TALK TOPICS CODE TALK TOPICS
+
+        vs code -  multi-line editing  (alt-click)      [ ]
+                   wild search (Ctrl+Shift+F)           [ ]  -- Another Message --
+                   replace (Ctrl-H)                     [ ]  I don't like Cake!!!
+
+                   // TODO
+
+                   // NOTE
+
+                   // HELP
+
+        css - quick and dirty - Patrick could lead a future talk here
+
+                .container
+                .row
+                .col-sm-2
+
+        namings
+
+                userService.getCurrent
+                        .then(this.onGetCurrentUserSuccess)
+                        .catch(this.onGetCurrentUserError)
+
+                onGetCurrentUserSuccess(response) {
+                }
+
+                onGetCurrentUserError(errResponse) {
+                }
+
+                in services  (friendService.js   jobService.js)
+
+        break-out naming/structure
+
+                components
+
+                        auth
+                                Login
+                                LoginButton
+                                Logout
+                                Register
+
+                        friends
+                                Friends
+                                FriendForm
+                                Friend
+                        jobs
+                                Jobs
+                                JobForm
+                                Job
+                        techcompanies
+                                TechCompanies
+                                TechCompanyForm
+                                TechCompany
+
+                services
+                        userService
+                        jobService
+                        techCompanyService
+                        friendService
+
+                mark up / git hub
+
+                ./share-branch
+
+                LIFE ADVICE
+                        - never go to sleep angry.
+                        - as best as possible, keep recent branch ./share-branch in a good working state.
+
+        ----------------------------------------------------------------------------------------------------------------
+        ----------------------------------------------------------------------------------------------------------------
+
 ### ----- WILL ACCOMPLISH -----
 
 ### ----- BLOCKERS -----
@@ -32,8 +122,6 @@
 
         FRIENDS
 
-        [ ] implement query string for /search and /paginate (re-read c93 friends instructions)
-        [ ] code review on friends final before lunch
         [ ] Start of jobs...
 
 ### ----- BLOCKERS -----
