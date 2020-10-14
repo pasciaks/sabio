@@ -26,13 +26,14 @@
 
         [x] post the add/update (already have service, just needed to post (add) and put (update))
         [x] post the delete, filtered out deleted id (findIndex and slice) -- still searching for optimal way Big O(n) you know!
+        [x] paginate (fixed my bug)
 
 ### ----- WILL ACCOMPLISH -----
 
         FRIENDS
 
-        [ ] paginate (need to Q up for finding/fixing my paginate bugs...)
-
+        [ ] implement query string for /search and /paginate (re-read c93 friends instructions)
+        [ ] code review on friends final before lunch
         [ ] Start of jobs...
 
 ### ----- BLOCKERS -----
