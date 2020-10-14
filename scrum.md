@@ -4,17 +4,36 @@
     What are you going to accomplish
     What are your blockers
 
+# October 14, 2020
+
+### ----- ACCOMPLISHED -----
+
+### ----- WILL ACCOMPLISH -----
+
+### ----- BLOCKERS -----
+
 # October 13, 2020
 
 ### ----- ACCOMPLISHED -----
 
-        [ ] Code review to this point (quick question)
-        [ ] Finalize my global updates on login, etc in app state on changes! ( perhaps handler callback function ...)
-        [ ] post the add/edit (already have service, just need to post and update)
-        [ ] post the delete (already have service, just need to delete)
-        [ ] paginate (included, just needs configured appropriately)
+        [x] Code review to this point (login,register,home,friends, edit, add, getall, search)
+            [x] refactored friends routes to app ( I had a friends component implementing /friends/edit route)
+            [x] optimized /friends/edit ( uses get friend by id, unless entire friend object passed back into it)
+            [x] got rid on unused code ( formFieldChanged ternary for 'checkbox', and un-used parameters in calls)
+
+        [x] took out virtually ALL my console.log's
+        [x] re-read and refactored majority of code
+
+        [x] post the add/update (already have service, just needed to post (add) and put (update))
+        [x] post the delete, filtered out deleted id (findIndex and slice) -- still searching for optimal way Big O(n) you know!
 
 ### ----- WILL ACCOMPLISH -----
+
+        FRIENDS
+
+        [ ] paginate (need to Q up for finding/fixing my paginate bugs...)
+
+        [ ] Start of jobs...
 
 ### ----- BLOCKERS -----
 
