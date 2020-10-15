@@ -25,6 +25,10 @@
         ----------------------------------------------------------------------------------------------------------------
         ## ----- code talk ----- ----- code talk ----- ----- code talk ----- ----- code talk ----- ----- code talk -----
         ----------------------------------------------------------------------------------------------------------------
+        ----------------------------------------------------------------------------------------------------------------
+        ## ----- code talk ----- ----- code talk ----- ----- code talk ----- ----- code talk ----- ----- code talk -----
+        ----------------------------------------------------------------------------------------------------------------
+
 
         CODE TALK TOPICS CODE TALK TOPICS CODE TALK TOPICS CODE TALK TOPICS CODE TALK TOPICS CODE TALK TOPICS CODE TALK TOPICS
 
@@ -74,10 +78,7 @@
                                 Friends
                                 FriendForm
                                 Friend
-                        jobs
-                                Jobs
-                                JobForm
-                                Job
+
                         techcompanies
                                 TechCompanies
                                 TechCompanyForm
@@ -93,13 +94,76 @@
 
                 ./share-branch - https://github.com/sabiocode/Starter.react-componentize/branches
 
+
+        // api service (generalization)
+
+                friendService
+                jobService
+                techCompanyService
+                blogService
+
+                * eventService
+
+        // on set state call back
+
+        /*
+
+        // when the search text field changes...
+
+                onFormFieldChanged = (e) => {
+                let currentTarget = e.currentTarget;
+                let inputName = currentTarget.name;
+                let newValue = currentTarget.value;
+
+                this.setState(
+                (prevState) => {
+                        let formData = { ...prevState.formData };
+                        formData[inputName] = newValue;
+
+                        return { formData };
+                },
+                () => {
+                        // Search text updated in state
+
+                        this.setState((prevState) => {
+                        // NOTE - VERY SLICK HERE, requiring the query to happy after the state field change is made!
+
+                        let mappedCards = prevState.arrayOfFriends
+                        .filter(this.searchFilter)
+                        .map(this.mapFriend);
+
+                        return { mappedCards };
+                        });
+                }
+                );
+                };
+
+        */
+
+
+
+
         // NOTE - CODE TALK (CTRL-SHIFT-F  // NOTE - CODE)
+
+        // NOTE - CODE TALK (CTRL-SHIFT-F  // NOTE - CODE)
+
+                STILL MORE TIME ???
+
+                        HACK-A-THONS / DEV POST
+
+                        https://mlh.io/
+
+                        https://devpost.com/pasciaks
+
 
                 LIFE ADVICE
                         - never go to sleep angry.
                         - as best as possible, keep recent branch ./share-branch in a good working state.
 
-                        https://docs.google.com/forms/d/e/1FAIpQLSevigoxTfV92dByarLHKtTA5U8LhZMHOG14850ZHYmv__teWA/viewform
+
+                thanks, please be sure to fill out thisform.  I'll post in the channel.
+
+                https://docs.google.com/forms/d/e/1FAIpQLSevigoxTfV92dByarLHKtTA5U8LhZMHOG14850ZHYmv__teWA/viewform
 
         ----------------------------------------------------------------------------------------------------------------
         ## ----- code talk ----- ----- code talk ----- ----- code talk ----- ----- code talk ----- ----- code talk -----
