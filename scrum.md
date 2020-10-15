@@ -8,23 +8,37 @@
 
 ### ----- ACCOMPLISHED -----
 
-        [ ] Started jobs
+        [x] Started jobs
                 [x] created 5 tech companies
                 [x] created Jobs.jsx, Job.jsx, JobForm.jsx (blank starts using Friends example)
                 [x] created TechCompanies.jsx, TechCompany.jsx, TechCompanyForm.jsx (blank starts using Friends example)
 
         [x] Create jobService with axios calls for { get, getPage, search, add, update, updateStatus, deleteItem, getBySlug };
+
         [x] Create techCompanyService with axios calls for { get, getPage, search, add, update, updateStatus, deleteItem, getBySlug };
 
         [x] created jobs add form, dynamic population of drop down options for choosing tech company id
 
         [ ] moved on to events...
                 [x] completed events service
-                [ ] started event form (layed out fields, working form inputs and wire up...)
+                [ ] started event form
 
         [x] Code talk!
 
+                SUMMARY OF THINGS COVERED
+
+                VS code search, replace, ctrl-shift-f for global finds,
+                noting in code // TODO // NOTE // HELP,
+                quick class creation for css using .container .row .col,
+                *{border:1px solid gray;} global css for borders to help alignments,
+                filenames and captured response naming, folder structures,
+                setState Callback function,
+                and arrayOfFriends.findIndex() optimization over .map.
+
 ### ----- WILL ACCOMPLISH -----
+
+        [ ] Work the event form - api call for address/gps latitude and longitude ?
+        [ ] Look into react-modal
 
 ### ----- BLOCKERS -----
 

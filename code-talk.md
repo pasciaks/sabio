@@ -93,6 +93,8 @@
 
         // when the search text field changes...
 
+                // for an input text field named searchText
+
                 onFormFieldChanged = (e) => {
                 let currentTarget = e.currentTarget;
                 let inputName = currentTarget.name;
@@ -111,14 +113,17 @@
                                         // Search text updated in state
 
                                         this.setState((prevState) => {
+
                                         // NOTE - VERY SLICK HERE, requiring the query to happy
-                                        // after the state field change is made!
+                                        // after the state form field (searchText) change is made!
+                                        // the subsequent call to (this.searchFilter) uses the
+                                        // value this.state.searchText to do the filtering.
 
-                                        let mappedCards = prevState.arrayOfFriends
-                                        .filter(this.searchFilter)
-                                        .map(this.mapFriend);
+                                                let mappedCards = prevState.arrayOfFriends
+                                                        .filter(this.searchFilter)
+                                                        .map(this.mapFriend);
 
-                                        return { mappedCards };
+                                                return { mappedCards };
                                         });
                                 }
                         );
