@@ -5,8 +5,10 @@
         ## ----- code talk ----- ----- code talk ----- ----- code talk ----- ----- code talk -
         --------------------------------------------------------------------------------------
 
+        SUMMARY OF THINGS COVERED
+
         VS code search, replace, ctrl-shift-f for global finds,
-        noting in code // todo // node //help,
+        noting in code // TODO // NOTE // HELP,
         quick class creation for css using .container .row .col,
         *{border:1px solid gray;} global css for borders to help alignments,
         filenames and captured response naming, folder structures,
