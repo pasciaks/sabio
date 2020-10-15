@@ -29,8 +29,12 @@
         ## ----- code talk ----- ----- code talk ----- ----- code talk ----- ----- code talk ----- ----- code talk -----
         ----------------------------------------------------------------------------------------------------------------
 
+        VS code search, replace, ctrl-shift-f for global finds, noting in code // todo // node //help,  quick class creation for css using .container .row .col, *{border:1px solid gray;} global css for borders to help alignments, filenames and captured response naming, folder structures, setState Callback function, and arrayOfFriends.findIndex() optimization over .map.
 
-        CODE TALK TOPICS CODE TALK TOPICS CODE TALK TOPICS CODE TALK TOPICS CODE TALK TOPICS CODE TALK TOPICS CODE TALK TOPICS
+
+        ----------------------------------------------------------------------------------------------------------------
+        ## ----- code talk ----- ----- code talk ----- ----- code talk ----- ----- code talk ----- ----- code talk -----
+        ----------------------------------------------------------------------------------------------------------------
 
                    replace (Ctrl-H)                     [ ]  I don't like Cake!!!
         vs code -
@@ -50,16 +54,23 @@
                 .row
                 .col-sm-2
 
+                * {
+                        /* border: 1px dotted gray; */
+                }
+
+
         namings
 
-                userService.getCurrentUser
+                userService.currentUser
                         .then(this.onGetCurrentUserSuccess)
                         .catch(this.onGetCurrentUserError)
 
                 onGetCurrentUserSuccess(response) {
+
                 }
 
                 onGetCurrentUserError(errResponse) {
+
                 }
 
                 in services  (friendService.js   jobService.js)
@@ -141,12 +152,9 @@
         */
 
 
-
-
         // NOTE - CODE TALK (CTRL-SHIFT-F  // NOTE - CODE)
 
         // NOTE - CODE TALK (CTRL-SHIFT-F  // NOTE - CODE)
-
 
 
                 LIFE ADVICE
@@ -155,7 +163,7 @@
                         - hope we should feel free to download others branches, run and learn from the code.
 
 
-                thanks, please be sure to fill out thisform.  I'll post in the channel.
+                thanks, please be sure to fill out this form.  I'll post in the channel.
 
                 https://docs.google.com/forms/d/e/1FAIpQLSevigoxTfV92dByarLHKtTA5U8LhZMHOG14850ZHYmv__teWA/viewform
 
