@@ -40,11 +40,11 @@
 ### ----- WILL ACCOMPLISH -----
 
         [ ] Work the event form - api call for address/gps latitude and longitude ?
-        [ ] Look into react-modal
 
         [ ] Layout events top page
         [ ] Implement event functionalities
-                [ ] a lot of them!
+                [ ] search
+                [ ] add / edit in modal
 
 ### ----- BLOCKERS -----
 
@@ -430,3 +430,30 @@ function fancyAlert(arg) {
 | Content in the first column | Content in the second column |
 
 ### ---------------------------------------------------------------------------------
+
+https://github.com/wojtekmaj/react-datetime-picker/blob/master/README.md
+
+[![npm](https://img.shields.io/npm/v/react-datetime-picker.svg)](https://www.npmjs.com/package/react-datetime-picker) ![downloads](https://img.shields.io/npm/dt/react-datetime-picker.svg) [![build](https://travis-ci.com/wojtekmaj/react-datetime-picker.svg?branch=master)](https://travis-ci.com/wojtekmaj/react-datetime-picker) ![dependencies](https://img.shields.io/david/wojtekmaj/react-datetime-picker.svg) ![dev dependencies](https://img.shields.io/david/dev/wojtekmaj/react-datetime-picker.svg) [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
+
+https://editor.method.ac/
+
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <defs>
+  <filter height="200%" width="200%" y="-50%" x="-50%" id="svg_2_blur">
+   <feGaussianBlur stdDeviation="5.3" in="SourceGraphic"/>
+  </filter>
+ </defs>
+ <g>
+  <title>background</title>
+  <rect fill="#fff" id="canvas_background" height="602" width="802" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <path transform="rotate(-40 399.9999999999999,322.8158569335938) " id="svg_1" d="m132.49999,322.81586l0,0c0,-107.69552 119.76384,-195.00001 267.5,-195.00001l0,0c70.94538,0 138.98508,20.54457 189.15103,57.11417c50.166,36.56961 78.34897,86.1686 78.34897,137.88584l0,0c0,107.69551 -119.76384,195.00001 -267.5,195.00001l0,0c-147.73614,0 -267.5,-87.3045 -267.5,-195.00001zm133.75,0l0,0c0,53.84775 59.88196,97.5 133.75,97.5c73.8681,0 133.75,-43.65226 133.75,-97.5c0,-53.84775 -59.88194,-97.5 -133.75,-97.5l0,0c-73.86804,0 -133.75,43.65227 -133.75,97.5z" stroke-width="1.5" stroke="#000" fill="#fff"/>
+  <text filter="url(#svg_2_blur)" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="128" id="svg_2" y="331.45313" x="186.5" stroke-width="0" stroke="#000" fill="#000000">Events!</text>
+ </g>
+</svg>
