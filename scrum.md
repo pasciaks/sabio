@@ -40,6 +40,10 @@
         [ ] Work the event form - api call for address/gps latitude and longitude ?
         [ ] Look into react-modal
 
+        [ ] Layout events top page
+        [ ] Implement event functionalities
+                [ ] a lot of them!
+
 ### ----- BLOCKERS -----
 
 # October 13, 2020

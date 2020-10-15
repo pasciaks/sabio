@@ -93,45 +93,73 @@
 
         // when the search text field changes...
 
-                // for an input text field named searchText
+        // for an input text field named searchText
 
-                onFormFieldChanged = (e) => {
+        onFormFieldChanged = (e) => {
+
                 let currentTarget = e.currentTarget;
                 let inputName = currentTarget.name;
                 let newValue = currentTarget.value;
 
-                        this.setState(
+                this.setState(
 
-                                (prevState) => {
-                                        let formData = { ...prevState.formData };
-                                        formData[inputName] = newValue;
+                        (prevState) => {
+                                let formData = { ...prevState.formData };
+                                formData[inputName] = newValue;
 
-                                        return { formData };
-                                },
+                                return { formData };
+                        },
 
-                                () => {
-                                        // Search text updated in state
+                        () => {
+                                // Search text updated in state
 
-                                        this.setState((prevState) => {
+                                this.setState((prevState) => {
 
-                                        // NOTE - VERY SLICK HERE, requiring the query to happy
-                                        // after the state form field (searchText) change is made!
-                                        // the subsequent call to (this.searchFilter) uses the
-                                        // value this.state.searchText to do the filtering.
+                                // NOTE - VERY SLICK HERE, requiring the query to happy
+                                // after the state form field (searchText) change is made!
+                                // the subsequent call to (this.searchFilter) uses the
+                                // value this.state.searchText to do the filtering.
 
-                                                let mappedCards = prevState.arrayOfFriends
-                                                        .filter(this.searchFilter)
-                                                        .map(this.mapFriend);
+                                        let mappedCards = prevState.arrayOfFriends
+                                                .filter(this.searchFilter)
+                                                .map(this.mapFriend);
 
-                                                return { mappedCards };
-                                        });
-                                }
-                        );
-                };
+                                        return { mappedCards };
+                                });
+                        }
+                );
+        };
 
         */
 
         // NOTE - CODE TALK (CTRL-SHIFT-F  // NOTE - CODE)
+
+        // NOTE - CODE TALK -
+
+        // let filtered = prevState.arrayOfFriends.filter((friend) => {
+        //   return friend.id === id ? false : true;
+        // });
+
+        // NOTE - CODE TALK -
+
+        let indexOfFriend = prevState.arrayOfFriends.findIndex(
+                (friend) => friend.id === id
+        );
+
+        /*
+
+        // NOTE - CODE TALK -
+
+        https://stackoverflow.com/questions/8668174/indexof-method-in-an-object-array
+        Array.prototype.findIndex is supported in all browsers other than IE (non-edge). But the polyfill provided is nice.
+        var indexOfStevie = myArray.findIndex(i => i.hello === "stevie");
+        The solution with map is okay. But you are iterating over the entire array every search.
+        That is only the worst case for findIndex which stops iterating once a match is found.
+                Another possibility... if an array is built with dictionary addressing...
+        https://jsfiddle.net/sheldon_pasciak/b3wuzfs7/
+        https://jsbench.me/9hjewv6a98
+
+
         // NOTE - CODE TALK (CTRL-SHIFT-F  // NOTE - CODE)
 
         LIFE ADVICE
