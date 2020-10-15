@@ -93,13 +93,17 @@
 
                 ./share-branch - https://github.com/sabiocode/Starter.react-componentize/branches
 
+        // NOTE - CODE TALK (CTRL-SHIFT-F  // NOTE - CODE)
+
                 LIFE ADVICE
                         - never go to sleep angry.
                         - as best as possible, keep recent branch ./share-branch in a good working state.
 
                         https://docs.google.com/forms/d/e/1FAIpQLSevigoxTfV92dByarLHKtTA5U8LhZMHOG14850ZHYmv__teWA/viewform
 
-
+        ----------------------------------------------------------------------------------------------------------------
+        ## ----- code talk ----- ----- code talk ----- ----- code talk ----- ----- code talk ----- ----- code talk -----
+        ----------------------------------------------------------------------------------------------------------------
         ----------------------------------------------------------------------------------------------------------------
         ----------------------------------------------------------------------------------------------------------------
 
