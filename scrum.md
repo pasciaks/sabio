@@ -147,18 +147,12 @@
 
         // NOTE - CODE TALK (CTRL-SHIFT-F  // NOTE - CODE)
 
-                STILL MORE TIME ???
-
-                        HACK-A-THONS / DEV POST
-
-                        https://mlh.io/
-
-                        https://devpost.com/pasciaks
 
 
                 LIFE ADVICE
                         - never go to sleep angry.
-                        - as best as possible, keep recent branch ./share-branch in a good working state.
+                        - as best as possible, keep recent branch push ./share-branch in a good working state.
+                        - hope we should feel free to download others branches, run and learn from the code.
 
 
                 thanks, please be sure to fill out thisform.  I'll post in the channel.
