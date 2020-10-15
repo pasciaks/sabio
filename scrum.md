@@ -35,6 +35,8 @@
                 setState Callback function,
                 and arrayOfFriends.findIndex() optimization over .map.
 
+        [x] Built in modal example code - thanks to Patrick for fiding the wiki!
+
 ### ----- WILL ACCOMPLISH -----
 
         [ ] Work the event form - api call for address/gps latitude and longitude ?
