@@ -4,6 +4,35 @@
     What are you going to accomplish
     What are your blockers
 
+# October 15, 2020
+
+### ---- ACCOMPLISHED -----
+
+        [x] Worked the events page
+
+        [x] Date/Time picker for start/end date
+
+        [x] Worked events view (renders cards)
+                [x] wired up view more and edit event
+
+        [x] Date/Time picker for start/end date search events
+
+        [X] Layout events top page
+
+        [X] add in modal 95%
+
+### ----- WILL ACCOMPLISH -----
+
+        [ ] edit in modal
+
+        [ ] url for selected event   /events/31523
+        [ ] default latest event if no event url
+
+        [ ] search
+        [ ] paginate
+
+        [ ] Address to gps
+
 # October 14, 2020
 
 ### ----- ACCOMPLISHED -----
