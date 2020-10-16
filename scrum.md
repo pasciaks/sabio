@@ -10,28 +10,40 @@
 
         [x] Worked the events page
 
-        [x] Date/Time picker for start/end date
+                [X] Completed Layout events top page (selected event, search, and event cards)
 
-        [x] Worked events view (renders cards)
-                [x] wired up view more and edit event
+        [x] Completed add event in modal
 
-        [x] Date/Time picker for start/end date search events
+        [x] Date/Time picker for Event form start/end date
 
-        [X] Layout events top page
+        [x] Worked events view (renders cards) using react-strap cards
 
-        [X] add in modal 95%
+        [x] wired up view more and edit event to call parent functions which
+            update state (selectedEvent) and (currentEvent) and open modal
+
+        [ ] incorporated code talk items in current code base
+
+        [x] paginate
 
 ### ----- WILL ACCOMPLISH -----
+
+        [ ] install wiki
 
         [ ] edit in modal
 
         [ ] url for selected event   /events/31523
+
         [ ] default latest event if no event url
 
-        [ ] search
-        [ ] paginate
+        [ ] Date/Time picker for Event search between dates
 
-        [ ] Address to gps
+        [ ] add search by date to events cards and paginate
+
+        [ ] url for selected event   /events/31523
+
+        [ ] default latest event if no event url
+
+        [ ] Address to gps, and store in api data
 
 # October 14, 2020
 
