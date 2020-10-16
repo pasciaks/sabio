@@ -27,6 +27,8 @@
 
 ### ----- WILL ACCOMPLISH -----
 
+        [ ] get in q
+
         [ ] install wiki
 
         [ ] edit in modal
