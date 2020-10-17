@@ -8,25 +8,34 @@
 
 ### ----- ACCOMPLISHED ----
 
-        [X] get in Q
+        [X] Complete Q for early stage of Events...
 
         [X] install wiki for SQL and ssms
 
-        [X] edit in modal
+        [X] completed edit in modal
 
-        [X] MAP VIEW
+        [X] completed selected event shows MAP VIEW
 
         [X] url for selected event /events/31523
 
         [X] default selected event to latest event if no event url /events/12343
 
-        [X] Date/Time picker for Event search between dates
+        [X] Date/Time picker for Event search between dates (JACKED MY STUFF UP)
+                (x) I need to revise this on my own time.
 
         [ ] add search by date to events cards and ensure paging works with it
+                (x) All I need to do is put in the date fields and execute
 
         [ ] Address to gps, and store in api data
+                ( ) Need to do this google address to geo info api
 
-        [ ] MOVED ON TO SQL
+        [X] MOVED ON TO SQL
+
+        [X] INSTALLED APEX FORMATTER
+
+        [ ] WATCHED VIDEOS .....
+
+        [ ] SQL PROC CRUD FOR USERS, PEOPLE AND POSSIBLY FRIENDS
 
 ### ----- WILL ACCOMPLISH -----
 
