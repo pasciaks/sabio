@@ -4,13 +4,41 @@
     What are you going to accomplish
     What are your blockers
 
+# October 16, 2020
+
+### ----- ACCOMPLISHED ----
+
+        [X] get in Q
+
+        [X] install wiki for SQL and ssms
+
+        [X] edit in modal
+
+        [X] MAP VIEW
+
+        [X] url for selected event /events/31523
+
+        [X] default selected event to latest event if no event url /events/12343
+
+        [X] Date/Time picker for Event search between dates
+
+        [ ] add search by date to events cards and ensure paging works with it
+
+        [ ] Address to gps, and store in api data
+
+        [ ] MOVED ON TO SQL
+
+### ----- WILL ACCOMPLISH -----
+
+        [ ] SQL PROC CRUD FOR USERS, PEOPLE AND POSSIBLY FRIENDS
+
 # October 15, 2020
 
 ### ---- ACCOMPLISHED -----
 
         [x] Worked the events page
 
-                [X] Completed Layout events top page (selected event, search, and event cards)
+        [X] Completed Layout events top page (selected event, search, and event cards)
 
         [x] Completed add event in modal
 
@@ -21,29 +49,27 @@
         [x] wired up view more and edit event to call parent functions which
             update state (selectedEvent) and (currentEvent) and open modal
 
-        [ ] incorporated code talk items in current code base
+        [x] incorporated code talk items in current code base
+                (d-flex justify-content-????)
+                (on click instead of NavLink)
 
-        [x] paginate
+        [x] paginate working
 
 ### ----- WILL ACCOMPLISH -----
 
-        [ ] get in q
+        [ ] get in Q
 
-        [ ] install wiki
+        [ ] install wiki for SQL and ssms
 
         [ ] edit in modal
 
-        [ ] url for selected event   /events/31523
+        [ ] url for selected event /events/31523
 
-        [ ] default latest event if no event url
+        [ ] default selected event to latest event if no event url /events/12343
 
         [ ] Date/Time picker for Event search between dates
 
-        [ ] add search by date to events cards and paginate
-
-        [ ] url for selected event   /events/31523
-
-        [ ] default latest event if no event url
+        [ ] add search by date to events cards and ensure paging works with it
 
         [ ] Address to gps, and store in api data
 
