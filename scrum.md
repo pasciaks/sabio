@@ -22,6 +22,8 @@
 
         [X] Date/Time picker for Event search between dates (JACKED MY STUFF UP)
                 (x) I need to revise this on my own time.
+                (x) converted to text fields for date.
+                ( ) need date formatting
 
         [ ] add search by date to events cards and ensure paging works with it
                 (x) All I need to do is put in the date fields and execute
