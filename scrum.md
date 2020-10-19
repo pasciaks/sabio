@@ -4,6 +4,21 @@
     What are you going to accomplish
     What are your blockers
 
+# October 19, 2020
+
+### ----- ACCOMPLISHED ----
+
+      [ ] SQL PROC CRUD FOR USERS, PEOPLE (video version), Skills Locations
+
+### ----- WILL ACCOMPLISH -----
+
+      [ ] Friends
+
+      [ ] UDT Videos
+
+
+### ----- BLOCKERS -----
+
 # October 16, 2020
 
 ### ----- ACCOMPLISHED ----
@@ -42,6 +57,8 @@
 ### ----- WILL ACCOMPLISH -----
 
         [ ] SQL PROC CRUD FOR USERS, PEOPLE AND POSSIBLY FRIENDS
+
+### ----- BLOCKERS -----
 
 # October 15, 2020
 
@@ -83,6 +100,8 @@
         [ ] add search by date to events cards and ensure paging works with it
 
         [ ] Address to gps, and store in api data
+
+### ----- BLOCKERS -----
 
 # October 14, 2020
 
