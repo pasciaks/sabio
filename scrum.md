@@ -18,25 +18,32 @@
 
         [x] SQL PROC CRUD FOR USERS, PEOPLE (video version), Skills Locations
 
-        [x] UDT Videos - friends process is candidate for this use.
+        [x] CREATED TABLES users, people, skills, locations, friends, techcompanies
 
-        [x] users, people, skills, locations, friends, techcompanies
+        [x] CREATE 1ST VERSION OF PROCS insert update delete selectbyid selectedpaginated searchpaginated
 
-        [x] insert update delete selectbyid selectedpaginated searchpaginated
+        [x] SET Unique constraint on slug field in friends
 
-        [x] Unique constraint on slug field in friends
+        [x] Bridge Table FriendsSkills FK relationships (USING DESIGN DATABASE DIAGRAM)
 
-        [x] Bridge Table FriendsSkills FK relationships
+        [x] CREATED TABLES Images, ImageTypes and FK relationship
 
-        [x] Images Table, ImageTypes Table,and ImagesImageTypes fk relationship
+        [x] Watched all the UDT Videos -
 
 ### ----- WILL ACCOMPLISH -----
 
-      [ ] UDT Videos
+        [ ] FriendsSkills_Insert, Update, Delete, SelectAll
+
+        [ ] Friends Select All
+
+        [ ] Create bridge table for Images and Friends
+
+        [ ] Update the friends table to use PrimaryImage as int relationship to images with entityId typeId to retrieve TypeId 3 for Primary Image
 
 ### ----- BLOCKERS -----
 
-        (question).. when we move on, will we be using our own DB and stored procedures to integrate with middle tier c# ?
+        (question).. when we move on, will we be using our own DB and stored procedures to integrate with middle tier c#?
+
         (reason).. implmentation will yield changes needed to our current PROCs after insight gained resulting in more time
 
 # October 16, 2020
