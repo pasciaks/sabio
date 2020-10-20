@@ -38,13 +38,16 @@
 
         [ ] Create bridge table for Images and Friends
 
-        [ ] Update the friends table to use PrimaryImage as int relationship to images with entityId typeId to retrieve TypeId 3 for Primary Image
+        [ ] Update the friends table to use PrimaryImage as int relationship to images
+        with entityId typeId to retrieve TypeId 3 for Primary Image
 
 ### ----- BLOCKERS -----
 
-        (question).. when we move on, will we be using our own DB and stored procedures to integrate with middle tier c#?
+        (question).. when we move on, will we be using our own DB and stored procedures
+                to integrate with middle tier c#?
 
-        (reason).. implmentation will yield changes needed to our current PROCs after insight gained resulting in more time
+        (reason).. implmentation will yield changes needed to our current PROCs
+                after insight gained resulting in more time
 
 # October 16, 2020
 
