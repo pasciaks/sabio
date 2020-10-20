@@ -34,7 +34,8 @@
 
         [ ] FriendsSkills_Insert, Update, Delete, SelectAll
 
-        [ ] Friends Select All
+        [ ] Modified version of Friends Select All that brings in Primary Image from FK
+                as well as Skills from bridge table
 
         [ ] Create bridge table for Images and Friends
 
