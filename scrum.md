@@ -4,20 +4,40 @@
     What are you going to accomplish
     What are your blockers
 
+# October 20, 2020
+
+### ----- ACCOMPLISHED ----
+
+### ----- WILL ACCOMPLISH -----
+
+### ----- BLOCKERS -----
+
 # October 19, 2020
 
 ### ----- ACCOMPLISHED ----
 
-      [ ] SQL PROC CRUD FOR USERS, PEOPLE (video version), Skills Locations
+        [x] SQL PROC CRUD FOR USERS, PEOPLE (video version), Skills Locations
+
+        [x] UDT Videos - friends process is candidate for this use.
+
+        [x] users, people, skills, locations, friends, techcompanies
+
+        [x] insert update delete selectbyid selectedpaginated searchpaginated
+
+        [x] Unique constraint on slug field in friends
+
+        [x] Bridge Table FriendsSkills FK relationships
+
+        [x] Images Table, ImageTypes Table,and ImagesImageTypes fk relationship
 
 ### ----- WILL ACCOMPLISH -----
 
-      [ ] Friends
-
       [ ] UDT Videos
 
-
 ### ----- BLOCKERS -----
+
+        (question).. when we move on, will we be using our own DB and stored procedures to integrate with middle tier c# ?
+        (reason).. implmentation will yield changes needed to our current PROCs after insight gained resulting in more time
 
 # October 16, 2020
 
