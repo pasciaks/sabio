@@ -8,6 +8,30 @@
 
 ### ----- ACCOMPLISHED ----
 
+        [X] FriendsSkills_Insert_V3] using UDT
+
+        [ ] Reformatted all PROCs using FORMAT SQL - Is there a format on Save ?
+
+### ----- WILL ACCOMPLISH -----
+
+        [ ] Watch SQL Videos on Joins
+
+        [ ] Continue to work PROCS and DATABASE
+
+### ----- BLOCKERS -----
+
+        [ ] Ouch!
+
+# October 20, 2020
+
+### ----- ACCOMPLISHED ----
+
+        creates jobs, techcompanies, jobsskills
+
+        MODIFIED FRIENDS INSERT TO CREATE IMAGES RECORD AND RUN FRIENDSSKILLS_INSERT
+
+        CREATED FRIENDSSKILLS INSERT BUT IT FAILING FOR UPDATES - NEED TO USE SPECIAL VERSION FROM GREGORIO
+
 ### ----- WILL ACCOMPLISH -----
 
 ### ----- BLOCKERS -----
