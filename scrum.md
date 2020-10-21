@@ -9,18 +9,25 @@
 ### ----- ACCOMPLISHED ----
 
         [X] FriendsSkills_Insert_V3] using UDT
+                It adds a friend (enforces unique slug constraint)!
+                It takes imageUrl and creates ImageID and inserts appropriate PrimaryImageId!
+                It takes collection of skills and adds skills as needed and updates FriendsSkills bridge table!
 
-        [ ] Reformatted all PROCs using FORMAT SQL - Is there a format on Save ?
+        [x] Reformatted all PROCs using APEX FORMAT SQL - Is there a format on Save ?
+
+        [x] a lot more than it seems, hard to put a handle on it all but I worked
+                a ton of procs - udt table, create table and procs from scratch
 
 ### ----- WILL ACCOMPLISH -----
 
         [ ] Watch SQL Videos on Joins
 
-        [ ] Continue to work PROCS and DATABASE
+        [ ] Continue to work PROCS and DATABASE, SQL Joins
 
 ### ----- BLOCKERS -----
 
-        [ ] Ouch!
+        [ ] Should our tables implement StatusId for deletes and thereby needing a lot of rework
+
 
 # October 20, 2020
 
