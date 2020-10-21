@@ -4,6 +4,22 @@
     What are you going to accomplish
     What are your blockers
 
+# October 21, 2020
+
+### ----- ACCOMPLISHED ----
+
+        [x] Watched SQL Videos on Joins
+
+        [x] Completed friends selectall selectbyid using joins for image and skills
+
+        [x] got rid of unique constraint on friends slug ( was too much a hassle during testing )
+
+        [x] Moved on to events table, jobs and tech companies
+
+### ----- WILL ACCOMPLISH -----
+
+### ----- BLOCKERS -----
+
 # October 20, 2020
 
 ### ----- ACCOMPLISHED ----
@@ -27,7 +43,6 @@
 ### ----- BLOCKERS -----
 
         [ ] Should our tables implement StatusId for deletes and thereby needing a lot of rework
-
 
 # October 20, 2020
 
