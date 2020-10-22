@@ -20,7 +20,9 @@
 
         [x] created Events_SelectPaginated, Events_SearchPaginated
 
-        [x] created Events_SelectByLocation ( Using internal Math ) GEO BABY! -- I'm hanging out now!
+        [x] created Events_SelectByLocation ( Using internal Math )
+
+        [x] watched the View videos, created view in my db
 
 ### ----- WILL ACCOMPLISH -----
 
@@ -29,8 +31,14 @@
 
         [ ] move back to react and get events fully working
 
-        [ ] implement geo search address to geo info
-                        import PlacesAutocomplete, { geocodeByAddress, } from "react-places-autocomplete";
+        [ ] implement geo address PlacesAutocomplete - import PlacesAutocomplete, { geocodeByAddress, } from "react-places-autocomplete";
+
+        [ ] implement map with all events as markers
+
+        [ ] plan to EITHER
+                MODIFY Backend so front end will work with it, or
+                MODIFY Frontend to use what I currently have in back end
+
 
 ### ----- BLOCKERS -----
 
