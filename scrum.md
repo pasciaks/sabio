@@ -27,7 +27,6 @@
 ### ----- WILL ACCOMPLISH -----
 
         -- TODO - GET RID OF ALL SELECT *'S IN ALL PROCS TEST CODE IN DB
-        -- TODO - Replace SELECT * with column names instead
 
         [ ] move back to react and get events fully working
 
@@ -38,7 +37,6 @@
         [ ] plan to EITHER
                 MODIFY Backend so front end will work with it, or
                 MODIFY Frontend to use what I currently have in back end
-
 
 ### ----- BLOCKERS -----
 
