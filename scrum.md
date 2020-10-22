@@ -10,13 +10,27 @@
 
         [x] Watched SQL Videos on Joins
 
-        [x] Completed friends selectall selectbyid using joins for image and skills
+        [x] Completed friends selectall and selectbyid using joins for image and skills and AUTO JSON
 
         [x] got rid of unique constraint on friends slug ( was too much a hassle during testing )
 
-        [x] Moved on to events table, jobs and tech companies
+        [X] updated Friends_Update to ensure it can update skills using FriendsSkills_Insert PROC
+
+        [x] created events table, created Events_Insert, Events_Update, Events_SelectAll, Events_SelectById, Events_Delete,
+
+        [x] created Events_SelectPaginated, Events_SearchPaginated
+
+        [x] created Events_SelectByLocation ( Using internal Math ) GEO BABY! -- I'm hanging out now!
 
 ### ----- WILL ACCOMPLISH -----
+
+        -- TODO - GET RID OF ALL SELECT *'S IN ALL PROCS TEST CODE IN DB
+        -- TODO - Replace SELECT * with column names instead
+
+        [ ] move back to react and get events fully working
+
+        [ ] implement geo search address to geo info
+                        import PlacesAutocomplete, { geocodeByAddress, } from "react-places-autocomplete";
 
 ### ----- BLOCKERS -----
 
