@@ -12,23 +12,25 @@
 
         [ ] Reviewed for Assessment
 
-                [ created Albums, Songs, AlbumsSongs and INSERT, UPDATE, DELETE, SelectAll, SelectById for each ]
+                [ created Albums, Songs, AlbumsSongs tables ]
+
+                [ created PROCS for each - INSERT, UPDATE, DELETE, SelectAll, SelectById ]
 
                 [ Albums_Insert allows batch insert of songs using UDT ]
 
-                [ SelectAll uses AUTOJSON ]
+                [ Albums SelectAll uses AUTOJSON to show all songs on album line ]
 
                 [ Creates friends like Component called Tests that renders with route /tests ]
 
-                [ onComponentDidMount AXIOS calls friends, gets results, updates state with array of friends and Maps REACT-Strap Cards 'TEST' into view ]
+                [ onComponentDidMount AXIOS calls friends, gets results,
+                updates state with array of friends and Maps REACT-Strap Cards 'TEST' into view ]
 
-                [ functional REACT Strap Test Card accepts clicks and can pass info back using function reference passed in as props ]
+                [ functional REACT Strap Test Card accepts clicks
+                and can pass info back using function reference passed in as props ]
 
 ### ---- WILL ACCOMPLISH
 
         [ ] Progress on Events
-
-
 
 # October 21, 2020
 
