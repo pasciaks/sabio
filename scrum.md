@@ -4,7 +4,21 @@
     What are you going to accomplish
     What are your blockers
 
-# October 22, 2020
+# October 25, 2020 (Sunday)
+
+# October 24, 2020 (Saturday)
+
+### ----- ACCOMPLISHED ----
+
+        [ ] login, register, friends
+
+        [ ] install vs code
+
+### ----- WILL ACCOMPLISH ----
+
+### ----- BLOCKERS -----
+
+# October 23, 2020 (Friday)
 
 ### ----- ACCOMPLISHED ----
 
