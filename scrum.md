@@ -8,6 +8,21 @@
 
 ### ----- ACCOMPLISHED ----
 
+        [ ] INTEGRATED Yup and Formik for form use on Login and various examples
+
+### ----- WILL ACCOMPLISH ----
+
+        [ ] INSTALL VS STUDIO COMMUNITY
+
+        [ ] Login
+        [ ] Register
+        [ ] Friends Form
+        [ ] Events Form
+
+# October 22, 2020
+
+### ----- ACCOMPLISHED ----
+
         [ ] Revisited React, tidy up code, reviewed for Assessment
 
         [ ] Reviewed for Assessment
