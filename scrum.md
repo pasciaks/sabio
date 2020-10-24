@@ -12,7 +12,7 @@
 
         [ ] login, register, friends
 
-        [ ] install vs code
+        [ ] install vs community 2019
 
 ### ----- WILL ACCOMPLISH ----
 
