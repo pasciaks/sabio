@@ -10,20 +10,28 @@
 
 ### ----- ACCOMPLISHED ----
 
-        [x] login, register, friends
+        [x] formik/yup versions of login, register, friends
 
-        [x] wired up login, register
-
-        [x] friends form geared with dogform example
 
                 [x] passwords don't match Yup
                 [x] min length
                 [x] regex
 
+        [x] wired up login, register
+
+        [x] friends form geared with dogform example
+
+                [x] Edit in view
+                [x] Add in view
 
         [x] install vs community 2019
 
 ### ----- WILL ACCOMPLISH ----
+
+        [ ] finish friends change to formik/yup
+
+                [ ] populate on route
+                [ ] wire up add/edit to backend
 
         [ ] start the new stuff!
 
