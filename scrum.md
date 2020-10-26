@@ -10,11 +10,22 @@
 
 ### ----- ACCOMPLISHED ----
 
-        [ ] login, register, friends
+        [x] login, register, friends
 
-        [ ] install vs community 2019
+        [x] wired up login, register
+
+        [x] friends form geared with dogform example
+
+                [x] passwords don't match Yup
+                [x] min length
+                [x] regex
+
+
+        [x] install vs community 2019
 
 ### ----- WILL ACCOMPLISH ----
+
+        [ ] start the new stuff!
 
 ### ----- BLOCKERS -----
 
