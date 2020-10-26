@@ -4,6 +4,14 @@
     What are you going to accomplish
     What are your blockers
 
+# October 26, 2020 (Sunday)
+
+### ----- ACCOMPLISHED ----
+
+### ----- WILL ACCOMPLISH ----
+
+### ----- BLOCKERS -----
+
 # October 25, 2020 (Sunday)
 
 # October 24, 2020 (Saturday)
