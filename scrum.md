@@ -8,9 +8,14 @@
 
 ### ----- ACCOMPLISHED ----
 
-        [] AddressesService, Address class and all CRUD
-        [] CREATE DOMAIN CLASSES FOR Users, Friends, Events
-        [] STARTED UsersService
+        [ ] AddressesService, Address class and CRUD
+                Request Models - [AddressAddRequest, AddressUpdateRequest]
+        [ ] CREATE DOMAIN CLASSES FOR User, Friend, Event
+                Request Models - [UserAddRequest, UserUpdateRequest]
+                Request Models - [FriendAddRequest, FriendUpdateRequest]
+                Request Models - [EventAddRequest, EventUpdateRequest]
+        [ ] Created domain classes for Skill, Image
+        [ ] STARTED UsersService
 
 ### ----- WILL ACCOMPLISH ----
 
