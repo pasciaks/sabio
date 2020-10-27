@@ -8,6 +8,7 @@
 
 ### ----- ACCOMPLISHED ----
 
+        [ ] Completed C# PRIMER
         [ ] AddressesService, Address class and CRUD
                 Request Models - [AddressAddRequest, AddressUpdateRequest]
         [ ] CREATE DOMAIN CLASSES FOR User, Friend, Event
