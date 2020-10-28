@@ -8,12 +8,13 @@
 
 ### ----- ACCOMPLISHED ----
 
-        [ ] Completed UsersService CRUD
-        [ ] Created Friends_UpdateStatus
-        [ ] Created FriendsService
-        [ ] CREATED [FriendsSkills_Delete] (deletes FriendsSkills where FriendId = @Id)
+        [x] Completed UsersService CRUD
+        [x] Created Friends_UpdateStatus
+        [x] Created FriendsService
+        [x] CREATED [FriendsSkills_Delete] (deletes FriendsSkills where FriendId = @Id)
+        [x] Completed Friends Service
 
-        [ ] Completed Friends Service
+        [x] Moved on to Events...
 
 ### ----- WILL ACCOMPLISH ----
 
