@@ -9,7 +9,7 @@
 ### ----- ACCOMPLISHED ----
 
         [x] Completed UsersService CRUD
-        [x] Created Friends_UpdateStatus
+        [x] Created Friends_UpdateStatus PROC and C# call
         [x] Created FriendsService
         [x] CREATED [FriendsSkills_Delete] (deletes FriendsSkills where FriendId = @Id)
         [x] Completed Friends Service
@@ -19,6 +19,8 @@
         [x] Completed Events CRUD
 
 ### ----- WILL ACCOMPLISH ----
+
+        [ ] Q review ?
 
         [ ] Implement "Retrieving Multiple Id's for Batch Inserts" for Friends
 
