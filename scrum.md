@@ -14,9 +14,15 @@
         [x] CREATED [FriendsSkills_Delete] (deletes FriendsSkills where FriendId = @Id)
         [x] Completed Friends Service
 
-        [x] Moved on to Events...
+        [x] Friends service with batch update skills, SkillAddRequest, SkillUpdateRequest SkillsAddRequest
+
+        [x] Completed Events CRUD
 
 ### ----- WILL ACCOMPLISH ----
+
+        [ ] Implement "Retrieving Multiple Id's for Batch Inserts" for Friends
+
+        [ ] Move on to Tech Companies Jobs
 
 ### ----- BLOCKERS -----
 
