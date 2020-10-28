@@ -4,7 +4,7 @@
     What are you going to accomplish
     What are your blockers
 
-# October 27, 2020 (Sunday)
+# October 27, 2020
 
 ### ----- ACCOMPLISHED ----
 
@@ -26,7 +26,7 @@
 
 ### ----- BLOCKERS -----
 
-# October 26, 2020 (Sunday)
+# October 26, 2020
 
 ### ----- ACCOMPLISHED ----
 
@@ -49,9 +49,9 @@
 
         [ ] anticipate difficulty with sub-table skills and primary images
 
-# October 25, 2020 (Sunday)
+# October 25, 2020
 
-# October 24, 2020 (Saturday)
+# October 24, 2020
 
 ### ----- ACCOMPLISHED ----
 
@@ -82,7 +82,7 @@
 
 ### ----- BLOCKERS -----
 
-# October 23, 2020 (Friday)
+# October 23, 2020
 
 ### ----- ACCOMPLISHED ----
 
