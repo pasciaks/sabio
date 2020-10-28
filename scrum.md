@@ -4,6 +4,21 @@
     What are you going to accomplish
     What are your blockers
 
+# October 27, 2020 (Sunday)
+
+### ----- ACCOMPLISHED ----
+
+        [ ] Completed UsersService CRUD
+        [ ] Created Friends_UpdateStatus
+        [ ] Created FriendsService
+        [ ] CREATED [FriendsSkills_Delete] (deletes FriendsSkills where FriendId = @Id)
+
+        [ ] Completed Friends Service
+
+### ----- WILL ACCOMPLISH ----
+
+### ----- BLOCKERS -----
+
 # October 26, 2020 (Sunday)
 
 ### ----- ACCOMPLISHED ----
