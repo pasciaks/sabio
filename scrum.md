@@ -4,6 +4,22 @@
     What are you going to accomplish
     What are your blockers
 
+# October 28, 2020
+
+### ----- ACCOMPLISHED ----
+
+        [X] Implemented "Retrieving Multiple Id's for Batch Inserts"
+
+        [x] created SkillsService, Skills domain and Batch Add for Skills
+
+        [ ] Moved on to Web Api Development
+
+### ----- WILL ACCOMPLISH ----
+
+        [ ] Finish all videos for Web API Development
+
+### ----- BLOCKERS -----
+
 # October 27, 2020
 
 ### ----- ACCOMPLISHED ----
