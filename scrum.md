@@ -12,37 +12,45 @@
 
         [ ] Decorate other classes with server side validation
 
-                [x] Decorated AddUserRequest, required, min lengths and password complexity
+               x [x] Decorated AddUserRequest, required, min lengths and password complexity
                         [Required]
                         [StringLength(64, MinimumLength = 2)]
                         [RegularExpression(@"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!$%^&*-]).{8,}",
                         ErrorMessage = "Password complexity not met.")]
 
-                [x] Inherited , IModelIdentifier in UserUpdateRequest
+               x [x] Inherited , IModelIdentifier in UserUpdateRequest
 
-                [x] Created IUserService interface (right click services class, ... extract interface), drag to correct folder
+               x [x] Created IUserService interface (right click services class, ... extract interface), drag to correct folder
 
-                [x] Added Dependency injection singleton for UsersService IUsersService
+               x [x] Added Dependency injection singleton for UsersService IUsersService
 
-                [x] Created USERS end points ...  implemented try/catch and single return response with applicable code
+               x [x] Created USERS end points ...  implemented try/catch and single return response with applicable code
 
-                [x] GET /api/users
+               x [x] GET /api/users
 
-                [x] GET /api/users/{id:int}
+               x [x] GET /api/users/{id:int}
 
-                [X] DELETE /api/users/{id:int}
+               x [X] DELETE /api/users/{id:int}
 
-                [X] POST /api/users
+               [ ] [X] POST /api/users
 
-                [x] PUT /api/users/{id:int}
+               [ ] [x] PUT /api/users/{id:int}
 
 ### ----- WILL ACCOMPLISH -----
 
+                [ ] Modify int currentUserId to nvarchar(128) string
+
                 [ ] Need to be consistent in naming (i.e. don't like -> GetTop)
 
+                [.. ] TODO - implement Interfaces and services for Create (ModelAddRequest model, int currentUserId) for Add
+                [.. ] TODO - implement Interfaces and services for Update (ModelUpdateRequest model, int currentUserId, int id) for Update
+                [.. ] TODO - implement Interfaces and services for UpdateStatus (ModelUpdateStatusRequest model, int currentUserId, int id, string statusId) for UpdateStatus
+
+                [ ] Fix return friend data for Image ( primaryImageId {} )
+
                 [ ] Get very detailed about PROCs and inner workings ... ensure UserId and other fields implemented/all working appropriately.
-                        [ ] TODO - adjust / fix the following in Create for Address api and User api
-                        [ ] TODO - ObjectResult result = null; // TODO FIX THIS LIKE BaseResponse response = null;
+
+                [ ] TODO - ObjectResult result = null; // TODO FIX THIS LIKE BaseResponse response = null;
 
 ### ----- BLOCKERS -----
 
