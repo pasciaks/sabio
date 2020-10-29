@@ -38,9 +38,9 @@
 
                [x] [X] DELETE /api/friends/{id:int} /api/users/{id:int}
 
-               [ ] [X] POST /api/friends /api/users
+               [x] [X] POST /api/friends /api/users
 
-               [ ] [x] PUT /api/friends/{id:int} /api/users/{id:int}
+               [x] [x] PUT /api/friends/{id:int} /api/users/{id:int}
 
                [x] PUT /api/friends/{id}/{statusId} - UpdateStatus(int id, string statusId)
 
@@ -48,15 +48,15 @@
 
 ### ----- WILL ACCOMPLISH -----
 
-                [ ] Modify int currentUserId to nvarchar(128) string
+                [ ] Dig deep into how Skills works in Create and Update for Friends...
+
+                [ ] Dig deep into Create and Update and use of UserId and Id in route (like UpdateStatus(int id, string statusId))
+                        Create (ModelAddRequest model, int currentUserId) for Add
+                        Update (ModelUpdateRequest model, int currentUserId, int id) for Update
+
+                [ ] Modify int currentUserId to nvarchar(128) string - Or just continue to .ToString() it...
 
                 [ ] Need to be consistent in naming (i.e. don't like -> GetTop)
-
-                [.. ] TODO - implement Interfaces and services for Create (ModelAddRequest model, int currentUserId) for Add
-                [.. ] TODO - implement Interfaces and services for Update (ModelUpdateRequest model, int currentUserId, int id) for Update
-                [.. ] TODO - implement Interfaces and services for UpdateStatus (ModelUpdateStatusRequest model, int currentUserId, int id, string statusId) for UpdateStatus
-
-                [ ] Get very detailed about PROCs and inner workings ... ensure UserId and other fields implemented/all working appropriately.
 
                 [ ] TODO - ObjectResult result = null; // TODO FIX THIS LIKE BaseResponse response = null;
 
