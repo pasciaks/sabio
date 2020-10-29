@@ -24,17 +24,25 @@
 
                 [x] Added Dependency injection singleton for UsersService IUsersService
 
-                [x] Create /api/users HTTP get api route with try/catch and single return
+                [x] Created USERS end points ...  implemented try/catch and single return response with applicable code
 
-                [ ]
+                [x] GET /api/users
 
-                [ ]
+                [x] GET /api/users/{id:int}
 
-                [ ]
+                [X] DELETE /api/users/{id:int}
 
-                [ ]
+                [X] POST /api/users
+
+                [x] PUT /api/users/{id:int}
 
 ### ----- WILL ACCOMPLISH -----
+
+                [ ] Need to be consistent in naming (i.e. don't like -> GetTop)
+
+                [ ] Get very detailed about PROCs and inner workings ... ensure UserId and other fields implemented/all working appropriately.
+                        [ ] TODO - adjust / fix the following in Create for Address api and User api
+                        [ ] TODO - ObjectResult result = null; // TODO FIX THIS LIKE BaseResponse response = null;
 
 ### ----- BLOCKERS -----
 
