@@ -8,6 +8,18 @@
 
 ### ----- ACCOMPLISHED ----
 
+        [ ] finished Web api videos
+
+        [ ] created end point api for Addresses  Get  GetTop  Post  Put  Delete
+
+### ----- WILL ACCOMPLISH ----
+
+        [ ] end point api for users
+
+# October 28, 2020
+
+### ----- ACCOMPLISHED ----
+
         [X] Implemented "Retrieving Multiple Id's for Batch Inserts"
 
         [x] created SkillsService, Skills domain and Batch Add for Skills
