@@ -12,7 +12,20 @@
 
         [x] created end point WEB api for Addresses
 
-                GetAll   Get   Create   Update   Delete
+                GET                             GetAll
+                /api/addresses
+
+                GET                             Get
+                /api/addresses/{id:int}
+
+                POST                            Create
+                /api/addresses
+
+                PUT                             Update
+                /api/addresses/{id:int}
+
+                DELETE                          Delete
+                /api/addresses/{id:int}
 
         [x] Refactored, single return point, try and catches, authorization getCurrentUser
 
