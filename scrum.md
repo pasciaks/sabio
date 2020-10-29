@@ -34,6 +34,11 @@
         [ ] Create web api end point for users, tighten up all code to this point
         [ ] Decorate other classes with server side validation
 
+### ----- BLOCKERS -----
+
+        [ ] Only Patrick and Me have waka time installs in Visual Studio
+        [ ] I'm the only one pushing updated branches!
+
 # October 28, 2020
 
 ### ----- ACCOMPLISHED ----
