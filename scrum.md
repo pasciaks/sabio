@@ -12,29 +12,37 @@
 
         [ ] Decorate other classes with server side validation
 
-               x [x] Decorated AddUserRequest, required, min lengths and password complexity
+                ____ Friend
+                |    ___ Address
+                |   |
+                [x] [x] Decorated AddUserRequest, required, min lengths and password complexity
                         [Required]
                         [StringLength(64, MinimumLength = 2)]
                         [RegularExpression(@"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!$%^&*-]).{8,}",
                         ErrorMessage = "Password complexity not met.")]
+                [x] [x] Decorated AddFriendRequest, required, min lengths
+                        [Required]
+                        [StringLength(64, MinimumLength = 2)]
 
-               x [x] Inherited , IModelIdentifier in UserUpdateRequest
+               [x] [x] Inherited , IModelIdentifier in FriendUpdateRequest - UserUpdateRequest
 
-               x [x] Created IUserService interface (right click services class, ... extract interface), drag to correct folder
+               [x] [x] Created IFriendService IUserService interface (right click services class, ... extract interface), drag to correct folder
 
-               x [x] Added Dependency injection singleton for UsersService IUsersService
+               [x] [x] Added Dependency injection singleton for FriendsService IFriendsService - UsersService IUsersService
 
-               x [x] Created USERS end points ...  implemented try/catch and single return response with applicable code
+               [x] [x] Created FRIENDS and USERS end points ... implemented try/catch and single return response with return code
 
-               x [x] GET /api/users
+               [x] [x] GET /api/friends /api/users
 
-               x [x] GET /api/users/{id:int}
+               [x] [x] GET /api/friends/{id:int} /api/users/{id:int}
 
-               x [X] DELETE /api/users/{id:int}
+               [x] [X] DELETE /api/friends/{id:int} /api/users/{id:int}
 
-               [ ] [X] POST /api/users
+               [ ] [X] POST /api/friends /api/users
 
-               [ ] [x] PUT /api/users/{id:int}
+               [ ] [x] PUT /api/friends/{id:int} /api/users/{id:int}
+
+               [x] Fixed return friend data for Image ( PrimaryImage { } ) now returning List<Image> and JSON Auto use to return appropriately.
 
 ### ----- WILL ACCOMPLISH -----
 
@@ -45,8 +53,6 @@
                 [.. ] TODO - implement Interfaces and services for Create (ModelAddRequest model, int currentUserId) for Add
                 [.. ] TODO - implement Interfaces and services for Update (ModelUpdateRequest model, int currentUserId, int id) for Update
                 [.. ] TODO - implement Interfaces and services for UpdateStatus (ModelUpdateStatusRequest model, int currentUserId, int id, string statusId) for UpdateStatus
-
-                [ ] Fix return friend data for Image ( primaryImageId {} )
 
                 [ ] Get very detailed about PROCs and inner workings ... ensure UserId and other fields implemented/all working appropriately.
 
