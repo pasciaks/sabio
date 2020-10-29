@@ -8,13 +8,15 @@
 
 ### ----- ACCOMPLISHED ----
 
-        [ ] finished Web api videos
+        [x] finished Web api videos
 
-        [ ] created end point api for Addresses  Get  GetTop  Post  Put  Delete
+        [x] created end point api for Addresses  Get  GetTop  Post  Put  Delete
+
+        [x] Refactored, single return point, try and catches, authorization getCurrentUser
 
 ### ----- WILL ACCOMPLISH ----
 
-        [ ] end point api for users
+        [ ] end point api for users, tighten up all code to this point
 
 # October 28, 2020
 
