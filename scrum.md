@@ -42,6 +42,8 @@
 
                [ ] [x] PUT /api/friends/{id:int} /api/users/{id:int}
 
+               [x] PUT /api/friends/{id}/{statusId} - UpdateStatus(int id, string statusId)
+
                [x] Fixed return friend data for Image ( PrimaryImage { } ) now returning List<Image> and JSON Auto use to return appropriately.
 
 ### ----- WILL ACCOMPLISH -----
