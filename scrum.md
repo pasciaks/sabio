@@ -20,14 +20,18 @@
 
                 [x] Inherited , IModelIdentifier in UserUpdateRequest
 
-                [ ] Created IUserService interface (right click services class, ... extract interface), drag to correct folder
+                [x] Created IUserService interface (right click services class, ... extract interface), drag to correct folder
 
-                [ ] Added Dependency injection singleton for UsersService IUsersService
+                [x] Added Dependency injection singleton for UsersService IUsersService
 
-                [ ] Create /api/users HTTP get api route with try/catch and single return
+                [x] Create /api/users HTTP get api route with try/catch and single return
+
                 [ ]
+
                 [ ]
+
                 [ ]
+
                 [ ]
 
 ### ----- WILL ACCOMPLISH -----
