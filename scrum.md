@@ -4,6 +4,36 @@
     What are you going to accomplish
     What are your blockers
 
+# October 29, 2020
+
+### ----- ACCOMPLISHED -----
+
+        [ ] Create web api end point for users, tighten up all code to this point
+
+        [ ] Decorate other classes with server side validation
+
+                [x] Decorated AddUserRequest, required, min lengths and password complexity
+                        [Required]
+                        [StringLength(64, MinimumLength = 2)]
+                        [RegularExpression(@"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!$%^&*-]).{8,}",
+                        ErrorMessage = "Password complexity not met.")]
+
+                [x] Inherited , IModelIdentifier in UserUpdateRequest
+
+                [ ] Created IUserService interface (right click services class, ... extract interface), drag to correct folder
+
+                [ ] Added Dependency injection singleton for UsersService IUsersService
+
+                [ ] Create /api/users HTTP get api route with try/catch and single return
+                [ ]
+                [ ]
+                [ ]
+                [ ]
+
+### ----- WILL ACCOMPLISH -----
+
+### ----- BLOCKERS -----
+
 # October 28, 2020
 
 ### ----- ACCOMPLISHED ----
