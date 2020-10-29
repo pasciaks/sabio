@@ -10,13 +10,16 @@
 
         [x] finished Web api videos
 
-        [x] created end point api for Addresses  Get  GetTop  Post  Put  Delete
+        [x] created end point WEB api for Addresses
+
+                GetAll   Get   Create   Update   Delete
 
         [x] Refactored, single return point, try and catches, authorization getCurrentUser
 
 ### ----- WILL ACCOMPLISH ----
 
-        [ ] end point api for users, tighten up all code to this point
+        [ ] Create web api end point for users, tighten up all code to this point
+        [ ] Decorate other classes with server side validation
 
 # October 28, 2020
 
