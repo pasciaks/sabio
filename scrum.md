@@ -54,10 +54,17 @@
 
 ### ----- WILL ACCOMPLISH -----
 
+                [ ] Three remaining videos under .net core
+
+                [ ] Get Paging Working
+
+                [ ] Events or Tech Companies / Jobs
+
+
+
                 [ ] Dig deep into Create and Update and use of UserId and Id in route (like UpdateStatus(int id, string statusId))
                         Create (ModelAddRequest model, int currentUserId) for Add
                         Update (ModelUpdateRequest model, int currentUserId, int id) for Update
-
 
                 [ ] Need to be consistent in naming (i.e. don't like -> GetTop)
 
@@ -66,10 +73,6 @@
                 [ ] Modify int currentUserId to nvarchar(128) string - Or just continue to .ToString() it...
 
                 [ ] Dig deep into how Skills works in Create and Update for Friends...
-
-                [ ] Three remaining videos under .net core
-
-                [ ] Get Paging Working for Friends / Events
 
 ### ----- BLOCKERS -----
 
