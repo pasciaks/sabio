@@ -48,13 +48,15 @@
 
                [X] Code Reviewed
 
-               [x] UTILITY FUNCTION FOR PARAM MAPPING in USERS
+               [x] UTILITY FUNCTION FOR PARAM MAPPING (MapUserParams)
+
+               [x] UTILITY FUNCTION FOR PARAM MAPPING (MapAddressParams, MapFriendParams)
+
+                [ ] Need to be consistent in naming (i.e. don't like -> GetTop)
+
+                [ ] TODO - ObjectResult result = null; // TODO FIX THIS LIKE BaseResponse response = null;
 
 ### ----- WILL ACCOMPLISH -----
-
-                [ ] TODO -- UTILITY FUNCTION FOR PARAM MAPPING in other services ???
-
-                [ ] Dig deep into how Skills works in Create and Update for Friends...
 
                 [ ] Dig deep into Create and Update and use of UserId and Id in route (like UpdateStatus(int id, string statusId))
                         Create (ModelAddRequest model, int currentUserId) for Add
@@ -62,9 +64,13 @@
 
                 [ ] Modify int currentUserId to nvarchar(128) string - Or just continue to .ToString() it...
 
-                [ ] Need to be consistent in naming (i.e. don't like -> GetTop)
+                [ ] Dig deep into how Skills works in Create and Update for Friends...
 
-                [ ] TODO - ObjectResult result = null; // TODO FIX THIS LIKE BaseResponse response = null;
+                [ ] Get Paging
+
+                [ ] Get Geo
+
+                [ ] Tech Companies / Jobs
 
 ### ----- BLOCKERS -----
 
