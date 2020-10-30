@@ -4,6 +4,22 @@
     What are you going to accomplish
     What are your blockers
 
+# October 30, 2020
+
+### ----- ACCOMPLISHED -----
+
+                [x] Paginate for friends (pageIndex, pageSize)
+
+                [x] Search for friends (with pagination) (pageIndex, pageSize, searchText)
+
+                [ ] Events or Tech Companies / Jobs
+
+                [ ] Three remaining videos under .net core
+
+### ----- WILL ACCOMPLISH -----
+
+### ----- BLOCKERS -----
+
 # October 29, 2020
 
 ### ----- ACCOMPLISHED -----
@@ -23,44 +39,30 @@
                 [x] [x] Decorated AddFriendRequest, required, min lengths
                         [Required]
                         [StringLength(64, MinimumLength = 2)]
-
                [x] [x] Inherited , IModelIdentifier in FriendUpdateRequest - UserUpdateRequest
-
                [x] [x] Created IFriendService IUserService interface (right click services class, ... extract interface), drag to correct folder
-
                [x] [x] Added Dependency injection singleton for FriendsService IFriendsService - UsersService IUsersService
-
                [x] [x] Created FRIENDS and USERS end points ... implemented try/catch and single return response with return code
-
                [x] [x] GET /api/friends /api/users
-
                [x] [x] GET /api/friends/{id:int} /api/users/{id:int}
-
                [x] [X] DELETE /api/friends/{id:int} /api/users/{id:int}
-
                [x] [X] POST /api/friends /api/users
-
                [x] [x] PUT /api/friends/{id:int} /api/users/{id:int}
-
                [x] PUT /api/friends/{id}/{statusId} - UpdateStatus(int id, string statusId)
-
                [x] Fixed return friend data for Image ( PrimaryImage { } ) now returning List<Image> and JSON Auto use to return appropriately.
 
                [X] Code Reviewed
-
                [x] UTILITY FUNCTION FOR PARAM MAPPING (MapUserParams)
-
                [x] UTILITY FUNCTION FOR PARAM MAPPING (MapAddressParams, MapFriendParams)
 
 ### ----- WILL ACCOMPLISH -----
 
                 [ ] Three remaining videos under .net core
-
                 [ ] Get Paging Working
-
                 [ ] Events or Tech Companies / Jobs
 
 
+                (( NICE todo ))
 
                 [ ] Dig deep into Create and Update and use of UserId and Id in route (like UpdateStatus(int id, string statusId))
                         Create (ModelAddRequest model, int currentUserId) for Add
