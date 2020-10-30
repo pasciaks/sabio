@@ -52,25 +52,24 @@
 
                [x] UTILITY FUNCTION FOR PARAM MAPPING (MapAddressParams, MapFriendParams)
 
-                [ ] Need to be consistent in naming (i.e. don't like -> GetTop)
-
-                [ ] TODO - ObjectResult result = null; // TODO FIX THIS LIKE BaseResponse response = null;
-
 ### ----- WILL ACCOMPLISH -----
 
                 [ ] Dig deep into Create and Update and use of UserId and Id in route (like UpdateStatus(int id, string statusId))
                         Create (ModelAddRequest model, int currentUserId) for Add
                         Update (ModelUpdateRequest model, int currentUserId, int id) for Update
 
+
+                [ ] Need to be consistent in naming (i.e. don't like -> GetTop)
+
+                [ ] TODO - ObjectResult result = null; // TODO FIX THIS LIKE BaseResponse response = null;
+
                 [ ] Modify int currentUserId to nvarchar(128) string - Or just continue to .ToString() it...
 
                 [ ] Dig deep into how Skills works in Create and Update for Friends...
 
-                [ ] Get Paging
+                [ ] Three remaining videos under .net core
 
-                [ ] Get Geo
-
-                [ ] Tech Companies / Jobs
+                [ ] Get Paging Working for Friends / Events
 
 ### ----- BLOCKERS -----
 
