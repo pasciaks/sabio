@@ -12,12 +12,12 @@
 
                 [x] Search for friends (with pagination) (pageIndex, pageSize, searchText)
 
-                [ ] Events
-                        Create a utility param mapper around my create and update
-                        Create Paging and Search by Date functions in EventsService
-                        Create IEvents interface
-                        Configure dependency injection in startup
-                        Create Web API for Events, CRUD, Paging and Search by dates
+                [x] Events
+                      x  Create a utility param mapper around my create and update
+                      x  Create Paging and Search by Date functions in EventsService
+                      x  Create IEvents interface
+                      x  Configure dependency injection in startup
+                      x  Create Web API for Events, CRUD, Paging and Search by dates, search by location
 
                 [ ] Three remaining videos under .net core
 
