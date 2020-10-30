@@ -46,10 +46,13 @@
 
                [x] Fixed return friend data for Image ( PrimaryImage { } ) now returning List<Image> and JSON Auto use to return appropriately.
 
+               [X] Code Reviewed
+
+               [x] UTILITY FUNCTION FOR PARAM MAPPING in USERS
+
 ### ----- WILL ACCOMPLISH -----
 
-                [ ] TODO -- UTILITY FUNCTION FOR PARAM MAPPING
-                [ ] TODO -- UTILITY FUNCTION FOR PARAM MAPPING
+                [ ] TODO -- UTILITY FUNCTION FOR PARAM MAPPING in other services ???
 
                 [ ] Dig deep into how Skills works in Create and Update for Friends...
 
