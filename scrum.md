@@ -12,9 +12,16 @@
 
                 [x] Search for friends (with pagination) (pageIndex, pageSize, searchText)
 
-                [ ] Events or Tech Companies / Jobs
+                [ ] Events
+                        Create a utility param mapper around my create and update
+                        Create Paging and Search by Date functions in EventsService
+                        Create IEvents interface
+                        Configure dependency injection in startup
+                        Create Web API for Events, CRUD, Paging and Search by dates
 
                 [ ] Three remaining videos under .net core
+
+                [ ] Implement my React front end with the new back-end
 
 ### ----- WILL ACCOMPLISH -----
 
