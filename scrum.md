@@ -8,6 +8,24 @@
 
 ### ----- ACCOMPLISHED -----
 
+        [x] /users/current
+        [x] /users/id (get current user id)
+
+        [x] Created User_Login proc
+        [x] Created users/register end point
+        [x] Created users/login end point
+        [x] implemented and tested unique constraint email address
+
+### ----- WILL ACCOMPLISH -----
+
+        [ ] Implement my React front end with the new back-end
+
+### ----- BLOCKERS -----
+
+# October 30, 2020
+
+### ----- ACCOMPLISHED -----
+
                 [x] Paginate for friends (pageIndex, pageSize)
 
                 [x] Search for friends (with pagination) (pageIndex, pageSize, searchText)
