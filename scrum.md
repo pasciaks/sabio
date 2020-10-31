@@ -19,11 +19,13 @@
                       x  Configure dependency injection in startup
                       x  Create Web API for Events, CRUD, Paging and Search by dates, search by location
 
-                [ ] Three remaining videos under .net core
+                [x] Three remaining videos under .net core
 
-                [ ] Implement my React front end with the new back-end
+                [x] Studied react interview questions.
 
 ### ----- WILL ACCOMPLISH -----
+
+                [ ] Implement my React front end with the new back-end
 
 ### ----- BLOCKERS -----
 
