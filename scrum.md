@@ -14,11 +14,14 @@
         [x] Created User_Login proc
         [x] Created users/register end point
         [x] Created users/login end point
-        [x] implemented and tested unique constraint email address
+
+        [X] answered from web - React study questions starter board, reviewed
 
 ### ----- WILL ACCOMPLISH -----
 
         [ ] Implement my React front end with the new back-end
+
+        [ ] Login and Register
 
 ### ----- BLOCKERS -----
 
