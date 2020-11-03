@@ -9,21 +9,29 @@
 ### ---- ACCOMPLISHED -----
 
         [X] WIRED UP REGISTER TO FRONT END REACT
-        [X] WIRED UP FRIENDS PAGEING AND SEARCH TO FRONT END REACT
+        [X] WIRED UP FRIENDS PAGING AND SEARCH TO FRONT END REACT
         [X] GOOD START OF WIRE-UP LOGIN TO FRONT END REACT
 
-        [X] FIXED /sarch /paginate to work off query strings and not fresh route
+        [X] FIXED /paginate to work off default GET + query strings and not /paginate route
 
-        [x] wired up friends add / edit to new backend, implementing formik/yup
+        [x] Wired up friends add / edit to new backend, implemented with formik/yup with dog form
+
+        [x] A litte more React interview questions studying
 
 ### ----- WILL ACCOMPLISH -----
 
-        [ ] TODO - echo add/update friend into fresh view in dom/state upon form close
+        [ ] TODO - Properly update Friends calling page after add/update friend from form.
+
         [ ] TODO - allow passed in friend via route for edit
 
         [ ] MOVE ON TO EVENTS
 
 ### ----- BLOCKERS ------
+
+        [ ] Original dev help api for Events is under nested metaData,
+                whereas, my new API Events table was created flat with all fields in one select return.
+
+        [ ] What is the best way ahead and use of my time.  Are there any new videos I should watch/learn?
 
 # October 30, 2020
 
