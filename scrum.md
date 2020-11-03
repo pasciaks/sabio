@@ -4,6 +4,27 @@
     What are you going to accomplish
     What are your blockers
 
+# November 2, 2020
+
+### ---- ACCOMPLISHED -----
+
+        [X] WIRED UP REGISTER TO FRONT END REACT
+        [X] WIRED UP FRIENDS PAGEING AND SEARCH TO FRONT END REACT
+        [X] GOOD START OF WIRE-UP LOGIN TO FRONT END REACT
+
+        [X] FIXED /sarch /paginate to work off query strings and not fresh route
+
+        [x] wired up friends add / edit to new backend, implementing formik/yup
+
+### ----- WILL ACCOMPLISH -----
+
+        [ ] TODO - echo add/update friend into fresh view in dom/state upon form close
+        [ ] TODO - allow passed in friend via route for edit
+
+        [ ] MOVE ON TO EVENTS
+
+### ----- BLOCKERS ------
+
 # October 30, 2020
 
 ### ----- ACCOMPLISHED -----
