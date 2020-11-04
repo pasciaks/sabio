@@ -4,6 +4,23 @@
     What are you going to accomplish
     What are your blockers
 
+# November 3, 2020
+
+### ---- ACCOMPLISHED -----
+
+        Studied a bunch, finished all videos for React
+        Created from scratch web api sql db procs services and react front end
+
+### --- WILL ACCOMPLISH ---
+
+        ASSESSMENT
+
+        MOVE ON TO EVENTS IN CURRENT PROJECT OR SOMETHING NEW
+
+### --- BLOCKERS ---
+
+        NO BLOCKERS
+
 # November 2, 2020
 
 ### ---- ACCOMPLISHED -----
