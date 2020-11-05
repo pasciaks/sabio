@@ -4,6 +4,22 @@
     What are you going to accomplish
     What are your blockers
 
+# November 4, 2020
+
+### ---- ACCOMPLISHED -----
+
+        COMPLETED REACT QUIZ ASSESSMENT
+
+        COMPLETED FULL STACK BACKEND ASSESSMENT
+
+### --- WILL ACCOMPLISH ---
+
+        PAT MYSELF ON THE BACK.
+
+### --- BLOCKERS ---
+
+        NO BLOCKERS
+
 # November 3, 2020
 
 ### ---- ACCOMPLISHED -----
