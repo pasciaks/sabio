@@ -8,13 +8,23 @@
 
 ### ---- ACCOMPLISHED -----
 
-        COMPLETED REACT QUIZ ASSESSMENT
+        COMPLETED REACT QUIZ ASSESSMENT.
 
-        COMPLETED FULL STACK BACKEND ASSESSMENT
+        COMPLETED DB SQL , PROCS, SERVICES AND WEB API BACKEND ASSESSMENT.
+
+        GROUP Code Talking about future Way ahead - Users tables and Login future code discussion.
+
+        Went through Prop Types Video Lesson and Wiki pages for the same.
 
 ### --- WILL ACCOMPLISH ---
 
-        PAT MYSELF ON THE BACK.
+        Implement Property Types on Friends functional component (or any/all relevant).
+
+        Start of revamping Users (UsersRecords) table (to preserve my Users table work already done).
+
+        Implement UsersRecords Roles UserRoles and create PROCs in order according to Trello Cards.
+
+        Learn about Login using salt/hash and comparisons according to trello card order.
 
 ### --- BLOCKERS ---
 
