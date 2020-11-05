@@ -8,6 +8,28 @@
 
 ### ---- ACCOMPLISHED -----
 
+        [x] Implemented Property Types on Friends functional component (or any/all relevant).
+
+        [x] Finished Trello Cards for Users ( DB Tables and PROCs )  (Users Roles UserRoles StatusIds)
+
+        [ ] Started new UserService, UserApiController and Domain objects for using end points.
+
+
+
+### --- WILL ACCOMPLISH ---
+
+        [ ] SQL interview prep questions.
+
+        [ ] REACT - Use maps and addresses for events.
+
+### --- BLOCKERS ---
+
+        NO BLOCKERS
+
+# November 4, 2020
+
+### ---- ACCOMPLISHED -----
+
         COMPLETED REACT QUIZ ASSESSMENT.
 
         COMPLETED DB SQL , PROCS, SERVICES AND WEB API BACKEND ASSESSMENT.
