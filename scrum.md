@@ -8,6 +8,14 @@
 
 ### ---- ACCOMPLISHED -----
 
+        /login
+
+        /register
+
+        /id/stringStatus  -- uses enum parse to get status ID from string (NotSet, Active, Deleted, Flagged - 0,1,2,3)
+
+        Got on the Q to check in...
+
 ### ---- WILL ACCOMPLISH -----
 
         https://stackoverflow.com/questions/21645323/what-is-the-claims-in-asp-net-identity
@@ -16,6 +24,9 @@
 
         SQL Study cards
 
+        MAP work
+
+        Implement Register and Login into Front end
 
 ### --- BLOCKERS ---
 
