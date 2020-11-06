@@ -4,19 +4,27 @@
     What are you going to accomplish
     What are your blockers
 
-# November 4, 2020
+# November 5, 2020
 
 ### ---- ACCOMPLISHED -----
 
-        [x] Implemented Property Types on Friends functional component (or any/all relevant).
+        [x] Implemented Property Types on Friends functional component and Test Component.
 
         [x] Finished Trello Cards for Users ( DB Tables and PROCs )  (Users Roles UserRoles StatusIds)
 
-        [ ] Started new UserService, UserApiController and Domain objects for using end points.
+        [X] Created new UserService, UserApiController and Domain objects for using end points.
 
+        [x] POST /users  (insert user from posted UserBase object) stores encrypted password
 
+        [x] POST /users/auth  (get user auth data from posted object {email , password}
 
 ### --- WILL ACCOMPLISH ---
+
+        [ ] OPTIMIZE POST /users/auth  ( DROP THE password field, use new UserAuthRequest model with just Email or Id )
+
+        [ ] Question - SelectAuth ( by email or by id ) ???
+
+        [ ] Finish Users Process (register, login, etc)
 
         [ ] SQL interview prep questions.
 
