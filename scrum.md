@@ -12,21 +12,27 @@
 
         /register
 
-        /id/stringStatus  -- uses enum parse to get status ID from string (NotSet, Active, Deleted, Flagged - 0,1,2,3)
+        /current
 
-        Got on the Q to check in...
+        /id/stringStatus  -- uses enum parse and updates user status (NotSet, Active, Deleted, Flagged)
+
+        Got on the Q to check in (Gregorio pinged me to do so) Code review with Hector.
 
 ### ---- WILL ACCOMPLISH -----
 
-        https://stackoverflow.com/questions/21645323/what-is-the-claims-in-asp-net-identity
+        READING
 
-        https://www.geeksforgeeks.org/difference-between-authentication-and-authorization/
+                https://stackoverflow.com/questions/21645323/what-is-the-claims-in-asp-net-identity
+
+                https://www.geeksforgeeks.org/difference-between-authentication-and-authorization/
 
         SQL Study cards
 
         MAP work
 
-        Implement Register and Login into Front end
+        Implement Register and Login into Front end.
+
+        Go back and implement USER UPDATE - http PUT /users - Update(UserBaseUpdateRequest model)
 
 ### --- BLOCKERS ---
 
