@@ -4,6 +4,21 @@
     What are you going to accomplish
     What are your blockers
 
+# November 6, 2020
+
+### ---- ACCOMPLISHED -----
+
+### ---- WILL ACCOMPLISH -----
+
+        https://stackoverflow.com/questions/21645323/what-is-the-claims-in-asp-net-identity
+
+        https://www.geeksforgeeks.org/difference-between-authentication-and-authorization/
+
+        SQL Study cards
+
+
+### --- BLOCKERS ---
+
 # November 5, 2020
 
 ### ---- ACCOMPLISHED -----
