@@ -8,7 +8,32 @@
 
 ### ---- ACCOMPLISHED -----
 
+        READING
+
+                https://stackoverflow.com/questions/21645323/what-is-the-claims-in-asp-net-identity
+
+                https://www.geeksforgeeks.org/difference-between-authentication-and-authorization/
+
+        MAPs work on REACT Front End Integration
+
+                [ ] Create separate Maps.jsx and Map.jsx, created addressService
+
+                [] Wired up Maps.jsx to call Addresses PROC to get addresses (random 50)
+
+                [] STUBBED IN WIRING FOR Select an address and Edit an address
+
+                        [ ] Select will pass selected in to Map view component
+                        [ ] Edit will pass selected in to Edit form for an address
+
+
+
 ### ---- WILL ACCOMPLISH -----
+
+                [ ] Show all
+                [ ] Fully implement address map one
+                [ ] Fully implement address map many
+                [ ] Implement Edit
+                [ ] Revisit login/register for interval event success/fail messages
 
 ### --- BLOCKERS ---
 
