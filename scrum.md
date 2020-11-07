@@ -4,19 +4,37 @@
     What are you going to accomplish
     What are your blockers
 
+# November 7, 2020
+
+### ---- ACCOMPLISHED -----
+
+### ---- WILL ACCOMPLISH -----
+
+### --- BLOCKERS ---
+
 # November 6, 2020
 
 ### ---- ACCOMPLISHED -----
 
-        /login
+        USERs work...
 
-        /register
+        POST /users/login
 
-        /current
+        POST /users/register
 
-        /id/stringStatus  -- uses enum parse and updates user status (NotSet, Active, Deleted, Flagged)
+        GET /users/current
 
-        Got on the Q to check in (Gregorio pinged me to do so) Code review with Hector.
+        DELETE /users/{id}
+
+        PUT /users/{id}/{stringStatus}  -- uses enum parse and updates user status (NotSet, Active, Deleted, Flagged)
+
+        [x] Got on the Q to check in (Gregorio pinged me to do so) Code review with Hector.
+
+        [x] Implemented Register and Login into Front end.
+
+        PUT /users/update/{id}
+
+        [x] Read SQL cards (the answers were there already, nothing serious it seems)
 
 ### ---- WILL ACCOMPLISH -----
 
@@ -26,13 +44,7 @@
 
                 https://www.geeksforgeeks.org/difference-between-authentication-and-authorization/
 
-        SQL Study cards
-
-        MAP work
-
-        Implement Register and Login into Front end.
-
-        Go back and implement USER UPDATE - http PUT /users - Update(UserBaseUpdateRequest model)
+        MAPs work on REACT Front End Integration
 
 ### --- BLOCKERS ---
 
