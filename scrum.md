@@ -25,15 +25,15 @@
                         [ ] Select will pass selected in to Map view component
                         [ ] Edit will pass selected in to Edit form for an address
 
-
-
 ### ---- WILL ACCOMPLISH -----
 
-                [ ] Show all
+                [ ] Revisit login/register for interval event success/fail messages
+                [ ] Consider my implementation with tenantID's
+
+                [ ] Show all addresses map markers
                 [ ] Fully implement address map one
                 [ ] Fully implement address map many
-                [ ] Implement Edit
-                [ ] Revisit login/register for interval event success/fail messages
+                [ ] Implement Edit on address
 
 ### --- BLOCKERS ---
 
