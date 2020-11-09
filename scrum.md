@@ -8,32 +8,37 @@
 
 ### ---- ACCOMPLISHED -----
 
+        [ ] Since we last talked with you...
+
+        [x] Got login/register/current implemented api/service
+
         READING
 
                 https://stackoverflow.com/questions/21645323/what-is-the-claims-in-asp-net-identity
 
                 https://www.geeksforgeeks.org/difference-between-authentication-and-authorization/
 
-        MAPs work on REACT Front End Integration
+        [x] Revisited login/register for interval event success/fail messages
 
-                [ ] Create separate Maps.jsx and Map.jsx, created addressService
+        [x] Started (good start) MAPs work on REACT Front End Integration
 
-                [] Wired up Maps.jsx to call Addresses PROC to get addresses (random 50)
+                .then([x] Create separate Maps.jsx and Map.jsx, created addressService
 
-                [] STUBBED IN WIRING FOR Select an address and Edit an address
+                .then([x] Wired up Maps.jsx to call Addresses PROC to get addresses (random 50)
 
-                        [ ] Select will pass selected in to Map view component
-                        [ ] Edit will pass selected in to Edit form for an address
+                .then([x] STUBBED IN WIRING FOR Select an address and Edit an address
 
 ### ---- WILL ACCOMPLISH -----
 
-                [ ] Revisit login/register for interval event success/fail messages
-                [ ] Consider my implementation with tenantID's
+                [ ] Fully implement address map one address on selection..
+                [ ] Fully implement address map many on mount and button show all
 
-                [ ] Show all addresses map markers
-                [ ] Fully implement address map one
-                [ ] Fully implement address map many
+                [ ] TODO Edit will pass selected in to Formik Edit form for an address
                 [ ] Implement Edit on address
+
+                [ ] Revisit login/register for interval event success/fail messages
+
+                [ ] Consider my implementation with tenantID's
 
 ### --- BLOCKERS ---
 
