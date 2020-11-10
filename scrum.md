@@ -4,9 +4,33 @@
     What are you going to accomplish
     What are your blockers
 
+# November 11, 2020
+
+### ---- ACCOMPLISHED -----
+
+        HAPPY VETERAN'S DAY
+
 # November 10, 2020
 
 ### ---- ACCOMPLISHED -----
+
+        [ ] Rewrite [__???__] service to single class method
+
+        [ ] Improve tests, all or better property checking
+
+        [ ] FINISH Friends Tests - Write tests for other entities
+
+
+        [CREATE]
+                        insert new friend [success / failure]
+        [READ]
+                        get page of friends - [success]
+                        get friend by id - [success]
+                        get friend by id (deleted friend - [success])
+        [UPDATE]
+                        update friend - [success]
+        [DELETE]
+                        delete friend by id - [success]
 
 # November 9, 2020
 
@@ -16,7 +40,7 @@
 
 ### ---- ACCOMPLISHED -----
 
-        [x] Revisited login/register for interval event success/fail messages
+        [x] Revisited login/register for internal response success/fail messages
 
         [x] Started (good start) MAPs work on REACT Front End Integration
                 .then([x] Create separate Maps.jsx and Map.jsx, created addressService
@@ -28,18 +52,15 @@
         [x] created testing for friends
 
                 [CREATE]
-                        insert new friend [success / failure]
+                                insert new friend [success / failure]
                 [READ]
-                        get page of friends - [success]
-                        get friend by id - [success]
-
+                                get page of friends - [success]
+                                get friend by id - [success]
+                                get friend by id (deleted friend - [success])
                 [UPDATE]
-
-                        update friend - [success]
-
+                                update friend - [success]
                 [DELETE]
-
-                        delete friend by id -
+                                delete friend by id - [success]
 
 ### ---- WILL ACCOMPLISH -----
 
