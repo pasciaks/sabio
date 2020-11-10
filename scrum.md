@@ -4,6 +4,51 @@
     What are you going to accomplish
     What are your blockers
 
+# November 10, 2020
+
+### ---- ACCOMPLISHED -----
+
+# November 9, 2020
+
+### ---- ACCOMPLISHED -----
+
+# November 8, 2020
+
+### ---- ACCOMPLISHED -----
+
+        [x] Revisited login/register for interval event success/fail messages
+
+        [x] Started (good start) MAPs work on REACT Front End Integration
+                .then([x] Create separate Maps.jsx and Map.jsx, created addressService
+                .then([x] Wired up Maps.jsx to call Addresses PROC to get addresses (random 50)
+                .then([x] STUBBED IN WIRING FOR Select an address and Edit an address
+
+        [x] started Integration testing
+
+        [x] created testing for friends
+
+                [CREATE]
+                        insert new friend [success / failure]
+                [READ]
+                        get page of friends - [success]
+                        get friend by id - [success]
+
+                [UPDATE]
+
+                        update friend - [success]
+
+                [DELETE]
+
+                        delete friend by id -
+
+### ---- WILL ACCOMPLISH -----
+
+        [ ] Rewrite [__???__] service to single class method
+
+        [ ] Improve tests, all or better property checking
+
+        [ ] FINISH Friends Tests - Write tests for other entities
+
 # November 7, 2020
 
 ### ---- ACCOMPLISHED -----
