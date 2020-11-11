@@ -39,6 +39,8 @@
                 [ ] questions about getting .env info
                 [ ] question about map pointers after zoom
 
+        [x] Watched product development videos in training.sabio
+
 ### ---- WILL ACCOMPLISH -----
 
         [ ] Continue work on Backend/frontend integration
