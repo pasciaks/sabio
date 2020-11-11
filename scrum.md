@@ -14,23 +14,38 @@
 
 ### ---- ACCOMPLISHED -----
 
-        [ ] Rewrite [__???__] service to single class method
+        [X] FINISHED Friends Tests [CREATE, READ, UPDATE, DELETE]
 
-        [ ] Improve tests, all or better property checking
+         Login to set cookie appropriate to test suite...	00:00.039	Passed
+         *** SHOULD ERROR AND FAIL *** to CREATE a new...	00:00.094	Passed
+         Should CREATE a new friend and set an Id.	        00:00.146	Passed
+         Get READ recent added friend by id.	                00:00.371	Passed
+         UPDATE a friend.	                                00:00.111	Passed
+         Successfully DELETE a friend	                        00:00.420	Passed
+         *** SHOULD FAIL TO GET *** Deleted friend by ...	00:00.110	Passed
+         READ - Gets an Array of friends	                00:00.233	Passed
+         Login to set cookie as developer user without...	00:00.032	Passed
+         Gets an Array of friends	                        00:00.224	Passed
+         Always passes	                                        00:00.001	Passed
+         Login to set cookie appropriate to administra...	00:00.031	Passed
+         Should get page of friends with 2 records. If...	00:00.104	Passed
+         Logs Out Successfully
 
-        [ ] FINISH Friends Tests - Write tests for other entities
+         [X] Code review on integration testing and quick questions on login/sql responses
 
+         [x] Rewrote [Address] service to single class method, implemented Addresses Address
+                and google map.
 
-        [CREATE]
-                        insert new friend [success / failure]
-        [READ]
-                        get page of friends - [success]
-                        get friend by id - [success]
-                        get friend by id (deleted friend - [success])
-        [UPDATE]
-                        update friend - [success]
-        [DELETE]
-                        delete friend by id - [success]
+                [ ] questions about getting .env info
+                [ ] question about map pointers after zoom
+
+### ---- WILL ACCOMPLISH -----
+
+        [ ] Continue work on Backend/frontend integration
+
+        [ ] Improve tests, all or better error count/property checking
+
+        [ ] Multiple SQL Procs to bubble up error messages, T-SQL Transactions/Errors
 
 # November 9, 2020
 
