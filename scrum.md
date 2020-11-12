@@ -45,7 +45,7 @@
 
         [ ] Continue work on Backend/frontend integration
 
-        [ ] Improve tests, all or better error count/property checking
+        [ ] Improve integration testing for better error count/property checking
 
         [ ] Multiple SQL Procs to bubble up error messages, T-SQL Transactions/Errors
 
