@@ -16,22 +16,22 @@
 
         [X] FINISHED Friends Tests [CREATE, READ, UPDATE, DELETE]
 
-         Login to set cookie appropriate to test suite...	00:00.039	Passed
-         *** SHOULD ERROR AND FAIL *** to CREATE a new...	00:00.094	Passed
-         Should CREATE a new friend and set an Id.	        00:00.146	Passed
-         Get READ recent added friend by id.	                00:00.371	Passed
-         UPDATE a friend.	                                00:00.111	Passed
-         Successfully DELETE a friend	                        00:00.420	Passed
-         *** SHOULD FAIL TO GET *** Deleted friend by ...	00:00.110	Passed
-         READ - Gets an Array of friends	                00:00.233	Passed
-         Login to set cookie as developer user without...	00:00.032	Passed
-         Gets an Array of friends	                        00:00.224	Passed
-         Always passes	                                        00:00.001	Passed
-         Login to set cookie appropriate to administra...	00:00.031	Passed
-         Should get page of friends with 2 records. If...	00:00.104	Passed
+         Login to set cookie appropriate to test suite...
+         *** SHOULD ERROR AND FAIL *** to CREATE a new...
+         Should CREATE a new friend and set an Id.
+         Get READ recent added friend by id.
+         UPDATE a friend.
+         Successfully DELETE a friend
+         *** SHOULD FAIL TO GET *** Deleted friend by ...
+         READ - Gets an Array of friends
+         Login to set cookie as developer user without...
+         Gets an Array of friends
+         Always passes
+         Login to set cookie appropriate to administra...
+         Should get page of friends with 2 records. If...
          Logs Out Successfully
 
-         [X] Code review on integration testing and quick questions on login/sql responses
+         [X] Code review on integration testing and questions on login/sql responses
 
          [x] Rewrote [Address] service to single class method, implemented Addresses Address
                 and google map.
@@ -40,6 +40,8 @@
                 [ ] question about map pointers after zoom
 
         [x] Watched product development videos in training.sabio
+
+        [x] Reviewed code review guidance, purpose and step by step
 
 ### ---- WILL ACCOMPLISH -----
 
