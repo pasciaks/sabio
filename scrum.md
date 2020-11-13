@@ -8,20 +8,31 @@
 
 ### ---- ACCOMPLISHED -----
 
-        [x] signed up for googe maps api free tier $300 credit
+        [ xxx ] Continue work on Backend/frontend integration
 
-        [x] Maps geo markers
+        [x] Signed up for googe maps api free tier $300 credit
+
+        [x] Maps geo markers, non-zoom issue bogged me down
+
+        [x] api key NOT in index.html, instead as component.
 
         [x] Maps from address to geo coding (lat/lng)
 
-        [ ] Maps auto-complete
+        [ xxx ] Improve integration testing for better error count/property checking
+
+        [ x ] Restarted INTEGRATION TESTING, installed jest runner and noticed there
+                were hidden underlying issues with my implementation of friends tests
+                after code talk, used some of things learned to revisit my
+                integration testing.  (basically emptied out and working to repaste in
+                good versions of test with better error testing returns)
 
 ### ---- WILL ACCOMPLISH -----
 
-        [ ]
+       [ ] Maps auto-complete
 
-        [ ]
+       [ ] Maps directions
 
+       [ ] New stuff (perhaps formik version of all input types as prep for project)
 
 ### --- BLOCKERS ---
 
