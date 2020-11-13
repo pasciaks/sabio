@@ -4,6 +4,29 @@
     What are you going to accomplish
     What are your blockers
 
+# November 13, 2020
+
+### ---- ACCOMPLISHED -----
+
+        [x] Updated integration testing
+                _ uses my login service
+
+                _ test user login
+                _ test user create (register)
+                _ test user read (get by id) (get auth)
+                _ test user update (update user) (update status)
+                _ test user delete
+                _ test user current
+
+        [ ] Revisit formik
+
+        [ ] Started new stuff
+
+
+### ---- WILL ACCOMPLISH -----
+
+### --- BLOCKERS ---
+
 # November 12, 2020
 
 ### ---- ACCOMPLISHED -----
@@ -28,11 +51,11 @@
 
 ### ---- WILL ACCOMPLISH -----
 
-       [ ] Maps auto-complete
+       [ ] Maps auto-complete ?
 
-       [ ] Maps directions
+       [ ] Maps directions ?
 
-       [ ] New stuff (perhaps formik version of all input types as prep for project)
+       [ ] New stuff (perhaps formik version of all input types as prep for project) ?
 
 ### --- BLOCKERS ---
 
