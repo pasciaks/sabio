@@ -4,6 +4,29 @@
     What are you going to accomplish
     What are your blockers
 
+# November 12, 2020
+
+### ---- ACCOMPLISHED -----
+
+        [x] signed up for googe maps api free tier $300 credit
+
+        [x] Maps geo markers
+
+        [x] Maps from address to geo coding (lat/lng)
+
+        [ ] Maps auto-complete
+
+### ---- WILL ACCOMPLISH -----
+
+        [ ]
+
+        [ ]
+
+
+### --- BLOCKERS ---
+
+        QUESTIONs about process.env and other things noted in code...
+
 # November 11, 2020
 
 ### ---- ACCOMPLISHED -----
