@@ -11,19 +11,17 @@
         [x] Updated integration testing
                 _ uses my login service
 
-                _ test user login
-                _ test user create (register)
-                _ test user read (get by id) (get auth)
-                _ test user update (update user) (update status)
-                _ test user delete
-                _ test user current
-
         [ ] Revisit formik
 
         [ ] Started new stuff
 
+        [ ] Watched product development videos
+
+        [ ] read through .net study trello cards
 
 ### ---- WILL ACCOMPLISH -----
+
+        [ ] ......
 
 ### --- BLOCKERS ---
 
