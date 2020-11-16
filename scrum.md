@@ -11,7 +11,7 @@
         [x] Updated integration testing
                 _ uses my login service
 
-        [ ] Revisit formik
+        [ ] Revisited formik
 
         [ ] Started new stuff
 
@@ -19,9 +19,13 @@
 
         [ ] read through .net study trello cards
 
+        [ ] read through trello project cards
+
+        [ ] relocated to PST, got internet back
+
 ### ---- WILL ACCOMPLISH -----
 
-        [ ] ......
+        [ ] Create a bunch of DB tables I'm guessing
 
 ### --- BLOCKERS ---
 
