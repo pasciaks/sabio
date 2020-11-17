@@ -11,17 +11,19 @@
         [X] Create a bunch of DB tables I'm guessing
 
         [X] Together created foreign key relationships
-                [ ] Created several diagrams to aid the process
+                [x] Created almost half/several diagrams to aid the process
 
-        [X] code review
+        [X] code review with peers
 
         [X] created tables and procs
 
 ### --- WILL ACCOMPLISH
 
-        GIT VIDEOS
+        FINISH DIAGRAM STARTS
 
         C93 PROJECT ASSIGNMENT START
+
+        GIT VIDEOS [TONIGHT]
 
 ### --- BLOCKERS
 
