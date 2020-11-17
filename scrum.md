@@ -4,6 +4,21 @@
     What are you going to accomplish
     What are your blockers
 
+# November 17, 2020
+
+### ---- DID ACCOMPLISH -----
+
+        [x] finished all db diagrams 1, 1/2 times around
+
+        [x] created all domain objects for 5 core processes of Provider Wizard
+                Provider, ProfessionalDetail, Practice, Affiliation, License
+
+        [...] created add request and update request models for 5 core processes of Provider Wizard
+
+### --- WILL ACCOMPLISH
+
+### --- BLOCKERS
+
 # November 16, 2020
 
 ### ---- DID ACCOMPLISH -----
