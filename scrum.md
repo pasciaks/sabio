@@ -4,6 +4,27 @@
     What are you going to accomplish
     What are your blockers
 
+# November 16, 2020
+
+### ---- DID ACCOMPLISH -----
+
+        [X] Create a bunch of DB tables I'm guessing
+
+        [X] Together created foreign key relationships
+                [ ] Created several diagrams to aid the process
+
+        [X] code review
+
+        [X] created tables and procs
+
+### --- WILL ACCOMPLISH
+
+        GIT VIDEOS
+
+        C93 PROJECT ASSIGNMENT START
+
+### --- BLOCKERS
+
 # November 13, 2020
 
 ### ---- ACCOMPLISHED -----
