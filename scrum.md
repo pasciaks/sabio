@@ -22,9 +22,13 @@
         [X] watched the git tutorial videos (THERE weren't any commit -m -s -push -checkout command line things)
                 ??? (THERE weren't any commit -m -s -push -checkout command line things)
 
+                // TODO - Ensure CreatedBy and ModifiedBy and similar are coming from authService Function and not model
+
+                // TODO - Ensure all updates are coming from route id
+
         [ ] BROWSED/READ the docs about code review
 
-Brijesh Patel:happygoat:  5:04 PM
+Brijesh Patel:happygoat: 5:04 PM
 
 [Purpose of Code Reviews](https://github.com/sabiocode/wiki/blob/master/general/github/Code-Review/Purpose-of-Code-Reviews.md)
 
@@ -34,7 +38,7 @@ Brijesh Patel:happygoat:  5:04 PM
 
 [Code Review Pull Requests(Finishing the Git WorkFlow)](https://github.com/sabiocode/wiki/blob/master/general/github/Code-Review/Code-Review-Pull-Requests.md)
 
-How do you find someone to do code review with you? Read [this](https://github.com/sabiocode/wiki/blob/master/general/github/Code-Review/Finding-a-Code-Reviewer.md)        
+How do you find someone to do code review with you? Read [this](https://github.com/sabiocode/wiki/blob/master/general/github/Code-Review/Finding-a-Code-Reviewer.md)
 
 ### --- WILL ACCOMPLISH
 
