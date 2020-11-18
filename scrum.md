@@ -15,34 +15,45 @@
 
         [x] I added domain models for 5 different tables, add and update request models for each, and
 
-        [x] stubbed out the interface and the service class for each.
+        [x] stubbed out the interface
 
-        [x] stub out web api for each
+        [x] stubbed out the service class for each.
+
+        [x] stubbed out web api class for each
+
+        [x] Provider
+
 
         [X] watched the git tutorial videos (THERE weren't any commit -m -s -push -checkout command line things)
-                ??? (THERE weren't any commit -m -s -push -checkout command line things)
 
                 // TODO - Ensure CreatedBy and ModifiedBy and similar are coming from authService Function and not model
-
                 // TODO - Ensure all updates are coming from route id
 
-        [ ] BROWSED/READ the docs about code review
+        [x] READ the docs about code review.
 
-Brijesh Patel:happygoat: 5:04 PM
+        [Purpose of Code Reviews]
+        (https://github.com/sabiocode/wiki/blob/master/general/github/Code-Review/Purpose-of-Code-Reviews.md)
 
-[Purpose of Code Reviews](https://github.com/sabiocode/wiki/blob/master/general/github/Code-Review/Purpose-of-Code-Reviews.md)
+        [Code Review Overview]
+        (https://github.com/sabiocode/wiki/blob/master/general/github/Code-Review/Code-Review.md)
 
-[Code Review Overview](https://github.com/sabiocode/wiki/blob/master/general/github/Code-Review/Code-Review.md)
+        [Code Review Commands Summary]
+        (https://github.com/sabiocode/wiki/blob/master/general/github/Code-Review/Code-Review-CommandSummary.md)
 
-[Code Review Commands Summary](https://github.com/sabiocode/wiki/blob/master/general/github/Code-Review/Code-Review-CommandSummary.md)
+        [Code Review Pull Requests(Finishing the Git WorkFlow)]
+        (https://github.com/sabiocode/wiki/blob/master/general/github/Code-Review/Code-Review-Pull-Requests.md)
 
-[Code Review Pull Requests(Finishing the Git WorkFlow)](https://github.com/sabiocode/wiki/blob/master/general/github/Code-Review/Code-Review-Pull-Requests.md)
-
-How do you find someone to do code review with you? Read [this](https://github.com/sabiocode/wiki/blob/master/general/github/Code-Review/Finding-a-Code-Reviewer.md)
+        How do you find someone to do code review with you? Read [this]
+        (https://github.com/sabiocode/wiki/blob/master/general/github/Code-Review/Finding-a-Code-Reviewer.md)
 
 ### --- WILL ACCOMPLISH
 
-        [ ] finish more work on api's for the 5 core processes of Provider Wizard
+        [ ] Provider Wizard
+
+        [ ] ProfessionalDetail
+        [ ] Practice
+        [ ] Affiliation
+        [ ] License
 
 ### --- BLOCKERS
 
