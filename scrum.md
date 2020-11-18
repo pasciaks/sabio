@@ -24,6 +24,18 @@
 
         [ ] BROWSED/READ the docs about code review
 
+Brijesh Patel:happygoat:  5:04 PM
+
+[Purpose of Code Reviews](https://github.com/sabiocode/wiki/blob/master/general/github/Code-Review/Purpose-of-Code-Reviews.md)
+
+[Code Review Overview](https://github.com/sabiocode/wiki/blob/master/general/github/Code-Review/Code-Review.md)
+
+[Code Review Commands Summary](https://github.com/sabiocode/wiki/blob/master/general/github/Code-Review/Code-Review-CommandSummary.md)
+
+[Code Review Pull Requests(Finishing the Git WorkFlow)](https://github.com/sabiocode/wiki/blob/master/general/github/Code-Review/Code-Review-Pull-Requests.md)
+
+How do you find someone to do code review with you? Read [this](https://github.com/sabiocode/wiki/blob/master/general/github/Code-Review/Finding-a-Code-Reviewer.md)        
+
 ### --- WILL ACCOMPLISH
 
         [ ] finish more work on api's for the 5 core processes of Provider Wizard
