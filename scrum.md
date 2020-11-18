@@ -13,9 +13,20 @@
         [x] created all domain objects for 5 core processes of Provider Wizard
                 Provider, ProfessionalDetail, Practice, Affiliation, License
 
-        [...] created add request and update request models for 5 core processes of Provider Wizard
+        [x] I added domain models for 5 different tables, add and update request models for each, and
+
+        [x] stubbed out the interface and the service class for each.
+
+        [x] stub out web api for each
+
+        [X] watched the git tutorial videos (THERE weren't any commit -m -s -push -checkout command line things)
+                ??? (THERE weren't any commit -m -s -push -checkout command line things)
+
+        [ ] BROWSED/READ the docs about code review
 
 ### --- WILL ACCOMPLISH
+
+        [ ] finish more work on api's for the 5 core processes of Provider Wizard
 
 ### --- BLOCKERS
 
