@@ -4,6 +4,18 @@
     What are you going to accomplish
     What are your blockers
 
+# November 18, 2020
+
+### ---- DID ACCOMPLISH -----
+
+        Provider Wizard
+
+        [x] Provider
+        [25%] ProfessionalDetail
+        [ ] Practice
+        [ ] Affiliation
+        [ ] License
+
 # November 17, 2020
 
 ### ---- DID ACCOMPLISH -----
@@ -48,8 +60,9 @@
 
 ### --- WILL ACCOMPLISH
 
-        [ ] Provider Wizard
+        Provider Wizard
 
+        [ ] Provider
         [ ] ProfessionalDetail
         [ ] Practice
         [ ] Affiliation
