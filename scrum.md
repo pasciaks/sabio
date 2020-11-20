@@ -4,6 +4,34 @@
     What are you going to accomplish
     What are your blockers
 
+# November 19, 2020
+
+### ---- DID ACCOMPLISH -----
+
+     [x] @pr providerWizardSheldonP
+
+     [ ] Health Profile Wizard
+                Medications
+                Weight
+                Blood Pressure
+                Blood Sugar
+                Temperature
+                AllergyLog
+
+        created batch insert sql for allergy
+
+        [ ] Moved back to to Provider Wizard
+
+        [ ] created udts for each of the Provider Wizard entities
+
+        [ ] created ProfileWizardAddRequest
+
+### --- WILL ACCOMPLISH ---
+
+        Create the service and web api for ProviderWizard
+
+        get ProviderWizard checked in and merged so I can start react front end tomorrow
+
 # November 18, 2020
 
 ### ---- DID ACCOMPLISH -----
@@ -12,6 +40,8 @@
 
         [x] Provider
         [25%] ProfessionalDetail
+        [x] @pr providerWizardSheldonP
+
         [ ] Practice
         [ ] Affiliation
         [ ] License
