@@ -4,6 +4,32 @@
     What are you going to accomplish
     What are your blockers
 
+# November 20, 2020
+
+### --- DID ACCOMPLISH
+
+        [X] Domains and Requests for ProviderWizard
+        [X] Service for ProviderWizard
+        [X] API for ProviderWizard
+        [X] Full insert for ProviderWizard
+
+        [X] PUSH ProviderWizard
+
+### --- WILL ACCOMPLISH
+
+        [ ] Provider add/edit form. (Component)
+
+        [ ] Affiliations add/edit form. (Component with functional mapped subcomponent)
+
+        [ ] Get code reviewed and pending PR for Monday
+
+        [ ] Professional Details add/edit form.
+                Provider -> Many Professional Details
+
+        [ ] Licenses
+
+        [ ] Practices
+
 # November 19, 2020
 
 ### ---- DID ACCOMPLISH -----
