@@ -4,6 +4,47 @@
     What are you going to accomplish
     What are your blockers
 
+### --- NOV 22,, 2020
+
+### --- ACCOMPLISHED
+
+        INSERTED Countries table
+
+        CREATED
+
+        Countries_SelectAll
+        States_SelectAll
+        GenderTypes_SelectAll
+        TitleTypes_SelectAll
+
+        CREATED LookupTables service and api with endpoint  /lookuptables/states (get all states)
+
+### --- WILL ACCOMPLISH
+
+# November 21, 2020
+
+        [ ] Provider form. (Component)
+
+        [ ] Created schemas for all entities
+
+        [ ] Created structure for 4 complex components
+
+                Professional Details
+                Practices
+                Licenses
+                Affiliations
+
+        [ ] Affiliations add/edit form. (Component with functional mapped subcomponent)
+
+### --- WILL ACCOMPLISH ---
+
+        [ ] CRUD SERVICES/API FOR
+                Provider,
+                ProfessionalDetail
+                Practice
+                License
+                Affiliation
+
 # November 20, 2020
 
 ### --- DID ACCOMPLISH
@@ -13,7 +54,7 @@
         [X] API for ProviderWizard
         [X] Full insert for ProviderWizard
 
-        [X] PUSH ProviderWizard
+        [X] PUSH healthProfile updates (provider wizard changes)
 
 ### --- WILL ACCOMPLISH
 
