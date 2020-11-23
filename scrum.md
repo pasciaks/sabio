@@ -8,7 +8,16 @@
 
 ### --- ACCOMPLISHED
 
+        [ ] Created structure for 4 complex components
+
+                Professional Details
+                Practices
+                Licenses
+                Affiliations
+
         INSERTED Countries table
+
+        Started provider form with Steps for remaining four forms
 
         CREATED
 
@@ -25,7 +34,7 @@
 
         [ ] Provider form. (Component)
 
-        [ ] Created schemas for all entities
+        [ ] Created schemas for all FORM entities
 
         [ ] Created structure for 4 complex components
 
