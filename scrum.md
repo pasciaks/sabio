@@ -26,7 +26,8 @@
         GenderTypes_SelectAll
         TitleTypes_SelectAll
 
-        CREATED LookupTables service and api with endpoint  /lookuptables/states (get all states)
+        CREATED LookupTables service and api with endpoint
+        to get any entity lookup table.
 
 ### --- WILL ACCOMPLISH
 
