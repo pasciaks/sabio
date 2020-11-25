@@ -4,7 +4,35 @@
     What are you going to accomplish
     What are your blockers
 
-### --- NOV 22,, 2020
+### --- NOV 24,, 2020
+
+        [ ] Created prop validation schema for each Provider Wizard Subform
+
+        [ ] Implemented Steppers
+
+        [ ] Select in React using Lookup
+
+        [ ] Start of multi-elements forms mapping
+
+        [ ] watched those videos other modules had at google drive.
+
+        code review and resolve merge conflict with Joe
+
+        [ ] Spent last 45 minutes of day working to revamp my wizard like Patrick's.
+
+        I didn't get success yet so I'll go with his way.
+
+### --- NOV 23,, 2020
+
+        [ ] Handle 'tabbed' data appropriately, submit full object on finsih button
+
+        [ ] Complete sub-form Affiliations
+
+        [ ] Complete sub-form Licenses
+
+        [ ] Complete sub-form Professional Details
+
+        [ ] Complete sub-form Practices
 
 ### --- ACCOMPLISHED
 
