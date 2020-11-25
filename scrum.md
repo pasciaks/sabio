@@ -6,6 +6,14 @@
 
 ### --- NOV 24,, 2020
 
+        [ ] - resume added to draft folder
+
+        [ ] - studied C93 study cards
+
+        [ ] - surrendered to Joe and Patrick
+
+### --- NOV 24,, 2020
+
         [ ] Created prop validation schema for each Provider Wizard Subform
 
         [ ] Implemented Steppers
