@@ -6,11 +6,17 @@
 
 ### --- NOV 24,, 2020
 
-        [ ] - resume added to draft folder
+### --- DID ACCOMPLISH
 
-        [ ] - studied C93 study cards
+        [ ] - resume added to draft folder.
 
-        [ ] - surrendered to Joe and Patrick
+        [ ] - worked and reworked health formik without progress.
+
+        [ ] - starting react from 'almost' scratch.
+
+### --- WILL ACCOMPLISH
+
+### --- BLOCKERS
 
 ### --- NOV 24,, 2020
 
