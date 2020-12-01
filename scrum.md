@@ -4,7 +4,35 @@
     What are you going to accomplish
     What are your blockers
 
-### --- NOV 24,, 2020
+### --- NOV 30, 2020
+
+### --- DID ACCOMPLISH
+
+        struggled through most of the morning working same bugs as patrick
+
+                Issues with complexity of field array
+
+        Video call and walkthrough with Brijesh, Patrick and Joe.
+
+        Started new branch, much of my old (un jacked) stuff back in.
+
+        50% done with bringing in old and revamping using edited Patrick code as way ahead
+
+### --- WILL ACCOMPLISH
+
+        Affiliations, Practices (JOE)
+
+        Plan to have PR ready for Peer review by 1pm (Provider, Professional Details, Licenses
+
+        Plan to have Provider Wizard merged by end of day for ADD
+
+---
+
+### --- BLOCKERS
+
+        QUESTION - ID's for possible reuse of wizard add to also serve as edit.
+
+### --- NOV 24, 2020
 
 ### --- DID ACCOMPLISH
 
@@ -18,7 +46,7 @@
 
 ### --- BLOCKERS
 
-### --- NOV 24,, 2020
+### --- NOV 24, 2020
 
         [ ] Created prop validation schema for each Provider Wizard Subform
 
