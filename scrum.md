@@ -8,6 +8,34 @@
 
 ### --- DID ACCOMPLISH
 
+        Version 2's
+
+        Zoom with Joe to work out much of Provider
+
+                Provider Wizard Form , Provider, Professional Details, Licenses
+
+                        wizard with steps, provider , professional details, licenses (many)
+
+                        affiliations (many), practices (many)
+
+        All main elements completed , a couple little errors to solve,
+
+        questions for Q right after standup
+
+### --- WILL ACCOMPLISH
+
+        post from wizard (after fixing issues in Q)
+
+        systematic check of prop types, error message, comments and unused file clean up
+
+        all drop downs programatic based on yesterday's code talk about reuse drop down code/lookup tables
+
+        PR for peer review
+
+        PR for merge
+
+### --- DID ACCOMPLISH
+
         struggled through most of the morning working same bugs as patrick
 
                 Issues with complexity of field array
