@@ -20,9 +20,13 @@
 
         All main elements completed , a couple little errors to solve,
 
-        questions for Q right after standup
+        We all pulled main and resolved conflicts at 7pm pst
+
+        code review Josiah
 
 ### --- WILL ACCOMPLISH
+
+        questions for Q right after standup
 
         post from wizard (after fixing issues in Q)
 
