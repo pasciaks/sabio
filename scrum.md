@@ -4,6 +4,22 @@
     What are you going to accomplish
     What are your blockers
 
+### --- DEC 3, 2020
+
+### --- ACCOMPLISHED
+
+        PROVIDER WIZARD INSERT
+
+        transpose state objects to ProviderWizardAddRequest
+
+        post to end point
+
+### --- WILL ACCOMPLISH
+
+        GET MERGED , PULL MAIN, START NEW BRANCH, AND MOVE ON TO NEXT STEPS
+
+### --- DEC 2, 2020
+
 ### --- NOV 30, 2020
 
 ### --- DID ACCOMPLISH
