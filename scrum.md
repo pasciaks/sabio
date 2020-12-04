@@ -8,6 +8,37 @@
 
 ### --- ACCOMPLISHED
 
+        WORKED IN SQL, DIAGRAMS AND REVIEW PROCS WHILE WAITING MERGE
+
+
+        [ ] Created SQL Proc get provider details
+
+                inner joins on types and bridge tables
+
+                select individual fields alias as approprite
+
+        [1/2][.] Auto-JSON or multi-table return
+
+
+        [ ] Study all three sets of Trello Cards, re-visit Resume
+
+### --- WILL ACCOMPLISH
+
+        [2/2][ ] Auto-JSON or multi-table return
+
+        [ ] Create C# controller and web api for provider details
+
+        [ ] Call web api route from react and render data on page
+
+
+                __ debugging Provider Wizard Add
+
+                        [ ] bug ?? ( recheck inserts multi - affiliations, licenses, practices )
+                        [ ] bug ?? ( are other things missing ? Other DB Tables ( ProviderLanguages, etc... )
+
+
+### --- ACCOMPLISHED
+
         PROVIDER WIZARD INSERT
 
         transpose state objects to ProviderWizardAddRequest
