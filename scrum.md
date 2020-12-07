@@ -8,6 +8,8 @@
 
 ### --- DEC 8, 2020
 
+### ----- ACCOMPLISHED -----
+
         [ ] Completed api/controller changes read data  provider/details/{id}
 
                 - reads params in from match and loads all data for that provider id
@@ -16,7 +18,11 @@
 
                 - plan /providers will be a page list of a providers browse/search form
 
-        [ ] Need to Revisit the practices form in the wizard (it's dropdowns are yet poplated with code table info)
+        [X] Revisited the practices form in the wizard.. Practices weren't adding/Fixed.
+
+        [ ] Code review Locations from Josiah
+
+### ----- WILL ACCOMPLISH
 
         [ ] Create Map View Component that will render practices locations on map
         [ ] Create List View Component that will list practice locations
