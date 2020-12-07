@@ -4,6 +4,39 @@
     What are you going to accomplish
     What are your blockers
 
+### --- DEC 4, 2020
+
+### --- ACCOMPLISHED
+
+        [2/2][X] Auto-JSON AND multi-table return
+
+        [X] Updated resume to match review comments
+
+        [X] Create C# controller and web api for provider details
+
+        [x] 4-6pm Q & A (SQL, REACT, NET)
+
+        [x] Saturday morning Q&A
+
+        [x] Worked more on provider details
+
+        [x] Call web api route from react and render data on page
+                [x] Create React Service to get provider details
+                [x] Create Page with components to view returned data
+
+
+
+### --- WILL ACCOMPLISH
+
+        GET IT ALL NICE ON A PAGE, then abstract into components..
+
+        Create Map View Component that will render practices locations on map
+        given an array of PracticeViewData records
+
+        Create List View Component that will list practice locations
+
+        Implement the Map View and List View Component on ProviderDetails page
+
 ### --- DEC 3, 2020
 
 ### --- ACCOMPLISHED
@@ -18,7 +51,6 @@
                 select individual fields alias as approprite
 
         [1/2][.] Auto-JSON or multi-table return
-
 
         [ ] Study all three sets of Trello Cards, re-visit Resume
 
@@ -35,7 +67,6 @@
 
                         [ ] bug ?? ( recheck inserts multi - affiliations, licenses, practices )
                         [ ] bug ?? ( are other things missing ? Other DB Tables ( ProviderLanguages, etc... )
-
 
 ### --- ACCOMPLISHED
 
