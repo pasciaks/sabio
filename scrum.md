@@ -24,11 +24,13 @@
                 [x] Create React Service to get provider details
                 [x] Create Page with components to view returned data
 
-
+        [ ] posted another, weaker version of resume (V2b)
 
 ### --- WILL ACCOMPLISH
 
-        GET IT ALL NICE ON A PAGE, then abstract into components..
+        GET IT ALL NICE ON A SINGLE PAGE, then abstract into components IF/AS needed.
+
+        [ ] Revisit the practices form in the wizard (it's dropdowns are yet poplated with code table info)
 
         Create Map View Component that will render practices locations on map
         given an array of PracticeViewData records
