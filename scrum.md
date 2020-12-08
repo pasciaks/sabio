@@ -10,23 +10,34 @@
 
 ### ----- ACCOMPLISHED -----
 
-        [ ] Completed api/controller changes read data  provider/details/{id}
+        [ ] Completed some api/controller/page/structure changes
+
+                (domains/providerwizard) (domain/providerdetails) ...
+
+                - nav after wizard add to providers/details/{newid}
+                
+                - providers/details/{id}
 
                 - reads params in from match and loads all data for that provider id
 
-                - returns to /providers on error of provider id
+                - returns to /providers on error of provider id not found
 
                 - plan /providers will be a page list of a providers browse/search form
 
-        [X] Revisited the practices form in the wizard.. Practices weren't adding/Fixed.
+        [x] Troubleshoot DB null optional dateExpires field
+                        (optional property names in models)
+                        DateTime? and careful reader readin
 
-        [ ] Code review Locations from Josiah
+        [X] Revisited the practices form in the wizard.. Practices weren't adding/Fixed.. 
+
+        [x] Code review Locations from Josiah
 
 ### ----- WILL ACCOMPLISH
 
-        [ ] Create Map View Component that will render practices locations on map
-        [ ] Create List View Component that will list practice locations
-        [ ] Implement the Map View and List View Component on ProviderDetails page
+        [ ] Design and render details view page
+                [ ] Create Map View Component that will render practices locations on map
+                [ ] Create List View Component that will list practice locations
+                [ ] Implement the Map View and List View Component on ProviderDetails page
 
 ### --- DEC 7, 2020
 
