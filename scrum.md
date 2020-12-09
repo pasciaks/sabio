@@ -4,9 +4,25 @@
     What are you going to accomplish
     What are your blockers
 
-### --- DEC 7, 2020
+### --- DEC 9, 2020
 
 ### --- DEC 8, 2020
+
+### --- ACCOMPLISHED ---
+
+        [ ] Design and render details view page.
+
+        [ ] Map view tht lists all practices for provider.
+
+        [ ] Algorithm
+
+        [ ] Updated Resume on drive
+
+### --- WILL ACCOMPLISH
+
+        [ ] Improve display towards demo with client this afternoon
+
+        [ ] Move on as directed ... or continuing stabbing at providers
 
 ### ----- ACCOMPLISHED -----
 
@@ -15,7 +31,7 @@
                 (domains/providerwizard) (domain/providerdetails) ...
 
                 - nav after wizard add to providers/details/{newid}
-                
+
                 - providers/details/{id}
 
                 - reads params in from match and loads all data for that provider id
@@ -28,7 +44,7 @@
                         (optional property names in models)
                         DateTime? and careful reader readin
 
-        [X] Revisited the practices form in the wizard.. Practices weren't adding/Fixed.. 
+        [X] Revisited the practices form in the wizard.. Practices weren't adding/Fixed..
 
         [x] Code review Locations from Josiah
 
