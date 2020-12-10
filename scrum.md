@@ -21,13 +21,16 @@
 ### --- will accomplish
 
         solve bug in large render
-
-        Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>.
-        at div
-        at p
-        at CardText (https://localhost:3000/static/js/7.chunk.js:144224:25)
+                Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>.
+                at div
+                at p
+                at CardText (https://localhost:3000/static/js/7.chunk.js:144224:25)
 
         location use with Josiah
+
+        start connect user to provider
+
+### ----- blockers
 
 ### --- DEC 8, 2020
 
