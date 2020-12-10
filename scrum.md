@@ -6,6 +6,29 @@
 
 ### --- DEC 9, 2020
 
+    [ ] Improve display towards demo with client this afternoon
+
+    [ ] Merge reconciliation and Code review with Patrick
+
+    [ ] Group chat after dinner about currentUser coming in as props on components
+
+    [ ] Allowed me to select userProfileId on provider wizard form
+
+    [ ] Read other peoples code to get a clue
+
+    [ ] got rid of pages for wizard/details in as components
+
+### --- will accomplish
+
+        solve bug in large render
+
+        Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>.
+        at div
+        at p
+        at CardText (https://localhost:3000/static/js/7.chunk.js:144224:25)
+
+        location use with Josiah
+
 ### --- DEC 8, 2020
 
 ### --- ACCOMPLISHED ---
