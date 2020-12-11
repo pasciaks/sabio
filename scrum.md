@@ -20,15 +20,11 @@
 
         [ ] populated some relavant look up table info
 
-        [ ] Invision reusable code table edit dynamic form/modal...
+        [ ] possible code table edit dynamic form/modal...
 
 ### --- WILL ACCOMPLISH
 
         [ ] Next assignment...
-
-        [ ] Providers search/filter ?
-
-        [ ] Practices search/filter ?
 
 ### --- DEC 9, 2020
 
