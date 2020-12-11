@@ -14,9 +14,9 @@
 
         [ ] resume update
 
-        [ ] algorithm work
+        [ ] algorithm work with Josiah - too much time spent but learned good things
 
-        [ ] code review
+        [ ] read through some front end theme code (exciting)
 
 ### --- WILL ACCOMPLISH
 
