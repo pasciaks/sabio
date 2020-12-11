@@ -18,6 +18,10 @@
 
         [ ] read through some front end theme code (exciting)
 
+        [ ] populated some relavant look up table info
+
+        [ ] Invision reusable code table edit dynamic form/modal...
+
 ### --- WILL ACCOMPLISH
 
         [ ] Next assignment...
