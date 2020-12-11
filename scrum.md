@@ -6,6 +6,28 @@
 
 ### --- DEC 9, 2020
 
+        [ ] integrated location add for provider wizard
+
+        [ ] code review/merge conflict fixes with Josiah
+
+        [ ] provider detail view, accepted merge
+
+        [ ] resume update
+
+        [ ] algorithm work
+
+        [ ] code review
+
+### --- WILL ACCOMPLISH
+
+        [ ] Next assignment...
+
+        [ ] Providers search/filter ?
+
+        [ ] Practices search/filter ?
+
+### --- DEC 9, 2020
+
     [ ] Improve display towards demo with client this afternoon
 
     [ ] Merge reconciliation and Code review with Patrick
