@@ -22,6 +22,8 @@
 
         [ ] integrated location add for provider wizard
 
+
+
         [ ] code review/merge conflict fixes with Josiah
 
         [ ] provider detail view, accepted merge
@@ -35,6 +37,8 @@
         [ ] populated some relavant look up table info
 
         [ ] possible code table edit dynamic form/modal...
+
+        [ ] code review Joe's schedule..
 
 ### --- WILL ACCOMPLISH
 
