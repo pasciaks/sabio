@@ -6,23 +6,31 @@
 
 ### --- dec 11
 
-
 ### --- DID ACCOMPLISH
 
-### --- WILL ACCOMPLISH
+        [ ] successful return from middle tier of all lookup tables
 
-        [ ] lookup tables at app level for use as props
+        [ ] transition from google map to open street on provider details view
 
-        [ ] merge conflict git buddy/code review with joe (Friday)
+        [ ] watch 2 hours of OOP videos
+
+        [ ] watch 1 hour of http response life cycle videos
+
         [ ] final view of provider details
 
         [ ] initial view/start of provider search
 
+### --- WILL ACCOMPLISH
+
+        [ ] lookup tables: bring into front end for use app level as props
+
+        [ ] provider search / filter
+
+        [ ] user - connect to a provider
+
 ### --- DEC 9, 2020
 
         [ ] integrated location add for provider wizard
-
-
 
         [ ] code review/merge conflict fixes with Josiah
 
