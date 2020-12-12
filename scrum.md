@@ -4,6 +4,20 @@
     What are you going to accomplish
     What are your blockers
 
+### --- dec 11
+
+
+### --- DID ACCOMPLISH
+
+### --- WILL ACCOMPLISH
+
+        [ ] lookup tables at app level for use as props
+
+        [ ] merge conflict git buddy/code review with joe (Friday)
+        [ ] final view of provider details
+
+        [ ] initial view/start of provider search
+
 ### --- DEC 9, 2020
 
         [ ] integrated location add for provider wizard
