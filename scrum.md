@@ -4,15 +4,19 @@
     What are you going to accomplish
     What are your blockers
 
-### --- dec 11
+### --- DEC 14
+
+### --- DID ACCOMPLISH, WILL ACCOMPLISH
+
+### --- dec 13
 
 ### --- DID ACCOMPLISH
 
-        [ ] successful return from middle tier of all lookup tables
+        [X] successful return from middle tier of all lookup tables
 
-        [ ] transition from google map to open street on provider details view
+        [X] transition from google map to open street on provider details view
 
-        [ ] watch 2 hours of OOP videos
+        [X] watch 1ST OF THE 2 of OOP videos
 
         [ ] watch 1 hour of http response life cycle videos
 
