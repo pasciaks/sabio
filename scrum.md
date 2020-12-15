@@ -6,7 +6,27 @@
 
 ### --- DEC 14
 
-### --- DID ACCOMPLISH, WILL ACCOMPLISH
+### --- DID ACCOMPLISH
+
+        [X] provider details view
+                [X] reviewd by Joe and Chad
+                [X] adjusted code as requied
+
+        [X] implemented app level lookup tables.
+
+        [X] finished OOP videos.
+
+        [ ] created search/filter by Provider/Practice SQL PROC.
+
+        [ ] created search/filter service.
+
+        [ ] created search/filter API Controller.
+
+### --- will accomplish
+
+        [ ] Finish provider search, and filter.
+
+        [ ] Connect user to Provider
 
 ### --- dec 13
 
