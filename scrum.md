@@ -4,7 +4,27 @@
     What are you going to accomplish
     What are your blockers
 
-### --- DEC 14
+### --- DEC 15
+
+### --- DID ACCOMPLISH
+
+        [ ] took out user profile id remnants from provider wizard (provider)
+
+        [ ] SQL proc for search for provider
+
+        [ ] service and api end point for provider search
+
+        [ ] react front end form and post for provider search
+
+### --- TODAY I WILL accomplish
+
+        [ ] get nice cards view and map view for provider search
+
+        [ ] get rid of schedule id from practice completely
+
+        [ ] 80% sql proc for search by practice (distance)
+
+        [ ]
 
 ### --- DID ACCOMPLISH
 
