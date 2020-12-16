@@ -4,6 +4,20 @@
     What are you going to accomplish
     What are your blockers
 
+### --- DEC 16
+
+### --- DID ACCOMPLISH
+
+        [ ] pagination for provider search
+
+        [ ] nice look and feel for provider search result cards
+
+        [ ] map view of providers practices in search result
+
+### --- TODAY I WILL accomplish
+
+        [ ]
+
 ### --- DEC 15
 
 ### --- DID ACCOMPLISH
@@ -17,6 +31,8 @@
         [ ] react front end form and post for provider search
 
 ### --- TODAY I WILL accomplish
+
+        [ ] get pagination working
 
         [ ] get nice cards view and map view for provider search
 
