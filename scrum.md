@@ -4,7 +4,23 @@
     What are you going to accomplish
     What are your blockers
 
+### --- DEC 17
+
 ### --- DEC 16
+
+### --- DID ACCOMPLISH
+
+        [X] Final tighten up provider search and check it in.
+
+        [X] map view of providers practices in search result
+
+        [X] Code review, changes for comments, schemas, UI
+
+        [x] Merged provider search and revised provider details
+
+### --- WILL ACCOMPLISH
+
+        [ ] ---
 
 ### --- DID ACCOMPLISH
 
