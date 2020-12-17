@@ -8,9 +8,20 @@
 
 ### --- DID ACCOMPLISH
 
-        [ ] pagination for provider search
+        [x] pagination for provider search
 
-        [ ] nice look and feel for provider search result cards
+        [x] ongoing improvements to look and feel for provider search result cards
+
+        [x] code review Joe, provider wizard insert transaction and
+             user profile setup
+
+             [x] map view on providers search page
+
+             [x] page size option on proiders search page
+
+             [x] reusable map locations component (kinda)
+
+        [ ] re-watch 'the cycle' video
 
         [ ] map view of providers practices in search result
 
@@ -29,6 +40,7 @@
         [ ] service and api end point for provider search
 
         [ ] react front end form and post for provider search
+
 
 ### --- TODAY I WILL accomplish
 
