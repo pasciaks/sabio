@@ -17,17 +17,17 @@
 
              [x] map view on providers search page
 
-             [x] page size option on proiders search page
+             [x] page size option on providers search page
 
              [x] reusable map locations component (kinda)
 
-        [ ] re-watch 'the cycle' video
-
-        [ ] map view of providers practices in search result
+        [x] re-watch 'the cycle' video
 
 ### --- TODAY I WILL accomplish
 
-        [ ]
+        [ ] Final tighten up provider search and check it in.
+
+        [ ] map view of providers practices in search result
 
 ### --- DEC 15
 
@@ -40,7 +40,6 @@
         [ ] service and api end point for provider search
 
         [ ] react front end form and post for provider search
-
 
 ### --- TODAY I WILL accomplish
 
