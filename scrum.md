@@ -8,11 +8,11 @@
 
 ### --- DID ACCOMPLISH
 
+        [x] video call with Josiah blogs, pull and merge conflict
+
         [ ] bug fixes, old provider data
 
         [ ] landing page
-
-
 
 ### --- WILL ACCOMPLISH
 
