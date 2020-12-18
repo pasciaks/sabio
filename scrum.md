@@ -6,6 +6,16 @@
 
 ### --- DEC 17
 
+### --- DID ACCOMPLISH
+
+        [ ] bug fixes, old provider data
+
+        [ ] landing page
+
+
+
+### --- WILL ACCOMPLISH
+
 ### --- DEC 16
 
 ### --- DID ACCOMPLISH
@@ -18,9 +28,13 @@
 
         [x] Merged provider search and revised provider details
 
+        [x] started landing page and bug fixes
+
 ### --- WILL ACCOMPLISH
 
-        [ ] ---
+        [ ] bug fixes, old provider data
+
+        [ ] landing page
 
 ### --- DID ACCOMPLISH
 
