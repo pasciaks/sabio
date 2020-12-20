@@ -4,6 +4,46 @@
     What are you going to accomplish
     What are your blockers
 
+### --- DEC 20th
+
+### --- DID ACCOMPLISH AND NEED TO ACCOMPLISH
+
+        [x] landing page links to public route pages
+                Privacy Policy
+                Terms of Service
+                Contact
+                FAQs
+
+     __ [ ] adjusted route clicks to be history.push and not nav link url
+
+        [x] links to third party sites are open in new window links
+
+     __ [x] buttons to login/register open in same page (history push)
+
+        [x] mobile friendly menu LINKS adjusted
+
+     __ [ ] mobile links need history push instead of URL href
+
+        [] landing page feature cards
+
+### --- WILL ACCOMPLISH
+
+        [ ] integrate Josiah's blog view instead of example
+
+### --- FUTURE
+
+        [ ] provider edit
+
+        [ ] professional details edit
+
+        [ ] practices edit
+
+        [ ] licenses edit
+
+        [ ] affiliations edit
+
+        [ ] provider dashboard
+
 ### --- DEC 17
 
 ### --- DID ACCOMPLISH
