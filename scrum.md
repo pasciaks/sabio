@@ -30,6 +30,12 @@
 
         [ ] integrate Josiah's blog view instead of example
 
+        [ ] integrate slider showing the
+                ... individual feature components as hero/call to action
+                ... images or other information pending product owner
+
+        QUESTION ... [ ] where are links to /providers within logged in system menu?
+
 ### --- FUTURE
 
         [ ] provider edit
