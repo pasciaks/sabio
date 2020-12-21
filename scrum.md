@@ -22,11 +22,11 @@
 
         [x] mobile friendly menu LINKS adjusted
 
-     __ [ ] mobile links need history push instead of URL href
-
-        [] landing page feature cards
+        [x] landing page feature cards
 
 ### --- WILL ACCOMPLISH
+
+     __ [ ] mobile links need history push instead of URL href
 
         [ ] integrate Josiah's blog view instead of example
 
