@@ -13,51 +13,18 @@
 
         [X] push that branch and start new providerEdit branch
 
-        [ ] created all back end and middle tier needed
+        [ ] OUCH - PROBLEM - Created all back end and middle tier needed had to back out of branch because
+        of possible implications to provider wizard - OUCH PROBLEM
 
                 Provider
-                        [X] Get
-                        [X] Add
-                        [X] Update
-                        [X] DeleteById
-
                 ProfessionalDetail
-                        [X] Get
-                        [X] Add
-                        [X] Update
-                        [X] DeleteById
                 License
-                        [X] Get
-                        [X] Add
-                        [X] Update
-                        [X] DeleteById
-
                 Affiliation
-                        [ ] Get
-                        [ ] Add
-                        [ ] Update
-                        [ ] DeleteById
                 Practice
-                        [ ] Get
-                        [ ] Add
-                        [ ] Update
-                        [ ] DeleteById
 
 ### --- WILL ACCOMPLISH
 
-        [ ] edit Provider
-
-                REACT FRONT END - use provider detail view for logged in user
-
-                . on add/edit/delete provider, edit modal
-
-                . on add/edit/delete provider details, edit modal
-
-                . on add/edit/delete (single) practice, edit modal
-
-                . on ADD/edit/delete (single) license)
-
-                . on ADD/edit/delete (single) affiliation
+        [ ]
 
                 ----
 
