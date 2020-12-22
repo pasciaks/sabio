@@ -8,33 +8,60 @@
 
 ### --- DID ACCOMPLISH
 
-        [ ] close out landing page, other than some technical fixes,
+        [X] close out landing page, other than some technical fixes,
                 no mentions of changes needed after demo on Saturday
 
-        [ ] push that branch and start new providerEdit branch
+        [X] push that branch and start new providerEdit branch
+
+        [ ] created all back end and middle tier needed
+
+                Provider
+                        [X] Get
+                        [X] Add
+                        [X] Update
+                        [X] DeleteById
+
+                ProfessionalDetail
+                        [X] Get
+                        [X] Add
+                        [X] Update
+                        [X] DeleteById
+                License
+                        [X] Get
+                        [X] Add
+                        [X] Update
+                        [X] DeleteById
+
+                Affiliation
+                        [ ] Get
+                        [ ] Add
+                        [ ] Update
+                        [ ] DeleteById
+                Practice
+                        [ ] Get
+                        [ ] Add
+                        [ ] Update
+                        [ ] DeleteById
 
 ### --- WILL ACCOMPLISH
 
-        [ ] provider edit
+        [ ] edit Provider
 
-                . use provider detail view for logged in user
+                REACT FRONT END - use provider detail view for logged in user
 
-                . on add/edit provider, edit modal
+                . on add/edit/delete provider, edit modal
 
-                . on add/edit provider details, edit modal
+                . on add/edit/delete provider details, edit modal
 
-                . on add/edit (single) practice, edit modal
+                . on add/edit/delete (single) practice, edit modal
 
-                . on ADD/edit (single) license)
+                . on ADD/edit/delete (single) license)
 
-                . on ADD/edit (single) affiliation
+                . on ADD/edit/delete (single) affiliation
 
                 ----
 
 ### --- BLOCKERS
-
-        TIME, need to validate or rewrite the individual procs for each of the 5 tables
-        4 are bridge table implementations
 
 ### --- DID ACCOMPLISH AND NEED TO ACCOMPLISH
 
