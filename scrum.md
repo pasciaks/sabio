@@ -6,6 +6,36 @@
 
 ### --- DEC 20th
 
+### --- DID ACCOMPLISH
+
+        [ ] close out landing page, other than some technical fixes,
+                no mentions of changes needed after demo on Saturday
+
+        [ ] push that branch and start new providerEdit branch
+
+### --- WILL ACCOMPLISH
+
+        [ ] provider edit
+
+                . use provider detail view for logged in user
+
+                . on add/edit provider, edit modal
+
+                . on add/edit provider details, edit modal
+
+                . on add/edit (single) practice, edit modal
+
+                . on ADD/edit (single) license)
+
+                . on ADD/edit (single) affiliation
+
+                ----
+
+### --- BLOCKERS
+
+        TIME, need to validate or rewrite the individual procs for each of the 5 tables
+        4 are bridge table implementations
+
 ### --- DID ACCOMPLISH AND NEED TO ACCOMPLISH
 
         [x] landing page links to public route pages
@@ -14,11 +44,11 @@
                 Contact
                 FAQs
 
-     __ [ ] adjusted route clicks to be history.push and not nav link url
+        [x] adjusted route clicks to be history.push and not nav link url
 
         [x] links to third party sites are open in new window links
 
-     __ [x] buttons to login/register open in same page (history push)
+        [x] buttons to login/register open in same page (history push)
 
         [x] mobile friendly menu LINKS adjusted
 
@@ -26,15 +56,22 @@
 
 ### --- WILL ACCOMPLISH
 
-     __ [ ] mobile links need history push instead of URL href
+      NO NO  [ ] Universal Contact component that renders link, on Click opens modal contact form.
 
-        [ ] integrate Josiah's blog view instead of example
+      DIDN'T GET TO IT YET, RABBIT HOLE FROM ABOVE!
 
-        [ ] integrate slider showing the
+        [ ]     Provider edit.
+                provider
+                professional details
+                licenses
+                affiliations
+                practices
+
+      NOT YET  [ ] integrate Josiah's blog view instead of example
+
+      NOT YET  [ ] integrate slider showing the
                 ... individual feature components as hero/call to action
                 ... images or other information pending product owner
-
-        QUESTION ... [ ] where are links to /providers within logged in system menu?
 
 ### --- FUTURE
 
