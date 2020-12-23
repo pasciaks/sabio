@@ -4,6 +4,20 @@
     What are you going to accomplish
     What are your blockers
 
+### --- DEC 23
+
+### --- DEC 22
+
+### --- DID ACCOMPLISH
+
+        CODE REVIEW PATRICK'S CODE
+
+        WATCHED VIDEO JOBS
+
+        PROVIDER EDIT / PROVIDER DASHBOARD
+
+### --- WILL ACCOMPLISH
+
 ### --- DEC 20th
 
 ### --- DID ACCOMPLISH
