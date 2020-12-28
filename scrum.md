@@ -4,6 +4,23 @@
     What are you going to accomplish
     What are your blockers
 
+### --- DEC 28
+
+### --- DID ACCOMPLISH
+
+        THR,FRI coded about 3-4 hours each day
+
+        SAT - 3 hours with Resumes and 3 hours with code
+
+                nothing major accomplished just steps to delivering provider edit
+                as part of provider dashboard
+
+### --- WILL ACCOMPLISH
+
+        PROVIDER + PROVIDER DETAILS EDIT
+
+        10 MORE APPLICATIONS
+
 ### --- DEC 23
 
 ### --- DEC 22
@@ -14,7 +31,7 @@
 
         WATCHED VIDEO JOBS
 
-        PROVIDER EDIT / PROVIDER DASHBOARD
+        (NOT) PROVIDER EDIT / PROVIDER DASHBOARD
 
 ### --- WILL ACCOMPLISH
 
