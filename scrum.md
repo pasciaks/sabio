@@ -8,18 +8,67 @@
 
 ### --- DID ACCOMPLISH
 
+    X select all proc
+    X select all service
+    X web api select all
+    X front end select all  (pages and features)
+
+        20+ MORE RESUME SEND/JOB APPLICATIONS
+
+    _ add/update proc
+        PAGES
+        FEATURES
+    _ delete proc
+        PAGES
+        FEATURES
+    _ add/update Service
+        PAGES
+        FEATURES
+    _ add/update api
+        PAGES
+        FEATURES
+    _ add/update react
+        PAGES
+        FEATURES
+
+### --- WILL ACCOMPLISH
+
+        WANT TO ACCOMPLISH
+
+        __ FINISH ADD/EDIT FEATURES & PAGES
+
+        __ Contact Form with email to all admins
+
+### --- DID ACCOMPLISH
+
         THR,FRI coded about 3-4 hours each day
+
+        code review josiah
 
         SAT - 3 hours with Resumes and 3 hours with code
 
                 nothing major accomplished just steps to delivering provider edit
                 as part of provider dashboard
 
+        Re-located to Alb NM
+
 ### --- WILL ACCOMPLISH
 
-        PROVIDER + PROVIDER DETAILS EDIT
+        PROVIDER + PROVIDER DETAILS EDIT (patrick taking that one for the team!)
 
-        10 MORE APPLICATIONS
+        20+ MORE APPLICATIONS
+
+        DONE
+    select all proc
+    select all service
+    web api select all
+    front end select all
+
+    add/update proc
+    delete proc
+    add/update Service
+    add/update api
+    add/update react
 
 ### --- DEC 23
 
