@@ -8,28 +8,24 @@
 
 ### --- DID ACCOMPLISH
 
-    X select all proc
-    X select all service
-    X web api select all
-    X front end select all  (pages and features)
-
         20+ MORE RESUME SEND/JOB APPLICATIONS
 
-    _ add/update proc
-        PAGES
-        FEATURES
-    _ delete proc
-        PAGES
-        FEATURES
-    _ add/update Service
-        PAGES
-        FEATURES
-    _ add/update api
-        PAGES
-        FEATURES
-    _ add/update react
-        PAGES
-        FEATURES
+    X INSERT/UPDATE PROC
+        X       PAGES
+        X       FEATURES
+    X DELETE PROC
+        X       PAGES
+        X       FEATURES
+
+    _ INSERT/update Service
+        __      PAGES
+        __      FEATURES
+    _ INSERT/update API
+        __      PAGES
+        __      FEATURES
+    _ INSERT/update React
+        __      PAGES
+        __      FEATURES
 
 ### --- WILL ACCOMPLISH
 
@@ -49,6 +45,12 @@
 
                 nothing major accomplished just steps to delivering provider edit
                 as part of provider dashboard
+
+
+        X select all proc
+        X select all service
+        X web api select all
+        X front end select all  (pages and features)
 
         Re-located to Alb NM
 
