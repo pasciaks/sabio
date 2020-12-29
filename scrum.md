@@ -8,7 +8,9 @@
 
 ### --- DID ACCOMPLISH
 
-        20+ MORE RESUME SEND/JOB APPLICATIONS
+       (55 total, but wildly all over the place)
+
+       20+ MORE RESUME SEND/JOB APPLICATIONS
 
     X INSERT/UPDATE PROC
         X       PAGES
@@ -17,26 +19,36 @@
         X       PAGES
         X       FEATURES
 
-    _ INSERT/update Service
-        __      PAGES
-        __      FEATURES
-    _ INSERT/update API
-        __      PAGES
-        __      FEATURES
-    _ INSERT/update React
-        __      PAGES
-        __      FEATURES
-
-
     _X_         QUEUE, code review by Gregorio
+
+    _X_         Made small changes based on code review from Gregorio
+
+    _ INSERT/update Service
+        _x_      PAGES
+        _x_      FEATURES
+    _ INSERT/update API
+        _x_      PAGES
+        _x_      FEATURES
 
 ### --- WILL ACCOMPLISH
 
-        WANT TO ACCOMPLISH
+        __ TEST POSTMAN ENDPOINTS FOR PAGES AND FEATURES
+
+\_ INSERT/update React
+** PAGES
+** FEATURES
 
         __ FINISH ADD/EDIT FEATURES & PAGES
 
         __ Contact Form with email to all admins
+
+### --- CONTINUAL DOING ---
+
+        Check email for job hunt responses, target (remote/florida) to  apply for more jobs
+
+        watch other videos for job hunt
+
+        study
 
 ### --- DID ACCOMPLISH
 
