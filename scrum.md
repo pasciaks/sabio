@@ -22,6 +22,10 @@
     _X_         QUEUE, code review by Gregorio
 
     _X_         Made small changes based on code review from Gregorio
+                details icon
+                move paging to appropriate spot
+                check in code soon
+                q more often
 
     _ INSERT/update Service
         _x_      PAGES
