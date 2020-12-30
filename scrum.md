@@ -8,27 +8,27 @@
 
 ### --- DID ACCOMPLISH
 
-        _X_ TEST POSTMAN ENDPOINTS FOR PAGES AND FEATURES
+        _X__  TEST POSTMAN ENDPOINTS FOR PAGES AND FEATURES
 
-        _X_ Your Account / Login / Register buttons show on splash based on if login email
+        _X__  Your Account / Login / Register buttons show on splash based on if login email
 
-        _X_ Created front end pageService for CRUD on pages and features
+        _X__  Created front end pageService for CRUD on pages and features
 
-        _X_  ADD/UPDATE/DELETE Feature in modal for admin login
+        _X__  ADD/UPDATE/DELETE Feature in modal for admin login
 
         _X__  UPDATE Page in modal for admin login
 
-        _X_  Delete Feature from modal - TODO - on page update view
+        _X__  Delete Feature from modal - TODO - on page update view
 
-        New PR #84 (landing pages and features/links)
+        _X__  New PR #84 (landing pages and features/links)
 
 ### --- WILL ACCOMPLISH
 
-        __ send out resumes, follow up on resumes
+        __ clean out old test data , run through data/views.
 
-        __ Q for current work
+        __ contact form that emails admin users or established email to send to.
 
-        __ PR to merge code this week
+        __ send out resumes, follow up on resumes.
 
 ### --- DEC 28
 
