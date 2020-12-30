@@ -28,7 +28,7 @@
 
         __ contact form that emails admin users or established email to send to.
 
-        __ send out resumes, follow up on resumes.
+        __ send out resumes, follow up on resumes, get to bottom of my inbox.
 
 ### --- DEC 28
 
