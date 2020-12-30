@@ -4,6 +4,32 @@
     What are you going to accomplish
     What are your blockers
 
+### --- DEC 29
+
+### --- DID ACCOMPLISH
+
+        _X_ TEST POSTMAN ENDPOINTS FOR PAGES AND FEATURES
+
+        _X_ Your Account / Login / Register buttons show on splash based on if login email
+
+        _X_ Created front end pageService for CRUD on pages and features
+
+        _X_  ADD/UPDATE/DELETE Feature in modal for admin login
+
+        _X__  UPDATE Page in modal for admin login
+
+        _X_  Delete Feature from modal - TODO - on page update view
+
+        New PR #84 (landing pages and features/links)
+
+### --- WILL ACCOMPLISH
+
+        __ send out resumes, follow up on resumes
+
+        __ Q for current work
+
+        __ PR to merge code this week
+
 ### --- DEC 28
 
 ### --- DID ACCOMPLISH
@@ -22,10 +48,6 @@
     _X_         QUEUE, code review by Gregorio
 
     _X_         Made small changes based on code review from Gregorio
-                details icon
-                move paging to appropriate spot
-                check in code soon
-                q more often
 
     _ INSERT/update Service
         _x_      PAGES
@@ -34,17 +56,18 @@
         _x_      PAGES
         _x_      FEATURES
 
+        10+ MORE RESUME SEND/JOB APPLICATIONS
+
 ### --- WILL ACCOMPLISH
 
         __ TEST POSTMAN ENDPOINTS FOR PAGES AND FEATURES
 
-\_ INSERT/update React
-** PAGES
-** FEATURES
+        _ INSERT/update React
 
-        __ FINISH ADD/EDIT FEATURES & PAGES
+        ** PAGES
+        ** FEATURES
 
-        __ Contact Form with email to all admins
+        __ send out resumes, follow up on resumes
 
 ### --- CONTINUAL DOING ---
 
@@ -52,7 +75,7 @@
 
         watch other videos for job hunt
 
-        study
+        study...
 
 ### --- DID ACCOMPLISH
 
