@@ -12,6 +12,10 @@
 
         _X_  STARTED contact form
 
+        __ getting through emails from job applications
+
+        __ completed 1 short assessment on indeed
+
 ### --- WILL ACCOMPLISH
 
 ### --- DEC 29
