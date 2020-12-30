@@ -4,6 +4,16 @@
     What are you going to accomplish
     What are your blockers
 
+### --- DEC 30
+
+### --- DID ACCOMPLISH
+
+        _x_  SUCCESS code review and merge of landing page with page/feature edits
+
+        _X_  STARTED contact form
+
+### --- WILL ACCOMPLISH
+
 ### --- DEC 29
 
 ### --- DID ACCOMPLISH
