@@ -4,6 +4,25 @@
     What are you going to accomplish
     What are your blockers
 
+### --- JAN 2, 2021
+
+### --- DID ACCOMPLISH
+
+        _ Comment Add Request, C# Service, API End Point
+
+                (emails comment form to admin@myhealth.com)
+
+                __ admin@healthlog.com
+                __ admin@dispostable?
+
+        _ Applied for 10+ more jobs, total 100+ (actually lost count)
+
+### --- WILL ACCOMPLISH
+
+        _ FORMIK front end form to accept and send user comments from landing page
+
+        _ PR request/peer review and merge
+
 ### --- DEC 30
 
 ### --- DID ACCOMPLISH
