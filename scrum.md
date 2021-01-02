@@ -18,6 +18,8 @@
 
         _x_ start of connect to provider component
 
+        _x_ watched 1st two videos job searching coding - not nice videos
+
 ### --- WILL ACCOMPLISH
 
         _ FORMIK front end form to accept and send user comments from landing page
