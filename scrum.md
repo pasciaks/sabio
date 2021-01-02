@@ -8,14 +8,15 @@
 
 ### --- DID ACCOMPLISH
 
-        _ Comment Add Request, C# Service, API End Point
+        _x_ Comment Add Request, C# Service, API End Point
 
-                (emails comment form to admin@myhealth.com)
+                For use to send comment form info to admin from landing page.
 
-                __ admin@healthlog.com
-                __ admin@dispostable?
+                _x_ admin@dispostable.com
 
-        _ Applied for 10+ more jobs, total 100+ (actually lost count)
+        _x_ Applied for 10+ more jobs, total 100+ (actually lost count)
+
+        _x_ start of connect to provider component
 
 ### --- WILL ACCOMPLISH
 
