@@ -10,19 +10,36 @@
 
         _x_ Comment Add Request, C# Service, API End Point
 
-                For use to send comment form info to admin from landing page.
-
+                Sends comment form info to admin from landing page.
                 _x_ admin@dispostable.com
 
         _x_ Applied for 10+ more jobs, total 100+ (actually lost count)
+            _x_ took one short, 20 min assessment on Indeed
+            (heed, they reuse that assessment so do it well, too late for me!)
 
         _x_ start of connect to provider component
 
-        _x_ watched 1st two videos job searching coding - not nice videos
+        _x_ SQL PROC - [dbo].[UserProviders_SelectAllUsers] - paged
+
+        _x_ SQL PROC - [dbo].[UserProviders_SelectAllProviders] - paged
+
+        _x_ watched 2 videos job searching coding - not nice videos
+            - If I make a video, will you add it to your lessons if appropriate/approved ?
 
 ### --- WILL ACCOMPLISH
 
+        Q - to talk about my way ahead and set reasonable suspense to be done with it.
+
+        _ RE-CHECK those two join/bridge/selects ( take out comments, validate result data from queries )
+
         _ FORMIK front end form to accept and send user comments from landing page
+
+        _ C# service, and endpoint for each of the select PROCs
+                [dbo].[UserProviders_SelectAllUsers]
+                [dbo].[UserProviders_SelectAllProviders]
+
+        _ REACT control to view [dbo].[UserProviders_SelectAllUsers] - paged
+        _ REACT control to view [dbo].[UserProviders_SelectAllProviders] - paged
 
         _ PR request/peer review and merge
 
