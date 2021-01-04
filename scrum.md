@@ -17,6 +17,11 @@
                 _x_ Page service sends to backend that emails admin@myhealth.com
 
 
+        _X_  1pm-3pm - TRELLO STUDY - REACT, SQL, .NET
+                - read cards on all three boards
+                - read top 50 interview questions
+
+
         __ PR request/peer review and merge (contactSheldonP)
 
         __ Start new branch for provider connections and compontents for view connections
@@ -31,6 +36,8 @@
         __ PR request/peer review and merge
 
 ### --- WILL ACCOMPLISH
+
+        _ study - rewatch the 'cycle'
 
 ### --- JAN 2, 2021
 
