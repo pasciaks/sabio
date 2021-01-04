@@ -4,6 +4,27 @@
     What are you going to accomplish
     What are your blockers
 
+### --- JAN 4, 2021
+
+### --- DID ACCOMPLISH
+
+        __ Q - to talk about my way ahead and set reasonable suspense to be done with it.
+
+        __ RE-CHECK those two join/bridge/selects ( take out comments, validate result data from queries )
+
+        __ FORMIK front end form to accept and send user comments from landing page
+
+        __ C# service, and endpoint for each of the select PROCs
+                [dbo].[UserProviders_SelectAllUsers]
+                [dbo].[UserProviders_SelectAllProviders]
+
+        __ REACT control to view [dbo].[UserProviders_SelectAllUsers] - paged
+        __ REACT control to view [dbo].[UserProviders_SelectAllProviders] - paged
+
+        __ PR request/peer review and merge
+
+### --- WILL ACCOMPLISH
+
 ### --- JAN 2, 2021
 
 ### --- DID ACCOMPLISH
