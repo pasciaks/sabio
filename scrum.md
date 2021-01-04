@@ -8,11 +8,18 @@
 
 ### --- DID ACCOMPLISH
 
-        __ Q - to talk about my way ahead and set reasonable suspense to be done with it.
+        _x_ RE-CHECK those two join/bridge/selects ( take out comments, validate result data from queries )
 
-        __ RE-CHECK those two join/bridge/selects ( take out comments, validate result data from queries )
+        _x_ FORMIK front end form to accept and send user comments from landing page
+                _x_ Schema
+                _x_ Wrapper page with header and footer
+                _x_ Form component that sends comments through pageService
+                _x_ Page service sends to backend that emails admin@myhealth.com
 
-        __ FORMIK front end form to accept and send user comments from landing page
+
+        __ PR request/peer review and merge (contactSheldonP)
+
+        __ Start new branch for provider connections and compontents for view connections
 
         __ C# service, and endpoint for each of the select PROCs
                 [dbo].[UserProviders_SelectAllUsers]
