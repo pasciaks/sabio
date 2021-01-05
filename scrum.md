@@ -4,11 +4,9 @@
     What are you going to accomplish
     What are your blockers
 
-### --- JAN 4, 2021
+### --- JAN 5, 2021
 
 ### --- DID ACCOMPLISH
-
-        _x_ RE-CHECK those two join/bridge/selects ( take out comments, validate result data from queries )
 
         _x_ FORMIK front end form to accept and send user comments from landing page
                 _x_ Schema
@@ -16,33 +14,42 @@
                 _x_ Form component that sends comments through pageService
                 _x_ Page service sends to backend that emails admin@myhealth.com
 
-
         _X_  1pm-3pm - TRELLO STUDY - REACT, SQL, .NET
                 - read cards on all three boards
-                - read top 50 interview questions
+                - read top 50 react interview questions
 
-        _x_  job activity - applied for 15 more jobs
+        _x_  job activity - applied for 15 more jobs (total 125)
 
                 _x_  follow up emails and linked in connections.
 
-        __ PR request/peer review and merge (contactSheldonP)
+        _x_ PR request/peer review and merge (contactSheldonP)
 
-        __ Start new branch for provider connections and compontents for view connections
+        _x_ RE-CHECK those two join/bridge/selects (connected users & connected providers)
+                _X_ take out comments,
+                _X_ validate result data from queries
+                _X_ added join for email addresses in each
+
+        _x_ Start new branch for provider connections and compontents for view connections
+
+### --- WILL ACCOMPLISH
 
         __ C# service, and endpoint for each of the select PROCs
                 [dbo].[UserProviders_SelectAllUsers]
                 [dbo].[UserProviders_SelectAllProviders]
 
         __ REACT control to view [dbo].[UserProviders_SelectAllUsers] - paged
+
         __ REACT control to view [dbo].[UserProviders_SelectAllProviders] - paged
 
-        __ PR request/peer review and merge
+        __ PR request/peer review and merge (providerConnectionsSheldonP)
 
-### --- WILL ACCOMPLISH
+        __ Follow schedule for job hunt, study and code
 
         _ study - rewatch the 'cycle'
 
-### --- JAN 2, 2021
+        _ study - watch the c# pramga videos
+
+### --- JAN 4, 2021
 
 ### --- DID ACCOMPLISH
 
