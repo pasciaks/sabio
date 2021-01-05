@@ -33,6 +33,12 @@
 
 ### --- WILL ACCOMPLISH
 
+        _x_ Job activity.  new Applications: 1
+
+        _x_ Job activity.  new Emails and phone calls: 2
+
+        _X_ Job activity.  new Indeed connections: 19
+
         __ C# service, and endpoint for each of the select PROCs
                 [dbo].[UserProviders_SelectAllUsers]
                 [dbo].[UserProviders_SelectAllProviders]
