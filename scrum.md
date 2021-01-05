@@ -21,6 +21,9 @@
                 - read cards on all three boards
                 - read top 50 interview questions
 
+        _x_  job activity - applied for 15 more jobs
+
+                _x_  follow up emails and linked in connections.
 
         __ PR request/peer review and merge (contactSheldonP)
 
