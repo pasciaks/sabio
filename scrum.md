@@ -4,6 +4,28 @@
     What are you going to accomplish
     What are your blockers
 
+### --- JAN 6, 2021
+
+### --- DID ACCOMPLISH
+
+        _x_ Job activity.  new Applications: 1 2 3 4
+
+        _x_ Job activity.  new Emails and phone calls: 4
+
+        _X_ Job activity.  new Indeed connections: 19
+
+        _x_ C# service for each of the select PROCs
+           _X_ GetConnectedUsers    [dbo].[UserProviders_SelectAllUsers]
+           _X_ GetConnectedProviders    [dbo].[UserProviders_SelectAllProviders]
+
+        _x_ C# API ENDPOINT for each of the select PROCs
+           [x] GetConnectedUsers    [dbo].[UserProviders_SelectAllUsers]
+           [x] GetConnectedProviders    [dbo].[UserProviders_SelectAllProviders]
+
+        _X_ Job Activity - took 2 linked in assessments, TOP 15% C#, BOTTOM 30% jQuery!!!
+
+### --- WILL ACCOMPLISH
+
 ### --- JAN 5, 2021
 
 ### --- DID ACCOMPLISH
@@ -31,29 +53,42 @@
 
         _x_ Start new branch for provider connections and compontents for view connections
 
+        _X_ study - watch the c# pramga videos (only 1st 5 videos starting midpoint of playlist)
+
+
 ### --- WILL ACCOMPLISH
 
-        _x_ Job activity.  new Applications: 1
+        _x_ Job activity.  new Applications: 1 2 3 4
 
-        _x_ Job activity.  new Emails and phone calls: 2
+        _x_ Job activity.  new Emails and phone calls: 4
 
         _X_ Job activity.  new Indeed connections: 19
 
-        __ C# service, and endpoint for each of the select PROCs
-                [dbo].[UserProviders_SelectAllUsers]
-                [dbo].[UserProviders_SelectAllProviders]
+        _x_ C# service for each of the select PROCs
+           _X_ GetConnectedUsers    [dbo].[UserProviders_SelectAllUsers]
+           _X_ GetConnectedProviders    [dbo].[UserProviders_SelectAllProviders]
+
+        _x_ C# API ENDPOINT for each of the select PROCs
+           [x] GetConnectedUsers    [dbo].[UserProviders_SelectAllUsers]
+           [x] GetConnectedProviders    [dbo].[UserProviders_SelectAllProviders]
+
+        _X_ Job Activity - took 2 linked in assessments, TOP 15% C#, BOTTOM 30% jQuery!!!
 
         __ REACT control to view [dbo].[UserProviders_SelectAllUsers] - paged
 
         __ REACT control to view [dbo].[UserProviders_SelectAllProviders] - paged
 
+        __ REACT control that allows toggle provider connection
+
+        __ implement REACT control on providers card in providers search view
+
         __ PR request/peer review and merge (providerConnectionsSheldonP)
 
         __ Follow schedule for job hunt, study and code
 
-        _ study - rewatch the 'cycle'
+        __ study - rewatch the 'cycle'
 
-        _ study - watch the c# pramga videos
+        _X_ study - watch the c# pramga videos
 
 ### --- JAN 4, 2021
 
