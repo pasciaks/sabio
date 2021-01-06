@@ -24,6 +24,8 @@
 
         _X_ Job Activity - took 2 linked in assessments, TOP 15% C#, BOTTOM 30% jQuery!!!
 
+        _X_ struggled through some things with derek.
+
 ### --- WILL ACCOMPLISH
 
 ### --- JAN 5, 2021
@@ -54,7 +56,6 @@
         _x_ Start new branch for provider connections and compontents for view connections
 
         _X_ study - watch the c# pramga videos (only 1st 5 videos starting midpoint of playlist)
-
 
 ### --- WILL ACCOMPLISH
 
