@@ -10,6 +10,19 @@
 
         _x_ Apply for more jobs: 10, total 137
 
+        _x_ the cycle video and c# videos to study
+
+        _x_ job related - linked in connections, email
+
+        _x_ created start to react component view connected providers/users,
+                getting the data, just need to make it look good and put somewhere
+
+        _X- Code review/pr merge of Chad's health info
+
+### --- WILL ACCOMPLISH
+
+        ___ complete the control that allows clicks to create the connections
+
 ### --- JAN 6, 2021
 
 ### --- DID ACCOMPLISH
