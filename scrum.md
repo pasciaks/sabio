@@ -8,7 +8,7 @@
 
 ### --- DID ACCOMPLISH
 
-        _x_ Job activity.  new Applications: 1 2 3 4
+        _x_ Job activity.  new Applications: 1 2 3 4 5
 
         _x_ Job activity.  new Emails and phone calls: 4
 
@@ -22,11 +22,22 @@
            [x] GetConnectedUsers    [dbo].[UserProviders_SelectAllUsers]
            [x] GetConnectedProviders    [dbo].[UserProviders_SelectAllProviders]
 
-        _X_ Job Activity - took 2 linked in assessments, TOP 15% C#, BOTTOM 30% jQuery!!!
+        _X_ Job Activity - took 3 linked in assessments, TOP 15% C#, TOP 5% JavaScript, BOTTOM 30% jQuery!!!
 
         _X_ struggled through some things with derek.
 
 ### --- WILL ACCOMPLISH
+
+        ___ complete the front end control
+
+                View of conneceds users
+                View of connected providers
+
+        __ Follow up on emails and apply for 10 more jobs
+
+        __ Study the cycle
+
+        __ Control to connect a user to a provider
 
 ### --- JAN 5, 2021
 
