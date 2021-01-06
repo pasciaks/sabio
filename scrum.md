@@ -8,7 +8,7 @@
 
 ### --- DID ACCOMPLISH
 
-        _x_ Job activity.  new Applications: 1 2 3 4 5
+        _x_ Job activity.  new Applications: 1 2 3 4 5 (127 total)
 
         _x_ Job activity.  new Emails and phone calls: 4
 
