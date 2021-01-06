@@ -8,9 +8,7 @@
 
 ### --- DID ACCOMPLISH
 
-        _x_ Apply for more jobs: 1 2 3
-
-        _x_ skill assessment : _____
+        _x_ Apply for more jobs: 10, total 137
 
 ### --- JAN 6, 2021
 
