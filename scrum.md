@@ -26,6 +26,8 @@
 
         _X_ struggled through some things with derek.
 
+        _X_ got to bottom on my inbox this morning already -- ps RUBY on Rails seems pretty sought after.
+
 ### --- WILL ACCOMPLISH
 
         ___ complete the front end control
