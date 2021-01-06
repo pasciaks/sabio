@@ -4,6 +4,14 @@
     What are you going to accomplish
     What are your blockers
 
+### --- JAN 7, 2021
+
+### --- DID ACCOMPLISH
+
+        _x_ Apply for more jobs: 1 2 3
+
+        _x_ skill assessment : _____
+
 ### --- JAN 6, 2021
 
 ### --- DID ACCOMPLISH
