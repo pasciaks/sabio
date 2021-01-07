@@ -9,6 +9,7 @@
 ### --- DID ACCOMPLISH
 
         _x_ Apply for more jobs: 10, total 137
+        _x_ job applications: 1 2 3 4 5 6 7 8 9 10 11 12 - 149 total!
 
         _x_ the cycle video and c# videos to study
 
@@ -17,13 +18,17 @@
         _x_ created start to react component view connected providers/users,
                 getting the data, just need to make it look good and put somewhere
 
-        _X- Code review/pr merge of Chad's health info
-
-        _x_ job applications: 1 2 3 4 5 6 7 8 9 10 11 12 - 149 total!
+        _X_ Code review/pr merge of Chad's health info
 
         _x_ inbox of indeed cleanup and fresh contact old recruiters
 
 ### --- WILL ACCOMPLISH
+
+        ___ complete the two react components
+
+        ___ jobs activity: will apply for 10 more jobs and follow up
+                (I told most jobs I'm available for interviews 11-13 Jan)
+                (I have to follow up with one job phone interview NLT 11 Jan)
 
         ___ complete the control that allows clicks to create the connections
 
