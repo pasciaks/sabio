@@ -23,6 +23,9 @@
 
         _x_ created start to react component view connected providers/users,
 
+        interview at 1pm (2nd interview)
+
+        awaiting interview for job in Vegas, 100k
 
 ### --- WILL ACCOMPLISH
 
