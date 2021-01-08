@@ -4,6 +4,20 @@
     What are you going to accomplish
     What are your blockers
 
+### --- JAN 8, 2021
+
+### --- DID ACCOMPLISH
+
+        _x_ Applied for 5 more jobs  (167 total)
+
+        _x_ phone interview 1pm (2nd call)
+
+        _x_ email follow ups
+
+        ___ worked on connect to provider button
+
+### --- WILL ACCOMPLISH
+
 ### --- JAN 7, 2021
 
 ### --- DID ACCOMPLISH
