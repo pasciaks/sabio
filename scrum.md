@@ -8,7 +8,7 @@
 
 ### --- DID ACCOMPLISH
 
-        Job applications: 1 2 3 4 5 6 7 8 9 10 11 12 (161 total)
+        Job applications: 1 2 3 4 5 6 7 8 9 10 11 12 13 (162 total)
                 (I told most jobs I'm available for interviews 11-13 Jan)
 
         Follow up emails: 4 ( aptitude questionaire, appt for 13 Jan with recruiter )
