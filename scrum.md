@@ -8,6 +8,34 @@
 
 ### --- DID ACCOMPLISH
 
+        Job applications: 1 2 3 4 5 6 7 8 9 10 11 12 (161 total)
+                (I told most jobs I'm available for interviews 11-13 Jan)
+
+        Follow up emails: 4 ( aptitude questionaire, appt for 13 Jan with recruiter )
+
+        _x_ online interview Fattmerchant (video recorded)
+
+        STRESS
+
+        _x_ another video call with lead dev interview 3pm, nice!
+
+        _x_ jobs activity: more linked in connections, 473 total
+
+        _x_ created start to react component view connected providers/users,
+
+
+### --- WILL ACCOMPLISH
+
+        ___ complete the control that allows clicks to create the connections
+
+        ___ PR and merge
+
+        ___ jobs activity
+
+        ___ study list from Brijesh
+
+### --- DID ACCOMPLISH
+
         _x_ Apply for more jobs: 10, total 137
         _x_ job applications: 1 2 3 4 5 6 7 8 9 10 11 12 - 149 total!
 
@@ -22,13 +50,13 @@
 
         _x_ inbox of indeed cleanup and fresh contact old recruiters
 
-### --- WILL ACCOMPLISH
-
-        ___ complete the two react components
+        ___ complete the two react components to view connections
 
         ___ jobs activity: will apply for 10 more jobs and follow up
                 (I told most jobs I'm available for interviews 11-13 Jan)
                 (I have to follow up with one job phone interview NLT 11 Jan)
+
+### --- WILL ACCOMPLISH
 
         ___ complete the control that allows clicks to create the connections
 
