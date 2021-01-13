@@ -4,6 +4,57 @@
     What are you going to accomplish
     What are your blockers
 
+### --- jan 13
+
+        _x_ pushed changes for UI practices wizard form.. much better.
+
+        _x_ finished 3 tutorials teacher quizes (jquery, javascript, node)  (75% average on each)
+
+        studied tutorials teacher for node
+
+### --- JAN 11, 2021
+
+### --- DID ACCOMPLISH
+
+        _X_ Completed job offer, employee handbook and new hire forms.
+
+        ___ Bugs/UI improvements on health log.
+
+                _x_  title
+                _X_  color of links users, providers, affiliates
+                _X_  Connected providers on user dashboard
+                _x   top right menu, get rid of unused icons (FB, etc)
+                _x   top left ... menu get rid of unused icons (fb, etc)
+                _x   delete non needed top left user stuff under the --- three dots
+
+        _x_ Code review/push Chad's health log things
+
+### --- WILL ACCOMPLISH
+
+        _ truncate old bad data or fix old bad data
+
+        _ QC things like makng sure no error if provider has no practices, locations, licenses, etc
+
+        _ PRACTICE demo script for presentation (text, order of presentation)
+
+        _ Make sure all contributions annotated in document
+
+        _ BREATH, RELAX and enjoy time off soon - WORK COMING, for Real money so REAL work with REAL results.
+
+### --- DID ACCOMPLISH
+
+        _x_ Variety of demo link, screen and data improvements
+
+        _x_ Code review and merge of Joe's Quartz Scheduler
+
+        _x_ Code review and merge of Josiah's location updates
+
+        _x_ Logged in view footer, 404 error page view, etc
+
+        _ _ Connect to Provider ( IN Provider details view )
+
+        _ _ Disconnect from Provider  ( IN Provider details view )
+
 ### --- JAN 8, 2021
 
 ### --- DID ACCOMPLISH
@@ -14,9 +65,16 @@
 
         _x_ email follow ups
 
-        ___ worked on connect to provider button
+        _x_ phone call recruiter, moving forward to next step fully remote 100k
+
+        __ worked on connect to provider button
+
+        ___ Product demo draft script, pushed branch of provider connections, etc
+          (more to do, but its there for concept and demo plan)
 
 ### --- WILL ACCOMPLISH
+
+        __ Connect button and bug fixes as part of final code branch (   demo.....SheldonP  )
 
 ### --- JAN 7, 2021
 
