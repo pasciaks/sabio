@@ -4,15 +4,38 @@
     What are you going to accomplish
     What are your blockers
 
+### --- jan 14
+
+        _x_ demo
+
+        _x_ mission complete!
+
 ### --- jan 13
 
         _x_ pushed changes for UI practices wizard form.. much better.
 
         _x_ finished 3 tutorials teacher quizes (jquery, javascript, node)  (75% average on each)
 
-        studied tutorials teacher for node
+        studied tutorials teacher for node, 3 assessments
+
+        _x_ updated some blogs things, like view and
+                required messages/formik validation for ck edit and image
+
+        _x_ code review and merge Chad's color coded levels
+
+        ___ blah!
+
+        __ another push address show stopper possible issue on live site.
+
+        __ code reviewed joe on that
 
 ### --- JAN 11, 2021
+
+        created provider data, tested system
+
+        demo product
+
+        RELAX and start to study/plan for node js job
 
 ### --- DID ACCOMPLISH
 
